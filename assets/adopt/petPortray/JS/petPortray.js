@@ -93,7 +93,7 @@ cc.Class({
                 console.log(err);
                 if (err) return;
                 if (this.node) {
-                    console.log("success");
+                    console.log("success" + sp);
                     if(sprite){
                         sprite.spriteFrame = sp;
                     }

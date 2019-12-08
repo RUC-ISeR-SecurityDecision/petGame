@@ -12,16 +12,10 @@ cc._RF.push(module, 'd5ba64+0W1PPJ3o9JN/V8Mf', 'globalData', __filename);
   author: qll
   time: 2019/12/2
 */
+
+window.SERVER_IP = "https://www.llquruc.top/"; // 服务器地址，全局变量，不会在游戏中修改
+
 var globalData = {
-    //服务器地址
-    serverAddr: {
-        get: function get() {
-            return this._serverAddr;
-        },
-        set: function set(value) {
-            this._serverAddr = value;
-        }
-    },
 
     //用户ID，游戏中的唯一标识
     userID: {

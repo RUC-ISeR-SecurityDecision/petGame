@@ -6,16 +6,10 @@
   author: qll
   time: 2019/12/2
 */
+
+window.SERVER_IP = "https://www.llquruc.top/"; // 服务器地址，全局变量，不会在游戏中修改
+
 var globalData = {
-    //服务器地址
-    serverAddr: {
-        get () {
-            return this._serverAddr;
-        },
-        set (value) {
-            this._serverAddr = value;
-        }
-    },
 
     //用户ID，游戏中的唯一标识
     userID: {
@@ -209,7 +203,7 @@ var globalData = {
     // 标志位：幼年or成年
     flagAgeGroup: {
         get () {
-        return this._flagAgeGroup;
+            return this._flagAgeGroup;
         },
         set (value) {
             this._flagAgeGroup = value;
@@ -218,7 +212,7 @@ var globalData = {
     //标志位_是否解锁“跳绳”操作
     flagSkipping: {
         get () {
-        return this._flagSkipping;
+            return this._flagSkipping;
         },
         set (value) {
             this._flagSkipping = value;
@@ -227,7 +221,7 @@ var globalData = {
     //标志位_是否解锁“讲故事”操作
     flagStory: {
         get () {
-        return this._flagStory;
+            return this._flagStory;
         },
         set (value) {
             this._flagStory = value;
@@ -236,7 +230,7 @@ var globalData = {
     //标志位-是否正在睡觉
     flagSleep: {
         get () {
-        return this._flagSleep;
+            return this._flagSleep;
         },
         set (value) {
             this._flagSleep = value;
@@ -245,7 +239,7 @@ var globalData = {
     //睡觉剩余时长
     sleepRemainTime: {
         get () {
-        return this._sleepRemainTime;
+            return this._sleepRemainTime;
         },
         set (value) {
             this._sleepRemainTime = value;
@@ -254,7 +248,7 @@ var globalData = {
     //标志位-是否正在打工
     flagWork: {
         get () {
-        return this._flagWork;
+            return this._flagWork;
         },
         set (value) {
             this._flagWork = value;
@@ -263,7 +257,7 @@ var globalData = {
     //打工剩余时长
     workRemainTime: {
         get () {
-        return this._workRemainTime;
+            return this._workRemainTime;
         },
         set (value) {
             this._workRemainTime = value;
@@ -272,7 +266,7 @@ var globalData = {
     //标志位-是否正在旅游
     flagTrip: {
         get () {
-        return this._flagTrip;
+            return this._flagTrip;
         },
         set (value) {
             this._flagTrip = value;
@@ -281,7 +275,7 @@ var globalData = {
     //旅游剩余时长
     tripRemainTime: {
         get () {
-        return this._tripRemainTime;
+            return this._tripRemainTime;
         },
         set (value) {
             this._tripRemainTime = value;
@@ -290,7 +284,7 @@ var globalData = {
     //标志位_是否开启背景音乐
     flagBgMusic: {
         get () {
-        return this._flagBgMusic;
+            return this._flagBgMusic;
         },
         set (value) {
             this._flagBgMusic = value;
@@ -299,7 +293,7 @@ var globalData = {
     //背景音乐音量
     bgMusicVolume: {
         get () {
-        return this._bgMusicVolume;
+            return this._bgMusicVolume;
         },
         set (value) {
             this._bgMusicVolume = value;
@@ -308,7 +302,7 @@ var globalData = {
     //背景音乐曲目编号
     bgMusicNum: {
         get () {
-        return this._bgMusicNum;
+            return this._bgMusicNum;
         },
         set (value) {
             this._bgMusicNum = value;
@@ -317,7 +311,7 @@ var globalData = {
     //背景图片编号
     bgPicNum: {
         get () {
-        return this._bgPicNum;
+            return this._bgPicNum;
         },
         set (value) {
             this._bgPicNum = value;
@@ -326,7 +320,7 @@ var globalData = {
     //标志位_是否开启音效
     flagSound: {
         get () {
-        return this._flagSound;
+            return this._flagSound;
         },
         set (value) {
             this._flagSound = value;
@@ -335,7 +329,7 @@ var globalData = {
     //音效音量
     soundVolume: {
         get () {
-        return this._soundVolume;
+            return this._soundVolume;
         },
         set (value) {
             this._soundVolume = value;
@@ -344,7 +338,7 @@ var globalData = {
     //标志位_是否开启推送通知
     flagNotice: {
         get () {
-        return this._flagNotice;
+            return this._flagNotice;
         },
         set (value) {
             this._flagNotice = value;
@@ -362,7 +356,7 @@ var globalData = {
     //标志位_是否开启震动
     flagVibration: {
         get () {
-        return this._flagVibration;
+            return this._flagVibration;
         },
         set (value) {
             this._flagVibration = value;
@@ -371,7 +365,7 @@ var globalData = {
     //背包内容（除小屋装饰）
     bag: {
         get () {
-        return this._bag;
+            return this._bag;
         },
         set (value) {
             this._bag = value;
@@ -380,7 +374,7 @@ var globalData = {
     //小屋装饰
     decorationBag: {
         get () {
-        return this._decorationBag;
+            return this._decorationBag;
         },
         set (value) {
             this._decorationBag = value;

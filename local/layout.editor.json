@@ -14,54 +14,64 @@
           {
             "children": [
               {
-                "active": 0,
-                "children": [
-                  "hierarchy"
-                ],
-                "height": 649.34375,
-                "type": "panel",
-                "width": 286.6875
-              },
-              {
-                "active": 0,
-                "children": [
-                  "assets"
-                ],
-                "height": 270.65625,
-                "type": "panel",
-                "width": 286.6875
-              }
-            ],
-            "height": 923,
-            "type": "dock-v",
-            "width": 286.6875
-          },
-          {
-            "children": [
-              {
                 "children": [
                   {
                     "active": 0,
                     "children": [
-                      "scene"
+                      "hierarchy"
                     ],
-                    "height": 611.015625,
+                    "height": 460,
                     "type": "panel",
-                    "width": 795.71875
+                    "width": 204
                   },
                   {
                     "active": 0,
                     "children": [
-                      "node-library"
+                      "assets"
                     ],
-                    "height": 611.015625,
+                    "height": 460,
                     "type": "panel",
-                    "width": 354.6875
+                    "width": 204
                   }
                 ],
-                "height": 611.015625,
+                "height": 460,
                 "type": "dock-h",
-                "width": 1153.40625
+                "width": 411
+              },
+              {
+                "active": 0,
+                "children": [
+                  "node-library"
+                ],
+                "height": 460,
+                "type": "panel",
+                "width": 411
+              }
+            ],
+            "height": 923,
+            "type": "dock-v",
+            "width": 411
+          },
+          {
+            "active": 0,
+            "children": [
+              "scene"
+            ],
+            "height": 923,
+            "type": "panel",
+            "width": 983
+          },
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "inspector",
+                  "cocos-services"
+                ],
+                "height": 556,
+                "type": "panel",
+                "width": 504
               },
               {
                 "active": 0,
@@ -70,24 +80,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 308.984375,
+                "height": 364,
                 "type": "panel",
-                "width": 1153.40625
+                "width": 504
               }
             ],
             "height": 923,
             "type": "dock-v",
-            "width": 1153.40625
-          },
-          {
-            "active": 0,
-            "children": [
-              "inspector",
-              "cocos-services"
-            ],
-            "height": 923,
-            "type": "panel",
-            "width": 457.90625
+            "width": 504
           }
         ],
         "type": "dock-h"
@@ -95,19 +95,36 @@
       "panels": [
         "hierarchy",
         "assets",
-        "scene",
         "node-library",
+        "scene",
+        "inspector",
+        "cocos-services",
         "console",
         "timeline",
-        "game-window",
-        "inspector",
-        "cocos-services"
+        "game-window"
       ]
     }
   },
-  "panels": {},
-  "panelLabelWidth": {
-    "inspector": null
+  "panels": {
+    "project-settings": {
+      "x": 672,
+      "y": 241,
+      "width": 600,
+      "height": 564
+    },
+    "builder": {
+      "x": 802,
+      "y": 145,
+      "width": 670,
+      "height": 738
+    }
   },
-  "panelLabelWidth.inspector": null
+  "panelLabelWidth": {
+    "inspector": null,
+    "project-settings": null,
+    "builder": null
+  },
+  "panelLabelWidth.inspector": null,
+  "panelLabelWidth.project-settings": null,
+  "panelLabelWidth.builder": null
 }
