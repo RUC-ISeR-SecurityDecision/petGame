@@ -759,6 +759,7 @@
     "meta": 1575355191291,
     "relativePath": "resources\\9.png"
   },
+<<<<<<< HEAD
   "87f24e7f-2404-4414-93f0-799c7dde5427": {
     "asset": 1575355150696,
     "meta": 1575355191080,
@@ -803,5 +804,46 @@
     "asset": 1575614762468,
     "meta": 1575614763499,
     "relativePath": "shop\\js\\shopCopy.js"
+=======
+  "093d5a7a-cc8e-4c17-a6e9-504aa9ad39ca": {
+    "asset": 1575285336773,
+    "meta": 1575285347392,
+    "relativePath": "shop\\js\\shopCopy.js"
+  },
+  "c03fb8e5-8b84-49ba-b8a2-68902011f747": {
+    "asset": 1575529419784,
+    "meta": 1575446189417,
+    "relativePath": "runtime"
+  },
+  "e2d70ee3-8200-4c81-a577-4668f1a4d1b9": {
+    "asset": 1575446239508,
+    "meta": 1575446434447,
+    "relativePath": "runtime\\bag.js"
+  },
+  "24910d3e-dd1a-46c1-86df-c557061965c4": {
+    "asset": 1575515512707,
+    "meta": 1575515518332,
+    "relativePath": "runtime\\music.js"
+  },
+  "c8a3f33c-c315-44ff-a505-d691541e8076": {
+    "asset": 1575532495582,
+    "meta": 1575532497345,
+    "relativePath": "runtime\\autoRun.js"
+  },
+  "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
+    "asset": 1575534908437,
+    "meta": 1575534913223,
+    "relativePath": "Global\\globalData.js"
+  },
+  "87f24e7f-2404-4414-93f0-799c7dde5427": {
+    "asset": 1575534908437,
+    "meta": 1575534913250,
+    "relativePath": "main\\js\\main.js"
+  },
+  "27dca957-a67c-49eb-a753-d6753f03019d": {
+    "asset": 1575769404204,
+    "meta": 1575769492633,
+    "relativePath": "adopt\\petPortray\\JS\\petPortray.js"
+>>>>>>> 83f085b8aff4651f3259adc33fd23ad1cf0d050d
   }
 }

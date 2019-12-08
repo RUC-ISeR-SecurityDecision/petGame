@@ -22,19 +22,110 @@ cc.Class({
         homeBtn: cc.Sprite,
 
         //以下为页面中需要展示的值
-        hunger: cc.Label, // 饥饿值
-        hungerCeiling: cc.Label, // 饥饿值上限
-        cleaness: cc.Label, // 清洁值
-        cleanessCeiling: cc.Label, // 清洁值上限
-        thirst: cc.Label, // 口渴值
-        thirstCeiling: cc.Label, // 口渴值上限
-        mood: cc.Label, // 心情值
-        moodCeiling: cc.Label, // 心情值上限
-        energy: cc.Label, // 能量值
-        energyCeiling: cc.Label, // 能量值上限
-        growth: cc.Label, // 成长值
-        growthLevel: cc.Label, // 成长值等级
-        coin: cc.Label, // 金币值
+        hunger:{ // 饥饿值
+            get () {
+                return this._hunger;
+            },
+            set (value) {
+                this._hunger = value;
+            }
+        },
+        hungerCeiling:{ // 饥饿值上限
+            get () {
+                return this._hungerCeiling;
+            },
+            set (value) {
+                this._hungerCeiling = value;
+            }
+        },
+        cleaness:{ // 清洁值
+            get () {
+                return this._cleaness;
+            },
+            set (value) {
+                this._cleaness = value;
+            }
+        },
+        cleanessCeiling:{ // 清洁值上限
+            get () {
+                return this._cleanessCeiling;
+            },
+            set (value) {
+                this._cleanessCeiling = value;
+            }
+        },
+        thirst:{ // 口渴值
+            get () {
+                return this._thirst;
+            },
+            set (value) {
+                this._thirst = value;
+            }
+        },
+        thirstCeiling:{ // 口渴值上限
+            get () {
+                return this._thirstCeiling;
+            },
+            set (value) {
+                this._thirstCeiling = value;
+            }
+        },
+        mood:{ // 心情值
+            get () {
+                return this._mood;
+            },
+            set (value) {
+                this._mood = value;
+            }
+        },
+        moodCeiling:{ // 心情值上限
+            get () {
+                return this._moodCeiling;
+            },
+            set (value) {
+                this._moodCeiling = value;
+            }
+        },
+        energy:{ // 能量值
+            get () {
+                return this._energy;
+            },
+            set (value) {
+                this._energy = value;
+            }
+        },
+        energyCeiling:{ // 能量值上限
+            get () {
+                return this._energyCeiling;
+            },
+            set (value) {
+                this._energyCeiling = value;
+            }
+        },
+        growth:{ // 成长值
+            get () {
+                return this._growth;
+            },
+            set (value) {
+                this._growth = value;
+            }
+        },
+        growthLevel:{ // 成长值等级
+            get () {
+                return this._growthLevel;
+            },
+            set (value) {
+                this._growthLevel = value;
+            }
+        },
+        coin:{ // 金币值
+            get () {
+                return this._coin;
+            },
+            set (value) {
+                this._coin = value;
+            }
+        },
 
         _isFunctionShow: true,
         //author:qll
@@ -48,8 +139,22 @@ cc.Class({
         
         _isLoginRewardShow : false,  //标志位_是否显示登录奖励
         _isContLoginRewardShow : false,  //标志位_是否显示连续登录奖励
-        _isRandomRewardShow : false,  //标志位_是否显示随机奖励
-        _isUpgradeRewardShow : false,  //标志位_是否显示升级奖励
+        _isRandomRewardShow: {  //标志位_是否显示随机奖励
+            get () {
+                return this.__isRandomRewardShow;
+            },
+            set (value) {
+                this.__isRandomRewardShow = value;
+            }
+        },
+        _isUpgradeRewardShow:{  //标志位_是否显示升级奖励
+            get () {
+                return this.__isUpgradeRewardShow;
+            },
+            set (value) {
+                this.__isUpgradeRewardShow = value;
+            }
+        },
         
         timeIndex: [0, 30, 40, 50, 60],  //不同的时间ID对应的具体秒数（适用于旅游、打工和睡觉操作）P.S. ID0是无效的
 
@@ -60,8 +165,6 @@ cc.Class({
         tripTimeID: 0,  //旅游时长设置
 
         sleepTimeID: 0,  //睡觉时间设置
-
-        updateID : 0,  //用于退出该页面时清除interval
     },
 
     //生成登录奖励
@@ -187,24 +290,6 @@ cc.Class({
         }
     },
 
-    autoUpdate: function(){
-        this.hunger.string = GlobalData.hunger;  // 饥饿值
-        this.cleaness.string = GlobalData.cleaness; // 清洁值
-        this.thirst.string = GlobalData.thirst; // 口渴值
-        this.mood.string = GlobalData.mood; // 心情值
-        this.energy.string = GlobalData.energy; // 能量值
-        this.growth.string = GlobalData.growth; // 成长值
-        this.growthLevel.string = GlobalData.growthLevel; // 成长值等级
-        this.coin.string = GlobalData.coin; // 金币值
-        //检查是否有奖励生成（仅限随机和升级）
-        if(GlobalData.flagRandomReward == true){
-            this._isRandomRewardShow = true;  //在主界面某处出现随机奖励
-        }
-        if(GlobalData.flagUpgradeReward == true){
-            this._isUpgradeRewardShow = true;  //弹出升级奖励框
-        }
-    },
-
     init: function() {   //进入该页面时调用此函数
         // 初始化宠物形象
         let sprite = this.pet;
@@ -253,13 +338,27 @@ cc.Class({
                 }
             })
         }  
-        //开始实时更新宠物属性值
-        var interval = 1000;  //1秒
-        this.updateID = setInterval(autoUpdate, interval);  
+        //初始化宠物属性值
+        this.hunger = GlobalData.hunger;  // 饥饿值
+        this.hungerCeiling = GlobalData.hungerCeiling;  // 饥饿值上限
+        this.cleaness = GlobalData.cleaness; // 清洁值
+        this.cleanessCeiling = GlobalData.cleanessCeiling;  // 清洁值上限
+        this.thirst = GlobalData.thirst; // 口渴值
+        this.thirstCeiling = GlobalData.thirstCeiling;  // 口渴值上限
+        this.mood = GlobalData.mood; // 心情值
+        this.moodCeiling = GlobalData.moodCeiling;  // 心情值上限
+        this.energy = GlobalData.energy; // 能量值
+        this.energyCeiling = GlobalData.energyCeiling;  // 能量值上限
+        this.growth = GlobalData.growth; // 成长值
+        this.growthLevel = GlobalData.growthLevel; // 成长值等级
+        this.coin = GlobalData.coin; // 金币值
+        //检查是否有奖励生成（仅限随机和升级）
+        this._isRandomRewardShow = GlobalData.flagRandomReward;  //如果为true，在主界面某处出现随机奖励
+        this._isUpgradeRewardShow = GlobalData.flagUpgradeReward;  //如果为true，弹出升级奖励框
     },
 
     exit: function(){  //退出该页面时调用此函数
-        clearInterval(this.updateID);
+        
     },
 
     onPlusBtnClicked: function() {
