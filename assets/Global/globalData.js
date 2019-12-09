@@ -9,7 +9,6 @@
 window.SERVER_IP = "https://www.llquruc.top/"; // 服务器地址，全局变量，不会在游戏中修改
 
 var globalData = {
-<<<<<<< HEAD
 
     //用户ID，游戏中的唯一标识
     userID: {
@@ -379,7 +378,7 @@ var globalData = {
         set (value) {
             this._decorationBag = value;
         }
-=======
+    },
   //用户的微信账户信息
   userName: {//用户昵称
     get () {
@@ -830,7 +829,6 @@ var globalData = {
   flagVibration: {//标志位_是否开启震动
     get () {
         return this._flagVibration;
->>>>>>> 83f085b8aff4651f3259adc33fd23ad1cf0d050d
     },
     set (value) {
         this._flagVibration = value;

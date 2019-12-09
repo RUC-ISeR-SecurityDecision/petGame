@@ -1,5 +1,5 @@
 "use strict";
-cc._RF.push(module, 'efb6fOyMhVEi5IEDbfbfuMx', 'main');
+cc._RF.push(module, '05888IeFlFIKrrGF8lWdvIO', 'main');
 // main/main.js
 
 'use strict';
