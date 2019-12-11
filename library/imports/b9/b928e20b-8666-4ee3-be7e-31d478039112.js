@@ -6,7 +6,9 @@ cc._RF.push(module, 'b928eILhmZO475+MdR4A5ES', 'net');
 
 // 网络请求处理
 // author：wang-c
-// 
+// 三个函数，httpGet,httpPost,httpPostLogin
+// httpPostLogin 还需要按照微信小游戏的登录模式修改
+// 用法：全局变量window.HttpHelper,使用时只需HttpHelper.httpGet(url, callback) 即可
 
 var HttpHelper = cc.Class({
     extends: cc.Component,
@@ -17,24 +19,19 @@ var HttpHelper = cc.Class({
 
     /**
      * get请求
-     * @param {string} url 
-     * @param {function} callback 
+     * @param {string} url 访问的url
+     * @param {function} callback 回调函数, 再函数结束后调用外部函数
      */
     httpGet: function httpGet(url, callback) {
-        cc.myGame.gameUi.onShowLockScreen();
         var xhr = cc.loader.getXMLHttpRequest();
         xhr.onreadystatechange = function () {
             // cc.log("Get: readyState:" + xhr.readyState + " status:" + xhr.status);
             if (xhr.readyState === 4 && xhr.status == 200) {
                 var respone = xhr.responseText;
                 var rsp = JSON.parse(respone);
-                cc.myGame.gameUi.onHideLockScreen();
                 callback(rsp);
-            } else if (xhr.readyState === 4 && xhr.status == 401) {
-                cc.myGame.gameUi.onHideLockScreen();
-                callback({ status: 401 });
             } else {
-                //callback(-1);
+                callback(-1);
             }
         };
         xhr.withCredentials = true;
@@ -59,19 +56,17 @@ var HttpHelper = cc.Class({
 
     /**
      * post请求
-     * @param {string} url 
-     * @param {object} params 
-     * @param {function} callback 
+     * @param {string} url 请求url
+     * @param {object} params 请求参数
+     * @param {function} callback 回调函数
      */
     httpPost: function httpPost(url, params, callback) {
-        cc.myGame.gameUi.onShowLockScreen();
         var xhr = cc.loader.getXMLHttpRequest();
         xhr.onreadystatechange = function () {
             // cc.log('xhr.readyState=' + xhr.readyState + '  xhr.status=' + xhr.status);
             if (xhr.readyState === 4 && xhr.status == 200) {
                 var respone = xhr.responseText;
                 var rsp = JSON.parse(respone);
-                cc.myGame.gameUi.onHideLockScreen();
                 callback(rsp);
             } else {
                 callback(-1);
@@ -83,7 +78,6 @@ var HttpHelper = cc.Class({
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
         xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader('Authorization', 'Bearer ' + cc.myGame.gameManager.getToken());
         // }
 
         // note: In Internet Explorer, the timeout property may be set only after calling the open()
@@ -103,14 +97,12 @@ var HttpHelper = cc.Class({
      * @param {string} password 
      */
     httpPostLogin: function httpPostLogin(url, params, callback, account, password) {
-        cc.myGame.gameUi.onShowLockScreen();
         var xhr = cc.loader.getXMLHttpRequest();
         xhr.onreadystatechange = function () {
             // cc.log('xhr.readyState=' + xhr.readyState + '  xhr.status=' + xhr.status);
             if (xhr.readyState === 4 && xhr.status == 200) {
                 var respone = xhr.responseText;
                 var rsp = JSON.parse(respone);
-                cc.myGame.gameUi.onHideLockScreen();
                 callback(rsp);
             } else {
                 callback(-1);

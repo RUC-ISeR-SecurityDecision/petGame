@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "male_penguins3",
+    "texture": "a5e55f7f-d265-49dd-931a-c23326d072cf",
+    "atlas": "",
+    "rect": [
+      26,
+      81,
+      579,
+      793
+    ],
+    "offset": [
+      -3,
+      0
+    ],
+    "originalSize": [
+      637,
+      955
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

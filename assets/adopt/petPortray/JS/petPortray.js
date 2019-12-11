@@ -28,6 +28,13 @@ cc.Class({
         skinPage: cc.ToggleContainer, // 毛色选择页面
         namePage: cc.Sprite, // 命名页面
         _isNamePageShow: false, // 是否显示命名页面
+
+        boyPetImage: cc.Sprite, // 性别选择页面男宠物形象
+        girlPetImage: cc.Sprite, // 性别选择页面女宠物形象
+
+        petColor1Image: cc.Sprite, // 毛色选择页面的选项1图片 
+        petColor2Image: cc.Sprite, // 毛色选择页面的选项2图片
+        petColor3Image: cc.Sprite, // 毛色选择页面的选项3图片
         
     },
 
@@ -74,68 +81,155 @@ cc.Class({
         console.log(pageNode[value].color);
         this.title.node.color = pageNode[value].color;
     },
-    // 改变用户物种选择
-    changeSpecies: function(value){
-        if (value > 3 || value < 0) {
-            console.log("species value error");
+    /**
+     * 用户做出物种和性别选择时需要更新性别页面和毛色页面的形象
+     * @param choiceType 玩家在领养界面做出的选择类型
+     */
+    changeImage: function(choiceType) {
+        if (!choiceType) {
+            console.log("petPortray.js error: changeImage() has incorrect param!");
             return RangeError;
+        } 
+        let boyPetImagePath = "pet/male_" ;
+        let girlPetImagePath = "pet/female_" ;
+        let petColor1ImagePath = GlobalData.gender == 0 ? "pet/male_" : "pet/female_"; 
+        let petColor2ImagePath = GlobalData.gender == 0 ? "pet/male_" : "pet/female_";
+        let petColor3ImagePath = GlobalData.gender == 0 ? "pet/male_" : "pet/female_";
+        let self = this;
+        if (GlobalData.species == 0) {
+            boyPetImagePath += 'owl';
+            girlPetImagePath += 'owl';
+            petColor1ImagePath += 'owl'; 
+            petColor2ImagePath += 'owl';
+            petColor3ImagePath += 'owl';
+        } else if (GlobalData.species == 1) {
+            boyPetImagePath += 'penguins';
+            girlPetImagePath += 'penguins';
+            petColor1ImagePath += 'penguins'; 
+            petColor2ImagePath += 'penguins';
+            petColor3ImagePath += 'penguins';
+        } else if (GlobalData.species == 2) {
+            boyPetImagePath += 'cat';
+            girlPetImagePath += 'cat';
+            petColor1ImagePath += 'cat'; 
+            petColor2ImagePath += 'cat';
+            petColor3ImagePath += 'cat';
+        } else if (GlobalData.species == 3) {
+            boyPetImagePath += 'dog';
+            girlPetImagePath += 'dog';
+            petColor1ImagePath += 'dog'; 
+            petColor2ImagePath += 'dog';
+            petColor3ImagePath += 'dog';
         }
-        GlobalData.species = value;
-        console.log(GlobalData);
-        // this.species = value;
-
-        // 修改skin页面的物种精灵
-        let sprite = this.portray.content.children[2].getChildByName("pickedPet").getComponent(cc.Sprite);
-        console.log(sprite);
-        if (value == 0) {
-            console.log("user choose owl");
-            cc.loader.loadRes("owl-simple", cc.SpriteFrame, (err, sp) => {
-                console.log(err);
-                if (err) return;
-                if (this.node) {
-                    console.log("success" + sp);
-                    if(sprite){
-                        sprite.spriteFrame = sp;
-                    }
-                }
-            })
-        } else if (value == 1) {
-            console.log("user choose penguin");
-            cc.loader.loadRes("penguin-simple", cc.SpriteFrame, (err, sp) => {
+        boyPetImagePath += (GlobalData.color + 1) + '';
+        girlPetImagePath += (GlobalData.color + 1) + '';
+        petColor1ImagePath += 1; 
+        petColor2ImagePath += 2;
+        petColor3ImagePath += 3; 
+        if (choiceType == 'species') {
+            cc.loader.loadRes(boyPetImagePath, cc.SpriteFrame, (err, sp) => {
                 console.log(err);
                 if (err) return;
                 if (this.node) {
                     console.log("success");
-                    if(sprite){
-                        sprite.spriteFrame = sp;
+                    if(self.boyPetImage){
+                        self.boyPetImage.spriteFrame = sp;
                     }
                 }
             })
-        } else if (value == 2) {
-            console.log("user choose cat");
-            cc.loader.loadRes("cat-simple", cc.SpriteFrame, (err, sp) => {
+            cc.loader.loadRes(girlPetImagePath, cc.SpriteFrame, (err, sp) => {
                 console.log(err);
                 if (err) return;
                 if (this.node) {
                     console.log("success");
-                    if(sprite){
-                        sprite.spriteFrame = sp;
+                    if(self.girlPetImage){
+                        self.girlPetImage.spriteFrame = sp;
                     }
                 }
             })
-        } else if (value == 3) {
-            console.log("user choose dog");
-            cc.loader.loadRes("dog-simple", cc.SpriteFrame, (err, sp) => {
+            cc.loader.loadRes(petColor1ImagePath, cc.SpriteFrame, (err, sp) => {
                 console.log(err);
                 if (err) return;
                 if (this.node) {
                     console.log("success");
-                    if(sprite){
-                        sprite.spriteFrame = sp;
+                    if(self.petColor1Image){
+                        self.petColor1Image.spriteFrame = sp;
                     }
                 }
             })
-        }    
+            cc.loader.loadRes(petColor2ImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.petColor2Image){
+                        self.petColor2Image.spriteFrame = sp;
+                    }
+                }
+            })
+            cc.loader.loadRes(petColor3ImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.petColor3Image){
+                        self.petColor3Image.spriteFrame = sp;
+                    }
+                }
+            })
+        } else if (choiceType == 'gender') {
+            cc.loader.loadRes(petColor1ImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.petColor1Image){
+                        self.petColor1Image.spriteFrame = sp;
+                    }
+                }
+            })
+            cc.loader.loadRes(petColor2ImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.petColor2Image){
+                        self.petColor2Image.spriteFrame = sp;
+                    }
+                }
+            })
+            cc.loader.loadRes(petColor3ImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.petColor3Image){
+                        self.petColor3Image.spriteFrame = sp;
+                    }
+                }
+            })
+        } else if (choiceType == 'skin') {
+            cc.loader.loadRes(boyPetImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.boyPetImage){
+                        self.boyPetImage.spriteFrame = sp;
+                    }
+                }
+            })
+            cc.loader.loadRes(girlPetImagePath, cc.SpriteFrame, (err, sp) => {
+                console.log(err);
+                if (err) return;
+                if (this.node) {
+                    console.log("success");
+                    if(self.girlPetImage){
+                        self.girlPetImage.spriteFrame = sp;
+                    }
+                }
+            })
+        }        
     },
     // 监听物种选择页面的滚动事件，判断用户物种选择
     onScrollingEvent: function(){
@@ -151,14 +245,15 @@ cc.Class({
                 // scroll滑动到相应的宠物种类时，进行处理
                 if (GlobalData.species != i) {
                     // 判断滑动是否使种类发生改变，发生改变进行以下处理
+                    console.log("choose " + element.name)
                     this.items[GlobalData.species].scale = 0.8;
-                    this.changeSpecies(i);
+                    GlobalData.species = i;
                     this.items[GlobalData.species].scale = 1.25; 
+                    this.changeImage('species');
                 }     
             } 
               
         }
-
         // console.log(this.content.height,this.speciesPage.getContentPosition());
     },
     // 监听性别选择页面的复选框事件
@@ -175,6 +270,7 @@ cc.Class({
                 }
             }
         }
+        this.changeImage('gender');
     },
     // 监听毛色选择页面的复选框事件
     onSkinToggleEvent : function() {
@@ -182,10 +278,11 @@ cc.Class({
         for (let i = 0; i < toggleArry.length; i++) {
             const element = toggleArry[i];
             if (element.isChecked) {
-                GlobalData.skin = i;
-                console.log("user choose skin" + (i + 1) )
+                GlobalData.color = i;
+                console.log("user choose color" + (i + 1) )
             }
         }
+        this.changeImage('skin');
     },
     // 监听输入事件
     // textChanged 事件的回调函数的参数模型
@@ -207,36 +304,36 @@ cc.Class({
 
     onCompleteClicked: function() {  //命名完成，提交结果，跳转到主界面
         console.log('turn to main page');
-        var serverAddr = GlobalData.serverAddr + "php/adopt.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                species: GlobalData.species,
-                gender: GlobalData.gender,
-                color: GlobalData.color,
-                userTitle: GlobalData.title,
-                petName: GlobalData.name,
-            },
-            success(res) {
-                console.log('领养成功');
-            },
-        });
-        var serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-            },
-            complete() {
-                console.log('后台自动更新进程开始运行');
-            },
-        });
-        //cc.director.loadScene("mainPage");
+        // var serverAddr = GlobalData.serverAddr + "php/adopt.php";
+        // $.ajax({
+        //     url: serverAddr,
+        //     type: 'POST',
+        //     dataType: json,
+        //     data: {
+        //         userID: GlobalData.userID,
+        //         species: GlobalData.species,
+        //         gender: GlobalData.gender,
+        //         color: GlobalData.color,
+        //         userTitle: GlobalData.title,
+        //         petName: GlobalData.name,
+        //     },
+        //     success(res) {
+        //         console.log('领养成功');
+        //     },
+        // });
+        // var serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
+        // $.ajax({
+        //     url: serverAddr,
+        //     type: 'POST',
+        //     dataType: json,
+        //     data: {
+        //         userID: GlobalData.userID,
+        //     },
+        //     complete() {
+        //         console.log('后台自动更新进程开始运行');
+        //     },
+        // });
+        cc.director.loadScene("mainPage");
     },
 
     // 显示命名页面
@@ -260,7 +357,7 @@ cc.Class({
 
         // ------- 初始化宠物选项 -------       
         // 宠物种类
-        this.changeSpecies(0);
+        this.changeImage('species');
         this.items[GlobalData.species].scale = 1.25;
         this.changeTitle(0);
 

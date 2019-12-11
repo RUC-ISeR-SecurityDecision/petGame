@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "eating",
+    "texture": "5ad6564e-b29a-460d-aecf-4a971050cd53",
+    "atlas": "",
+    "rect": [
+      18,
+      0,
+      403,
+      403
+    ],
+    "offset": [
+      7,
+      11
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

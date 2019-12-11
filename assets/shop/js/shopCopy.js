@@ -5,14 +5,14 @@
 // 加载数据
 var globalData = require("globalData");
 
-function Commodity(id, name, categoryID, categoryName, price) {
+function Commodity(id, name, categoryID, categoryName, price, isOwnFlag) {
 	this.id = id;
 	this.name = name;
 	this.categoryID = categoryID;
 	this.categoryName = categoryName;
 	this.price = price;
 	this._isShow = false;
-	this._isOwn = false; // 需要服务器传值才能确定，现在先按照单机的写
+	this._isOwn = isOwnFlag // 需要服务器传值才能确定，现在先按照单机的写
 	this.cartAmount = 0;
 
 	this.showCategory = function (categoryID) {
@@ -341,6 +341,7 @@ cc.Class({
 			let categoryIDArray = _data.categoryIDArray.split('+');
 			let categoryNameArray = _data.categoryNameArray.split('+');
 			let priceArray = _data.priceArray.split('+');
+			let isOwnArray = _data.ownFlagArray.split('+');
 			for (let index = 0; index < itemIDArray.length; index++) {
 				const element = itemIDArray[index];
 				let commodity = new Commodity(itemIDArray[index], itemNameArray[index], categoryIDArray[index], categoryNameArray[index], priceArray[index]);
@@ -377,8 +378,8 @@ cc.Class({
 			console.log("now load shop item: " + i );
 			if (element._isShow) {
 				itemNum += 1;
-				console.log("item: " + i + ' could be loaded');
-				let picName = element.id;
+				console.log("item: " + i + ' will be loaded');
+				let picName = 'shop/' + element.id;
 				cc.loader.loadRes(picName, cc.SpriteFrame, (err, sp) => {
 					if (err) {
 						console.log('failed to load sprite ' + picName);
@@ -403,7 +404,6 @@ cc.Class({
 						self.commodityShowBlock.node.addChild(commodityItem);
 						console.log(self.commodityArray[i].name + ' is loading... item: ' + i);
 					})
-					console.log("item:" + picName + " load end");
 				})
 			}
 		}
@@ -424,29 +424,18 @@ cc.Class({
 		this.selectedCategory = 1;
 		this.subCategory.active = false;
 		//与服务器交互，获得所有的商品信息
+		
 		var url = "https://www.llquruc.top/petGame/" + "php/queryShop.php"; //服务器接口地址
-		var request = cc.loader.getXMLHttpRequest();
-		var response = null;
-		console.log("Status: Send Get Request to " + url);
-		request.open("POST", url, true); // param: 1,使用的HTTP方法， 2，请求的url, 3,异步吗？
-		if (cc.sys.isNative) {
-			xhr.setRequestHeader("Accept-Encoding", "gzip,deflate", "text/html;charset=UTF-8");
-		}
+		// 调用自定义网路接口获取商品信息
 		var self = this;
-		request.onreadystatechange = function () {
-			if (request.readyState == 4 && (request.status >= 200 && request.status <= 207)) {
-				var httpStatus = request.statusText;
-				response = request.responseText;
-				console.log("Status: Got GET response! " + httpStatus);
-				response = JSON.parse(response);
-				console.log(response);
-				self.initShop(response);
-				self.loadShopItem();
+		HttpHelper.httpPost(url, null, function(data) {
+			if (data == -1) {
+				console.log("访问失败");
 			} else {
-				console.log('failure');
+				self.initShop(data);
+				self.loadShopItem();
 			}
-		};
-		request.send();
+		});
 
 	},
 

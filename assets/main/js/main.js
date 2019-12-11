@@ -20,6 +20,8 @@ cc.Class({
         tripBtn: cc.Sprite,
         workBtn: cc.Sprite,
         homeBtn: cc.Sprite,
+        sleepBtn: cc.Sprite,
+        functionBtn: cc.Button,
 
         //以下为页面中需要展示的值
         hunger: cc.Label, // 饥饿值
@@ -126,11 +128,12 @@ cc.Class({
         });
     },
 
-    /* 登录函数
-    需要微信接口，测试时可以先注释掉
-  author: qll
-  time: 2019/12/2
-    */
+    /**
+     *  登录函数
+     *  需要微信接口，测试时可以先注释掉
+     *  author: qll
+     *  time: 2019/12/2
+     */
     login: function() {  
         var flagContLoginReward = 0; 
         var flagLoginReward = 0; 
@@ -255,7 +258,8 @@ cc.Class({
         }  
         //开始实时更新宠物属性值
         var interval = 1000;  //1秒
-        this.updateID = setInterval(autoUpdate, interval);  
+        this.updateID = setInterval(this.autoUpdate, interval);  
+        this._isFunctionShow = true;
     },
 
     exit: function(){  //退出该页面时调用此函数
@@ -263,26 +267,34 @@ cc.Class({
     },
 
     onPlusBtnClicked: function() {
+        // 动作期间禁用功能按钮
+        this.functionBtn.interactable = false;
         this.showFunction();
     },
 
     showFunction: function() {
         this._isFunctionShow = !this._isFunctionShow;
-        let actionShop = null;
-        let actionWork = null;
-        let actionTravel = null;
-        if (this._isFunctionShow) {
-            actionTravel = cc.spawn(cc.moveBy(0.5, cc.v2(0, -94)), cc.fadeOut(0.5));
-            actionWork =  cc.spawn(cc.moveBy(0.6, cc.v2(0, -188)), cc.fadeOut(0.6));
-            actionShop = cc.spawn(cc.moveBy(0.7, cc.v2(0, -282)), cc.fadeOut(0.7));
+        let actionSleepBtn = null;
+        let actionWorkBtn = null;
+        let actionTripBtn = null;
+        // 动作结束时触发回调函数，让功能按钮恢复使用
+        let funcBtnEnd = cc.callFunc(function () {
+            this.functionBtn.interactable = true;
+        }, this, null);
+        let actionPlusBtn = cc.sequence(cc.rotateBy(0.7, 360), funcBtnEnd);
+        if (!this._isFunctionShow) {
+            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -100)), cc.fadeOut(0.7));
+            actionWorkBtn =  cc.spawn(cc.moveBy(0.6, cc.v2(0, -194)), cc.fadeOut(0.7));
+            actionSleepBtn = cc.spawn(cc.moveBy(0.7, cc.v2(0, -288)), cc.fadeOut(0.7));
         } else {
-            actionTravel = cc.spawn(cc.moveBy(0.5, cc.v2(0, 94)), cc.fadeIn(0.5));
-            actionWork =  cc.spawn(cc.moveBy(0.6, cc.v2(0, 188)), cc.fadeIn(0.6));
-            actionShop = cc.spawn(cc.moveBy(0.7, cc.v2(0, 282)), cc.fadeIn(0.7));
+            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, 100)), cc.fadeIn(0.5));
+            actionWorkBtn =  cc.spawn(cc.moveBy(0.6, cc.v2(0, 194)), cc.fadeIn(0.5));
+            actionSleepBtn = cc.spawn(cc.moveBy(0.7, cc.v2(0, 288)), cc.fadeIn(0.5));
         }
-        this.travel.node.runAction(actionTravel);
-        this.work.node.runAction(actionWork);
-        this.shop.node.runAction(actionShop);
+        this.tripBtn.node.runAction(actionTripBtn);
+        this.workBtn.node.runAction(actionWorkBtn);
+        this.sleepBtn.node.runAction(actionSleepBtn);
+        this.functionBtn.node.runAction(actionPlusBtn);
     },
     // LIFE-CYCLE CALLBACKS:
 
@@ -296,12 +308,11 @@ cc.Class({
     },
 
     /**
-   * “进入游戏”按键所对应的事件处理函数，在用户的授权下获得并更新一些用户信息
-   * 需要微信接口，测试时可以先注释掉
-   * author: qll
-   * time: 2019/12/4
-   */
-  
+     * 进入游戏”按键所对应的事件处理函数，在用户的授权下获得并更新一些用户信息
+     * 需要微信接口，测试时可以先注释掉
+     * author: qll
+     * time: 2019/12/4
+     */
     bindEnter: function(e) {
         var instance = this;
         if (e.detail.userInfo) 
@@ -685,7 +696,6 @@ cc.Class({
         console.log('设置工时为：', workTimeID);
         this.workTimeID = workTimeID;
     },
-
 
     onClickConfirmWork: function(){//完成所有设置后，点击“去打工”
         console.log("确认打工");
