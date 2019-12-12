@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "male_cat2",
+    "texture": "5d8d7034-681d-4df9-bc07-a8702dfaf5e8",
+    "atlas": "",
+    "rect": [
+      0,
+      77,
+      643,
+      903
+    ],
+    "offset": [
+      -18,
+      -19.5
+    ],
+    "originalSize": [
+      679,
+      1018
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

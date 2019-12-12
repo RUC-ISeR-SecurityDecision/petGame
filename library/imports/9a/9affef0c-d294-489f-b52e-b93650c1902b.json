@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "female_penguins2",
+    "texture": "b9c1212d-2afe-4e5b-b4de-5e047f983531",
+    "atlas": "",
+    "rect": [
+      22,
+      51,
+      579,
+      815
+    ],
+    "offset": [
+      -10,
+      23.5
+    ],
+    "originalSize": [
+      643,
+      964
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

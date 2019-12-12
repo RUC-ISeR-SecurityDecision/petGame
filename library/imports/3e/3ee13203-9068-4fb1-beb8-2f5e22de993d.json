@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "houseButton",
+    "texture": "cb5223c4-4e58-4ffe-9c55-77b49808174a",
+    "atlas": "",
+    "rect": [
+      94,
+      116,
+      1310,
+      1310
+    ],
+    "offset": [
+      12,
+      -34
+    ],
+    "originalSize": [
+      1474,
+      1474
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

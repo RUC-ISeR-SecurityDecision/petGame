@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "completeButton",
+    "texture": "4db0d0ee-626d-41cf-8b46-d2e3f40afa73",
+    "atlas": "",
+    "rect": [
+      12,
+      22,
+      157,
+      50
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      181,
+      95
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
