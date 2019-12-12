@@ -428,7 +428,10 @@ cc.Class({
 		var url = "https://www.llquruc.top/petGame/" + "php/queryShop.php"; //服务器接口地址
 		// 调用自定义网路接口获取商品信息
 		var self = this;
-		HttpHelper.httpPost(url, null, function(data) {
+		var data = {
+			userID: GlobalData.userID,
+		};
+		HttpHelper.httpPost(url, data, function(data) {
 			if (data == -1) {
 				console.log("访问失败");
 			} else {
