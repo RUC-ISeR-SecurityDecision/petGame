@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "提示框效果图",
+    "texture": "3abd6e35-bcfe-43f2-a02d-dc2b684fe321",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      476,
+      796
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      476,
+      796
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

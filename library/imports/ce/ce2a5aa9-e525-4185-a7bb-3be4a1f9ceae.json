@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "主界面效果图",
+    "texture": "f76e57a8-1251-4b87-b4a2-b1b495e30184",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      480,
+      799
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      480,
+      799
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

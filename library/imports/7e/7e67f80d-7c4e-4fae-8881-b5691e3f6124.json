@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "故事书3",
+    "texture": "c740b2d2-c4ba-4273-8f71-3cfdfc03a7d3",
+    "atlas": "",
+    "rect": [
+      44,
+      54,
+      323,
+      318
+    ],
+    "offset": [
+      -7,
+      -0.5
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

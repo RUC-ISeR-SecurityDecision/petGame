@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "领养page2效果图",
+    "texture": "10d6f228-8c51-4933-bdb5-33b378d3e28a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      477,
+      795
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      477,
+      795
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

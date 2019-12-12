@@ -20,7 +20,7 @@
                     "children": [
                       "hierarchy"
                     ],
-                    "height": 460,
+                    "height": 587.984375,
                     "type": "panel",
                     "width": 204
                   },
@@ -29,12 +29,12 @@
                     "children": [
                       "assets"
                     ],
-                    "height": 460,
+                    "height": 587.984375,
                     "type": "panel",
                     "width": 204
                   }
                 ],
-                "height": 460,
+                "height": 587.984375,
                 "type": "dock-h",
                 "width": 411
               },
@@ -43,7 +43,7 @@
                 "children": [
                   "node-library"
                 ],
-                "height": 460,
+                "height": 332,
                 "type": "panel",
                 "width": 411
               }
@@ -103,7 +103,8 @@
         "timeline",
         "game-window"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "sprite-editor": {

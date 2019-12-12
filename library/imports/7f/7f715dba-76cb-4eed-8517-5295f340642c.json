@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "落地灯1",
+    "texture": "ed59955b-4472-4c2e-8867-8536d2ea29d2",
+    "atlas": "",
+    "rect": [
+      444,
+      152,
+      1151,
+      1773
+    ],
+    "offset": [
+      19.5,
+      -38.5
+    ],
+    "originalSize": [
+      2000,
+      2000
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

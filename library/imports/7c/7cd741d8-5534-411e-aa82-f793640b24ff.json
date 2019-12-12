@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "高档3",
+    "texture": "99a042cb-0ac2-4f7e-8b29-286a2451b57a",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      2500,
+      2362
+    ],
+    "offset": [
+      0,
+      69
+    ],
+    "originalSize": [
+      2500,
+      2500
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

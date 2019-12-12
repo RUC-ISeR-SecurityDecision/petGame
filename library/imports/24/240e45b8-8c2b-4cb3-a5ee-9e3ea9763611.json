@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "花瓶1",
+    "texture": "baedecaa-c967-4926-b266-cc0ead0ae135",
+    "atlas": "",
+    "rect": [
+      582,
+      162,
+      884,
+      1692
+    ],
+    "offset": [
+      24,
+      -8
+    ],
+    "originalSize": [
+      2000,
+      2000
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

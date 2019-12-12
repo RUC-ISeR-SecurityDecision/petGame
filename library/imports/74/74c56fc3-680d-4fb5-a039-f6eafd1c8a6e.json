@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "沙发",
+    "texture": "df1b9bde-ea83-4259-8a32-1c92a10b6768",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      2000,
+      3020
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      2000,
+      3020
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

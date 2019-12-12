@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "盆栽1",
+    "texture": "1de430b9-1ee5-4ce2-abd2-4595e4ccee28",
+    "atlas": "",
+    "rect": [
+      223,
+      38,
+      1608,
+      1861
+    ],
+    "offset": [
+      27,
+      31.5
+    ],
+    "originalSize": [
+      2000,
+      2000
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
