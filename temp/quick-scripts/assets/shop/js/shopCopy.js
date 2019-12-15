@@ -384,7 +384,7 @@ cc.Class({
 			if (element._isShow) {
 				itemNum += 1;
 				console.log("item: " + i + ' will be loaded');
-				var picName = 'shop/' + element.id;
+				var picName = 'shopPic/cate' + element.categoryID + '/' + element.id;
 				cc.loader.loadRes(picName, cc.SpriteFrame, function (err, sp) {
 					if (err) {
 						console.log('failed to load sprite ' + picName);

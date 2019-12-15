@@ -1,277 +1,100 @@
-2019-12-12T01:40:16.991Z - normal: Load ~/.CocosCreator/settings.json
-2019-12-12T01:40:17.042Z - normal: Initializing Asset Database
-2019-12-12T01:40:17.045Z - normal: checking language setting...
-2019-12-12T01:40:17.045Z - normal: Language: zh
-2019-12-12T01:40:17.381Z - success: preview server running at http://localhost:7456
-2019-12-12T01:40:17.384Z - success: protocol editor-framework registered
-2019-12-12T01:40:17.384Z - success: protocol app registered
-2019-12-12T01:40:17.384Z - success: protocol theme registered
-2019-12-12T01:40:17.384Z - success: protocol packages registered
-2019-12-12T01:40:17.384Z - success: protocol uuid registerred
-2019-12-12T01:40:17.385Z - success: protocol db registerred
-2019-12-12T01:40:17.385Z - success: protocol thumbnail registerred
-2019-12-12T01:40:17.385Z - success: protocol unpack registerred
-2019-12-12T01:40:17.385Z - success: protocol disable-commonjs registerred
-2019-12-12T01:40:17.462Z - normal: connected!
-2019-12-12T01:40:17.462Z - normal: Check project D:\cocos_project\petGame
-2019-12-12T01:40:17.464Z - normal: Initializing project D:\cocos_project\petGame
-2019-12-12T01:40:17.659Z - normal: Initializing Cocos2d
-2019-12-12T01:40:17.972Z - normal: Initializing engine extends
-2019-12-12T01:40:18.001Z - success: adapters loaded
-2019-12-12T01:40:18.007Z - success: asset-db-debugger loaded
-2019-12-12T01:40:18.061Z - success: fb-audience-network loaded
-2019-12-12T01:40:18.081Z - success: fb-live-stream loaded
-2019-12-12T01:40:18.084Z - success: google-play-instant loaded
-2019-12-12T01:40:18.088Z - success: huawei-runtime loaded
-2019-12-12T01:40:18.188Z - success: cpk-publish loaded
-2019-12-12T01:40:18.189Z - success: jsb-adapter loaded
-2019-12-12T01:40:18.194Z - success: oppo-runtime loaded
-2019-12-12T01:40:18.198Z - success: package-manager loaded
-2019-12-12T01:40:18.200Z - success: runtime-dev-tools loaded
-2019-12-12T01:40:18.205Z - success: sdkbox loaded
-2019-12-12T01:40:18.208Z - success: ui-kit-preview-extra loaded
-2019-12-12T01:40:18.211Z - success: ui-kit-preview loaded
-2019-12-12T01:40:18.216Z - success: vivo-runtime loaded
-2019-12-12T01:40:18.220Z - success: alipay-minigame loaded
-2019-12-12T01:40:18.254Z - success: assets loaded
-2019-12-12T01:40:18.258Z - success: baidugame-opendata loaded
-2019-12-12T01:40:18.260Z - success: baidugame loaded
-2019-12-12T01:40:18.263Z - success: builder loaded
-2019-12-12T01:40:18.372Z - success: cocos-services loaded
-2019-12-12T01:40:18.376Z - success: console loaded
-2019-12-12T01:40:18.385Z - success: fb-instant-games loaded
-2019-12-12T01:40:18.387Z - success: game-window loaded
-2019-12-12T01:40:18.388Z - success: google-instant-games loaded
-2019-12-12T01:40:18.391Z - success: hierarchy loaded
-2019-12-12T01:40:18.394Z - success: inspector loaded
-2019-12-12T01:40:18.395Z - success: keystore loaded
-2019-12-12T01:40:18.399Z - success: node-library loaded
-2019-12-12T01:40:18.400Z - success: open-recent-items loaded
-2019-12-12T01:40:18.401Z - success: package-asset loaded
-2019-12-12T01:40:18.402Z - success: preferences loaded
-2019-12-12T01:40:18.404Z - success: project-exporter loaded
-2019-12-12T01:40:18.406Z - success: project-importer loaded
-2019-12-12T01:40:18.408Z - success: project-settings loaded
-2019-12-12T01:40:18.411Z - success: scene loaded
-2019-12-12T01:40:18.412Z - success: simulator-debugger loaded
-2019-12-12T01:40:18.412Z - success: sprite-editor loaded
-2019-12-12T01:40:18.415Z - success: store loaded
-2019-12-12T01:40:18.421Z - success: timeline loaded
-2019-12-12T01:40:18.424Z - success: wechatgame-opendata loaded
-2019-12-12T01:40:18.427Z - success: wechatgame loaded
-2019-12-12T01:40:18.430Z - success: xiaomi-runtime loaded
-2019-12-12T01:40:19.916Z - info: Cocos Services load base data!
-2019-12-12T01:40:24.147Z - normal: Loading packages
-2019-12-12T01:40:24.152Z - normal: Watching packages
-2019-12-12T01:40:25.904Z - normal: Run Application
-2019-12-12T01:57:34.814Z - warn: The Asset used by component "cc.Sprite" in scene "bag.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/bag/bag.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:57:39.471Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:57:39.472Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/growthBlock/growthIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.473Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/hungerBlock/hungerIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.473Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/cleanessBlock/cleanessIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.474Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/thirstBlock/thirstIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.474Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/energyBlock/energyIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.475Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/moodBlock/moodIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:59:29.435Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:59:29.435Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T01:59:29.436Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T01:59:29.437Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T01:59:29.437Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T01:59:29.443Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T01:59:29.443Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T01:59:29.444Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T01:59:29.444Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg1"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "9958e2b7-528e-4a6d-b568-fae41b32cc2d"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg2"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "d65e8375-701f-42d4-843d-fe167379de60"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg3"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "b01b54c8-1d50-4c9c-be71-b68afe142452"
-
-2019-12-12T01:59:29.446Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg4"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a34c092a-59c3-4753-9044-b59ca4180ebd"
-
-2019-12-12T01:59:55.461Z - info: Path: Canvas/Main Camera/close, UUID: 4eV0JFeN5Nv5ujedkGaxzC
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T02:00:58.332Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T02:00:58.333Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T02:00:58.337Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T02:00:58.337Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T02:00:58.338Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T02:00:58.338Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg1"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "9958e2b7-528e-4a6d-b568-fae41b32cc2d"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg2"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "d65e8375-701f-42d4-843d-fe167379de60"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg3"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "b01b54c8-1d50-4c9c-be71-b68afe142452"
-
-2019-12-12T02:00:58.340Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg4"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a34c092a-59c3-4753-9044-b59ca4180ebd"
-
-2019-12-12T02:04:04.757Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T02:04:04.758Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/growthBlock/growthIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.758Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/hungerBlock/hungerIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/cleanessBlock/cleanessIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/thirstBlock/thirstIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/energyBlock/energyIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.760Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/moodBlock/moodIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:09:58.901Z - warn: The Asset used by component "cc.Sprite" in scene "bag.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/bag/bag.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
+2019-12-12T08:11:43.816Z - normal: Load ~/.CocosCreator/settings.json
+2019-12-12T08:11:43.880Z - normal: Initializing Asset Database
+2019-12-12T08:11:43.883Z - normal: checking language setting...
+2019-12-12T08:11:43.883Z - normal: Language: zh
+2019-12-12T08:11:44.719Z - success: preview server running at http://localhost:7456
+2019-12-12T08:11:44.723Z - success: protocol editor-framework registered
+2019-12-12T08:11:44.723Z - success: protocol app registered
+2019-12-12T08:11:44.723Z - success: protocol theme registered
+2019-12-12T08:11:44.723Z - success: protocol packages registered
+2019-12-12T08:11:44.723Z - success: protocol uuid registerred
+2019-12-12T08:11:44.724Z - success: protocol db registerred
+2019-12-12T08:11:44.724Z - success: protocol thumbnail registerred
+2019-12-12T08:11:44.724Z - success: protocol unpack registerred
+2019-12-12T08:11:44.724Z - success: protocol disable-commonjs registerred
+2019-12-12T08:11:46.161Z - normal: connected!
+2019-12-12T08:11:46.163Z - normal: Check project F:\petGame
+2019-12-12T08:11:46.167Z - normal: Initializing project F:\petGame
+2019-12-12T08:11:46.489Z - normal: Initializing Cocos2d
+2019-12-12T08:11:47.097Z - normal: Initializing engine extends
+2019-12-12T08:11:47.150Z - success: adapters loaded
+2019-12-12T08:11:47.155Z - success: asset-db-debugger loaded
+2019-12-12T08:11:47.411Z - success: fb-audience-network loaded
+2019-12-12T08:11:47.458Z - success: fb-live-stream loaded
+2019-12-12T08:11:47.460Z - success: google-play-instant loaded
+2019-12-12T08:11:47.493Z - success: huawei-runtime loaded
+2019-12-12T08:11:47.887Z - success: cpk-publish loaded
+2019-12-12T08:11:47.888Z - success: jsb-adapter loaded
+2019-12-12T08:11:47.891Z - success: oppo-runtime loaded
+2019-12-12T08:11:47.895Z - success: package-manager loaded
+2019-12-12T08:11:47.906Z - success: runtime-dev-tools loaded
+2019-12-12T08:11:47.919Z - success: sdkbox loaded
+2019-12-12T08:11:47.922Z - success: ui-kit-preview-extra loaded
+2019-12-12T08:11:47.925Z - success: ui-kit-preview loaded
+2019-12-12T08:11:47.935Z - success: vivo-runtime loaded
+2019-12-12T08:11:47.937Z - success: alipay-minigame loaded
+2019-12-12T08:11:47.980Z - success: assets loaded
+2019-12-12T08:11:47.982Z - success: baidugame-opendata loaded
+2019-12-12T08:11:47.985Z - success: baidugame loaded
+2019-12-12T08:11:47.988Z - success: builder loaded
+2019-12-12T08:11:48.238Z - success: cocos-services loaded
+2019-12-12T08:11:48.242Z - success: console loaded
+2019-12-12T08:11:48.251Z - success: fb-instant-games loaded
+2019-12-12T08:11:48.254Z - success: game-window loaded
+2019-12-12T08:11:48.255Z - success: google-instant-games loaded
+2019-12-12T08:11:48.259Z - success: hierarchy loaded
+2019-12-12T08:11:48.262Z - success: inspector loaded
+2019-12-12T08:11:48.263Z - success: keystore loaded
+2019-12-12T08:11:48.267Z - success: node-library loaded
+2019-12-12T08:11:48.268Z - success: open-recent-items loaded
+2019-12-12T08:11:48.269Z - success: package-asset loaded
+2019-12-12T08:11:48.270Z - success: preferences loaded
+2019-12-12T08:11:48.272Z - success: project-exporter loaded
+2019-12-12T08:11:48.275Z - success: project-importer loaded
+2019-12-12T08:11:48.277Z - success: project-settings loaded
+2019-12-12T08:11:48.281Z - success: scene loaded
+2019-12-12T08:11:48.282Z - success: simulator-debugger loaded
+2019-12-12T08:11:48.283Z - success: sprite-editor loaded
+2019-12-12T08:11:48.289Z - success: store loaded
+2019-12-12T08:11:48.292Z - success: timeline loaded
+2019-12-12T08:11:48.295Z - success: wechatgame-opendata loaded
+2019-12-12T08:11:48.299Z - success: wechatgame loaded
+2019-12-12T08:11:48.303Z - success: xiaomi-runtime loaded
+2019-12-12T08:11:50.888Z - info: Cocos Services load base data!
+2019-12-12T08:11:52.279Z - warn: [db-task][init] uuid collision, the uuid(162a23e8-8ca0-4239-814e-16350bf48c62) for F:\petGame\assets\resources\gender-female.png is already used. A new uuid(804cf5ec-15fb-44e8-896f-f99709315925) will be assigned.
+2019-12-12T08:11:52.280Z - warn: [db-task][init] uuid collision, the uuid(23068e6c-2503-4ebd-9888-74e47165179b) for F:\petGame\assets\resources\gender-female.png\gender-female is already used. A new uuid(7c675ed1-1e79-49ab-9391-9ae61b42dd37) will be assigned.
+2019-12-12T08:11:52.284Z - warn: [db-task][init] uuid collision, the uuid(dbe6d2cc-993b-4f1b-88a9-82359f155fdf) for F:\petGame\assets\resources\gender-male.png is already used. A new uuid(322fb167-1843-46c8-90d4-4f840ec48bd5) will be assigned.
+2019-12-12T08:11:52.284Z - warn: [db-task][init] uuid collision, the uuid(aac1b903-2463-42a3-aaf0-75ac26242a4f) for F:\petGame\assets\resources\gender-male.png\gender-male is already used. A new uuid(83ffdbd3-8bc0-4888-b362-b50bd28a2cea) will be assigned.
+2019-12-12T08:11:52.285Z - warn: [db-task][init] uuid collision, the uuid(b237377e-c73a-4fa1-b391-b1dced6c4f4b) for F:\petGame\assets\resources\page_adopt is already used. A new uuid(8f33b4b2-4716-4dab-87cb-017b829bc1c7) will be assigned.
+2019-12-12T08:11:52.287Z - warn: [db-task][init] uuid collision, the uuid(395284b6-4ba4-41ed-a262-3f24acdf31ef) for F:\petGame\assets\resources\page_adopt\adopt_bg.png is already used. A new uuid(81110a4b-b24f-4715-b7dd-16adfae53f10) will be assigned.
+2019-12-12T08:11:52.287Z - warn: [db-task][init] uuid collision, the uuid(0e5130b9-f7c0-4527-b323-e20a400df4aa) for F:\petGame\assets\resources\page_adopt\adopt_bg.png\adopt_bg is already used. A new uuid(dbb52e02-1ebb-4470-b83e-474ed6fcdf28) will be assigned.
+2019-12-12T08:11:52.287Z - warn: [db-task][init] uuid collision, the uuid(f5ee2cc6-ab4a-4e30-8602-d2f49f2130d7) for F:\petGame\assets\resources\page_adopt\box1.png is already used. A new uuid(4b5b06cb-f161-425b-b8fe-6780967f218b) will be assigned.
+2019-12-12T08:11:52.288Z - warn: [db-task][init] uuid collision, the uuid(a10e3025-e87e-4976-aecb-f4106264c229) for F:\petGame\assets\resources\page_adopt\box1.png\box1 is already used. A new uuid(25f0af86-6131-4eee-875e-af78a6e6f19e) will be assigned.
+2019-12-12T08:11:52.288Z - warn: [db-task][init] uuid collision, the uuid(48238cf0-7fee-408d-83fb-b61119691307) for F:\petGame\assets\resources\page_adopt\color_1.png is already used. A new uuid(1e185bb2-d08b-45c6-8a70-518b85f0df3f) will be assigned.
+2019-12-12T08:11:52.288Z - warn: [db-task][init] uuid collision, the uuid(bd10ca0e-e1e8-4d81-90ed-ae38bc77f8eb) for F:\petGame\assets\resources\page_adopt\color_1.png\color_1 is already used. A new uuid(abbe5b5c-18bc-4d6a-b6d8-893c71ec2ac7) will be assigned.
+2019-12-12T08:11:52.289Z - warn: [db-task][init] uuid collision, the uuid(d5d13630-4ebc-4df9-a966-803e4d04368e) for F:\petGame\assets\resources\page_adopt\color_2.png is already used. A new uuid(7b692d0b-59e5-4ad2-902a-4966c1e5ba9c) will be assigned.
+2019-12-12T08:11:52.289Z - warn: [db-task][init] uuid collision, the uuid(4b111959-dcad-4b6f-81ca-c8bdf5be9d9a) for F:\petGame\assets\resources\page_adopt\color_2.png\color_2 is already used. A new uuid(241c4221-6029-4ae6-bb61-4317fa1ac799) will be assigned.
+2019-12-12T08:11:52.290Z - warn: [db-task][init] uuid collision, the uuid(2b64e3d8-84b1-43e7-9994-0fd6a59af266) for F:\petGame\assets\resources\page_adopt\color_3.png is already used. A new uuid(0403e881-609d-45e0-b500-a6698e0f88d5) will be assigned.
+2019-12-12T08:11:52.290Z - warn: [db-task][init] uuid collision, the uuid(7ee00c37-422c-4d8f-a014-3a23b02b5953) for F:\petGame\assets\resources\page_adopt\color_3.png\color_3 is already used. A new uuid(9ebc2d5a-6c5a-4065-baf8-ebe629b919d0) will be assigned.
+2019-12-12T08:11:52.290Z - warn: [db-task][init] uuid collision, the uuid(65089d17-8a55-4d93-aafb-aae363054bb2) for F:\petGame\assets\resources\page_adopt\color.png is already used. A new uuid(6468e13d-c0de-492c-83be-9b88695be7af) will be assigned.
+2019-12-12T08:11:52.290Z - warn: [db-task][init] uuid collision, the uuid(290200ca-e2dc-46a4-a961-55f4aff4883f) for F:\petGame\assets\resources\page_adopt\color.png\color is already used. A new uuid(552fe85d-bba2-4877-8f2e-ffa531333d76) will be assigned.
+2019-12-12T08:11:52.291Z - warn: [db-task][init] uuid collision, the uuid(4db0d0ee-626d-41cf-8b46-d2e3f40afa73) for F:\petGame\assets\resources\page_adopt\completeButton.png is already used. A new uuid(7237c8f6-55d1-49b8-a7a1-42e0f39e7a8a) will be assigned.
+2019-12-12T08:11:52.291Z - warn: [db-task][init] uuid collision, the uuid(b87791de-761d-413b-8e07-464332fbd608) for F:\petGame\assets\resources\page_adopt\completeButton.png\completeButton is already used. A new uuid(d82244c5-1560-44b1-b039-398e3428bf2e) will be assigned.
+2019-12-12T08:11:52.292Z - warn: [db-task][init] uuid collision, the uuid(98a21fbb-6183-407f-a27c-0effd08613cc) for F:\petGame\assets\resources\page_adopt\next1.png is already used. A new uuid(0dc62650-003f-431b-8a83-24104464b0c4) will be assigned.
+2019-12-12T08:11:52.292Z - warn: [db-task][init] uuid collision, the uuid(7077899c-bf30-4288-8d25-9b2c8befc88f) for F:\petGame\assets\resources\page_adopt\next1.png\next1 is already used. A new uuid(bcfde33f-b8e2-4804-ae18-4639d1cd6420) will be assigned.
+2019-12-12T08:11:52.292Z - warn: [db-task][init] uuid collision, the uuid(57116834-5a1b-46cc-bb1e-15addaf2d3d3) for F:\petGame\assets\resources\page_adopt\next2.png is already used. A new uuid(f493a345-f198-49f6-a23d-e662b951b1fe) will be assigned.
+2019-12-12T08:11:52.293Z - warn: [db-task][init] uuid collision, the uuid(5d2e874f-9bf0-4160-a945-3bc2996abc2e) for F:\petGame\assets\resources\page_adopt\next2.png\next2 is already used. A new uuid(6901504f-8d5f-41c7-ab55-ef8d8e5115b7) will be assigned.
+2019-12-12T08:11:52.293Z - warn: [db-task][init] uuid collision, the uuid(fb3e5aad-2bc9-49a8-86c4-2a2abae8e6af) for F:\petGame\assets\resources\page_adopt\next3.png is already used. A new uuid(19925498-e8c3-4ceb-8bcd-6a6827f20fc0) will be assigned.
+2019-12-12T08:11:52.293Z - warn: [db-task][init] uuid collision, the uuid(44111b40-b71b-47f3-b240-630d6fa93901) for F:\petGame\assets\resources\page_adopt\next3.png\next3 is already used. A new uuid(1190a73c-b5c0-456f-a25a-70511839d87b) will be assigned.
+2019-12-12T08:11:52.294Z - warn: [db-task][init] uuid collision, the uuid(82b93928-d35e-4496-bbd7-841148167197) for F:\petGame\assets\resources\page_adopt\sex.png is already used. A new uuid(1d451608-ff72-41bf-83b3-ee91bf424d53) will be assigned.
+2019-12-12T08:11:52.294Z - warn: [db-task][init] uuid collision, the uuid(4ac6d43d-113d-4144-b2f8-7add608be63a) for F:\petGame\assets\resources\page_adopt\sex.png\sex is already used. A new uuid(5dd2a0a6-8721-4ac0-8da2-15e46c62dd2f) will be assigned.
+2019-12-12T08:11:52.294Z - warn: [db-task][init] uuid collision, the uuid(b49a8ffe-e53b-4e1c-bab1-cd2bd72b0c07) for F:\petGame\assets\resources\page_adopt\species.png is already used. A new uuid(70a001ff-a846-47a7-b48c-904aa0794027) will be assigned.
+2019-12-12T08:11:52.294Z - warn: [db-task][init] uuid collision, the uuid(8bc0267d-55d9-498a-96c1-05b98e572ec0) for F:\petGame\assets\resources\page_adopt\species.png\species is already used. A new uuid(9b84d8aa-7c48-4943-80d2-805157fdb504) will be assigned.
+2019-12-12T08:11:52.354Z - warn: [db-task][init] uuid collision, the uuid(7bc7730e-b754-4f0d-88de-928db15af617) for F:\petGame\assets\resources\profile.png is already used. A new uuid(2e65bc17-955a-4c8a-9662-d894867f0106) will be assigned.
+2019-12-12T08:11:52.354Z - warn: [db-task][init] uuid collision, the uuid(574e29af-fbbd-4e96-8423-b0bab2c378d9) for F:\petGame\assets\resources\profile.png\profile is already used. A new uuid(a20e2a2b-9b6e-41ed-9f66-2b5b53f7dc65) will be assigned.
+2019-12-12T08:12:01.595Z - normal: Loading packages
+2019-12-12T08:12:01.622Z - normal: Watching packages
+2019-12-12T08:12:01.859Z - normal: Run Application
+2019-12-13T06:38:31.437Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/bagItemBlock"
 
