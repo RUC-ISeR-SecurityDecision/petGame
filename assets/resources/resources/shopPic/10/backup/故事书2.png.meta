@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "552263a0-b94a-49c0-8c1d-75ea02dd1fd1",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "故事书2": {
+      "ver": "1.0.4",
+      "uuid": "4877b2f8-5478-4a91-98c6-a364af80c597",
+      "rawTextureUuid": "552263a0-b94a-49c0-8c1d-75ea02dd1fd1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -8,
+      "trimX": 52,
+      "trimY": 61,
+      "width": 322,
+      "height": 319,
+      "rawWidth": 425,
+      "rawHeight": 425,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

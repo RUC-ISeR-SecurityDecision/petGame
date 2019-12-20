@@ -1,0 +1,34 @@
+{
+  "ver": "2.3.3",
+  "uuid": "20603be9-3ed4-4ef7-a1bd-47bcb2466f89",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
+  "subMetas": {
+    "沐浴露": {
+      "ver": "1.0.4",
+      "uuid": "d91685a5-39f3-47f8-8d37-1503b6f12236",
+      "rawTextureUuid": "20603be9-3ed4-4ef7-a1bd-47bcb2466f89",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 47.5,
+      "offsetY": -30,
+      "trimX": 525,
+      "trimY": 178,
+      "width": 1045,
+      "height": 1704,
+      "rawWidth": 2000,
+      "rawHeight": 2000,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
