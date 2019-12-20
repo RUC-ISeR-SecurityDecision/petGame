@@ -5,7 +5,7 @@ cc._RF.push(module, 'ad105eM3/RL95ZBb6fETvyw', 'load');
 "use strict";
 
 // 加载数据
-var globalData = require("globalData");
+var GlobalData = require("globalData");
 // 加载框水波对象
 var wave = {
     canvasHeight: 200, // 画面高度
@@ -26,8 +26,38 @@ cc.Class({
     },
 
     init: function init() {
-        console.log("init", globalData);
-        globalData.init();
+        console.log("init", GlobalData);
+        GlobalData.init();
+
+        // test for login: wangc
+        var date = new Date();
+        var year = date.getFullYear(); //获取当前年份   
+        var month = date.getMonth() + 1; //获取当前月份   
+        var dat = date.getDate(); //获取当前日    
+        var hour = date.getHours(); //获取小时   
+        var minute = date.getMinutes(); //获取分钟   
+        var second = date.getSeconds(); //获取秒   
+        var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+        var flagLocation = GlobalData.flagLocation;
+        var serverAddr = GlobalData.serverAddr + "php/login.php";
+        // 调用自定义网路接口进行登录操作
+        var data = {
+            loginTime: timeStr,
+            flagLocation: flagLocation
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
+                console.log(res);
+                GlobalData.userID = res.userID;
+                GlobalData.flagNewUser = Number(res.flagNewUser);
+                GlobalData.contLoginDays = Number(res.contLoginDays);
+            }
+        });
+
+        console.log('登录完成');
+
         // console.log(globalData.species);
     },
 
@@ -38,7 +68,7 @@ cc.Class({
 
         this.time += 1;
         wave.xOffset += wave.speed;
-        wave.levelHeight += 0.2;
+        wave.levelHeight += 1;
         ctx.moveTo(0, 0);
         for (var x = startX; x < startX + wave.canvasWidth; x += 20 / wave.canvasWidth) {
             var y = wave.waveHeight * Math.sin((startX + x) * wave.waveWidth + wave.xOffset) + wave.levelHeight;

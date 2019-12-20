@@ -22,7 +22,7 @@
                     ],
                     "height": 587.984375,
                     "type": "panel",
-                    "width": 204
+                    "width": 234
                   },
                   {
                     "active": 0,
@@ -31,12 +31,12 @@
                     ],
                     "height": 587.984375,
                     "type": "panel",
-                    "width": 204
+                    "width": 234
                   }
                 ],
                 "height": 587.984375,
                 "type": "dock-h",
-                "width": 411
+                "width": 471
               },
               {
                 "active": 0,
@@ -45,12 +45,12 @@
                 ],
                 "height": 332,
                 "type": "panel",
-                "width": 411
+                "width": 471
               }
             ],
             "height": 923,
             "type": "dock-v",
-            "width": 411
+            "width": 471
           },
           {
             "active": 0,
@@ -59,7 +59,7 @@
             ],
             "height": 923,
             "type": "panel",
-            "width": 983
+            "width": 849
           },
           {
             "children": [
@@ -69,25 +69,25 @@
                   "inspector",
                   "cocos-services"
                 ],
-                "height": 556,
+                "height": 557,
                 "type": "panel",
-                "width": 504
+                "width": 578
               },
               {
-                "active": 0,
+                "active": 2,
                 "children": [
                   "console",
                   "timeline",
                   "game-window"
                 ],
-                "height": 364,
+                "height": 363,
                 "type": "panel",
-                "width": 504
+                "width": 578
               }
             ],
             "height": 923,
             "type": "dock-v",
-            "width": 504
+            "width": 578
           }
         ],
         "type": "dock-h"
@@ -103,8 +103,7 @@
         "timeline",
         "game-window"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "sprite-editor": {
@@ -115,7 +114,7 @@
     }
   },
   "panelLabelWidth": {
-    "inspector": null
+    "inspector": "31.5682%"
   },
-  "panelLabelWidth.inspector": null
+  "panelLabelWidth.inspector": "31.5682%"
 }

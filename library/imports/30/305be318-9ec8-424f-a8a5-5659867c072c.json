@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cancelButton",
+    "texture": "8d16c98a-8aab-49e0-8661-62b933db8bb9",
+    "atlas": "",
+    "rect": [
+      64,
+      59,
+      479,
+      186
+    ],
+    "offset": [
+      3.5,
+      3
+    ],
+    "originalSize": [
+      600,
+      310
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

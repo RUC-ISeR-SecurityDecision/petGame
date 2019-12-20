@@ -12,7 +12,8 @@ function Commodity(id, name, categoryID, categoryName, price, isOwnFlag) {
 	this.categoryName = categoryName;
 	this.price = price;
 	this._isShow = false;
-	this._isOwn = isOwnFlag // 需要服务器传值才能确定，现在先按照单机的写
+	this._isOwn = isOwnFlag;
+	this._isSoldOut = false;
 	this.cartAmount = 0;
 
 	this.showCategory = function (categoryID) {
@@ -25,8 +26,8 @@ function Commodity(id, name, categoryID, categoryName, price, isOwnFlag) {
 	};
 	// 判断是否商店是否继续销售
 	this.isSelling = function () {
-		if (this._isOwn && ( this.categoryID != 1 && this.categoryID != 2) ) {
-			this._isShow = false;
+		if (this._isOwn == 1 && (this.categoryID != 1 && this.categoryID != 2)) {
+			this._isSoldOut = true;
 		}
 	};
 };
@@ -49,7 +50,7 @@ cc.Class({
 		//以下为对页面的控制数据
 		coin: cc.Label, //用户金币值
 		growthLevel: cc.Label, //用户等级
-		
+
 		cost: cc.Label, //一次购买操作的花费
 
 		shopListView: cc.ScrollView,
@@ -72,20 +73,20 @@ cc.Class({
 		prompt: cc.Node, // 提示框节点
 		_isPromptHidden: true,  // 标志位：提示框是否隐藏
 		promptUnitPrice: { // 提示框显示单价
-			get: function(){
+			get: function () {
 				return this._promptUnitPrice;
 			},
-			set: function(value) {
+			set: function (value) {
 				this._promptUnitPrice = value;
 				this.promptUnitPriceLabel.string = this._promptUnitPrice + '';
 			}
 		},
 		promptQuantity: { // 提示框显示数量
-			get: function(){
+			get: function () {
 				return this._promptQuantity;
 			},
-			set: function(value) {
-				if(value < 0) {
+			set: function (value) {
+				if (value < 0) {
 					value = 0;
 				}
 				this._promptQuantity = value;
@@ -93,10 +94,10 @@ cc.Class({
 			}
 		},
 		promptTotalPrice: { // 提示框显示总价
-			get: function(){
+			get: function () {
 				return this._promptTotalPrice;
 			},
-			set: function() {
+			set: function () {
 				this._promptTotalPrice = this._promptUnitPrice * this.promptQuantity;
 				this.promptTotalPriceLabel.string = this._promptTotalPrice + '';
 			}
@@ -170,62 +171,48 @@ cc.Class({
 	//点击确认按钮的事件处理函数
 	confirm: function () {
 		if (this.promptQuantity > 0) {
-			console.log("buy " + this.commodityArray[this.selectedCommodityIndex].name + ' ' + this.commodityArray[this.selectedCommodityIndex].cartAmount);
+			console.log("buy " + this.commodityArray[this.selectedCommodityIndex].name + ' ' + this.promptQuantity);
 			// 选中商品的加入购物车
 			this.commodityArray[this.selectedCommodityIndex]._isOwn = true;
 
 			this.commodityArray[this.selectedCommodityIndex].cartAmount = this.promptQuantity;
 			this.commodityArray[this.selectedCommodityIndex].isSelling(); // 购买该商品之后重新判断能否出现在商店
 			this.cart.push(this.commodityArray[this.selectedCommodityIndex]);
+
+			let date = new Date();
+			let year = date.getFullYear(); //获取当前年份   
+			let month = date.getMonth() + 1; //获取当前月份   
+			let dat = date.getDate(); //获取当前日    
+			let hour = date.getHours(); //获取小时   
+			let minute = date.getMinutes(); //获取分钟   
+			let second = date.getSeconds(); //获取秒   
+			let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+
+			var data = {
+				"userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
+				"operationTime": timeStr,
+				"categoryID": this.commodityArray[this.selectedCommodityIndex].categoryID,
+				"itemID": this.commodityArray[this.selectedCommodityIndex].id,
+				"number": this.promptQuantity,
+			};
+			var self = this;
+			var serverAddr = 'https://www.llquruc.top/petGame/php/buy.php';
+
+			HttpHelper.httpPost(serverAddr, data, function (_data) {
+				if (_data != -1) {
+					console.log("success!");
+					// 未处理返回值，
+				}
+			});
+
 			this.openPrompt();
 			this.loadShopItem();
 		}
 		console.log("--------fellows are in cart--------");
 		for (let i = 0; i < this.cart.length; i++) {
 			const element = this.cart[i];
-			console.log("shop name: " + element.name + ",amount: " + element.cartAmount );
+			console.log("shop name: " + element.name + ",amount: " + element.cartAmount);
 		}
-
-		// let date = new Date();
-		// let year = date.getFullYear(); //获取当前年份   
-		// let month = date.getMonth() + 1; //获取当前月份   
-		// let dat = date.getDate(); //获取当前日    
-		// let hour = date.getHours(); //获取小时   
-		// let minute = date.getMinutes(); //获取分钟   
-		// let second = date.getSeconds(); //获取秒   
-		// let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-		// var serverAddr = globalData.serverAddr.get() + "php/buy.php"; //服务器接口地址
-		// var ins = this;
-		// wx.request({
-		// 	url: serverAddr,
-		// 	method: "POST",
-		// 	header: {
-		// 		"content-type": "application/x-www-form-urlencoded"
-		// 	},
-		// 	data: {
-		// 		userID: globalData.userID.get(),
-		// 		operationTime: timeStr,
-		// 		categoryID: ins.selectedCommodity.categoryID,
-		// 		itemID: ins.selectedCommodity.itemID,
-		// 		number: ins.number,
-		// 	},
-		// 	success(res) {
-		// 		globalData.flagStory.set(res.data.flagStory);
-		// 		globalData.flagSkipping.set(res.data.flagSkipping);
-		// 		ins.cost.string = res.data.cost;
-		// 		console.log(res.data);
-		// 		let title = "花费:" + res.data.cost;
-		// 		wx.showToast({
-		// 			title: title,
-		// 			icon: 'none',
-		// 			duration: 3000
-		// 		});
-		// 		//退出提示框，恢复默认值
-		// 		ins.number.string = 1;
-		// 		ins.cost.string = 0;
-		// 		ins._isPromptHidden = true;
-		// 	}
-		// })
 	},
 
 
@@ -289,7 +276,7 @@ cc.Class({
 			var fout = cc.fadeOut(0.3);
 			this.prompt.runAction(fout);
 			var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
-			var end_func = cc.callFunc(function() {
+			var end_func = cc.callFunc(function () {
 				this.prompt.active = false;
 			}.bind(this));
 			var seq = cc.sequence([s, end_func]);
@@ -335,7 +322,7 @@ cc.Class({
      */
 	initShop: function (_data) {
 		if (_data) {
-			console.log( _data);
+			console.log(_data);
 			let itemIDArray = _data.itemIDArray.split('+');
 			let itemNameArray = _data.itemNameArray.split('+');
 			let categoryIDArray = _data.categoryIDArray.split('+');
@@ -343,8 +330,7 @@ cc.Class({
 			let priceArray = _data.priceArray.split('+');
 			let isOwnArray = _data.ownFlagArray.split('+');
 			for (let index = 0; index < itemIDArray.length; index++) {
-				const element = itemIDArray[index];
-				let commodity = new Commodity(itemIDArray[index], itemNameArray[index], categoryIDArray[index], categoryNameArray[index], priceArray[index]);
+				let commodity = new Commodity(itemIDArray[index], itemNameArray[index], categoryIDArray[index], categoryNameArray[index], priceArray[index], isOwnArray[index]);
 				commodity.showCategory(1);
 				this.commodityArray.push(commodity);
 				// console.log(commodity);
@@ -356,7 +342,7 @@ cc.Class({
      * 修改商店加载商品类别
      * @param { Number } type 加载商品类别 
      */
-	modifyShopItemType: function(type) {
+	modifyShopItemType: function (type) {
 		console.log('commodity ' + type + ' will be loaded!');
 		for (let i = 0; i < this.commodityArray.length; i++) {
 			const element = this.commodityArray[i];
@@ -366,7 +352,6 @@ cc.Class({
 
 	/**
      * 加载商店商品
-     * @param { Number } type 加载商品类别 
      */
 	loadShopItem: function () {
 		let self = this;
@@ -374,11 +359,11 @@ cc.Class({
 		let itemNum = 0;
 		for (let i = 0; i < self.commodityArray.length; i++) {
 			const element = self.commodityArray[i];
-			console.log("-----------debug log----------");
-			console.log("now load shop item: " + i );
+			// console.log("-----------debug log----------");
+			// console.log("now load shop item: " + i);
 			if (element._isShow) {
 				itemNum += 1;
-				console.log("item: " + i + ' will be loaded');
+				// console.log("item: " + i + ' will be loaded');
 				let picName = 'shopPic/cate' + element.categoryID + '/' + element.id;
 				cc.loader.loadRes(picName, cc.SpriteFrame, (err, sp) => {
 					if (err) {
@@ -390,24 +375,27 @@ cc.Class({
 						}
 						if (!(prf instanceof cc.Prefab)) {
 							console.log("not a prefab");
-
 						}
 						let commodityItem = cc.instantiate(prf);
-						commodityItem.getComponent('shopItem').init(element.price, sp);
+
+						commodityItem.getComponent('shopItem').init(element.price, sp, element._isSoldOut);
 						commodityItem.on("touchstart", function () {
-							console.log(element.name + ' was clicked');
+							// console.log(element.name + ' was clicked');
 							self.selectedCommodityIndex = i;
-							self.openPrompt(element, sp);
-							console.log(self.commodityArray[self.selectedCommodityIndex].name + ' was clicked,order ' + i);
+							if (!element._isSoldOut) {
+								self.openPrompt(element, sp);
+							}
+							
+							// console.log(self.commodityArray[self.selectedCommodityIndex].name + ' was clicked,order ' + i);
 						})
 						commodityItem.zIndex = i;
 						self.commodityShowBlock.node.addChild(commodityItem);
-						console.log(self.commodityArray[i].name + ' is loading... item: ' + i);
+						// console.log(self.commodityArray[i].name + ' is loading... item: ' + i);
 					})
 				})
 			}
 		}
-		self.commodityShowBlock.node.height = (itemNum % 3) ? ((itemNum - (itemNum % 3)) / 3 + 1) * 130 + (itemNum - (itemNum % 3)) / 3 * 20 : itemNum / 3  * 130 + itemNum  / 3 * 20;
+		self.commodityShowBlock.node.height = (itemNum % 3) ? ((itemNum - (itemNum % 3)) / 3 + 1) * 130 + (itemNum - (itemNum % 3)) / 3 * 20 : itemNum / 3 * 130 + itemNum / 3 * 20;
 		self.shopListView.scrollToTop(0.5);
 	},
 
@@ -424,14 +412,14 @@ cc.Class({
 		this.selectedCategory = 1;
 		this.subCategory.active = false;
 		//与服务器交互，获得所有的商品信息
-		
+
 		var url = "https://www.llquruc.top/petGame/" + "php/queryShop.php"; //服务器接口地址
 		// 调用自定义网路接口获取商品信息
 		var self = this;
 		var data = {
-			userID: GlobalData.userID,
+			"userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
 		};
-		HttpHelper.httpPost(url, data, function(data) {
+		HttpHelper.httpPost(url, data, function (data) {
 			if (data == -1) {
 				console.log("访问失败");
 			} else {

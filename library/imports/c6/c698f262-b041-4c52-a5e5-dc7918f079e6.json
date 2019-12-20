@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "购买弹出框预览图",
+    "texture": "64e47d16-85f9-49e5-a4c0-41a05398ef0a",
+    "atlas": "",
+    "rect": [
+      13,
+      109,
+      454,
+      483
+    ],
+    "offset": [
+      0,
+      49.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

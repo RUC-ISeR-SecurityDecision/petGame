@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "minusButton",
+    "texture": "f602f20f-7a6f-43e0-a356-c1d4dff7e8ea",
+    "atlas": "",
+    "rect": [
+      17,
+      13,
+      123,
+      135
+    ],
+    "offset": [
+      -1.5,
+      -0.5
+    ],
+    "originalSize": [
+      160,
+      160
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

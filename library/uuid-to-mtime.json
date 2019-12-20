@@ -450,7 +450,7 @@
     "relativePath": "adopt\\petPortray"
   },
   "ba06d088-76ed-478e-85b7-5fbfad3b1e7c": {
-    "asset": 1575795757203,
+    "asset": 1576411000437,
     "meta": 1575355150687,
     "relativePath": "adopt\\petPortray\\JS"
   },
@@ -480,12 +480,12 @@
     "relativePath": "load\\loadPage.fire"
   },
   "b1461062-749e-4ea0-bc95-3097edc09870": {
-    "asset": 1576052371475,
+    "asset": 1576486092713,
     "meta": 1575355150695,
     "relativePath": "main"
   },
   "44502c3a-dd4c-4a94-80b9-3bdad758c8c7": {
-    "asset": 1575795757168,
+    "asset": 1576717749772,
     "meta": 1575355150696,
     "relativePath": "main\\js"
   },
@@ -495,13 +495,13 @@
     "relativePath": "adopt\\petPortray\\portrayPage.fire"
   },
   "bb01b381-ca01-4b2b-b108-8a5656fe65a4": {
-    "asset": 1576138247151,
+    "asset": 1576138990387,
     "meta": 1575355150698,
     "relativePath": "resources"
   },
   "8cc7625f-c16e-400f-95d7-f603e1b5b9ab": {
-    "asset": 1576220299103,
-    "meta": 1576220299122,
+    "asset": 1576822006709,
+    "meta": 1576822006717,
     "relativePath": "main\\mainPage.fire"
   },
   "51bcab0c-5707-479d-af5f-026757688504": {
@@ -634,11 +634,6 @@
     "meta": 1576138315603,
     "relativePath": "resources\\page_main\\bg.png"
   },
-  "afd85d8e-4f89-416d-89ff-cfcc044b72c2": {
-    "asset": 1576138246714,
-    "meta": 1576138316553,
-    "relativePath": "resources\\shopPic\\cart.png"
-  },
   "7244facd-98f8-4763-b441-87ab1512e0e6": {
     "asset": 1576138246995,
     "meta": 1576138319809,
@@ -650,13 +645,13 @@
     "relativePath": "resources\\page_main\\home.png"
   },
   "651fc3f6-c449-46ee-8fe4-307b157b59de": {
-    "asset": 1575445967763,
+    "asset": 1576573975101,
     "meta": 1575429457618,
     "relativePath": "resources\\prefab"
   },
   "9839e018-bd56-4926-84a4-76b6472bf21c": {
-    "asset": 1575465893996,
-    "meta": 1576138316513,
+    "asset": 1576822444429,
+    "meta": 1576822444433,
     "relativePath": "resources\\prefab\\shopItem.prefab"
   },
   "7d99ce47-8588-4f87-a9c7-236a11c6867d": {
@@ -665,14 +660,9 @@
     "relativePath": "resources\\shopPic\\total.png"
   },
   "c03fb8e5-8b84-49ba-b8a2-68902011f747": {
-    "asset": 1575795757170,
+    "asset": 1576411000461,
     "meta": 1575795757168,
     "relativePath": "runtime"
-  },
-  "c8a3f33c-c315-44ff-a505-d691541e8076": {
-    "asset": 1575795757169,
-    "meta": 1576138321010,
-    "relativePath": "runtime\\autoRun.js"
   },
   "e2d70ee3-8200-4c81-a577-4668f1a4d1b9": {
     "asset": 1575795757169,
@@ -690,29 +680,19 @@
     "relativePath": "shop"
   },
   "c6ab1a48-3b08-4e32-a548-b59169e82417": {
-    "asset": 1575445967763,
+    "asset": 1576411000478,
     "meta": 1575355150811,
     "relativePath": "shop\\js"
   },
-  "39b4dbbf-76c2-4b40-ab64-c2c803385216": {
-    "asset": 1575600647429,
-    "meta": 1576138321125,
-    "relativePath": "shop\\js\\shopItem.js"
-  },
   "01dd0098-b0f1-4689-92b2-915a0a202dfd": {
-    "asset": 1575793604942,
-    "meta": 1576138321133,
+    "asset": 1576811512915,
+    "meta": 1576811512924,
     "relativePath": "shop\\shop.fire"
   },
   "143f6c49-30c2-42d0-9106-d3e086a95813": {
     "asset": 1576138246683,
     "meta": 1576138316573,
     "relativePath": "resources\\page_main\\bg_4.png"
-  },
-  "b928e20b-8666-4ee3-be7e-31d478039112": {
-    "asset": 1575890357916,
-    "meta": 1576138313128,
-    "relativePath": "Global\\net.js"
   },
   "ba3fafff-3d50-47ad-9d48-98ba6bbe973b": {
     "asset": 1576138246589,
@@ -913,31 +893,6 @@
     "asset": 1576138246574,
     "meta": 1576138315423,
     "relativePath": "resources\\page_loading\\heart.png"
-  },
-  "ad10578c-dff4-4bf7-9641-6fa7c44efcb0": {
-    "asset": 1576051117918,
-    "meta": 1576138313148,
-    "relativePath": "load\\JS\\load.js"
-  },
-  "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
-    "asset": 1576056690628,
-    "meta": 1576138313098,
-    "relativePath": "Global\\globalData.js"
-  },
-  "87f24e7f-2404-4414-93f0-799c7dde5427": {
-    "asset": 1576066800807,
-    "meta": 1576138313268,
-    "relativePath": "main\\js\\main.js"
-  },
-  "27dca957-a67c-49eb-a753-d6753f03019d": {
-    "asset": 1576067987636,
-    "meta": 1576138312908,
-    "relativePath": "adopt\\petPortray\\JS\\petPortray.js"
-  },
-  "1b4ae50f-3cf5-4126-b8ad-91098c7bd809": {
-    "asset": 1576068001495,
-    "meta": 1576138313138,
-    "relativePath": "Global\\pet.js"
   },
   "48238cf0-7fee-408d-83fb-b61119691307": {
     "asset": 1575895056000,
@@ -2650,8 +2605,8 @@
     "relativePath": "personalInfo"
   },
   "3718d8ac-8feb-437b-8fea-2999eabf6caa": {
-    "asset": 1576219111443,
-    "meta": 1576219111452,
+    "asset": 1576573999801,
+    "meta": 1576573999809,
     "relativePath": "bag\\bag.fire"
   },
   "9fd1cace-6af0-4a1e-bcee-c8c4d7863897": {
@@ -2675,7 +2630,7 @@
     "relativePath": "resources\\button\\close.png"
   },
   "f4278204-c74b-4007-86b8-67e630a43413": {
-    "asset": 1576138246388,
+    "asset": 1576411000461,
     "meta": 1576138246376,
     "relativePath": "resources\\else"
   },
@@ -2784,9 +2739,204 @@
     "meta": 1576138316513,
     "relativePath": "resources\\profile.png"
   },
+  "27dca957-a67c-49eb-a753-d6753f03019d": {
+    "asset": 1576411000437,
+    "meta": 1576475075500,
+    "relativePath": "adopt\\petPortray\\JS\\petPortray.js"
+  },
+  "c8a3f33c-c315-44ff-a505-d691541e8076": {
+    "asset": 1576411000461,
+    "meta": 1576475075654,
+    "relativePath": "runtime\\autoRun.js"
+  },
+  "bf12e2ab-217f-4278-80dd-7c5176049a32": {
+    "asset": 1576411000461,
+    "meta": 1576475075739,
+    "relativePath": "resources\\else\\coin.png"
+  },
+  "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
+    "asset": 1576500398229,
+    "meta": 1576500807377,
+    "relativePath": "Global\\globalData.js"
+  },
+  "ad10578c-dff4-4bf7-9641-6fa7c44efcb0": {
+    "asset": 1576572847765,
+    "meta": 1576572853625,
+    "relativePath": "load\\JS\\load.js"
+  },
+  "e3b54b91-0e22-4c12-8e38-d56d10e31715": {
+    "asset": 1576586577886,
+    "meta": 1576586577889,
+    "relativePath": "resources\\prefab\\bagItem.prefab"
+  },
+  "6bfb3e5f-f225-49f4-a130-ece568117ff0": {
+    "asset": 1576586762052,
+    "meta": 1576586951409,
+    "relativePath": "main\\js\\bagItem.js"
+  },
+  "b928e20b-8666-4ee3-be7e-31d478039112": {
+    "asset": 1576804762205,
+    "meta": 1576806672963,
+    "relativePath": "Global\\net.js"
+  },
+  "1b4ae50f-3cf5-4126-b8ad-91098c7bd809": {
+    "asset": 1576804764445,
+    "meta": 1576806672964,
+    "relativePath": "Global\\pet.js"
+  },
+  "64e47d16-85f9-49e5-a4c0-41a05398ef0a": {
+    "asset": 1576806530000,
+    "meta": 1576806673052,
+    "relativePath": "resources\\shopPic\\购买弹出框预览图.png"
+  },
+  "812e5ff1-ce40-44f7-bc67-e2d6a92fbedc": {
+    "asset": 1576806530000,
+    "meta": 1576806673060,
+    "relativePath": "resources\\shopPic\\商店预览图.png"
+  },
+  "eba4a356-7487-42a4-936e-fc838748aab1": {
+    "asset": 1576806530000,
+    "meta": 1576806673073,
+    "relativePath": "resources\\shopPic\\addButton3.png"
+  },
+  "25d591c8-5bf1-4167-a655-144325385334": {
+    "asset": 1576806530000,
+    "meta": 1576806673074,
+    "relativePath": "resources\\shopPic\\余额不足提示框预览图.png"
+  },
+  "e99c5465-503a-4c8e-8cb7-bed2a7853e7c": {
+    "asset": 1576806530000,
+    "meta": 1576806673090,
+    "relativePath": "resources\\shopPic\\box3_bg.png"
+  },
+  "83e2b00d-ab0d-455d-96a1-6776147ed19a": {
+    "asset": 1576806530000,
+    "meta": 1576806673093,
+    "relativePath": "resources\\shopPic\\box2_bg.png"
+  },
+  "3e3f7ec8-6bec-424f-8d49-aa138e3a16ff": {
+    "asset": 1576806530000,
+    "meta": 1576806673106,
+    "relativePath": "resources\\shopPic\\buyButton.png"
+  },
+  "8d16c98a-8aab-49e0-8661-62b933db8bb9": {
+    "asset": 1576806530000,
+    "meta": 1576806673108,
+    "relativePath": "resources\\shopPic\\cancelButton.png"
+  },
+  "ff34d773-4100-4b61-9ae3-31ee5321e032": {
+    "asset": 1576806530000,
+    "meta": 1576806673136,
+    "relativePath": "resources\\shopPic\\carpetType.png"
+  },
+  "b5debcae-d362-4f55-b9d9-6289bed8d02e": {
+    "asset": 1576806530000,
+    "meta": 1576806673162,
+    "relativePath": "resources\\shopPic\\closeButton.png"
+  },
+  "2b64f0e9-1761-4448-b13e-4caa514a96c9": {
+    "asset": 1576806530000,
+    "meta": 1576806673192,
+    "relativePath": "resources\\shopPic\\cart1.png"
+  },
+  "1f747416-96a8-428c-8589-4f4ad16772f8": {
+    "asset": 1576806530000,
+    "meta": 1576806673195,
+    "relativePath": "resources\\shopPic\\curtainType.png"
+  },
+  "0f0178f3-d9d8-4942-97cb-b42c7dace2d2": {
+    "asset": 1576806530000,
+    "meta": 1576806673210,
+    "relativePath": "resources\\shopPic\\exitButton.png"
+  },
+  "087c69e4-814e-40e4-a051-1fbec03c1558": {
+    "asset": 1576806530000,
+    "meta": 1576806673222,
+    "relativePath": "resources\\shopPic\\decorationType.png"
+  },
+  "f69a8743-b705-4817-a707-55ff83a5cdee": {
+    "asset": 1576806530000,
+    "meta": 1576806673241,
+    "relativePath": "resources\\shopPic\\floorType.png"
+  },
+  "108c585b-621c-432e-aa41-338d70436652": {
+    "asset": 1576806530000,
+    "meta": 1576806673249,
+    "relativePath": "resources\\shopPic\\foodType.png"
+  },
+  "45c6d0c6-7968-4a96-9a69-30c5251c39ae": {
+    "asset": 1576806530000,
+    "meta": 1576806673266,
+    "relativePath": "resources\\shopPic\\furnitureType.png"
+  },
+  "f85e3d66-a59c-4c4f-921b-5cf656750c55": {
+    "asset": 1576806530000,
+    "meta": 1576806673280,
+    "relativePath": "resources\\shopPic\\good_bg.png"
+  },
+  "57b14528-04ff-4c73-b108-bfba901dcdff": {
+    "asset": 1576806530000,
+    "meta": 1576806673306,
+    "relativePath": "resources\\shopPic\\itemType.png"
+  },
+  "f602f20f-7a6f-43e0-a356-c1d4dff7e8ea": {
+    "asset": 1576806530000,
+    "meta": 1576806673313,
+    "relativePath": "resources\\shopPic\\minusButton.png"
+  },
+  "fb34e73f-b516-42f9-952e-1d6999ac8e0e": {
+    "asset": 1576806530000,
+    "meta": 1576806673322,
+    "relativePath": "resources\\shopPic\\money_level.png"
+  },
+  "ba6e9cee-f1fc-4893-ab88-10045e1f8eff": {
+    "asset": 1576806530000,
+    "meta": 1576806673338,
+    "relativePath": "resources\\shopPic\\shop_bg.png"
+  },
+  "00e7f2eb-f65a-4a62-8dbb-54575bfa981b": {
+    "asset": 1576806530000,
+    "meta": 1576806673360,
+    "relativePath": "resources\\shopPic\\showerType.png"
+  },
+  "30f8e3b4-4ab9-4a49-a25f-de8c55612163": {
+    "asset": 1576806530000,
+    "meta": 1576806673383,
+    "relativePath": "resources\\shopPic\\sofaType.png"
+  },
+  "072ba5ce-be56-477c-956f-334d264bdd43": {
+    "asset": 1576806530000,
+    "meta": 1576806673390,
+    "relativePath": "resources\\shopPic\\soldout.png"
+  },
+  "7721b608-a196-4f61-9367-1c852a40211c": {
+    "asset": 1576806530000,
+    "meta": 1576806673415,
+    "relativePath": "resources\\shopPic\\tableType.png"
+  },
+  "4525035d-3414-4b4a-a93e-0bad98ef1f6d": {
+    "asset": 1576806530000,
+    "meta": 1576806673440,
+    "relativePath": "resources\\shopPic\\wallType.png"
+  },
+  "2aee3a28-ef8f-41de-8223-4cfd9528f85e": {
+    "asset": 1576806530000,
+    "meta": 1576806673939,
+    "relativePath": "resources\\shopPic\\goldIcon.png"
+  },
+  "87f24e7f-2404-4414-93f0-799c7dde5427": {
+    "asset": 1576812093176,
+    "meta": 1576812094826,
+    "relativePath": "main\\js\\main.js"
+  },
+  "39b4dbbf-76c2-4b40-ab64-c2c803385216": {
+    "asset": 1576823096636,
+    "meta": 1576823097610,
+    "relativePath": "shop\\js\\shopItem.js"
+  },
   "093d5a7a-cc8e-4c17-a6e9-504aa9ad39ca": {
-    "asset": 1576139988686,
-    "meta": 1576139989740,
+    "asset": 1576823204261,
+    "meta": 1576823206493,
     "relativePath": "shop\\js\\shopCopy.js"
   }
 }

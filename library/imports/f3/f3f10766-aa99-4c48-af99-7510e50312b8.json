@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "商店预览图",
+    "texture": "812e5ff1-ce40-44f7-bc67-e2d6a92fbedc",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      480,
+      800
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

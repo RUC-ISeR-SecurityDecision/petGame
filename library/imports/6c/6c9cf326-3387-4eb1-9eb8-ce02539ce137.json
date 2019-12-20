@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "soldout",
+    "texture": "072ba5ce-be56-477c-956f-334d264bdd43",
+    "atlas": "",
+    "rect": [
+      14,
+      12,
+      105,
+      109
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      133,
+      133
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
