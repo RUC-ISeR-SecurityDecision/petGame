@@ -27,51 +27,47 @@ cc.Class({
         let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/genReward.php";
         var rewardLevel = newGrowthLevel;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                genTime: timeStr,
-                rewardCategoryID: 3,
-                rewardLevel: rewardLevel,
-            },
-            success(res) {
+        // 调用自定义网路接口生成升级奖励
+        var data = {
+            userID: GlobalData.userID,
+            genTime: timeStr,
+            rewardCategoryID: 3,
+            rewardLevel: rewardLevel,
+        };
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.upgradeRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.upgradeRewardItemID = res.rewardItemID;//奖励物品编号
                 GlobalData.upgradeRewardItemCateID = res.rewardItemCateID;//奖励物品类别编号
                 GlobalData.flagUpgradeReward = true;
-            },
-        });
+            }
+        }); 
     },
 
     queryAttribute: function (){
         var instance = this;
         var serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success(res) {
+        // 调用自定义网路接口进行查询
+        var data = {
+            userID: GlobalData.userID
+        };
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.coin = res.coin;//金币值
                 GlobalData.title = res.title;//主人称呼
-            },
+            }
         });
         serverAddr = GlobalData.serverAddr + "php/queryPetAttribute.php";
-        $.ajax({
-            url: serveAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success(res) {
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.lastLoginTime = res.lastLoginTime;//上一次登录时间
                 GlobalData.contLoginDays = res.contLoginDays; //连续登录天数
@@ -90,9 +86,6 @@ cc.Class({
                 GlobalData.energy = res.energy;// 宠物能量值
                 GlobalData.energyCeiling = res.energyCeiling;// 宠物能量值上限
                 GlobalData.growth = res.growth;// 宠物成长值
-                if(GlobalData.growthLevel != res.growthLevel){   //宠物等级发生改变，说明该升级了
-                    instance.genUpgradeReward(GlobalData.growthLevel);
-                }
                 GlobalData.growthLevel = res.growthLevel;// 宠物成长等级
                 GlobalData.flagAgeGroup = res.flagAgeGroup;// 标志位：幼年or成年
                 GlobalData.flagSkipping = res.flagSkipping;//标志位_是否解锁“跳绳”操作
@@ -103,17 +96,13 @@ cc.Class({
                 GlobalData.workRemainTime = res.workRemainTime;//打工剩余时长
                 GlobalData.flagTrip = res.flagTrip;//标志位-是否正在旅游
                 GlobalData.tripRemainTime = res.tripRemainTime;//旅游剩余时长
-            },
+            }
         });
         serverAddr = GlobalData.serverAddr + "php/querySetting.php";
-        $.ajax({
-            url: serveAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success(res) {
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.flagBgMusic = res.flagBgMusic;//标志位_是否开启背景音乐
                 GlobalData.bgMusicVolume = res.bgMusicVolume;//背景音乐音量
@@ -124,41 +113,33 @@ cc.Class({
                 GlobalData.flagNotice = res.flagNotice;//标志位_是否开启推送通知
                 GlobalData.flagLocation = res.flagLocation;//标志位_是否开启摄像头权限
                 GlobalData.flagVibration = res.flagVibration;//标志位_是否开启震动
-            },
+            }
         });
         serverAddr = GlobalData.serverAddr + "php/queryBag.php";
-        $.ajax({
-            url: serveAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success(res) {
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
                 GlobalData.bag.categoryIDArrayStr = res.categoryIDArray;//物品类别ID数组
                 GlobalData.bag.categoryNameArrayStr = res.categoryNameArray;//物品类别名称数组
                 GlobalData.bag.numberArrayStr = res.numberArray;//物品数量数组
-            },
+            }
         });
         serverAddr = GlobalData.serverAddr + "php/queryDecBag.php";
-        $.ajax({
-            url: serveAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success(res) {
+        HttpHelper.httpPost(serverAddr, data, function(res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
                 GlobalData.bag.categoryIDArrayStr = res.categoryArray;//物品类别ID数组
                 GlobalData.bag.categoryNameArrayStr = res.categoryNameArray;//物品类别名称数组
                 GlobalData.bag.flagEnableArrayStr = res.flagEnableArray;//物品是否启用的标志位数组
-            },
+            }
         });
     },
 
@@ -177,22 +158,22 @@ cc.Class({
             let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
             var serverAddr = GlobalData.serverAddr + "php/genReward.php";
             var rewardLevel = Math.ceil(Math.random() * 20);
-            $.ajax({
-                url: serverAddr,
-                type: 'POST',
-                dataType: json,
-                data: {
-                    userID: GlobalData.userID,
-                    genTime: timeStr,
-                    rewardCategoryID: 4,
-                    rewardLevel: rewardLevel,
-                },
-                success(res) {
+            // 调用自定义网路接口生成随机奖励
+            var data = {
+                userID: GlobalData.userID,
+                genTime: timeStr,
+                rewardCategoryID: 4,
+                rewardLevel: rewardLevel,
+            };
+            HttpHelper.httpPost(serverAddr, data, function(res) {
+                if (res == -1) {
+                    console.log("访问失败");
+                } else {
                     console.log(res);
                     GlobalData.randomRewardItemID = res.rewardItemID;//奖励物品编号
                     GlobalData.randomRewardItemCateID = res.rewardItemCateID;//奖励物品类别编号
                     GlobalData.flagRandomReward = true;
-                },
+                }
             });
         }
     },

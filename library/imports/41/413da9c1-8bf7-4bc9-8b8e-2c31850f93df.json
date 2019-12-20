@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "closeButton",
+    "texture": "b5debcae-d362-4f55-b9d9-6289bed8d02e",
+    "atlas": "",
+    "rect": [
+      161,
+      61,
+      1164,
+      451
+    ],
+    "offset": [
+      13,
+      5.5
+    ],
+    "originalSize": [
+      1460,
+      584
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

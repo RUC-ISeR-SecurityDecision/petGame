@@ -1,277 +1,80 @@
-2019-12-12T01:40:16.991Z - normal: Load ~/.CocosCreator/settings.json
-2019-12-12T01:40:17.042Z - normal: Initializing Asset Database
-2019-12-12T01:40:17.045Z - normal: checking language setting...
-2019-12-12T01:40:17.045Z - normal: Language: zh
-2019-12-12T01:40:17.381Z - success: preview server running at http://localhost:7456
-2019-12-12T01:40:17.384Z - success: protocol editor-framework registered
-2019-12-12T01:40:17.384Z - success: protocol app registered
-2019-12-12T01:40:17.384Z - success: protocol theme registered
-2019-12-12T01:40:17.384Z - success: protocol packages registered
-2019-12-12T01:40:17.384Z - success: protocol uuid registerred
-2019-12-12T01:40:17.385Z - success: protocol db registerred
-2019-12-12T01:40:17.385Z - success: protocol thumbnail registerred
-2019-12-12T01:40:17.385Z - success: protocol unpack registerred
-2019-12-12T01:40:17.385Z - success: protocol disable-commonjs registerred
-2019-12-12T01:40:17.462Z - normal: connected!
-2019-12-12T01:40:17.462Z - normal: Check project D:\cocos_project\petGame
-2019-12-12T01:40:17.464Z - normal: Initializing project D:\cocos_project\petGame
-2019-12-12T01:40:17.659Z - normal: Initializing Cocos2d
-2019-12-12T01:40:17.972Z - normal: Initializing engine extends
-2019-12-12T01:40:18.001Z - success: adapters loaded
-2019-12-12T01:40:18.007Z - success: asset-db-debugger loaded
-2019-12-12T01:40:18.061Z - success: fb-audience-network loaded
-2019-12-12T01:40:18.081Z - success: fb-live-stream loaded
-2019-12-12T01:40:18.084Z - success: google-play-instant loaded
-2019-12-12T01:40:18.088Z - success: huawei-runtime loaded
-2019-12-12T01:40:18.188Z - success: cpk-publish loaded
-2019-12-12T01:40:18.189Z - success: jsb-adapter loaded
-2019-12-12T01:40:18.194Z - success: oppo-runtime loaded
-2019-12-12T01:40:18.198Z - success: package-manager loaded
-2019-12-12T01:40:18.200Z - success: runtime-dev-tools loaded
-2019-12-12T01:40:18.205Z - success: sdkbox loaded
-2019-12-12T01:40:18.208Z - success: ui-kit-preview-extra loaded
-2019-12-12T01:40:18.211Z - success: ui-kit-preview loaded
-2019-12-12T01:40:18.216Z - success: vivo-runtime loaded
-2019-12-12T01:40:18.220Z - success: alipay-minigame loaded
-2019-12-12T01:40:18.254Z - success: assets loaded
-2019-12-12T01:40:18.258Z - success: baidugame-opendata loaded
-2019-12-12T01:40:18.260Z - success: baidugame loaded
-2019-12-12T01:40:18.263Z - success: builder loaded
-2019-12-12T01:40:18.372Z - success: cocos-services loaded
-2019-12-12T01:40:18.376Z - success: console loaded
-2019-12-12T01:40:18.385Z - success: fb-instant-games loaded
-2019-12-12T01:40:18.387Z - success: game-window loaded
-2019-12-12T01:40:18.388Z - success: google-instant-games loaded
-2019-12-12T01:40:18.391Z - success: hierarchy loaded
-2019-12-12T01:40:18.394Z - success: inspector loaded
-2019-12-12T01:40:18.395Z - success: keystore loaded
-2019-12-12T01:40:18.399Z - success: node-library loaded
-2019-12-12T01:40:18.400Z - success: open-recent-items loaded
-2019-12-12T01:40:18.401Z - success: package-asset loaded
-2019-12-12T01:40:18.402Z - success: preferences loaded
-2019-12-12T01:40:18.404Z - success: project-exporter loaded
-2019-12-12T01:40:18.406Z - success: project-importer loaded
-2019-12-12T01:40:18.408Z - success: project-settings loaded
-2019-12-12T01:40:18.411Z - success: scene loaded
-2019-12-12T01:40:18.412Z - success: simulator-debugger loaded
-2019-12-12T01:40:18.412Z - success: sprite-editor loaded
-2019-12-12T01:40:18.415Z - success: store loaded
-2019-12-12T01:40:18.421Z - success: timeline loaded
-2019-12-12T01:40:18.424Z - success: wechatgame-opendata loaded
-2019-12-12T01:40:18.427Z - success: wechatgame loaded
-2019-12-12T01:40:18.430Z - success: xiaomi-runtime loaded
-2019-12-12T01:40:19.916Z - info: Cocos Services load base data!
-2019-12-12T01:40:24.147Z - normal: Loading packages
-2019-12-12T01:40:24.152Z - normal: Watching packages
-2019-12-12T01:40:25.904Z - normal: Run Application
-2019-12-12T01:57:34.814Z - warn: The Asset used by component "cc.Sprite" in scene "bag.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/bag/bag.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:57:39.471Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:57:39.472Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/growthBlock/growthIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.473Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/hungerBlock/hungerIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.473Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/cleanessBlock/cleanessIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.474Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/thirstBlock/thirstIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.474Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/energyBlock/energyIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:57:39.475Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/moodBlock/moodIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T01:59:29.435Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T01:59:29.435Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T01:59:29.436Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T01:59:29.437Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T01:59:29.437Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T01:59:29.443Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T01:59:29.443Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T01:59:29.444Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T01:59:29.444Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg1"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "9958e2b7-528e-4a6d-b568-fae41b32cc2d"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg2"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "d65e8375-701f-42d4-843d-fe167379de60"
-
-2019-12-12T01:59:29.445Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg3"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "b01b54c8-1d50-4c9c-be71-b68afe142452"
-
-2019-12-12T01:59:29.446Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg4"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a34c092a-59c3-4753-9044-b59ca4180ebd"
-
-2019-12-12T01:59:55.461Z - info: Path: Canvas/Main Camera/close, UUID: 4eV0JFeN5Nv5ujedkGaxzC
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T02:00:58.331Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/musicBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T02:00:58.332Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/disable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "3d45eca4-d02d-47c8-a649-909fa3d5f0b8"
-
-2019-12-12T02:00:58.333Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/soundBlock/enable"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "7f2cc35a-decb-4a56-a1a5-da6a84c115ef"
-
-2019-12-12T02:00:58.337Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T02:00:58.337Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock1/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T02:00:58.338Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume-"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a422feaf-c1e0-4f40-b779-7d7eede37cad"
-
-2019-12-12T02:00:58.338Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock2/volume+"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "77250dd9-3987-4b9e-8392-b120025a3e46"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg1"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "9958e2b7-528e-4a6d-b568-fae41b32cc2d"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg2"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "d65e8375-701f-42d4-843d-fe167379de60"
-
-2019-12-12T02:00:58.339Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg3"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "b01b54c8-1d50-4c9c-be71-b68afe142452"
-
-2019-12-12T02:00:58.340Z - warn: The Asset used by component "cc.Sprite" in scene "setting.fire" is missing. Detailed information:
-Node path: "Canvas/promptBlock3/bg4"
-Asset url: "db://assets/setting/setting.fire"
-Missing uuid: "a34c092a-59c3-4753-9044-b59ca4180ebd"
-
-2019-12-12T02:04:04.757Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
-2019-12-12T02:04:04.758Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/growthBlock/growthIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.758Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/hungerBlock/hungerIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/cleanessBlock/cleanessIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/thirstBlock/thirstIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.759Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/energyBlock/energyIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:04:04.760Z - warn: The Asset used by component "cc.Sprite" in scene "personalInfo.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/mainBlock/moodBlock/moodIcon"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Missing uuid: "cafbf3c1-5428-42af-a55a-89ad730415bb"
-
-2019-12-12T02:09:58.901Z - warn: The Asset used by component "cc.Sprite" in scene "bag.fire" is missing. Detailed information:
-Node path: "Canvas/Main Camera/close"
-Asset url: "db://assets/bag/bag.fire"
-Missing uuid: "f4540fc9-dcfd-425f-a993-9bbec5efd5ce"
-
+2019-12-19T09:40:44.018Z - normal: Load ~/.CocosCreator/settings.json
+2019-12-19T09:40:44.053Z - normal: Initializing Asset Database
+2019-12-19T09:40:44.056Z - normal: checking language setting...
+2019-12-19T09:40:44.056Z - normal: Language: zh
+2019-12-19T09:40:44.377Z - success: preview server running at http://localhost:7456
+2019-12-19T09:40:44.381Z - success: protocol editor-framework registered
+2019-12-19T09:40:44.381Z - success: protocol app registered
+2019-12-19T09:40:44.381Z - success: protocol theme registered
+2019-12-19T09:40:44.381Z - success: protocol packages registered
+2019-12-19T09:40:44.382Z - success: protocol uuid registerred
+2019-12-19T09:40:44.382Z - success: protocol db registerred
+2019-12-19T09:40:44.382Z - success: protocol thumbnail registerred
+2019-12-19T09:40:44.382Z - success: protocol unpack registerred
+2019-12-19T09:40:44.382Z - success: protocol disable-commonjs registerred
+2019-12-19T09:40:44.494Z - normal: connected!
+2019-12-19T09:40:44.496Z - normal: Check project F:\petGame
+2019-12-19T09:40:44.499Z - normal: Initializing project F:\petGame
+2019-12-19T09:40:44.711Z - normal: Initializing Cocos2d
+2019-12-19T09:40:45.792Z - normal: Initializing engine extends
+2019-12-19T09:40:45.821Z - success: adapters loaded
+2019-12-19T09:40:45.827Z - success: asset-db-debugger loaded
+2019-12-19T09:40:45.885Z - success: fb-audience-network loaded
+2019-12-19T09:40:45.905Z - success: fb-live-stream loaded
+2019-12-19T09:40:45.907Z - success: google-play-instant loaded
+2019-12-19T09:40:45.929Z - success: huawei-runtime loaded
+2019-12-19T09:40:46.080Z - success: cpk-publish loaded
+2019-12-19T09:40:46.081Z - success: jsb-adapter loaded
+2019-12-19T09:40:46.094Z - success: oppo-runtime loaded
+2019-12-19T09:40:46.100Z - success: package-manager loaded
+2019-12-19T09:40:46.110Z - success: runtime-dev-tools loaded
+2019-12-19T09:40:46.123Z - success: sdkbox loaded
+2019-12-19T09:40:46.126Z - success: ui-kit-preview-extra loaded
+2019-12-19T09:40:46.129Z - success: ui-kit-preview loaded
+2019-12-19T09:40:46.138Z - success: vivo-runtime loaded
+2019-12-19T09:40:46.141Z - success: alipay-minigame loaded
+2019-12-19T09:40:46.177Z - success: assets loaded
+2019-12-19T09:40:46.180Z - success: baidugame-opendata loaded
+2019-12-19T09:40:46.182Z - success: baidugame loaded
+2019-12-19T09:40:46.185Z - success: builder loaded
+2019-12-19T09:40:46.294Z - success: cocos-services loaded
+2019-12-19T09:40:46.298Z - success: console loaded
+2019-12-19T09:40:46.307Z - success: fb-instant-games loaded
+2019-12-19T09:40:46.310Z - success: game-window loaded
+2019-12-19T09:40:46.312Z - success: google-instant-games loaded
+2019-12-19T09:40:46.315Z - success: hierarchy loaded
+2019-12-19T09:40:46.317Z - success: inspector loaded
+2019-12-19T09:40:46.318Z - success: keystore loaded
+2019-12-19T09:40:46.322Z - success: node-library loaded
+2019-12-19T09:40:46.323Z - success: open-recent-items loaded
+2019-12-19T09:40:46.325Z - success: package-asset loaded
+2019-12-19T09:40:46.326Z - success: preferences loaded
+2019-12-19T09:40:46.328Z - success: project-exporter loaded
+2019-12-19T09:40:46.330Z - success: project-importer loaded
+2019-12-19T09:40:46.332Z - success: project-settings loaded
+2019-12-19T09:40:46.335Z - success: scene loaded
+2019-12-19T09:40:46.336Z - success: simulator-debugger loaded
+2019-12-19T09:40:46.341Z - success: sprite-editor loaded
+2019-12-19T09:40:46.343Z - success: store loaded
+2019-12-19T09:40:46.346Z - success: timeline loaded
+2019-12-19T09:40:46.347Z - success: wechatgame-opendata loaded
+2019-12-19T09:40:46.351Z - success: wechatgame loaded
+2019-12-19T09:40:46.354Z - success: xiaomi-runtime loaded
+2019-12-19T09:40:47.489Z - normal: Loading packages
+2019-12-19T09:40:47.492Z - normal: Watching packages
+2019-12-19T09:40:47.728Z - normal: Run Application
+2019-12-19T09:40:48.110Z - info: Cocos Services load base data!
+2019-12-20T02:53:23.722Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T02:53:24.767Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T02:53:24.994Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T02:53:25.391Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T02:53:25.609Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T03:55:12.384Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T03:55:13.152Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:02.489Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:03.369Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:03.583Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:03.796Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:04.004Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:04.211Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2019-12-20T06:14:04.420Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。

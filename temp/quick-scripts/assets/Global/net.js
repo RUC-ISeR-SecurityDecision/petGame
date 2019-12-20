@@ -65,8 +65,8 @@ var HttpHelper = cc.Class({
         xhr.onreadystatechange = function () {
             // cc.log('xhr.readyState=' + xhr.readyState + '  xhr.status=' + xhr.status);
             if (xhr.readyState === 4 && xhr.status == 200) {
-                var respone = xhr.responseText;
-                var rsp = JSON.parse(respone);
+                var response = xhr.responseText;
+                var rsp = JSON.parse(response);
                 callback(rsp);
             } else {
                 callback(-1);
@@ -82,9 +82,9 @@ var HttpHelper = cc.Class({
 
         // note: In Internet Explorer, the timeout property may be set only after calling the open()
         // method and before calling the send() method.
-        xhr.timeout = 8000; // 8 seconds for timeout
-
+        xhr.timeout = 5000; // 8 seconds for timeout
         xhr.send(JSON.stringify(params));
+        console.log(JSON.stringify(params));
     },
 
 

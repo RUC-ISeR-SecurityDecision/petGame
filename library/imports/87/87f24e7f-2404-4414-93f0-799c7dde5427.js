@@ -15,39 +15,72 @@ cc._RF.push(module, '87f245/JAREFJPweZx93lQn', 'main');
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 var GlobalData = require('globalData');
+function BagItem(id, name, categoryID, categoryName, number) {
+    this.id = id;
+    this.name = name;
+    this.categoryID = categoryID;
+    this.categoryName = categoryName;
+    this.number = number;
+};
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
         profile: cc.Sprite,
-        pet: cc.Sprite,
         shop: cc.Sprite,
         tripBtn: cc.Sprite,
         workBtn: cc.Sprite,
         homeBtn: cc.Sprite,
         sleepBtn: cc.Sprite,
         functionBtn: cc.Button,
+        bag: cc.Node, // 背包节点
+        bagContent: cc.Layout, // 背包物品添加的父节点
+        bagCloseBtn: cc.Sprite, // 背包关闭按钮
+        bagItemArray: [],
+
+        pet: cc.Node, // 宠物
 
         //以下为页面中需要展示的值
-        hunger: cc.Label, // 饥饿值
-        hungerCeiling: cc.Label, // 饥饿值上限
-        cleaness: cc.Label, // 清洁值
-        cleanessCeiling: cc.Label, // 清洁值上限
-        thirst: cc.Label, // 口渴值
-        thirstCeiling: cc.Label, // 口渴值上限
-        mood: cc.Label, // 心情值
-        moodCeiling: cc.Label, // 心情值上限
-        energy: cc.Label, // 能量值
-        energyCeiling: cc.Label, // 能量值上限
-        growth: cc.Label, // 成长值
-        growthLevel: cc.Label, // 成长值等级
         coin: cc.Label, // 金币值
 
         _isFunctionShow: true,
         //author:qll
         //time:2019.12.4
-        _isBagShow: false, //标志位_是否展示背包
+        isBagShow: {
+            get: function get() {
+                return this._isBagShow;
+            },
+            set: function set(value) {
+                if (typeof value != 'number') {
+                    // 如果非法值，不调用背包控制函数
+                    value = 0;
+                    this._isBagShow = value;
+                }
+                if (this._isBagShow > 0) {
+                    // 背包被打开的情况下
+                    this.closeBag(); // 不管什么值都要先关闭背包
+                    if (this._isBagShow != value && value > 0) {
+                        // 如果点击不同背包，需要重新打开，例如打开食物背包的情况下，点击了洗澡背包
+                        this._isBagShow = value;
+                        this.openBag();
+                    } else {
+                        // 如果是相同背包，则背包显示置为0，表示现在处于关闭状态   
+                        this._isBagShow = 0;
+                    }
+                } else {
+                    // 背包关闭的情况下
+                    if (value > 0) {
+                        // 正常打开背包
+                        this._isBagShow = value;
+                        this.openBag();
+                    } else {
+                        // 关闭的情况不能再次关闭，置为关闭状态即可
+                        this._isBagShow = 0;
+                    }
+                }
+            }
+        }, // 标志位_是否展示背包,根据值判断打开哪个背包
         _isSleepSettingShow: false, //标志位_是否展示睡觉设置框
         _isWorkSettingShow: false, //标志位_是否展示工作设置框
         _isTripSettingShow: false, //标志位_是否展示旅游设置框
@@ -69,7 +102,253 @@ cc.Class({
 
         sleepTimeID: 0, //睡觉时间设置
 
-        updateID: 0 //用于退出该页面时清除interval
+        updateID: 0, //用于退出该页面时清除interval
+        selectBagItemIndex: null
+    },
+
+    // LIFE-CYCLE CALLBACKS:
+
+    onLoad: function onLoad() {
+        // console.log(GlobalData);
+        this.init();
+    },
+    start: function start() {},
+
+
+    loadBag: function loadBag() {
+        var data = {
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
+        };
+        var self = this;
+        var serverAddr = 'https://www.llquruc.top/petGame/php/queryBag.php';
+        HttpHelper.httpPost(serverAddr, data, function (_data) {
+            if (_data != -1) {
+                // console.log(_data);
+                var itemIDArray = _data.itemIDArray.split('+');
+                var itemNameArray = _data.itemNameArray.split('+');
+                var categoryIDArray = _data.categoryIDArray.split('+');
+                var categoryNameArray = _data.categoryNameArray.split('+');
+                var numberArray = _data.numberArray.split('+');
+                for (var index = 0; index < itemIDArray.length; index++) {
+                    var item = new BagItem(itemIDArray[index], itemNameArray[index], categoryIDArray[index], categoryNameArray[index], numberArray[index]);
+                    self.bagItemArray.push(item);
+                }
+            }
+        });
+    },
+    // 关闭背包,根据isBagShow的值自己调用，不要单独调用
+    closeBag: function closeBag() {
+        console.log("close bag");
+        this.bagContent.node.destroyAllChildren();
+        // 提示框关闭动作部分：
+        var hide = cc.moveBy(0.2, cc.v2(-220, 0));
+        this.bag.runAction(hide);
+    },
+    /**
+     * 打开背包,根据isBagShow的值自己调用，不要单独调用，逻辑查看isBagShow的注释
+     */
+    openBag: function openBag() {
+        var _this = this;
+
+        var self = this;
+        console.log("open bag");
+
+        var _loop = function _loop(i) {
+            var element = self.bagItemArray[i];
+            console.log("-----------debug log----------");
+            console.log("now load bag item: " + (i + 1));
+            if (element.categoryID == _this.isBagShow) {
+                console.log("item: " + i + ' will be loaded.');
+                var picName = 'shopPic/cate' + element.categoryID + '/' + element.id;
+                cc.loader.loadRes(picName, cc.SpriteFrame, function (err, sp) {
+                    if (err) {
+                        console.log('failed to load sprite ' + picName);
+                    }
+                    cc.loader.loadRes("prefab/bagItem", cc.Prefab, function (err, prf) {
+                        console.log(element);
+                        if (err) {
+                            console.log('error: get prefab' + err + "prefab/bagItem");
+                        }
+                        if (!(prf instanceof cc.Prefab)) {
+                            console.log("not a prefab");
+                        }
+                        var bagItem = cc.instantiate(prf);
+                        bagItem.zIndex = i;
+                        bagItem.name = element.categoryID + '_' + element.id;
+                        bagItem.getComponent('bagItem').init(element.number, sp);
+                        self.bagContent.node.addChild(bagItem);
+                        bagItem.getChildByName('itemPic').on(cc.Node.EventType.TOUCH_START, function () {
+                            // 选中物品
+                            var selectNode = bagItem.getChildByName('itemPic');
+                            // 阴影复制物品
+                            var copyNode = cc.instantiate(selectNode);
+                            // 阴影物品代替选中物品的位置
+                            selectNode.parent.addChild(copyNode);
+                            copyNode.opacity = 100;
+                            var pos = selectNode.parent.convertToWorldSpaceAR(copyNode.position);
+                            pos = self.bag.parent.convertToNodeSpaceAR(pos);
+                            // 被选中的物品进入与宠物同一个层级  
+                            self.bag.parent.addChild(selectNode);
+                            selectNode.position = pos;
+                            self.selectBagItemIndex = i; // 记录背包里选中的物品
+                            // console.log(selectNode, copyNode)
+                            selectNode.on(cc.Node.EventType.TOUCH_MOVE, self.onTouchMove, self);
+                            selectNode.on(cc.Node.EventType.TOUCH_END, self.onTouchEnd, self);
+                            selectNode.on(cc.Node.EventType.TOUCH_CANCEL, self.onTouchCancel, self);
+                        });
+                        console.log(bagItem);
+                    });
+                });
+            }
+        };
+
+        for (var i = 0; i < self.bagItemArray.length; i++) {
+            _loop(i);
+        }
+        // 提示框打开动作部分：
+        var show = cc.moveBy(0.2, cc.v2(220, 0));
+        self.bag.runAction(show);
+    },
+
+    //触摸移动；
+    onTouchMove: function onTouchMove(event) {
+        var self = this;
+        var selectItemName = self.bagItemArray[self.selectBagItemIndex].categoryID + '_' + self.bagItemArray[self.selectBagItemIndex].id;
+        var copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
+        var selectNode = self.bag.parent.getChildByName('itemPic');
+        // 转换为世界坐标
+        var pos = copyNode.parent.convertToWorldSpaceAR(copyNode.position);
+        pos = self.bag.parent.convertToNodeSpaceAR(pos);
+        var nodeP = pos;
+        var touches = event.getTouches();
+        //触摸刚开始的位置
+        var oldPos = selectNode.parent.convertToNodeSpaceAR(touches[0].getStartLocation());
+
+        //触摸时不断变更的位置
+        var newPos = selectNode.parent.convertToNodeSpaceAR(touches[0].getLocation());
+        var subPos = oldPos.sub(newPos); // 2.X版本是 p1.sub(p2);
+
+        selectNode.x = nodeP.x - subPos.x;
+        selectNode.y = nodeP.y - subPos.y;
+
+        // 控制节点移不出屏幕; 
+        var minX = -selectNode.parent.width / 2 + selectNode.width / 2; //最小X坐标；
+        var maxX = Math.abs(minX);
+        var minY = -selectNode.parent.height / 2 + selectNode.height / 2; //最小Y坐标；
+        var maxY = Math.abs(minY);
+        var nPos = selectNode.getPosition(); //节点实时坐标；
+
+        if (nPos.x < minX) {
+            nPos.x = minX;
+        };
+        if (nPos.x > maxX) {
+            nPos.x = maxX;
+        };
+        if (nPos.y < minY) {
+            nPos.y = minY;
+        };
+        if (nPos.y > maxY) {
+            nPos.y = maxY;
+        };
+        selectNode.setPosition(nPos);
+    },
+    // 背包物品触摸结束
+    onTouchEnd: function onTouchEnd() {
+        var self = this;
+        // 宠物矩形框
+        var petRect = new cc.Rect(self.pet.x, self.pet.y, self.pet.width, self.pet.height);
+        // 找到所选物品所在的物品块的名字
+        var selectItemName = self.bagItemArray[self.selectBagItemIndex].categoryID + '_' + self.bagItemArray[self.selectBagItemIndex].id;
+        // 留下的阴影复制物品
+        var copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
+        // 选中的物品
+        var selectNode = self.bag.parent.getChildByName('itemPic');
+        // 物品矩形框
+        var pos = copyNode.parent.convertToWorldSpaceAR(copyNode.position);
+        pos = self.bag.parent.convertToNodeSpaceAR(pos);
+        var useRect = new cc.Rect(selectNode.x, selectNode.y, selectNode.width, selectNode.height);
+        console.log("touch end");
+        if (petRect.intersects(useRect)) {
+            // 判断两个矩形框是否重叠
+            // 矩形重叠说明进行喂食等操作
+            // console.log(self.testNode.parent.parent.getChildByName('pet'));
+            if (self.bagItemArray[self.selectBagItemIndex].categoryID == 1) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').eat(self.bagItemArray[self.selectBagItemIndex].id);
+            } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 2) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').shower(self.bagItemArray[self.selectBagItemIndex].id);
+            } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 10) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').play(self.bagItemArray[self.selectBagItemIndex].id);
+            }
+            selectNode.setPosition(copyNode.position);
+            copyNode.destroy();
+            self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+            if (self.bagItemArray[self.selectBagItemIndex].number == 1) {
+                // 该物品将用完，动态在背包中删除
+                self.bagContent.node.getChildByName(selectItemName).destroy();
+            } else {
+                self.bagItemArray[self.selectBagItemIndex].number -= 1;
+                console.log(self.bagContent.node.getChildByName(selectItemName).getChildByName('numberBlock').getChildByName('number'));
+                self.bagContent.node.getChildByName(selectItemName).getChildByName('numberBlock').getChildByName('number').getComponent(cc.Label).string = self.bagItemArray[self.selectBagItemIndex].number;
+            }
+        } else {
+            var backEnd = cc.callFunc(function () {
+                selectNode.setPosition(copyNode.position);
+                copyNode.destroy();
+                self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+            }, self, null);
+            console.log(pos, selectNode.position);
+            var back = cc.sequence(cc.moveTo(0.5, pos.x, pos.y), backEnd);
+            selectNode.runAction(back);
+            console.log("second");
+            console.log(selectNode);
+        }
+    },
+
+    // 背包物品触摸取消，同触摸结束的操作
+    onTouchCancel: function onTouchCancel() {
+        var self = this;
+        // 宠物矩形框
+        var petRect = new cc.Rect(self.pet.x, self.pet.y, self.pet.width, self.pet.height);
+        // 找到所选物品所在的物品块的名字
+        var selectItemName = self.bagItemArray[self.selectBagItemIndex].categoryID + '_' + self.bagItemArray[self.selectBagItemIndex].id;
+        // 留下的阴影复制物品
+        var copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
+        // 选中的物品
+        var selectNode = self.bag.parent.getChildByName('itemPic');
+        // 物品矩形框
+        var pos = copyNode.parent.convertToWorldSpaceAR(copyNode.position);
+        pos = self.bag.parent.convertToNodeSpaceAR(pos);
+        var useRect = new cc.Rect(selectNode.x, selectNode.y, selectNode.width, selectNode.height);
+        console.log("touch cancel");
+        if (petRect.intersects(useRect)) {
+            // 判断两个矩形框是否重叠
+            // 矩形重叠说明进行喂食等操作
+            // console.log(self.testNode.parent.parent.getChildByName('pet'));
+            if (self.bagItemArray[self.selectBagItemIndex].categoryID == 1) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').eat(self.bagItemArray[self.selectBagItemIndex].id);
+            } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 2) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').shower(self.bagItemArray[self.selectBagItemIndex].id);
+            } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 10) {
+                selectNode.parent.parent.getChildByName('pet').getComponent('pet').play(self.bagItemArray[self.selectBagItemIndex].id);
+            }
+            // 实时刷新背包动态 - 待写/////////////////
+            /////////////////////////////////
+            selectNode.setPosition(copyNode.position);
+            copyNode.destroy();
+            self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+        } else {
+            var backEnd = cc.callFunc(function () {
+                console.log(copyNode.position);
+                selectNode.setPosition(copyNode.position);
+                copyNode.destroy();
+                self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+            }, self, null);
+            console.log(pos, selectNode.position);
+            var back = cc.sequence(cc.moveTo(0.1, pos.x, pos.y), backEnd);
+            selectNode.runAction(back);
+            console.log("second");
+            console.log(selectNode);
+        }
     },
 
     //生成登录奖励
@@ -84,17 +363,17 @@ cc.Class({
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/genReward.php";
         var instance = this;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                genTime: timeStr,
-                rewardCategoryID: 1,
-                rewardLevel: 1
-            },
-            success: function success(res) {
+        // 调用自定义网路接口获取登录奖励
+        var data = {
+            userID: GlobalData.userID,
+            genTime: timeStr,
+            rewardCategoryID: 1,
+            rewardLevel: 1
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.loginRewardCoin = res.rewardCoin; //奖励金币数
                 GlobalData.loginRewardGrowth = res.rewardGrowth; //奖励成长值
@@ -115,17 +394,17 @@ cc.Class({
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/genReward.php";
         var instance = this;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                genTime: timeStr,
-                rewardCategoryID: 2,
-                rewardLevel: GlobalData.contLoginDays
-            },
-            success: function success(res) {
+        // 调用自定义网路接口获取连续登录奖励
+        var data = {
+            userID: GlobalData.userID,
+            genTime: timeStr,
+            rewardCategoryID: 2,
+            rewardLevel: GlobalData.contLoginDays
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.contLoginRewardCoin = res.rewardCoin; //奖励金币数
                 GlobalData.contLoginRewardGrowth = res.rewardGrowth; //奖励成长值
@@ -143,41 +422,42 @@ cc.Class({
     login: function login() {
         var flagContLoginReward = 0;
         var flagLoginReward = 0;
-        wx.login({
-            success: function success(res) {
-                // 发送 res.code 到后台并收取生成的userID，
-                var js_code = res.code;
-                console.log(js_code);
-                var date = new Date();
-                var year = date.getFullYear(); //获取当前年份   
-                var month = date.getMonth() + 1; //获取当前月份   
-                var dat = date.getDate(); //获取当前日    
-                var hour = date.getHours(); //获取小时   
-                var minute = date.getMinutes(); //获取分钟   
-                var second = date.getSeconds(); //获取秒   
-                var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-                var flagLocation = GlobalData.flagLocation;
-                var serverAddr = GlobalData.serverAddr + "php/login.php";
-                $.ajax({
-                    url: serverAddr,
-                    type: 'POST',
-                    dataType: json,
-                    data: {
-                        js_code: js_code,
-                        loginTime: timeStr,
-                        flagLocation: flagLocation
-                    },
-                    success: function success(res) {
-                        console.log(res);
-                        GlobalData.userID = res.userID;
-                        GlobalData.flagNewUser = Number(res.flagNewUser);
-                        GlobalData.contLoginDays = Number(res.contLoginDays);
-                        flagContLoginReward = Number(res.flagContLoginReward);
-                        flagLoginReward = Number(res.flagLoginReward);
-                    }
-                });
-            }
-        });
+        // wx.login({
+        //     success: res => {
+        //         // 发送 res.code 到后台并收取生成的userID，
+        //         let js_code = res.code;
+        //         console.log(js_code);
+        //         let date = new Date();
+        //         let year = date.getFullYear(); //获取当前年份   
+        //         let month = date.getMonth() + 1; //获取当前月份   
+        //         let dat = date.getDate(); //获取当前日    
+        //         let hour = date.getHours(); //获取小时   
+        //         let minute = date.getMinutes(); //获取分钟   
+        //         let second = date.getSeconds(); //获取秒   
+        //         let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+        //         let flagLocation = GlobalData.flagLocation;
+        //         let serverAddr = GlobalData.serverAddr + "php/login.php";
+        //         // 调用自定义网路接口进行登录操作
+        //         let data = {
+        //             js_code: js_code,
+        //             loginTime: timeStr,
+        //             flagLocation: flagLocation,
+        //         };
+        //         HttpHelper.httpPost(serverAddr, data, function(res) {
+        // 	        if (res == -1) {
+        // 		        console.log("访问失败");
+        // 	        } else {
+        // 		        console.log(res);
+        //                 GlobalData.userID = res.userID;
+        //                 GlobalData.flagNewUser = Number(res.flagNewUser);
+        //                 GlobalData.contLoginDays = Number(res.contLoginDays);
+        //                 flagContLoginReward = Number(res.flagContLoginReward);
+        //                 flagLoginReward = Number(res.flagLoginReward);
+        // 	        }
+        //         });
+        //     }
+        // })
+
         console.log('登录完成');
 
         if (GlobalData.flagNewUser == 1) //新用户，跳到领养界面
@@ -214,60 +494,12 @@ cc.Class({
     },
 
     init: function init() {
-        var _this = this;
-
         //进入该页面时调用此函数
-        // 初始化宠物形象
-        var sprite = this.pet;
-        if (GlobalData.species == 0) {
-            cc.loader.loadRes("owl-simple", cc.SpriteFrame, function (err, sp) {
-                console.log(err);
-                if (err) return;
-                if (_this.node) {
-                    console.log("success");
-                    if (sprite) {
-                        sprite.spriteFrame = sp;
-                    }
-                }
-            });
-        } else if (GlobalData.species == 1) {
-            cc.loader.loadRes("penguin-simple", cc.SpriteFrame, function (err, sp) {
-                console.log(err);
-                if (err) return;
-                if (_this.node) {
-                    console.log("success");
-                    if (sprite) {
-                        sprite.spriteFrame = sp;
-                    }
-                }
-            });
-        } else if (GlobalData.species == 2) {
-            cc.loader.loadRes("cat-simple", cc.SpriteFrame, function (err, sp) {
-                console.log(err);
-                if (err) return;
-                if (_this.node) {
-                    console.log("success");
-                    if (sprite) {
-                        sprite.spriteFrame = sp;
-                    }
-                }
-            });
-        } else if (GlobalData.species == 3) {
-            cc.loader.loadRes("dog-simple", cc.SpriteFrame, function (err, sp) {
-                console.log(err);
-                if (err) return;
-                if (_this.node) {
-                    console.log("success");
-                    if (sprite) {
-                        sprite.spriteFrame = sp;
-                    }
-                }
-            });
-        }
-        //开始实时更新宠物属性值
-        var interval = 1000; //1秒
-        this.updateID = setInterval(this.autoUpdate, interval);
+        // let interval = 1000;  //1秒
+        // this.updateID = setInterval(this.autoUpdate, interval);
         this._isFunctionShow = true;
+        this.loadBag();
+        // this.queryAttribute();
     },
 
     exit: function exit() {
@@ -305,14 +537,6 @@ cc.Class({
         this.sleepBtn.node.runAction(actionSleepBtn);
         this.functionBtn.node.runAction(actionPlusBtn);
     },
-    // LIFE-CYCLE CALLBACKS:
-
-    onLoad: function onLoad() {
-        console.log(GlobalData);
-        this.init();
-    },
-    start: function start() {},
-
 
     /**
      * 进入游戏”按键所对应的事件处理函数，在用户的授权下获得并更新一些用户信息
@@ -378,28 +602,24 @@ cc.Class({
 
     queryAttribute: function queryAttribute() {
         var serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success: function success(res) {
+        // 调用自定义网路接口进行查询
+        var data = {
+            userID: GlobalData.userID
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.coin = res.coin; //金币值
                 GlobalData.title = res.title; //主人称呼
             }
         });
         serverAddr = GlobalData.serverAddr + "php/queryPetAttribute.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success: function success(res) {
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.lastLoginTime = res.lastLoginTime; //上一次登录时间
                 GlobalData.contLoginDays = res.contLoginDays; //连续登录天数
@@ -420,25 +640,21 @@ cc.Class({
                 GlobalData.growth = res.growth; // 宠物成长值
                 GlobalData.growthLevel = res.growthLevel; // 宠物成长等级
                 GlobalData.flagAgeGroup = res.flagAgeGroup; // 标志位：幼年or成年
-                GlobalData.flagSkipping = res.flagSkipping; //标志位_是否解锁“跳绳”操作
-                GlobalData.flagStory = res.flagStory; //标志位_是否解锁“讲故事”操作
-                GlobalData.flagSleep = res.flagSleep; //标志位-是否正在睡觉
-                GlobalData.sleepRemainTime = res.sleepRemainTime; //睡觉剩余时长
-                GlobalData.flagWork = res.flagWork; //标志位-是否正在打工
-                GlobalData.workRemainTime = res.workRemainTime; //打工剩余时长
-                GlobalData.flagTrip = res.flagTrip; //标志位-是否正在旅游
-                GlobalData.tripRemainTime = res.tripRemainTime; //旅游剩余时长
+                GlobalData.flagSkipping = res.flagSkipping; // 标志位_是否解锁“跳绳”操作
+                GlobalData.flagStory = res.flagStory; // 标志位_是否解锁“讲故事”操作
+                GlobalData.flagSleep = res.flagSleep; // 标志位-是否正在睡觉
+                GlobalData.sleepRemainTime = res.sleepRemainTime; // 睡觉剩余时长
+                GlobalData.flagWork = res.flagWork; // 标志位-是否正在打工
+                GlobalData.workRemainTime = res.workRemainTime; // 打工剩余时长
+                GlobalData.flagTrip = res.flagTrip; // 标志位-是否正在旅游
+                GlobalData.tripRemainTime = res.tripRemainTime; // 旅游剩余时长
             }
         });
         serverAddr = GlobalData.serverAddr + "php/querySetting.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success: function success(res) {
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.flagBgMusic = res.flagBgMusic; //标志位_是否开启背景音乐
                 GlobalData.bgMusicVolume = res.bgMusicVolume; //背景音乐音量
@@ -452,14 +668,10 @@ cc.Class({
             }
         });
         serverAddr = GlobalData.serverAddr + "php/queryBag.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success: function success(res) {
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray; //物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray; //物品名称数组（英文）
@@ -469,14 +681,10 @@ cc.Class({
             }
         });
         serverAddr = GlobalData.serverAddr + "php/queryDecBag.php";
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID
-            },
-            success: function success(res) {
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray; //物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray; //物品名称数组（英文）
@@ -522,20 +730,20 @@ cc.Class({
             rewardItemID = GlobalData.randomRewardItemID;
             rewardItemCateID = GlobalData.randomRewardItemCateID;
         }
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                getTime: timeStr,
-                rewardCoin: rewardCoin,
-                rewardGrowth: rewardGrowth,
-                rewardItemID: rewardItemID,
-                rewardItemCateID: rewardItemCateID,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口领取奖励
+        var data = {
+            userID: GlobalData.userID,
+            getTime: timeStr,
+            rewardCoin: rewardCoin,
+            rewardGrowth: rewardGrowth,
+            rewardItemID: rewardItemID,
+            rewardItemCateID: rewardItemCateID,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
             }
         });
@@ -544,71 +752,13 @@ cc.Class({
     onClickEatBtn: function onClickEatBtn() {
         //点击吃饭按钮
         console.log("点击吃饭");
-        this._isBagShow = true; //显示背包
-    },
-
-    onClickFood: function onClickFood(foodID) {
-        //点击食物
-        var date = new Date();
-        var year = date.getFullYear(); //获取当前年份   
-        var month = date.getMonth() + 1; //获取当前月份   
-        var dat = date.getDate(); //获取当前日    
-        var hour = date.getHours(); //获取小时   
-        var minute = date.getMinutes(); //获取分钟   
-        var second = date.getSeconds(); //获取秒   
-        var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-        var serverAddr = GlobalData.serverAddr + "php/eat.php";
-        var details = '';
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                foodID: foodID,
-                details: details
-            },
-            success: function success(res) {
-                console.log(res);
-                //无需更新属性值，后台会自动更新
-            }
-        });
+        this.isBagShow = 1;
     },
 
     onClickShowerBtn: function onClickShowerBtn() {
         //点击洗澡按钮
         console.log("点击洗澡");
-        this._isBagShow = true; //显示背包
-    },
-
-    onClickShowerTool: function onClickShowerTool(toolID) {
-        //点击洗澡工具
-        var date = new Date();
-        var year = date.getFullYear(); //获取当前年份   
-        var month = date.getMonth() + 1; //获取当前月份   
-        var dat = date.getDate(); //获取当前日    
-        var hour = date.getHours(); //获取小时   
-        var minute = date.getMinutes(); //获取分钟   
-        var second = date.getSeconds(); //获取秒   
-        var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-        var serverAddr = GlobalData.serverAddr + "php/shower.php";
-        var details = '';
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                bathToolID: toolID,
-                details: details
-            },
-            success: function success(res) {
-                console.log(res);
-                //无需更新属性值，后台会自动更新
-            }
-        });
+        this.isBagShow = 2;
     },
 
     onClickDrinkBtn: function onClickDrinkBtn() {
@@ -624,16 +774,16 @@ cc.Class({
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/drink.php";
         var details = '';
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口
+        var data = {
+            userID: GlobalData.userID,
+            operationTime: timeStr,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 //无需更新属性值，后台会自动更新
             }
@@ -658,17 +808,17 @@ cc.Class({
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/play.php";
         var details = '';
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                playID: playID,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口
+        var data = {
+            userID: GlobalData.userID,
+            operationTime: timeStr,
+            playID: playID,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 //无需更新属性值，后台会自动更新
             }
@@ -680,6 +830,12 @@ cc.Class({
         //time表示时间
         //question和answer分别表示结束后问答环节的问题和答案
         //picAddr表示提供的图片
+    },
+
+    onClickCloseBagBtn: function onClickCloseBagBtn() {
+        //点击主界面上的打工按钮
+        console.log("关闭背包");
+        this.isBagShow = 0;
     },
 
     onClickWorkBtn: function onClickWorkBtn() {
@@ -719,18 +875,18 @@ cc.Class({
         var serverAddr = GlobalData.serverAddr + "php/work.php";
         var details = '';
         var instance = this;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                workTimeID: instance.workTimeID,
-                workTypeID: instance.workTypeID,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口
+        var data = {
+            userID: GlobalData.userID,
+            operationTime: timeStr,
+            workTimeID: instance.workTimeID,
+            workTypeID: instance.workTypeID,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
                 instance.startCountDown('work', instance.timeIndex[instance.workTimeID], res.question, res.answer, res.picAddr);
@@ -774,18 +930,18 @@ cc.Class({
         var serverAddr = GlobalData.serverAddr + "php/trip.php";
         var details = '';
         var instance = this;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                tripTimeID: instance.tripTimeID,
-                tripLocID: instance.tripLocID,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口
+        var data = {
+            userID: GlobalData.userID,
+            operationTime: timeStr,
+            tripTimeID: instance.tripTimeID,
+            tripLocID: instance.tripLocID,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
                 instance.startCountDown('trip', instance.timeIndex[instance.tripTimeID], res.question, res.answer, res.picAddr);
@@ -818,17 +974,17 @@ cc.Class({
         var serverAddr = GlobalData.serverAddr + "php/sleep.php";
         var details = '';
         var instance = this;
-        $.ajax({
-            url: serverAddr,
-            type: 'POST',
-            dataType: json,
-            data: {
-                userID: GlobalData.userID,
-                operationTime: timeStr,
-                sleepTimeID: instance.sleepTimeID,
-                details: details
-            },
-            success: function success(res) {
+        // 调用自定义网路接口
+        var data = {
+            userID: GlobalData.userID,
+            operationTime: timeStr,
+            sleepTimeID: instance.sleepTimeID,
+            details: details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
                 instance.startCountDown('sleep', instance.timeIndex[instance.sleepTimeID], null, null, null);

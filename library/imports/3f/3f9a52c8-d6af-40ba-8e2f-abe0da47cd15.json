@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "余额不足提示框预览图",
+    "texture": "25d591c8-5bf1-4167-a655-144325385334",
+    "atlas": "",
+    "rect": [
+      45,
+      7,
+      349,
+      165
+    ],
+    "offset": [
+      -6.5,
+      1
+    ],
+    "originalSize": [
+      452,
+      181
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

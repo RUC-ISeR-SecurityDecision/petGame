@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "money_level",
+    "texture": "fb34e73f-b516-42f9-952e-1d6999ac8e0e",
+    "atlas": "",
+    "rect": [
+      26,
+      5,
+      570,
+      170
+    ],
+    "offset": [
+      5.5,
+      1.5
+    ],
+    "originalSize": [
+      611,
+      183
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

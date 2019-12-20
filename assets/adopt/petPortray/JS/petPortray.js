@@ -304,35 +304,34 @@ cc.Class({
 
     onCompleteClicked: function() {  //命名完成，提交结果，跳转到主界面
         console.log('turn to main page');
-        // var serverAddr = GlobalData.serverAddr + "php/adopt.php";
-        // $.ajax({
-        //     url: serverAddr,
-        //     type: 'POST',
-        //     dataType: json,
-        //     data: {
-        //         userID: GlobalData.userID,
-        //         species: GlobalData.species,
-        //         gender: GlobalData.gender,
-        //         color: GlobalData.color,
-        //         userTitle: GlobalData.title,
-        //         petName: GlobalData.name,
-        //     },
-        //     success(res) {
-        //         console.log('领养成功');
-        //     },
-        // });
-        // var serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
-        // $.ajax({
-        //     url: serverAddr,
-        //     type: 'POST',
-        //     dataType: json,
-        //     data: {
-        //         userID: GlobalData.userID,
-        //     },
-        //     complete() {
-        //         console.log('后台自动更新进程开始运行');
-        //     },
-        // });
+        // 调用自定义网路接口
+        var serverAddr = GlobalData.serverAddr + "php/adopt.php";
+		var data = {
+			userID: GlobalData.userID,
+            species: GlobalData.species,
+            gender: GlobalData.gender,
+            color: GlobalData.color,
+            userTitle: GlobalData.title,
+            petName: GlobalData.name,
+		};
+		HttpHelper.httpPost(serverAddr, data, function(data) {
+			if (data == -1) {
+				console.log("访问失败");
+			} else {
+				console.log('领养成功');
+			}
+        });
+        serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
+        data = {
+			userID: GlobalData.userID,
+		};
+        HttpHelper.httpPost(serverAddr, data, function(data) {
+			if (data == -1) {
+				console.log("访问失败");
+			} else {
+				console.log('后台自动更新进程开始运行');
+			}
+        });
         cc.director.loadScene("mainPage");
     },
 
