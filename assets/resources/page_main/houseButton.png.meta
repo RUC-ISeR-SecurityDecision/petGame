@@ -1,6 +1,6 @@
 {
   "ver": "2.3.3",
-  "uuid": "08750607-2b54-46c6-adf6-18c4383cf862",
+  "uuid": "c214e5e1-6269-4201-b9bc-de67d743096c",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -11,8 +11,8 @@
   "subMetas": {
     "houseButton": {
       "ver": "1.0.4",
-      "uuid": "253f9568-5177-4777-a352-6896cf88897d",
-      "rawTextureUuid": "08750607-2b54-46c6-adf6-18c4383cf862",
+      "uuid": "03b68018-a5f2-4a86-b03c-c8e22dd28026",
+      "rawTextureUuid": "c214e5e1-6269-4201-b9bc-de67d743096c",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
