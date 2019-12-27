@@ -500,8 +500,8 @@
     "relativePath": "resources"
   },
   "8cc7625f-c16e-400f-95d7-f603e1b5b9ab": {
-    "asset": 1577412342433,
-    "meta": 1577412342447,
+    "asset": 1577432148131,
+    "meta": 1577432148146,
     "relativePath": "main\\mainPage.fire"
   },
   "51bcab0c-5707-479d-af5f-026757688504": {
@@ -954,26 +954,6 @@
     "meta": 1576138314974,
     "relativePath": "resources\\page_adopt\\华康娃娃体W5.ttc"
   },
-  "d978a4b1-da53-453e-a388-55fc8b210ab5": {
-    "asset": 1576138246574,
-    "meta": 1576138314993,
-    "relativePath": "resources\\page_adopt\\领养page1效果图.png"
-  },
-  "10d6f228-8c51-4933-bdb5-33b378d3e28a": {
-    "asset": 1576138246574,
-    "meta": 1576138315012,
-    "relativePath": "resources\\page_adopt\\领养page2效果图.png"
-  },
-  "693152a7-c8e4-4b35-9110-3d4ab3e87965": {
-    "asset": 1576138246574,
-    "meta": 1576138315031,
-    "relativePath": "resources\\page_adopt\\领养page3效果图.png"
-  },
-  "a43f7191-df49-4c32-bea2-58931b220e36": {
-    "asset": 1576138246605,
-    "meta": 1576138315463,
-    "relativePath": "resources\\page_loading\\加载界面效果图.png"
-  },
   "cbdcab0c-f5b1-40d9-9b8a-b126baa75f21": {
     "asset": 1577063901122,
     "meta": 1577069159271,
@@ -1043,11 +1023,6 @@
     "asset": 1576138246605,
     "meta": 1576138315693,
     "relativePath": "resources\\page_main\\Inkfree.ttf"
-  },
-  "f76e57a8-1251-4b87-b4a2-b1b495e30184": {
-    "asset": 1576138246698,
-    "meta": 1576138315493,
-    "relativePath": "resources\\page_main\\主界面效果图.png"
   },
   "9ecf5d15-ce99-4284-b7b8-73c6abc0e0df": {
     "asset": 1576138246683,
@@ -2629,30 +2604,10 @@
     "meta": 1576138314922,
     "relativePath": "resources\\else\\enable.png"
   },
-  "dbe6d2cc-993b-4f1b-88a9-82359f155fdf": {
-    "asset": 1576138246386,
-    "meta": 1576138314932,
-    "relativePath": "resources\\else\\gender-male.png"
-  },
-  "162a23e8-8ca0-4239-814e-16350bf48c62": {
-    "asset": 1576138246386,
-    "meta": 1576138314928,
-    "relativePath": "resources\\else\\gender-female.png"
-  },
   "7bc7730e-b754-4f0d-88de-928db15af617": {
     "asset": 1576138246387,
     "meta": 1576138314938,
     "relativePath": "resources\\else\\profile.png"
-  },
-  "a63c32a3-694d-4e30-acb8-ef0125fe52d9": {
-    "asset": 1576138246388,
-    "meta": 1576138314946,
-    "relativePath": "resources\\else\\volume-.png"
-  },
-  "ee6b69e1-d1e7-4cb8-8803-9daa146e94a7": {
-    "asset": 1576138246387,
-    "meta": 1576138314954,
-    "relativePath": "resources\\else\\volume+.png"
   },
   "2e65bc17-955a-4c8a-9662-d894867f0106": {
     "asset": 1575355150810,
