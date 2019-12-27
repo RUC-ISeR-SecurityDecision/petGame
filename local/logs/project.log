@@ -391,3 +391,20 @@ Node path: "Canvas/personalInfo"
 Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
 Class ID: "5b733dN9epOQp2S5mmJ2CP6"
 
+2019-12-27T06:35:58.584Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/personalInfo"
+Asset url: "db://assets/personalInfo/personalInfo.fire"
+Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
+Class ID: "5b733dN9epOQp2S5mmJ2CP6"
+
+2019-12-27T06:43:06.250Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/personalInfo"
+Asset url: "db://assets/personalInfo/personalInfo.fire"
+Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
+Class ID: "5b733dN9epOQp2S5mmJ2CP6"
+
+2019-12-27T06:50:46.632Z - warn: Script attached to "personalInfo" is missing or invalid. Detailed information:
+Node path: "Canvas/personalInfo"
+Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
+Class ID: "5b733dN9epOQp2S5mmJ2CP6"
+
