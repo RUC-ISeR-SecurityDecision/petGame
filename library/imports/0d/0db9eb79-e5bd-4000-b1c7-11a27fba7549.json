@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "soundBg",
+    "texture": "0b83c0e3-d617-4258-b351-127c48b6b95f",
+    "atlas": "",
+    "rect": [
+      36,
+      257,
+      406,
+      217
+    ],
+    "offset": [
+      -1,
+      34.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

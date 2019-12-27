@@ -1,6 +1,6 @@
 {
   "ver": "2.3.3",
-  "uuid": "7ec0f137-e8b0-4182-8f86-0f1dd81d457b",
+  "uuid": "f046f1c5-ba30-4e36-a886-b9e66744bc4e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -11,8 +11,8 @@
   "subMetas": {
     "shopButton": {
       "ver": "1.0.4",
-      "uuid": "26992238-1e70-40dd-9f8b-e5f783a42c47",
-      "rawTextureUuid": "7ec0f137-e8b0-4182-8f86-0f1dd81d457b",
+      "uuid": "93396c9e-373d-42c9-a924-94b0ebff87b0",
+      "rawTextureUuid": "f046f1c5-ba30-4e36-a886-b9e66744bc4e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

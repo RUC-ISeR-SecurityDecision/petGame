@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "土豆",
+    "texture": "cd5006aa-1c39-42d8-9667-37b334f0866f",
+    "atlas": "",
+    "rect": [
+      44,
+      59,
+      319,
+      264
+    ],
+    "offset": [
+      -9,
+      21.5
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

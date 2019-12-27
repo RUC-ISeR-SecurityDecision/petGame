@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "drinking",
+    "texture": "7e1bc022-f4e5-4a59-95b2-7507c53c130e",
+    "atlas": "",
+    "rect": [
+      12,
+      4,
+      413,
+      413
+    ],
+    "offset": [
+      6,
+      2
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

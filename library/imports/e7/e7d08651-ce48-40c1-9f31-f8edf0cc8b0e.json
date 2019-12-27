@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "male_owl2",
+    "texture": "52dba902-0124-4118-aec3-ba70197aa470",
+    "atlas": "",
+    "rect": [
+      0,
+      91,
+      679,
+      758
+    ],
+    "offset": [
+      -6.5,
+      49
+    ],
+    "originalSize": [
+      692,
+      1038
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

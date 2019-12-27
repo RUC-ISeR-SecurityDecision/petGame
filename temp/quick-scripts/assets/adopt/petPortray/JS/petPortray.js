@@ -322,24 +322,24 @@ cc.Class({
             userTitle: GlobalData.title,
             petName: GlobalData.name
         };
-        HttpHelper.httpPost(serverAddr, data, function (data) {
-            if (data == -1) {
-                console.log("访问失败");
-            } else {
-                console.log('领养成功');
-            }
-        });
-        serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
-        data = {
-            userID: GlobalData.userID
+        /*HttpHelper.httpPost(serverAddr, data, function(data) {
+        	if (data == -1) {
+        		console.log("访问失败");
+        	} else {
+        		console.log('领养成功');
+        	}
+              });
+              serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
+              data = {
+        	userID: GlobalData.userID,
         };
-        HttpHelper.httpPost(serverAddr, data, function (data) {
-            if (data == -1) {
-                console.log("访问失败");
-            } else {
-                console.log('后台自动更新进程开始运行');
-            }
-        });
+              HttpHelper.httpPost(serverAddr, data, function(data) {
+        	if (data == -1) {
+        		console.log("访问失败");
+        	} else {
+        		console.log('后台自动更新进程开始运行');
+        	}
+              });*/
         cc.director.loadScene("mainPage");
     },
 

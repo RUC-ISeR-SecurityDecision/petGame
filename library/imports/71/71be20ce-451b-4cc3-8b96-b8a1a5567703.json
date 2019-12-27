@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tripping",
+    "texture": "d09e3f89-2000-4a7d-9bba-fda0076d9e19",
+    "atlas": "",
+    "rect": [
+      20,
+      26,
+      200,
+      194
+    ],
+    "offset": [
+      3.5,
+      -6.5
+    ],
+    "originalSize": [
+      233,
+      233
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

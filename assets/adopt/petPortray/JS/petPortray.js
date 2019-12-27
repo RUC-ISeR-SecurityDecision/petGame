@@ -314,7 +314,7 @@ cc.Class({
             userTitle: GlobalData.title,
             petName: GlobalData.name,
 		};
-		HttpHelper.httpPost(serverAddr, data, function(data) {
+		/*HttpHelper.httpPost(serverAddr, data, function(data) {
 			if (data == -1) {
 				console.log("访问失败");
 			} else {
@@ -331,7 +331,7 @@ cc.Class({
 			} else {
 				console.log('后台自动更新进程开始运行');
 			}
-        });
+        });*/
         cc.director.loadScene("mainPage");
     },
 

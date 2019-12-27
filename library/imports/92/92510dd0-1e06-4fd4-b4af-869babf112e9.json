@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "propertyBarIcon",
+    "texture": "5f5e1b56-1f8f-4bc1-bf23-da15cd9e2f56",
+    "atlas": "",
+    "rect": [
+      2,
+      4,
+      54,
+      50
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      57,
+      57
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

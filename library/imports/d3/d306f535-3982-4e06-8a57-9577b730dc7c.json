@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "玩具3",
+    "texture": "8411d5d3-730e-4b61-a219-e8b4787862a4",
+    "atlas": "",
+    "rect": [
+      41,
+      84,
+      354,
+      256
+    ],
+    "offset": [
+      5.5,
+      0.5
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

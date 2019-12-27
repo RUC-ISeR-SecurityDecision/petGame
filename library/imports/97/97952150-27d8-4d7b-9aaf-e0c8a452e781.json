@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "QA_Bg",
+    "texture": "650a8692-8b18-4a53-8638-3fe668af2608",
+    "atlas": "",
+    "rect": [
+      28,
+      96,
+      425,
+      577
+    ],
+    "offset": [
+      0.5,
+      15.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

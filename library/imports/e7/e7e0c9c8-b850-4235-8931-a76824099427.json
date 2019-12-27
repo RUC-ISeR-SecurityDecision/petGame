@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "刷子2",
+    "texture": "78d2a91c-88a9-4a8c-a57f-c7215d76c938",
+    "atlas": "",
+    "rect": [
+      257,
+      291,
+      2370,
+      1423
+    ],
+    "offset": [
+      24.5,
+      74.5
+    ],
+    "originalSize": [
+      2835,
+      2154
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "沐浴露",
+    "texture": "efbddb93-3fb1-4683-982a-cf8ed7af0080",
+    "atlas": "",
+    "rect": [
+      525,
+      178,
+      1045,
+      1704
+    ],
+    "offset": [
+      47.5,
+      -30
+    ],
+    "originalSize": [
+      2000,
+      2000
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

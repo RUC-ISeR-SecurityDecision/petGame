@@ -33,6 +33,7 @@ cc.Class({
         workBtn: cc.Sprite,
         homeBtn: cc.Sprite,
         sleepBtn: cc.Sprite,
+        settingBtn: cc.Sprite,
         functionBtn: cc.Button,
         bag: cc.Node, // 背包节点
         bagContent: cc.Layout, // 背包物品添加的父节点
@@ -196,7 +197,6 @@ cc.Class({
                             selectNode.on(cc.Node.EventType.TOUCH_END, self.onTouchEnd, self);
                             selectNode.on(cc.Node.EventType.TOUCH_CANCEL, self.onTouchCancel, self);
                         });
-                        console.log(bagItem);
                     });
                 });
             }
@@ -518,23 +518,27 @@ cc.Class({
         var actionSleepBtn = null;
         var actionWorkBtn = null;
         var actionTripBtn = null;
+        var actionSettingBtn = null;
         // 动作结束时触发回调函数，让功能按钮恢复使用
         var funcBtnEnd = cc.callFunc(function () {
             this.functionBtn.interactable = true;
         }, this, null);
         var actionPlusBtn = cc.sequence(cc.rotateBy(0.7, 360), funcBtnEnd);
         if (!this._isFunctionShow) {
-            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -100)), cc.fadeOut(0.7));
-            actionWorkBtn = cc.spawn(cc.moveBy(0.6, cc.v2(0, -194)), cc.fadeOut(0.7));
-            actionSleepBtn = cc.spawn(cc.moveBy(0.7, cc.v2(0, -288)), cc.fadeOut(0.7));
+            actionSleepBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, 60)), cc.fadeOut(0.7));
+            actionWorkBtn = cc.spawn(cc.moveBy(0.6, cc.v2(0, 120)), cc.fadeOut(0.7));
+            actionTripBtn = cc.spawn(cc.moveBy(0.7, cc.v2(0, 180)), cc.fadeOut(0.7));
+            actionSettingBtn = cc.spawn(cc.moveBy(0.8, cc.v2(0, 240)), cc.fadeOut(0.7));
         } else {
-            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, 100)), cc.fadeIn(0.5));
-            actionWorkBtn = cc.spawn(cc.moveBy(0.6, cc.v2(0, 194)), cc.fadeIn(0.5));
-            actionSleepBtn = cc.spawn(cc.moveBy(0.7, cc.v2(0, 288)), cc.fadeIn(0.5));
+            actionSleepBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -60)), cc.fadeIn(0.5));
+            actionWorkBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -120)), cc.fadeIn(0.5));
+            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -180)), cc.fadeIn(0.5));
+            actionSettingBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -240)), cc.fadeIn(0.5));
         }
         this.tripBtn.node.runAction(actionTripBtn);
         this.workBtn.node.runAction(actionWorkBtn);
         this.sleepBtn.node.runAction(actionSleepBtn);
+        this.settingBtn.node.runAction(actionSettingBtn);
         this.functionBtn.node.runAction(actionPlusBtn);
     },
 
@@ -1013,7 +1017,7 @@ cc.Class({
     onClickUserInfoBtn: function onClickUserInfoBtn() {
         //跳转到个人信息界面
         this.exit();
-        cc.director.loadScene('userInfo');
+        cc.director.loadScene('personalInfo');
     }
 
     // update (dt) {},

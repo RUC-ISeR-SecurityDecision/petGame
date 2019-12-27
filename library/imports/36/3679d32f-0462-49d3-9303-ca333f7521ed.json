@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "promptBg",
+    "texture": "62b2e37e-385c-4d76-b914-9ea8136d182c",
+    "atlas": "",
+    "rect": [
+      35,
+      146,
+      409,
+      483
+    ],
+    "offset": [
+      -0.5,
+      12.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

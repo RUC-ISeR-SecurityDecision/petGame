@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "female_owl3",
+    "texture": "3e6e9a5a-928d-4454-8132-2fcf39b4ab95",
+    "atlas": "",
+    "rect": [
+      0,
+      89,
+      689,
+      758
+    ],
+    "offset": [
+      -8.5,
+      61.5
+    ],
+    "originalSize": [
+      706,
+      1059
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
