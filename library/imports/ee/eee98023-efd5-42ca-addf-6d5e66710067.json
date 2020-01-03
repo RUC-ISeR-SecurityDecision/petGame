@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cd2-second",
+    "texture": "84924941-0aba-4131-827f-ccaa3aa56461",
+    "atlas": "",
+    "rect": [
+      388,
+      464,
+      128,
+      196
+    ],
+    "offset": [
+      -32,
+      -78
+    ],
+    "originalSize": [
+      968,
+      968
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

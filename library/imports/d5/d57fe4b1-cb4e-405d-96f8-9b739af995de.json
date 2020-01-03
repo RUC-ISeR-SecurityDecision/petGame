@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gotrip",
+    "texture": "abd4d33b-0e63-468f-8394-67ca01c91abd",
+    "atlas": "",
+    "rect": [
+      85,
+      40,
+      1164,
+      452
+    ],
+    "offset": [
+      0.5,
+      1
+    ],
+    "originalSize": [
+      1333,
+      534
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

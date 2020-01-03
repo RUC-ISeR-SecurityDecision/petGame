@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tripBtn",
+    "texture": "642519df-f819-4374-a282-9241c548ea10",
+    "atlas": "",
+    "rect": [
+      161,
+      16,
+      1083,
+      488
+    ],
+    "offset": [
+      0,
+      21
+    ],
+    "originalSize": [
+      1405,
+      562
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

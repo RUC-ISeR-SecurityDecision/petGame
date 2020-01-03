@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cd2-hour",
+    "texture": "ebda2747-dc80-4177-a2e0-ac56505003c1",
+    "atlas": "",
+    "rect": [
+      452,
+      368,
+      223,
+      157
+    ],
+    "offset": [
+      79.5,
+      37.5
+    ],
+    "originalSize": [
+      968,
+      968
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

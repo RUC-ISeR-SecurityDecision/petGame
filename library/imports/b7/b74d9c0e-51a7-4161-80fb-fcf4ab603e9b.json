@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cd2-minute",
+    "texture": "0625d2ab-cdfe-40cf-9a32-942f6acdda6d",
+    "atlas": "",
+    "rect": [
+      355,
+      311,
+      109,
+      160
+    ],
+    "offset": [
+      -74.5,
+      93
+    ],
+    "originalSize": [
+      968,
+      968
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

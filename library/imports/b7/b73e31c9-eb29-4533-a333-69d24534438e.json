@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "emotion",
+    "texture": "65f8c16a-6887-44fd-bc22-ce5c089e474a",
+    "atlas": "",
+    "rect": [
+      0,
+      10,
+      403,
+      403
+    ],
+    "offset": [
+      -11,
+      1
+    ],
+    "originalSize": [
+      425,
+      425
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

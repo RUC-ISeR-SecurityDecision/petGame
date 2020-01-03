@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dropIcon",
+    "texture": "4f8c3d7a-2f2a-48f5-a65d-0becd0108070",
+    "atlas": "",
+    "rect": [
+      27,
+      11,
+      246,
+      245
+    ],
+    "offset": [
+      0,
+      16.5
+    ],
+    "originalSize": [
+      300,
+      300
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

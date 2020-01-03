@@ -329,7 +329,7 @@ cc.Class({
                 self.image.spriteFrame = sp;
             }
         });
-        this.updateID = setInterval(this.queryPetStatus, interval);
+        // this.updateID = setInterval(this.queryPetStatus, interval);
     },
 
     /**

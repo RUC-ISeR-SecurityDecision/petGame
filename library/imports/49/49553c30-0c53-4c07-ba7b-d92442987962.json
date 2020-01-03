@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gowork",
+    "texture": "3ec1dea1-446b-402f-be49-ea9f6cc44a3d",
+    "atlas": "",
+    "rect": [
+      85,
+      40,
+      1164,
+      452
+    ],
+    "offset": [
+      0.5,
+      1
+    ],
+    "originalSize": [
+      1333,
+      534
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -21,12 +21,84 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        theme: {
+            get() {
+                return this._theme;
+            },
+            set(value) {
+                if (value < 0) {
+                    value = 0;
+                }
+                if (value > 3) {
+                    value = 3
+                }
+                if (value != this._theme) {
+                    let resPath = "bgPic/" + (value + 1);
+                    cc.loader.loadRes(resPath, cc.SpriteFrame, (err, sp) => {
+                        if (err) {
+                            console.log('failed to load sprite ' + resPath);
+                        } else {
+                            this.background.spriteFrame = sp;
+                        }
+                    });
+                    let color = new cc.Color();
+                    if (value == 0) {
+                        color.fromHEX("#ACE6BF");
+                        this.statusLayout.color = color;
+                        let status = this.statusLayout.children;
+                        for (let i = 0; i < status.length; i++) {
+                            const element = status[i];
+                            color.fromHEX('#7BFFABB4');
+                            if (element.getChildByName('level')) {
+                                element.getChildByName('level').color = color;
+                            }
+                        }
+                    } else if (value == 1) {
+                        color.fromHEX("#E2F0AD");
+                        this.statusLayout.color = color;
+                        let status = this.statusLayout.children;
+                        for (let i = 0; i < status.length; i++) {
+                            const element = status[i];
+                            color.fromHEX('#CBFA66B4');
+                            if (element.getChildByName('level')) {
+                                element.getChildByName('level').color = color;
+                            }
+                        }
+                    } else if (value == 2) {
+                        color.fromHEX("#FA972C");
+                        this.statusLayout.color = color;
+                        let status = this.statusLayout.children;
+                        for (let i = 0; i < status.length; i++) {
+                            const element = status[i];
+                            color.fromHEX('#FFB803B4');
+                            if (element.getChildByName('level')) {
+                                element.getChildByName('level').color = color;
+                            }
+                        }
+                    } else if (value == 3) {
+                        color.fromHEX("#B9D6E4");
+                        this.statusLayout.color = color;
+                        let status = this.statusLayout.children;
+                        for (let i = 0; i < status.length; i++) {
+                            const element = status[i];
+                            color.fromHEX('#5ED4F1B4');
+                            if (element.getChildByName('level')) {
+                                element.getChildByName('level').color = color;
+                            }
+                        }
+                    }
+                }
+                this._theme = value;
+            }
+        },
+        background: cc.Sprite,
+        statusLayout: cc.Node,
         profile: cc.Sprite,
         shop: cc.Sprite,
         tripBtn: cc.Sprite,
         workBtn: cc.Sprite,
         homeBtn: cc.Sprite,
-        sleepBtn: cc.Sprite,
+        sleepBtn: cc.Button,
         settingBtn: cc.Sprite,
         functionBtn: cc.Button,
         bag: cc.Node, // 背包节点
@@ -55,6 +127,7 @@ cc.Class({
                     this.closeBag(); // 不管什么值都要先关闭背包
                     if (this._isBagShow != value && value > 0) { // 如果点击不同背包，需要重新打开，例如打开食物背包的情况下，点击了洗澡背包
                         this._isBagShow = value;
+                        this.bag.stopAllActions();
                         this.openBag();
                     } else { // 如果是相同背包，则背包显示置为0，表示现在处于关闭状态   
                         this._isBagShow = 0;
@@ -91,7 +164,11 @@ cc.Class({
         sleepTimeID: 0,  //睡觉时间设置
 
         updateID: 0,  //用于退出该页面时清除interval
-        selectBagItemIndex: null,
+        selectBagItemIndex: 0,
+
+        // clock
+        clockCanvas: cc.Graphics,
+        sleepTimeLabel: cc.Label,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -99,6 +176,7 @@ cc.Class({
     onLoad() {
         // console.log(GlobalData);
         this.init();
+        // this.drawClock();
     },
 
     start() {
@@ -106,8 +184,19 @@ cc.Class({
     },
 
     loadBag: function () {
+        //  changed by qll on 20191226
+        let date = new Date();
+        let year = date.getFullYear(); //获取当前年份   
+        let month = date.getMonth() + 1; //获取当前月份   
+        let dat = date.getDate(); //获取当前日    
+        let hour = date.getHours(); //获取小时   
+        let minute = date.getMinutes(); //获取分钟   
+        let second = date.getSeconds(); //获取秒   
+        let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         let data = {
-            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
+            "operationTime": timeStr,
+            "details": "user",
         };
         let self = this;
         let serverAddr = 'https://www.llquruc.top/petGame/php/queryBag.php';
@@ -130,8 +219,7 @@ cc.Class({
     closeBag: function () {
         console.log("close bag");
         this.bagContent.node.destroyAllChildren();
-        // 提示框关闭动作部分：
-        let hide = cc.moveBy(0.2, cc.v2(-220, 0));
+        let hide = cc.moveTo(0.2, cc.v2(0, 600));
         this.bag.runAction(hide);
     },
     /**
@@ -188,14 +276,14 @@ cc.Class({
             }
         }
         // 提示框打开动作部分：
-        let show = cc.moveBy(0.2, cc.v2(220, 0));
+        let show = cc.moveTo(0.2, cc.v2(0, 100));
         self.bag.runAction(show);
-
     },
 
     //触摸移动；
     onTouchMove: function (event) {
         let self = this;
+        console.log("touch move");
         let selectItemName = self.bagItemArray[self.selectBagItemIndex].categoryID + '_' + self.bagItemArray[self.selectBagItemIndex].id;
         let copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
         let selectNode = self.bag.parent.getChildByName('itemPic');
@@ -246,6 +334,7 @@ cc.Class({
         let copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
         // 选中的物品
         let selectNode = self.bag.parent.getChildByName('itemPic');
+        selectNode.pauseSystemEvents(true);
         // 物品矩形框
         let pos = copyNode.parent.convertToWorldSpaceAR(copyNode.position);
         pos = self.bag.parent.convertToNodeSpaceAR(pos);
@@ -277,11 +366,12 @@ cc.Class({
                 selectNode.setPosition(copyNode.position);
                 copyNode.destroy();
                 self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+                selectNode.resumeSystemEvents(true);
             }, self, null);
             console.log(pos, selectNode.position);
-            let back = cc.sequence(cc.moveTo(0.5, pos.x, pos.y), backEnd);
+            let back = cc.sequence(cc.moveTo(0.2, pos.x, pos.y), backEnd);
             selectNode.runAction(back);
-            console.log("second");
+            console.log("touch end second");
             console.log(selectNode);
         }
     },
@@ -296,11 +386,12 @@ cc.Class({
         let copyNode = self.bagContent.node.getChildByName(selectItemName).getChildByName('itemPic');
         // 选中的物品
         let selectNode = self.bag.parent.getChildByName('itemPic');
+        selectNode.pauseSystemEvents(true);
         // 物品矩形框
         let pos = copyNode.parent.convertToWorldSpaceAR(copyNode.position);
         pos = self.bag.parent.convertToNodeSpaceAR(pos);
         let useRect = new cc.Rect(selectNode.x, selectNode.y, selectNode.width, selectNode.height);
-        console.log("touch cancel");
+        console.log("touch end");
         if (petRect.intersects(useRect)) { // 判断两个矩形框是否重叠
             // 矩形重叠说明进行喂食等操作
             // console.log(self.testNode.parent.parent.getChildByName('pet'));
@@ -311,22 +402,28 @@ cc.Class({
             } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 10) {
                 selectNode.parent.parent.getChildByName('pet').getComponent('pet').play(self.bagItemArray[self.selectBagItemIndex].id);
             }
-            // 实时刷新背包动态 - 待写/////////////////
-            /////////////////////////////////
             selectNode.setPosition(copyNode.position);
             copyNode.destroy();
             self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+            if (self.bagItemArray[self.selectBagItemIndex].number == 1) { // 该物品将用完，动态在背包中删除
+                self.bagContent.node.getChildByName(selectItemName).destroy();
+            } else {
+                self.bagItemArray[self.selectBagItemIndex].number -= 1;
+                console.log(self.bagContent.node.getChildByName(selectItemName).getChildByName('numberBlock').getChildByName('number'));
+                self.bagContent.node.getChildByName(selectItemName).getChildByName('numberBlock').getChildByName('number').getComponent(cc.Label).string = self.bagItemArray[self.selectBagItemIndex].number;
+            }
+
         } else {
             let backEnd = cc.callFunc(function () {
-                console.log(copyNode.position);
                 selectNode.setPosition(copyNode.position);
                 copyNode.destroy();
                 self.bagContent.node.getChildByName(selectItemName).addChild(selectNode);
+                selectNode.resumeSystemEvents(true);
             }, self, null);
             console.log(pos, selectNode.position);
-            let back = cc.sequence(cc.moveTo(0.1, pos.x, pos.y), backEnd);
+            let back = cc.sequence(cc.moveTo(0.2, pos.x, pos.y), backEnd);
             selectNode.runAction(back);
-            console.log("second");
+            console.log("touch cancel second");
             console.log(selectNode);
         }
     },
@@ -399,7 +496,7 @@ cc.Class({
      *  author: qll
      *  time: 2019/12/2
      */
-    login: function () {
+    login: function () {//  changed by qll on 20191226
         let flagContLoginReward = 0;
         let flagLoginReward = 0;
         // wx.login({
@@ -419,9 +516,9 @@ cc.Class({
         //         let serverAddr = GlobalData.serverAddr + "php/login.php";
         //         // 调用自定义网路接口进行登录操作
         //         let data = {
-        //             js_code: js_code,
-        //             loginTime: timeStr,
-        //             flagLocation: flagLocation,
+        //             "js_code": js_code,
+        //             "loginTime": timeStr,
+        //             "flagLocation": flagLocation,
         //         };
         //         HttpHelper.httpPost(serverAddr, data, function(res) {
         // 	        if (res == -1) {
@@ -479,6 +576,7 @@ cc.Class({
         // this.updateID = setInterval(this.autoUpdate, interval);
         this._isFunctionShow = true;
         this.loadBag();
+        this.theme = GlobalData.bgPicNum;
         // this.queryAttribute();
     },
 
@@ -511,7 +609,7 @@ cc.Class({
         } else {
             actionSleepBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -60)), cc.fadeIn(0.5));
             actionWorkBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -120)), cc.fadeIn(0.5));
-            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -180)), cc.fadeIn(0.5));            
+            actionTripBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -180)), cc.fadeIn(0.5));
             actionSettingBtn = cc.spawn(cc.moveBy(0.5, cc.v2(0, -240)), cc.fadeIn(0.5));
         }
         this.tripBtn.node.runAction(actionTripBtn);
@@ -584,11 +682,11 @@ cc.Class({
         });
     },
 
-    queryAttribute: function () {
+    queryAttribute: function () {//  changed by qll on 20191226
         let serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
         // 调用自定义网路接口进行查询
         let data = {
-            userID: GlobalData.userID
+            "userID": GlobalData.userID
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -681,6 +779,60 @@ cc.Class({
 
     //点击获取奖励
     //参数说明：1：登录奖励；2：连续登录奖励；3：升级奖励；4：随机奖励
+    onClickGetReward: function (rewardCategoryID) {//  changed by qll on 20191226
+        let date = new Date();
+        let year = date.getFullYear(); //获取当前年份   
+        let month = date.getMonth() + 1; //获取当前月份   
+        let dat = date.getDate(); //获取当前日    
+        let hour = date.getHours(); //获取小时   
+        let minute = date.getMinutes(); //获取分钟   
+        let second = date.getSeconds(); //获取秒   
+        let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+        let serverAddr = GlobalData.serverAddr + "php/getReward.php";
+        let details = 'Category:' + rewardCategoryID.toString();
+        let rewardCoin = 0;
+        let rewardGrowth = 0;
+        let rewardItemID = 0;
+        let rewardItemCateID = 0;
+        if (rewardCategoryID == 1) {  //登录奖励
+            rewardCoin = GlobalData.loginRewardCoin;
+            rewardGrowth = GlobalData.loginRewardGrowth;
+        }
+        else if (rewardCategoryID == 2) {  //连续登录奖励
+            rewardCoin = GlobalData.contLoginRewardCoin;
+            rewardGrowth = GlobalData.contLoginRewardGrowth;
+        }
+        else if (rewardCategoryID == 3) {  //升级奖励
+            rewardCoin = GlobalData.upgradeRewardCoin;
+            rewardItemID = GlobalData.upgradeRewardItemID;
+            rewardItemCateID = GlobalData.upgradeRewardItemCateID;
+        }
+        else {  //随机奖励
+            rewardItemID = GlobalData.randomRewardItemID;
+            rewardItemCateID = GlobalData.randomRewardItemCateID;
+        }
+        // 调用自定义网路接口领取奖励
+        let data = {
+            "userID": GlobalData.userID,
+            "getTime": timeStr,
+            "rewardCoin": rewardCoin,
+            "rewardGrowth": rewardGrowth,
+            "rewardItemID": rewardItemID,
+            "rewardItemCateID": rewardItemCateID,
+            "details": details,
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
+                console.log(res);
+            }
+        });
+    },
+
+
+    //点击获取奖励
+    //参数说明：1：登录奖励；2：连续登录奖励；3：升级奖励；4：随机奖励
     onClickGetReward: function (rewardCategoryID) {
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -742,7 +894,7 @@ cc.Class({
         this.isBagShow = 2;
     },
 
-    onClickDrinkBtn: function () {  //点击喝水按钮
+    onClickDrinkBtn: function () {  //点击喝水按钮 //  changed by qll on 20191226
         console.log("点击喝水");
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -756,9 +908,9 @@ cc.Class({
         let details = '';
         // 调用自定义网路接口
         let data = {
-            userID: GlobalData.userID,
-            operationTime: timeStr,
-            details: details,
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -770,11 +922,13 @@ cc.Class({
         });
     },
 
+
     onClickPlayBtn: function () {  //点击玩耍按钮
         console.log("点击玩耍");
         this._isPlaySettingShow = true;  //显示玩耍子类别按钮
     },
 
+    //  changed by qll on 20191226
     onClickSubPlayBtn: function (playID) {  //点击玩耍子类别按钮
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -788,10 +942,10 @@ cc.Class({
         let details = '';
         // 调用自定义网路接口
         let data = {
-            userID: GlobalData.userID,
-            operationTime: timeStr,
-            playID: playID,
-            details: details,
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "playID": playID,
+            "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -802,6 +956,7 @@ cc.Class({
             }
         });
     },
+
 
     startCountDown: function (operationName, time, question, answer, picAddr) {  //该函数待实现
         //参数的意义：operationName表示到底是为了什么操作而进行倒计时（work或trip或sleep）
@@ -836,6 +991,7 @@ cc.Class({
         this.workTimeID = workTimeID;
     },
 
+    //  changed by qll on 20191226
     onClickConfirmWork: function () {//完成所有设置后，点击“去打工”
         console.log("确认打工");
         let date = new Date();
@@ -851,11 +1007,11 @@ cc.Class({
         let instance = this;
         // 调用自定义网路接口
         let data = {
-            userID: GlobalData.userID,
-            operationTime: timeStr,
-            workTimeID: instance.workTimeID,
-            workTypeID: instance.workTypeID,
-            details: details,
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "workTimeID": instance.workTimeID,
+            "workTypeID": instance.workTypeID,
+            "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -867,6 +1023,7 @@ cc.Class({
             }
         });
     },
+
 
     onClickTripBtn: function () {  //点击主界面上的旅游按钮
         console.log("点击旅游");
@@ -889,6 +1046,7 @@ cc.Class({
         this.tripTimeID = tripTimeID;
     },
 
+    //  changed by qll on 20191226
     onClickConfirmTrip: function () {//完成所有设置后，点击“去旅游”
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -903,11 +1061,11 @@ cc.Class({
         let instance = this;
         // 调用自定义网路接口
         let data = {
-            userID: GlobalData.userID,
-            operationTime: timeStr,
-            tripTimeID: instance.tripTimeID,
-            tripLocID: instance.tripLocID,
-            details: details,
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "tripTimeID": instance.tripTimeID,
+            "tripLocID": instance.tripLocID,
+            "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -920,16 +1078,42 @@ cc.Class({
         });
     },
 
+
+    //  changed by wang-c on 20200103
     onClickSleepBtn: function () {  //点击主界面上的睡觉按钮
         console.log("点击睡觉");
         this._isSleepSettingShow = true;  //显示睡觉设置框
+        this.sleepCounter = this.sleepTotalTime;
+        this.clockCanvas.node.parent.active = true;
+        this.pet.active = false;
+        this.clockCanvas.counter = 30; // 睡觉计数器
+        this.sleepBtn.interactable = false; // ps：更好的办法是修改睡觉的flag，通过修改flag把该禁用的按钮全部禁用
+        let self = this;
+        this.clockCanvas.callback = function () {
+            this.counter--;
+            if (this.counter < 1) {
+                this.unschedule(this.callback);
+                this.node.parent.active = false;
+                self.pet.active = true;
+                self.sleepBtn.interactable = true;
+            }
+            this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
+            this.circle(0, 0, 75);
+            this.fill();
+            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / 30 * Math.PI, false);
+            this.stroke();
+        }
+        // 计时函数，每一秒执行一次
+        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
     },
+
 
     onClickSleepTimeBtn: function (sleepTimeID) {  //点击睡觉时间设置按钮
         console.log('设置睡觉时间为：', sleepTimeID);
         this.sleepTimeID = sleepTimeID;
     },
 
+    //  changed by qll on 20191226
     onClickConfirmSleep: function () {//完成所有设置后，点击“去睡觉”
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -944,10 +1128,10 @@ cc.Class({
         let instance = this;
         // 调用自定义网路接口
         let data = {
-            userID: GlobalData.userID,
-            operationTime: timeStr,
-            sleepTimeID: instance.sleepTimeID,
-            details: details,
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "sleepTimeID": instance.sleepTimeID,
+            "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -962,7 +1146,7 @@ cc.Class({
 
     onClickHomeBtn: function () {  //跳转到小屋界面
         this.exit();
-        cc.director.loadScene('home');
+        cc.director.loadScene('house');
     },
 
     onClickSettingBtn: function () {  //跳转到设置界面

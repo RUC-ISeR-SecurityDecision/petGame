@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "workBtn",
+    "texture": "6e0e2d88-e2a7-475b-820e-09b3a1a8c027",
+    "atlas": "",
+    "rect": [
+      131,
+      14,
+      1083,
+      489
+    ],
+    "offset": [
+      -26,
+      21
+    ],
+    "originalSize": [
+      1397,
+      559
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

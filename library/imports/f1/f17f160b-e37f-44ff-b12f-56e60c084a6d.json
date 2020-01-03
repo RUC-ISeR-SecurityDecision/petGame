@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dropDownBg",
+    "texture": "a0f98c1f-fabf-49e8-a29a-65e58b998bf3",
+    "atlas": "",
+    "rect": [
+      20,
+      17,
+      182,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      222,
+      67
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

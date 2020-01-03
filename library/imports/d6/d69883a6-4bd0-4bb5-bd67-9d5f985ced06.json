@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "workTripSleepBg",
+    "texture": "2d35804b-7b2d-4374-98c7-3eb6fe201217",
+    "atlas": "",
+    "rect": [
+      40,
+      156,
+      416,
+      317
+    ],
+    "offset": [
+      8,
+      85.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gosleep",
+    "texture": "0d4d886b-e400-48cd-9338-dc1b3a04f1f5",
+    "atlas": "",
+    "rect": [
+      85,
+      40,
+      1164,
+      452
+    ],
+    "offset": [
+      0.5,
+      1
+    ],
+    "originalSize": [
+      1333,
+      534
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

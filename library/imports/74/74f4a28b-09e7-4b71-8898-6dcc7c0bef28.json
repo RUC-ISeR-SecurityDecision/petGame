@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "upGradeLoginPrompt",
+    "texture": "73b4c879-1181-44c6-a90b-afc416cb453f",
+    "atlas": "",
+    "rect": [
+      106,
+      308,
+      288,
+      117
+    ],
+    "offset": [
+      10,
+      33.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

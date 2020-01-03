@@ -1,416 +1,300 @@
-2019-12-23T02:45:52.699Z - normal: Load ~/.CocosCreator/settings.json
-2019-12-23T02:45:52.764Z - normal: Initializing Asset Database
-2019-12-23T02:45:52.789Z - normal: checking language setting...
-2019-12-23T02:45:52.789Z - normal: Language: zh
-2019-12-23T02:45:54.003Z - success: preview server running at http://localhost:7456
-2019-12-23T02:45:54.007Z - success: protocol editor-framework registered
-2019-12-23T02:45:54.007Z - success: protocol app registered
-2019-12-23T02:45:54.007Z - success: protocol theme registered
-2019-12-23T02:45:54.007Z - success: protocol packages registered
-2019-12-23T02:45:54.007Z - success: protocol uuid registerred
-2019-12-23T02:45:54.007Z - success: protocol db registerred
-2019-12-23T02:45:54.007Z - success: protocol thumbnail registerred
-2019-12-23T02:45:54.007Z - success: protocol unpack registerred
-2019-12-23T02:45:54.007Z - success: protocol disable-commonjs registerred
-2019-12-23T02:45:54.113Z - normal: connected!
-2019-12-23T02:45:54.115Z - normal: Check project F:\petGame
-2019-12-23T02:45:54.119Z - normal: Initializing project F:\petGame
-2019-12-23T02:45:54.453Z - normal: Initializing Cocos2d
-2019-12-23T02:45:55.438Z - normal: Initializing engine extends
-2019-12-23T02:45:55.604Z - success: adapters loaded
-2019-12-23T02:45:55.611Z - success: asset-db-debugger loaded
-2019-12-23T02:45:55.767Z - success: fb-audience-network loaded
-2019-12-23T02:45:55.981Z - success: fb-live-stream loaded
-2019-12-23T02:45:55.985Z - success: google-play-instant loaded
-2019-12-23T02:45:56.003Z - success: huawei-runtime loaded
-2019-12-23T02:45:56.419Z - success: cpk-publish loaded
-2019-12-23T02:45:56.420Z - success: jsb-adapter loaded
-2019-12-23T02:45:56.424Z - success: oppo-runtime loaded
-2019-12-23T02:45:56.438Z - success: package-manager loaded
-2019-12-23T02:45:56.460Z - success: runtime-dev-tools loaded
-2019-12-23T02:45:56.470Z - success: sdkbox loaded
-2019-12-23T02:45:56.481Z - success: ui-kit-preview-extra loaded
-2019-12-23T02:45:56.487Z - success: ui-kit-preview loaded
-2019-12-23T02:45:56.502Z - success: vivo-runtime loaded
-2019-12-23T02:45:56.504Z - success: alipay-minigame loaded
-2019-12-23T02:45:56.547Z - success: assets loaded
-2019-12-23T02:45:56.559Z - success: baidugame-opendata loaded
-2019-12-23T02:45:56.561Z - success: baidugame loaded
-2019-12-23T02:45:56.582Z - success: builder loaded
-2019-12-23T02:45:56.885Z - success: cocos-services loaded
-2019-12-23T02:45:56.901Z - success: console loaded
-2019-12-23T02:45:56.911Z - success: fb-instant-games loaded
-2019-12-23T02:45:56.915Z - success: game-window loaded
-2019-12-23T02:45:56.916Z - success: google-instant-games loaded
-2019-12-23T02:45:56.919Z - success: hierarchy loaded
-2019-12-23T02:45:56.933Z - success: inspector loaded
-2019-12-23T02:45:56.934Z - success: keystore loaded
-2019-12-23T02:45:56.938Z - success: node-library loaded
-2019-12-23T02:45:56.939Z - success: open-recent-items loaded
-2019-12-23T02:45:56.940Z - success: package-asset loaded
-2019-12-23T02:45:56.941Z - success: preferences loaded
-2019-12-23T02:45:56.943Z - success: project-exporter loaded
-2019-12-23T02:45:56.946Z - success: project-importer loaded
-2019-12-23T02:45:56.949Z - success: project-settings loaded
-2019-12-23T02:45:56.954Z - success: scene loaded
-2019-12-23T02:45:56.955Z - success: simulator-debugger loaded
-2019-12-23T02:45:56.956Z - success: sprite-editor loaded
-2019-12-23T02:45:56.960Z - success: store loaded
-2019-12-23T02:45:56.964Z - success: timeline loaded
-2019-12-23T02:45:56.969Z - success: wechatgame-opendata loaded
-2019-12-23T02:45:56.974Z - success: wechatgame loaded
-2019-12-23T02:45:56.983Z - success: xiaomi-runtime loaded
-2019-12-23T02:45:57.865Z - warn: [db-task][init] uuid collision, the uuid(b237377e-c73a-4fa1-b391-b1dced6c4f4b) for F:\petGame\assets\resources\page_adopt is already used. A new uuid(5620a299-c313-482c-9cc2-dfd248499eb4) will be assigned.
-2019-12-23T02:45:57.893Z - warn: [db-task][init] uuid collision, the uuid(395284b6-4ba4-41ed-a262-3f24acdf31ef) for F:\petGame\assets\resources\page_adopt\adopt_bg.png is already used. A new uuid(1c950f73-83f9-4b92-a879-4ee6a15f4a07) will be assigned.
-2019-12-23T02:45:57.894Z - warn: [db-task][init] uuid collision, the uuid(0e5130b9-f7c0-4527-b323-e20a400df4aa) for F:\petGame\assets\resources\page_adopt\adopt_bg.png\adopt_bg is already used. A new uuid(8efec51a-63e6-4002-a3c6-ececf0545223) will be assigned.
-2019-12-23T02:45:57.895Z - warn: [db-task][init] uuid collision, the uuid(f5ee2cc6-ab4a-4e30-8602-d2f49f2130d7) for F:\petGame\assets\resources\page_adopt\box1.png is already used. A new uuid(e85d72e1-a7bc-4da0-b193-d8c4bc77dc3d) will be assigned.
-2019-12-23T02:45:57.895Z - warn: [db-task][init] uuid collision, the uuid(a10e3025-e87e-4976-aecb-f4106264c229) for F:\petGame\assets\resources\page_adopt\box1.png\box1 is already used. A new uuid(b192ac38-2897-4c35-b570-8e14dc9feefd) will be assigned.
-2019-12-23T02:45:57.897Z - warn: [db-task][init] uuid collision, the uuid(48238cf0-7fee-408d-83fb-b61119691307) for F:\petGame\assets\resources\page_adopt\color_1.png is already used. A new uuid(5959087c-eab0-419d-9575-5c473a8e7ffe) will be assigned.
-2019-12-23T02:45:57.897Z - warn: [db-task][init] uuid collision, the uuid(bd10ca0e-e1e8-4d81-90ed-ae38bc77f8eb) for F:\petGame\assets\resources\page_adopt\color_1.png\color_1 is already used. A new uuid(3e1e1c47-abe4-4117-b275-21e2f8f22f3c) will be assigned.
-2019-12-23T02:45:57.898Z - warn: [db-task][init] uuid collision, the uuid(d5d13630-4ebc-4df9-a966-803e4d04368e) for F:\petGame\assets\resources\page_adopt\color_2.png is already used. A new uuid(cf9f8158-7148-4472-926c-e125be443d1b) will be assigned.
-2019-12-23T02:45:57.899Z - warn: [db-task][init] uuid collision, the uuid(4b111959-dcad-4b6f-81ca-c8bdf5be9d9a) for F:\petGame\assets\resources\page_adopt\color_2.png\color_2 is already used. A new uuid(50af6e3b-e281-4df1-a670-91b864d47320) will be assigned.
-2019-12-23T02:45:57.900Z - warn: [db-task][init] uuid collision, the uuid(2b64e3d8-84b1-43e7-9994-0fd6a59af266) for F:\petGame\assets\resources\page_adopt\color_3.png is already used. A new uuid(f9c30f2f-04ba-45ad-8fc2-03842b0c698a) will be assigned.
-2019-12-23T02:45:57.901Z - warn: [db-task][init] uuid collision, the uuid(7ee00c37-422c-4d8f-a014-3a23b02b5953) for F:\petGame\assets\resources\page_adopt\color_3.png\color_3 is already used. A new uuid(fc4e2a9d-4a43-410f-993a-7fa0ff87ffcf) will be assigned.
-2019-12-23T02:45:57.902Z - warn: [db-task][init] uuid collision, the uuid(65089d17-8a55-4d93-aafb-aae363054bb2) for F:\petGame\assets\resources\page_adopt\color.png is already used. A new uuid(a3351ec3-75cd-49b2-ad83-0b162ea455b2) will be assigned.
-2019-12-23T02:45:57.902Z - warn: [db-task][init] uuid collision, the uuid(290200ca-e2dc-46a4-a961-55f4aff4883f) for F:\petGame\assets\resources\page_adopt\color.png\color is already used. A new uuid(9c4879dc-8c79-4299-b38a-9b23723ddce2) will be assigned.
-2019-12-23T02:45:57.903Z - warn: [db-task][init] uuid collision, the uuid(4db0d0ee-626d-41cf-8b46-d2e3f40afa73) for F:\petGame\assets\resources\page_adopt\completeButton.png is already used. A new uuid(0fb2a3cd-5109-4755-9dc0-caec849bf31f) will be assigned.
-2019-12-23T02:45:57.904Z - warn: [db-task][init] uuid collision, the uuid(b87791de-761d-413b-8e07-464332fbd608) for F:\petGame\assets\resources\page_adopt\completeButton.png\completeButton is already used. A new uuid(e11dcdbd-46c9-4f42-85a9-d9383e1044dd) will be assigned.
-2019-12-23T02:45:57.917Z - warn: [db-task][init] uuid collision, the uuid(98a21fbb-6183-407f-a27c-0effd08613cc) for F:\petGame\assets\resources\page_adopt\next1.png is already used. A new uuid(544fcd8d-9b7e-4391-b653-be732cbfa544) will be assigned.
-2019-12-23T02:45:57.917Z - warn: [db-task][init] uuid collision, the uuid(7077899c-bf30-4288-8d25-9b2c8befc88f) for F:\petGame\assets\resources\page_adopt\next1.png\next1 is already used. A new uuid(6822fd32-cbb5-49bd-9d56-ec9097c0071b) will be assigned.
-2019-12-23T02:45:57.919Z - warn: [db-task][init] uuid collision, the uuid(57116834-5a1b-46cc-bb1e-15addaf2d3d3) for F:\petGame\assets\resources\page_adopt\next2.png is already used. A new uuid(fc67f96f-096b-4454-9812-488ceaf80cf4) will be assigned.
-2019-12-23T02:45:57.919Z - warn: [db-task][init] uuid collision, the uuid(5d2e874f-9bf0-4160-a945-3bc2996abc2e) for F:\petGame\assets\resources\page_adopt\next2.png\next2 is already used. A new uuid(3e564377-64a8-46d4-837c-e9b09724e89c) will be assigned.
-2019-12-23T02:45:57.920Z - warn: [db-task][init] uuid collision, the uuid(fb3e5aad-2bc9-49a8-86c4-2a2abae8e6af) for F:\petGame\assets\resources\page_adopt\next3.png is already used. A new uuid(ae61b00c-f13e-4411-92f7-96f0fe336959) will be assigned.
-2019-12-23T02:45:57.921Z - warn: [db-task][init] uuid collision, the uuid(44111b40-b71b-47f3-b240-630d6fa93901) for F:\petGame\assets\resources\page_adopt\next3.png\next3 is already used. A new uuid(e1483b53-8bcc-4fc5-9d90-c21b1e597538) will be assigned.
-2019-12-23T02:45:57.923Z - warn: [db-task][init] uuid collision, the uuid(82b93928-d35e-4496-bbd7-841148167197) for F:\petGame\assets\resources\page_adopt\sex.png is already used. A new uuid(02eb0f3d-2a74-42ab-8619-b6f7516cffb3) will be assigned.
-2019-12-23T02:45:57.923Z - warn: [db-task][init] uuid collision, the uuid(4ac6d43d-113d-4144-b2f8-7add608be63a) for F:\petGame\assets\resources\page_adopt\sex.png\sex is already used. A new uuid(c0a9d9b2-2547-40e4-b596-2f5a9726b4ee) will be assigned.
-2019-12-23T02:45:57.924Z - warn: [db-task][init] uuid collision, the uuid(b49a8ffe-e53b-4e1c-bab1-cd2bd72b0c07) for F:\petGame\assets\resources\page_adopt\species.png is already used. A new uuid(d8b00495-c266-4577-89c7-43ad39638b1e) will be assigned.
-2019-12-23T02:45:57.925Z - warn: [db-task][init] uuid collision, the uuid(8bc0267d-55d9-498a-96c1-05b98e572ec0) for F:\petGame\assets\resources\page_adopt\species.png\species is already used. A new uuid(e8cd218f-2cef-409b-a891-62a5ef0e1e28) will be assigned.
-2019-12-23T02:45:57.926Z - warn: [db-task][init] uuid collision, the uuid(205b399e-7948-49c5-80ac-ab4d4d0b59ba) for F:\petGame\assets\resources\page_loading is already used. A new uuid(8daa4284-98f1-4494-940c-70b6b4197673) will be assigned.
-2019-12-23T02:45:57.947Z - warn: [db-task][init] uuid collision, the uuid(8f601d0c-c99d-44ac-b16f-396de7637604) for F:\petGame\assets\resources\page_loading\heart.png is already used. A new uuid(3cf188da-e794-48a9-a027-a278aa6c0d3d) will be assigned.
-2019-12-23T02:45:57.948Z - warn: [db-task][init] uuid collision, the uuid(72b26a54-f138-481c-aa69-ee1603b74ca4) for F:\petGame\assets\resources\page_loading\heart.png\heart is already used. A new uuid(6623b632-c2af-4585-b2fd-9f408cf42158) will be assigned.
-2019-12-23T02:45:57.948Z - warn: [db-task][init] uuid collision, the uuid(ba3fafff-3d50-47ad-9d48-98ba6bbe973b) for F:\petGame\assets\resources\page_loading\load_bg.png is already used. A new uuid(7f462536-138c-4c72-87c3-9f76a5e081a5) will be assigned.
-2019-12-23T02:45:57.949Z - warn: [db-task][init] uuid collision, the uuid(ec443f31-ae22-4609-9b89-886e68c96fc8) for F:\petGame\assets\resources\page_loading\load_bg.png\load_bg is already used. A new uuid(f55854b4-2f0d-46b6-aa24-898121956ef6) will be assigned.
-2019-12-23T02:45:57.949Z - warn: [db-task][init] uuid collision, the uuid(70dd40b3-1044-456a-913f-946d986e078b) for F:\petGame\assets\resources\page_loading\loading.png is already used. A new uuid(8f9da4e0-b61c-4e5a-9df9-7db7f420da63) will be assigned.
-2019-12-23T02:45:57.950Z - warn: [db-task][init] uuid collision, the uuid(a3792f0d-743f-4ea0-b2bc-0cd18afd7556) for F:\petGame\assets\resources\page_loading\loading.png\loading is already used. A new uuid(fc0ad16a-eb08-405d-9c33-93335fcf94f0) will be assigned.
-2019-12-23T02:45:57.954Z - warn: [db-task][init] uuid collision, the uuid(a6256187-26e0-41ba-a597-0633fc9eaf16) for F:\petGame\assets\resources\page_loading\startButton.png is already used. A new uuid(62e0ab21-775b-4bc2-8083-6c0d2d326f94) will be assigned.
-2019-12-23T02:45:57.954Z - warn: [db-task][init] uuid collision, the uuid(d7e6fca8-4daa-4054-826b-16c74d18bddf) for F:\petGame\assets\resources\page_loading\startButton.png\startButton is already used. A new uuid(c4676b3a-30f1-4d40-a347-5d22d69f5f61) will be assigned.
-2019-12-23T02:45:57.955Z - warn: [db-task][init] uuid collision, the uuid(d0311a05-5d45-4c3d-b0ad-b184eaa18129) for F:\petGame\assets\resources\page_main is already used. A new uuid(c67699a2-0724-4ade-abe0-643acaa271d8) will be assigned.
-2019-12-23T02:45:57.956Z - warn: [db-task][init] uuid collision, the uuid(cbdcab0c-f5b1-40d9-9b8a-b126baa75f21) for F:\petGame\assets\resources\page_main\addButton2.png is already used. A new uuid(c157fdb7-bd6a-4140-ab05-055483623e48) will be assigned.
-2019-12-23T02:45:57.957Z - warn: [db-task][init] uuid collision, the uuid(b0e1d9d9-024f-4d23-a41a-865e6bd1afe6) for F:\petGame\assets\resources\page_main\addButton2.png\addButton2 is already used. A new uuid(a4cec4fe-5415-4f77-a826-3ffa454948d8) will be assigned.
-2019-12-23T02:45:57.967Z - warn: [db-task][init] uuid collision, the uuid(143f6c49-30c2-42d0-9106-d3e086a95813) for F:\petGame\assets\resources\page_main\bg_4.png is already used. A new uuid(c4e68d70-be9d-4217-8705-644ce26726c4) will be assigned.
-2019-12-23T02:45:57.967Z - warn: [db-task][init] uuid collision, the uuid(48f7c629-f186-410e-8f6b-fc87b1e7966e) for F:\petGame\assets\resources\page_main\bg_4.png\bg_4 is already used. A new uuid(a47f3c5b-99b8-4b0d-8b34-5d19aaa2581f) will be assigned.
-2019-12-23T02:45:57.968Z - warn: [db-task][init] uuid collision, the uuid(5baaa062-bab4-4ee8-af8d-bfb7f5834be3) for F:\petGame\assets\resources\page_main\bg.png is already used. A new uuid(f702cb09-6727-4085-91e5-75b6faa40966) will be assigned.
-2019-12-23T02:45:57.969Z - warn: [db-task][init] uuid collision, the uuid(c66279b7-c8b9-4515-b256-8258adf77d8b) for F:\petGame\assets\resources\page_main\bg.png\bg is already used. A new uuid(1fa8d097-1697-446d-86ca-b1fd0921c079) will be assigned.
-2019-12-23T02:45:57.977Z - warn: [db-task][init] uuid collision, the uuid(504845ce-2c62-40f8-a187-f37551060c03) for F:\petGame\assets\resources\page_main\drinking.png is already used. A new uuid(7e1bc022-f4e5-4a59-95b2-7507c53c130e) will be assigned.
-2019-12-23T02:45:57.978Z - warn: [db-task][init] uuid collision, the uuid(77eb2706-552a-4f2e-b8da-a1e037248c84) for F:\petGame\assets\resources\page_main\drinking.png\drinking is already used. A new uuid(2f4f0f23-b571-459f-ace0-c69fa0f706f7) will be assigned.
-2019-12-23T02:45:57.980Z - warn: [db-task][init] uuid collision, the uuid(5ad6564e-b29a-460d-aecf-4a971050cd53) for F:\petGame\assets\resources\page_main\eating.png is already used. A new uuid(eaa1eafe-c61e-493b-b104-6a59ff1ea9de) will be assigned.
-2019-12-23T02:45:57.980Z - warn: [db-task][init] uuid collision, the uuid(4fef97bc-9df5-416a-88a1-7d452d298d14) for F:\petGame\assets\resources\page_main\eating.png\eating is already used. A new uuid(188d21fc-a66a-4545-8754-8f8722137d14) will be assigned.
-2019-12-23T02:45:57.981Z - warn: [db-task][init] uuid collision, the uuid(69c3a6c1-2828-4226-ae35-74e32747d1e4) for F:\petGame\assets\resources\page_main\emotion.png is already used. A new uuid(bf451dca-1ce0-473e-aaef-05e2d593d302) will be assigned.
-2019-12-23T02:45:57.982Z - warn: [db-task][init] uuid collision, the uuid(29e62797-6d0e-4e9e-8884-0decd1e49006) for F:\petGame\assets\resources\page_main\emotion.png\emotion is already used. A new uuid(3a7387c6-b06f-4139-b22a-d1af8823e21d) will be assigned.
-2019-12-23T02:45:57.983Z - warn: [db-task][init] uuid collision, the uuid(be3d814c-86a8-44d7-9962-8dac296b5b44) for F:\petGame\assets\resources\page_main\energy.png is already used. A new uuid(72351eb8-eae4-45fc-96f5-496f9490bcbe) will be assigned.
-2019-12-23T02:45:57.983Z - warn: [db-task][init] uuid collision, the uuid(158c987b-c3de-4a57-ab8b-0cf171d3c3ac) for F:\petGame\assets\resources\page_main\energy.png\energy is already used. A new uuid(70140578-997b-46b5-8055-ad2f3d48dbed) will be assigned.
-2019-12-23T02:45:57.992Z - warn: [db-task][init] uuid collision, the uuid(c2b72cd8-ba09-4b47-bd85-547a65cfab78) for F:\petGame\assets\resources\page_main\home.png is already used. A new uuid(fb05d9b2-91ff-4713-abc9-aa80e0d1c5a7) will be assigned.
-2019-12-23T02:45:57.992Z - warn: [db-task][init] uuid collision, the uuid(735be47e-4a30-4fd2-a182-b68cc6137d55) for F:\petGame\assets\resources\page_main\home.png\home is already used. A new uuid(e222d335-000e-4e61-b4a7-a321853da8cf) will be assigned.
-2019-12-23T02:45:57.993Z - warn: [db-task][init] uuid collision, the uuid(cb5223c4-4e58-4ffe-9c55-77b49808174a) for F:\petGame\assets\resources\page_main\houseButton.png is already used. A new uuid(08750607-2b54-46c6-adf6-18c4383cf862) will be assigned.
-2019-12-23T02:45:57.994Z - warn: [db-task][init] uuid collision, the uuid(3ee13203-9068-4fb1-beb8-2f5e22de993d) for F:\petGame\assets\resources\page_main\houseButton.png\houseButton is already used. A new uuid(253f9568-5177-4777-a352-6896cf88897d) will be assigned.
-2019-12-23T02:45:57.995Z - warn: [db-task][init] uuid collision, the uuid(03af1126-53a0-4018-b0db-823a4a596c59) for F:\petGame\assets\resources\page_main\money_level.png is already used. A new uuid(4843a98e-e550-4049-b817-bcc16c7b39c6) will be assigned.
-2019-12-23T02:45:57.995Z - warn: [db-task][init] uuid collision, the uuid(62793056-0ad8-458a-aa4a-4f202826b9f2) for F:\petGame\assets\resources\page_main\money_level.png\money_level is already used. A new uuid(768d211b-9d70-4507-9258-948d78eab2d2) will be assigned.
-2019-12-23T02:45:58.004Z - warn: [db-task][init] uuid collision, the uuid(891ad826-098e-4ddf-8794-da792d67e006) for F:\petGame\assets\resources\page_main\setting.png is already used. A new uuid(13265a8b-de6a-4814-89f0-a3455e270520) will be assigned.
-2019-12-23T02:45:58.004Z - warn: [db-task][init] uuid collision, the uuid(78aa2761-9950-456f-9122-21ba58ed279f) for F:\petGame\assets\resources\page_main\setting.png\setting is already used. A new uuid(6666b719-f581-4fe0-9ff3-4e14d6ce83ca) will be assigned.
-2019-12-23T02:45:58.005Z - warn: [db-task][init] uuid collision, the uuid(7ec0f137-e8b0-4182-8f86-0f1dd81d457b) for F:\petGame\assets\resources\page_main\shopButton.png is already used. A new uuid(f046f1c5-ba30-4e36-a886-b9e66744bc4e) will be assigned.
-2019-12-23T02:45:58.005Z - warn: [db-task][init] uuid collision, the uuid(26992238-1e70-40dd-9f8b-e5f783a42c47) for F:\petGame\assets\resources\page_main\shopButton.png\shopButton is already used. A new uuid(93396c9e-373d-42c9-a924-94b0ebff87b0) will be assigned.
-2019-12-23T02:45:58.006Z - warn: [db-task][init] uuid collision, the uuid(3c059276-e1e8-41a1-9259-0a59a5fc3bb3) for F:\petGame\assets\resources\page_main\showering.png is already used. A new uuid(86531c18-c9b2-4289-98fd-6604334c7906) will be assigned.
-2019-12-23T02:45:58.006Z - warn: [db-task][init] uuid collision, the uuid(f3972538-b285-4b25-b0d8-45f8b62f156b) for F:\petGame\assets\resources\page_main\showering.png\showering is already used. A new uuid(82a67ed3-185b-4521-997e-dbcbe7397d1b) will be assigned.
-2019-12-23T02:45:58.008Z - warn: [db-task][init] uuid collision, the uuid(95b18a85-45c8-4d83-b86c-14074d67d532) for F:\petGame\assets\resources\page_main\sleeping.png is already used. A new uuid(f858f594-6958-4216-b9d3-0138caa8feb8) will be assigned.
-2019-12-23T02:45:58.008Z - warn: [db-task][init] uuid collision, the uuid(385b3caa-6dce-4e79-9774-c93eaba9637c) for F:\petGame\assets\resources\page_main\sleeping.png\sleeping is already used. A new uuid(83b71db9-cb5f-4aec-93cf-c3f59fbb4f0f) will be assigned.
-2019-12-23T02:45:58.009Z - warn: [db-task][init] uuid collision, the uuid(6cc72951-6147-4010-9099-9208b9ddaf50) for F:\petGame\assets\resources\page_main\touring.png is already used. A new uuid(72ba73e1-ffda-4441-8be8-9b80ffce20c2) will be assigned.
-2019-12-23T02:45:58.009Z - warn: [db-task][init] uuid collision, the uuid(e7c19461-a4af-42e5-bc86-37cb601468e9) for F:\petGame\assets\resources\page_main\touring.png\touring is already used. A new uuid(c9ea06df-de43-4537-b6d3-bc56a5d47cba) will be assigned.
-2019-12-23T02:45:58.015Z - warn: [db-task][init] uuid collision, the uuid(f190a1cc-537c-4b89-863d-e06a0f2fffb3) for F:\petGame\assets\resources\page_main\working.png is already used. A new uuid(74fc7440-e6eb-4508-930f-537152514551) will be assigned.
-2019-12-23T02:45:58.016Z - warn: [db-task][init] uuid collision, the uuid(954e62c8-e56d-4c81-8c9b-578ef86f23c4) for F:\petGame\assets\resources\page_main\working.png\working is already used. A new uuid(4ab0886c-071a-4daf-bbd9-04492941e0b9) will be assigned.
-2019-12-23T02:45:58.081Z - warn: [db-task][init] uuid collision, the uuid(0096ec51-46ac-4bc4-a2b1-3e6d6960c3e7) for F:\petGame\assets\resources\shopPic is already used. A new uuid(3fc8209f-08e3-4769-9289-4b2ca302e63d) will be assigned.
-2019-12-23T02:45:58.152Z - warn: [db-task][init] uuid collision, the uuid(afd85d8e-4f89-416d-89ff-cfcc044b72c2) for F:\petGame\assets\resources\shopPic\cart.png is already used. A new uuid(28b5d3c9-6f0d-41d6-b9a7-a1f403329fa7) will be assigned.
-2019-12-23T02:45:58.153Z - warn: [db-task][init] uuid collision, the uuid(873547f4-4404-4024-b355-204128027ec6) for F:\petGame\assets\resources\shopPic\cart.png\cart is already used. A new uuid(8994d2a7-71be-4e2e-89a9-1009e0c6d740) will be assigned.
-2019-12-23T02:45:58.166Z - warn: [db-task][init] uuid collision, the uuid(51bcab0c-5707-479d-af5f-026757688504) for F:\petGame\assets\resources\shopPic\cate1\1.png is already used. A new uuid(3fb5dbdc-de92-4443-b1c3-d1819080bec8) will be assigned.
-2019-12-23T02:45:58.166Z - warn: [db-task][init] uuid collision, the uuid(b0077289-347f-4bfa-b92e-d4af57573566) for F:\petGame\assets\resources\shopPic\cate1\1.png\1 is already used. A new uuid(faf5c632-7ccb-4922-82b4-5ef2b87efbfb) will be assigned.
-2019-12-23T02:45:58.168Z - warn: [db-task][init] uuid collision, the uuid(a200a257-91bc-4a8e-945c-7d1732902254) for F:\petGame\assets\resources\shopPic\cate1\10.png is already used. A new uuid(0f70b233-086d-47ae-8a4f-b87409b3fead) will be assigned.
-2019-12-23T02:45:58.169Z - warn: [db-task][init] uuid collision, the uuid(de36565b-1550-4399-9e42-d91152837bcf) for F:\petGame\assets\resources\shopPic\cate1\10.png\10 is already used. A new uuid(128b798f-f3cc-4812-ba1c-7272b38c6bd1) will be assigned.
-2019-12-23T02:45:58.171Z - warn: [db-task][init] uuid collision, the uuid(6589590c-d4eb-4bc6-9963-687bd56c1a4b) for F:\petGame\assets\resources\shopPic\cate1\11.png is already used. A new uuid(63555af7-f4a1-4d4f-b35b-ff1ec09b7f25) will be assigned.
-2019-12-23T02:45:58.171Z - warn: [db-task][init] uuid collision, the uuid(c10e8b68-af19-41e0-b4f0-1daae4d7685d) for F:\petGame\assets\resources\shopPic\cate1\11.png\11 is already used. A new uuid(e7ac9f48-18ee-4e3a-8633-2241674b13d1) will be assigned.
-2019-12-23T02:45:58.173Z - warn: [db-task][init] uuid collision, the uuid(0a424d2a-644d-48d8-9572-3edb7baf85c4) for F:\petGame\assets\resources\shopPic\cate1\12.png is already used. A new uuid(ac0f8f72-ae09-400e-a5ef-68bdc65bfdbf) will be assigned.
-2019-12-23T02:45:58.173Z - warn: [db-task][init] uuid collision, the uuid(21c72855-8b5a-481a-965d-8a2bab626e87) for F:\petGame\assets\resources\shopPic\cate1\12.png\12 is already used. A new uuid(d9fc102f-59c2-4b22-9be8-11a1d1b22f90) will be assigned.
-2019-12-23T02:45:58.179Z - warn: [db-task][init] uuid collision, the uuid(e61fd2e0-2e5b-4230-8aaf-1780e8962d4f) for F:\petGame\assets\resources\shopPic\cate1\13.png is already used. A new uuid(4a0906d0-ba6e-4ad4-b14c-c846fcdc9a58) will be assigned.
-2019-12-23T02:45:58.180Z - warn: [db-task][init] uuid collision, the uuid(514dbf0c-7da3-461c-8c2d-c648f3f1e15f) for F:\petGame\assets\resources\shopPic\cate1\13.png\13 is already used. A new uuid(09f4afae-c6d8-4773-80a0-b131767cabab) will be assigned.
-2019-12-23T02:45:58.181Z - warn: [db-task][init] uuid collision, the uuid(e4b2ac0b-0f95-4d7d-9bac-4d04a8d598f7) for F:\petGame\assets\resources\shopPic\cate1\14.png is already used. A new uuid(d9a327f0-5486-43db-a87c-a1294546af65) will be assigned.
-2019-12-23T02:45:58.182Z - warn: [db-task][init] uuid collision, the uuid(f5c1a102-7bc9-4960-be1e-5ea6e0dc56a4) for F:\petGame\assets\resources\shopPic\cate1\14.png\14 is already used. A new uuid(fadbd080-9447-409b-b60e-898a9f868e7c) will be assigned.
-2019-12-23T02:45:58.192Z - warn: [db-task][init] uuid collision, the uuid(0018dbce-36f9-476e-bf2f-e28aa9c6604e) for F:\petGame\assets\resources\shopPic\cate1\15.png is already used. A new uuid(a85c6471-4913-4a23-b08a-1f19a2d6129e) will be assigned.
-2019-12-23T02:45:58.193Z - warn: [db-task][init] uuid collision, the uuid(cdd0cb37-26b5-47b2-8d20-5f0d54aa14a3) for F:\petGame\assets\resources\shopPic\cate1\15.png\15 is already used. A new uuid(bafacd54-f3f2-4884-ba91-c16043bb8669) will be assigned.
-2019-12-23T02:45:58.194Z - warn: [db-task][init] uuid collision, the uuid(2d8c6368-2f6f-4ab0-a7f8-9a5e9c73c64f) for F:\petGame\assets\resources\shopPic\cate1\16.png is already used. A new uuid(fdef5a62-d9f3-45b7-b430-77780f4faba6) will be assigned.
-2019-12-23T02:45:58.195Z - warn: [db-task][init] uuid collision, the uuid(47030324-a5ff-4261-b8dc-d5a1e2cd7ae4) for F:\petGame\assets\resources\shopPic\cate1\16.png\16 is already used. A new uuid(ebb31ac5-f364-42b1-863a-24fc9a08919b) will be assigned.
-2019-12-23T02:45:58.196Z - warn: [db-task][init] uuid collision, the uuid(6a2668ef-b956-4a32-8867-c642ba338aef) for F:\petGame\assets\resources\shopPic\cate1\17.png is already used. A new uuid(29df923e-c8a2-4421-b9e9-bff92840c655) will be assigned.
-2019-12-23T02:45:58.196Z - warn: [db-task][init] uuid collision, the uuid(3690abfb-43ab-4249-bd71-62bf754dc806) for F:\petGame\assets\resources\shopPic\cate1\17.png\17 is already used. A new uuid(45e8ffd7-976c-4f06-8de5-ed9bf23925d9) will be assigned.
-2019-12-23T02:45:58.198Z - warn: [db-task][init] uuid collision, the uuid(b610b088-0999-4da0-86d6-7cea7ac1a8ec) for F:\petGame\assets\resources\shopPic\cate1\18.png is already used. A new uuid(bcc84ab4-2afb-4134-9e6a-3eae00df6a6c) will be assigned.
-2019-12-23T02:45:58.198Z - warn: [db-task][init] uuid collision, the uuid(1dd1e3db-bec3-42df-bf48-3298e4cf4010) for F:\petGame\assets\resources\shopPic\cate1\18.png\18 is already used. A new uuid(1250e30f-f6d6-41df-8092-7d8b3a7cf68a) will be assigned.
-2019-12-23T02:45:58.206Z - warn: [db-task][init] uuid collision, the uuid(ac91ebdb-d335-4f01-b7a0-005c2a24a71f) for F:\petGame\assets\resources\shopPic\cate1\19.png is already used. A new uuid(46e73fad-65b4-4ffb-b17b-1da5f61de2c1) will be assigned.
-2019-12-23T02:45:58.207Z - warn: [db-task][init] uuid collision, the uuid(d2ddeb52-d045-4f53-94b1-bb47c49b7bd1) for F:\petGame\assets\resources\shopPic\cate1\19.png\19 is already used. A new uuid(df650723-7d5c-42e1-a500-6746310176eb) will be assigned.
-2019-12-23T02:45:58.208Z - warn: [db-task][init] uuid collision, the uuid(45258eb9-1146-400c-8bb3-8b689993cc1e) for F:\petGame\assets\resources\shopPic\cate1\2.png is already used. A new uuid(b92497da-e485-44f5-adf5-a970149b1604) will be assigned.
-2019-12-23T02:45:58.209Z - warn: [db-task][init] uuid collision, the uuid(5cd71789-2f6b-446d-b675-1b72984e9943) for F:\petGame\assets\resources\shopPic\cate1\2.png\2 is already used. A new uuid(f4bb95bc-4168-471e-8879-c9ecce09aec4) will be assigned.
-2019-12-23T02:45:58.210Z - warn: [db-task][init] uuid collision, the uuid(fe24de19-a43f-4d26-a871-71791d144119) for F:\petGame\assets\resources\shopPic\cate1\20.png is already used. A new uuid(a7b18996-db29-4f88-ba0b-10f27acb267d) will be assigned.
-2019-12-23T02:45:58.210Z - warn: [db-task][init] uuid collision, the uuid(44bcc6bf-a737-4699-b993-1e69bd26be63) for F:\petGame\assets\resources\shopPic\cate1\20.png\20 is already used. A new uuid(7fd75fac-1163-42ef-a41a-56d4c88331d1) will be assigned.
-2019-12-23T02:45:58.212Z - warn: [db-task][init] uuid collision, the uuid(79d18a5b-ea79-4f44-b1f9-9db92999783a) for F:\petGame\assets\resources\shopPic\cate1\21.png is already used. A new uuid(6b7113b7-53a5-44f5-9d32-fd8b3c325eda) will be assigned.
-2019-12-23T02:45:58.212Z - warn: [db-task][init] uuid collision, the uuid(4ad4b773-4433-4ac5-95c6-da394b95bb77) for F:\petGame\assets\resources\shopPic\cate1\21.png\21 is already used. A new uuid(384e9896-abac-4bf0-bf6c-e2e0b141c8a6) will be assigned.
-2019-12-23T02:45:58.213Z - warn: [db-task][init] uuid collision, the uuid(dc638af6-b92b-4d33-9096-6e4c1f2ec791) for F:\petGame\assets\resources\shopPic\cate1\22.png is already used. A new uuid(5664a721-1125-4399-9c76-4c1f842dd4cb) will be assigned.
-2019-12-23T02:45:58.214Z - warn: [db-task][init] uuid collision, the uuid(1b1cc36a-7d7e-42e1-81da-b140b0db22ff) for F:\petGame\assets\resources\shopPic\cate1\22.png\22 is already used. A new uuid(7a354b99-9b92-4eed-93be-e0d23eea8c4b) will be assigned.
-2019-12-23T02:45:58.215Z - warn: [db-task][init] uuid collision, the uuid(42742737-8503-4bcb-8580-522471c4aaee) for F:\petGame\assets\resources\shopPic\cate1\23.png is already used. A new uuid(678e649d-6c2b-4b51-aac5-fd48e6cf31fd) will be assigned.
-2019-12-23T02:45:58.216Z - warn: [db-task][init] uuid collision, the uuid(7fead631-da76-4320-b4cf-5efd2a4742e3) for F:\petGame\assets\resources\shopPic\cate1\23.png\23 is already used. A new uuid(70ecc940-19d5-42f4-aec3-0f3624269b91) will be assigned.
-2019-12-23T02:45:58.220Z - warn: [db-task][init] uuid collision, the uuid(87bacc03-de46-43cc-90b4-946c664446ac) for F:\petGame\assets\resources\shopPic\cate1\24.png is already used. A new uuid(10388f1e-ba90-4ac6-aa11-e509a769e0fd) will be assigned.
-2019-12-23T02:45:58.221Z - warn: [db-task][init] uuid collision, the uuid(b677f33d-f221-447c-8f5e-411fe1173623) for F:\petGame\assets\resources\shopPic\cate1\24.png\24 is already used. A new uuid(b00ecbe6-e3a9-4b09-be72-580b1b77f04e) will be assigned.
-2019-12-23T02:45:58.222Z - warn: [db-task][init] uuid collision, the uuid(91b77bf3-5afe-4b21-82df-28d0b6203377) for F:\petGame\assets\resources\shopPic\cate1\25.png is already used. A new uuid(d16786df-6d19-4ec0-be2e-08a81ebd67c4) will be assigned.
-2019-12-23T02:45:58.223Z - warn: [db-task][init] uuid collision, the uuid(286add7d-8959-487f-b559-ab82e6523233) for F:\petGame\assets\resources\shopPic\cate1\25.png\25 is already used. A new uuid(f4bb7496-2eb6-40ea-9225-aa0d5f16a8a3) will be assigned.
-2019-12-23T02:45:58.224Z - warn: [db-task][init] uuid collision, the uuid(693a0e6f-57d1-45cc-b7e0-bf4cc90eb12f) for F:\petGame\assets\resources\shopPic\cate1\3.png is already used. A new uuid(3537451f-3660-4916-bda5-108e7fea926e) will be assigned.
-2019-12-23T02:45:58.224Z - warn: [db-task][init] uuid collision, the uuid(43aa3d33-3e5e-48f1-ae3c-5b60c09ee908) for F:\petGame\assets\resources\shopPic\cate1\3.png\3 is already used. A new uuid(dec06457-b208-4c16-9e5c-8230ba72d05c) will be assigned.
-2019-12-23T02:45:58.225Z - warn: [db-task][init] uuid collision, the uuid(983ac7e6-7d9b-47c7-9e4f-71484a259fb2) for F:\petGame\assets\resources\shopPic\cate1\4.png is already used. A new uuid(86bde2fc-8db2-4a64-8d0a-c69f43453f02) will be assigned.
-2019-12-23T02:45:58.226Z - warn: [db-task][init] uuid collision, the uuid(9219041c-cfcf-4552-b45c-48363e3a44e6) for F:\petGame\assets\resources\shopPic\cate1\4.png\4 is already used. A new uuid(dd73eb0c-3eeb-4d8d-bd9a-2c457621a5eb) will be assigned.
-2019-12-23T02:45:58.227Z - warn: [db-task][init] uuid collision, the uuid(deca62b9-cb95-4c15-85ca-9a7ad5a39116) for F:\petGame\assets\resources\shopPic\cate1\5.png is already used. A new uuid(f0cc61d7-9941-45ad-8271-ae6e7d15939d) will be assigned.
-2019-12-23T02:45:58.228Z - warn: [db-task][init] uuid collision, the uuid(6cd7fd60-6fb3-49b4-9971-2a9070c0545f) for F:\petGame\assets\resources\shopPic\cate1\5.png\5 is already used. A new uuid(ba41a61a-85d4-48d3-9a62-85e3582bb089) will be assigned.
-2019-12-23T02:45:58.229Z - warn: [db-task][init] uuid collision, the uuid(a75545a6-19db-4ccb-acf1-149d09bab11b) for F:\petGame\assets\resources\shopPic\cate1\6.png is already used. A new uuid(261d3a9a-9dbe-456f-a4b0-a26ad9e5295c) will be assigned.
-2019-12-23T02:45:58.229Z - warn: [db-task][init] uuid collision, the uuid(adaf8247-1db4-4b0d-b004-8ee35c99d30c) for F:\petGame\assets\resources\shopPic\cate1\6.png\6 is already used. A new uuid(0fb4e32f-be9b-47e0-bb04-c3d81f1d9260) will be assigned.
-2019-12-23T02:45:58.234Z - warn: [db-task][init] uuid collision, the uuid(e2923f05-218f-4414-9e0e-ced6e5f385eb) for F:\petGame\assets\resources\shopPic\cate1\7.png is already used. A new uuid(4a9ea00d-735f-41a9-8b31-d43a5e861165) will be assigned.
-2019-12-23T02:45:58.234Z - warn: [db-task][init] uuid collision, the uuid(cb7a71aa-c49f-4ec3-a183-0d09914adc18) for F:\petGame\assets\resources\shopPic\cate1\7.png\7 is already used. A new uuid(33fc7340-737b-4a0a-b4ed-2ad1835790fd) will be assigned.
-2019-12-23T02:45:58.235Z - warn: [db-task][init] uuid collision, the uuid(f0c4d595-3f91-4d11-82c9-35aedf421574) for F:\petGame\assets\resources\shopPic\cate1\8.png is already used. A new uuid(bb758ce5-08de-4355-b035-d1f28f2c42cb) will be assigned.
-2019-12-23T02:45:58.235Z - warn: [db-task][init] uuid collision, the uuid(12d8174e-8e2f-4382-a3a3-946e8240387a) for F:\petGame\assets\resources\shopPic\cate1\8.png\8 is already used. A new uuid(4de6eb0d-48ac-4667-a952-7482fc9cde60) will be assigned.
-2019-12-23T02:45:58.236Z - warn: [db-task][init] uuid collision, the uuid(e2604505-175f-4037-904b-2fc7c356a07b) for F:\petGame\assets\resources\shopPic\cate1\9.png is already used. A new uuid(d7d03935-562c-4503-8eba-4dae26baf2a1) will be assigned.
-2019-12-23T02:45:58.236Z - warn: [db-task][init] uuid collision, the uuid(6d911921-475f-402f-8a75-78ea7a0e6e5a) for F:\petGame\assets\resources\shopPic\cate1\9.png\9 is already used. A new uuid(6132a683-bedb-4579-ac8f-e3f36d2c260f) will be assigned.
-2019-12-23T02:45:58.357Z - warn: [db-task][init] uuid collision, the uuid(7244facd-98f8-4763-b441-87ab1512e0e6) for F:\petGame\assets\resources\shopPic\gold.png is already used. A new uuid(679a6837-c458-4938-a66b-8450b350bd8e) will be assigned.
-2019-12-23T02:45:58.357Z - warn: [db-task][init] uuid collision, the uuid(6c216a61-e040-4832-8f12-cd630a2dc28e) for F:\petGame\assets\resources\shopPic\gold.png\gold is already used. A new uuid(fb7a2653-2af9-4d0c-8f17-3cac8eaf7ac2) will be assigned.
-2019-12-23T02:45:58.403Z - warn: [db-task][init] uuid collision, the uuid(7d99ce47-8588-4f87-a9c7-236a11c6867d) for F:\petGame\assets\resources\shopPic\total.png is already used. A new uuid(4b01ca9f-c929-48be-b264-41b4cab12706) will be assigned.
-2019-12-23T02:45:58.403Z - warn: [db-task][init] uuid collision, the uuid(677f57d5-9081-48bf-aa52-92094dbd9c8b) for F:\petGame\assets\resources\shopPic\total.png\total is already used. A new uuid(26e2bc43-d023-4f73-8e53-4d23a3107ef5) will be assigned.
-2019-12-23T02:45:59.855Z - info: Cocos Services load base data!
-2019-12-23T02:46:06.222Z - normal: Loading packages
-2019-12-23T02:46:06.225Z - normal: Watching packages
-2019-12-23T02:46:06.551Z - normal: Run Application
-2019-12-26T08:19:33.958Z - warn: The ToggleContainer referenced by component "setting" is invalid. Detailed information:
-Node path: "setting"
-
-2019-12-26T08:19:34.862Z - warn: The ToggleContainer referenced by component "setting" is invalid. Detailed information:
-Node path: "setting"
-
-2019-12-26T09:42:01.850Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.850Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.850Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.850Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.851Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.852Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.853Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.854Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.855Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.855Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.856Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:42:01.856Z - warn: The Asset used by component "cc.Camera" is missing. Detailed information:
-Node path: "Canvas/personalInfo"
-Missing uuid: "4c78d2d9-4526-4ae4-bb86-6ca971a3b845"
-
-2019-12-26T09:43:23.508Z - info: 只有预制节点 "personalInfo" 及其子节点会被保存。
-2019-12-26T12:06:09.088Z - warn: The Asset used is missing. Detailed information:
-Missing uuid: "1062a2d5-e102-4e73-93b0-f7687fc681a3"
-
-2019-12-26T12:06:09.088Z - warn: The Asset used is missing. Detailed information:
-Missing uuid: "e0228ae3-f0b3-46ed-9bba-9d9e671d9640"
-
-2019-12-26T13:01:26.800Z - warn: Script attached to "personalInfo" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
-
-2019-12-26T13:08:07.792Z - warn: Script attached to "personalInfo" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
-
-2019-12-27T06:35:58.584Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
+2019-12-31T06:03:11.339Z - normal: Load ~/.CocosCreator/settings.json
+2019-12-31T06:03:11.402Z - normal: Initializing Asset Database
+2019-12-31T06:03:11.408Z - normal: checking language setting...
+2019-12-31T06:03:11.408Z - normal: Language: zh
+2019-12-31T06:03:12.382Z - success: preview server running at http://localhost:7456
+2019-12-31T06:03:12.386Z - success: protocol editor-framework registered
+2019-12-31T06:03:12.386Z - success: protocol app registered
+2019-12-31T06:03:12.386Z - success: protocol theme registered
+2019-12-31T06:03:12.386Z - success: protocol packages registered
+2019-12-31T06:03:12.386Z - success: protocol uuid registerred
+2019-12-31T06:03:12.386Z - success: protocol db registerred
+2019-12-31T06:03:12.387Z - success: protocol thumbnail registerred
+2019-12-31T06:03:12.387Z - success: protocol unpack registerred
+2019-12-31T06:03:12.387Z - success: protocol disable-commonjs registerred
+2019-12-31T06:03:12.912Z - normal: connected!
+2019-12-31T06:03:12.914Z - normal: Check project F:\petGame
+2019-12-31T06:03:12.918Z - normal: Initializing project F:\petGame
+2019-12-31T06:03:13.274Z - normal: Initializing Cocos2d
+2019-12-31T06:03:14.119Z - normal: Initializing engine extends
+2019-12-31T06:03:14.276Z - success: adapters loaded
+2019-12-31T06:03:14.284Z - success: asset-db-debugger loaded
+2019-12-31T06:03:14.456Z - success: fb-audience-network loaded
+2019-12-31T06:03:14.502Z - success: fb-live-stream loaded
+2019-12-31T06:03:14.504Z - success: google-play-instant loaded
+2019-12-31T06:03:14.520Z - success: huawei-runtime loaded
+2019-12-31T06:03:14.868Z - success: cpk-publish loaded
+2019-12-31T06:03:14.869Z - success: jsb-adapter loaded
+2019-12-31T06:03:14.873Z - success: oppo-runtime loaded
+2019-12-31T06:03:14.904Z - success: package-manager loaded
+2019-12-31T06:03:14.941Z - success: runtime-dev-tools loaded
+2019-12-31T06:03:14.955Z - success: sdkbox loaded
+2019-12-31T06:03:14.963Z - success: ui-kit-preview-extra loaded
+2019-12-31T06:03:14.977Z - success: ui-kit-preview loaded
+2019-12-31T06:03:14.998Z - success: vivo-runtime loaded
+2019-12-31T06:03:15.000Z - success: alipay-minigame loaded
+2019-12-31T06:03:15.042Z - success: assets loaded
+2019-12-31T06:03:15.045Z - success: baidugame-opendata loaded
+2019-12-31T06:03:15.047Z - success: baidugame loaded
+2019-12-31T06:03:15.070Z - success: builder loaded
+2019-12-31T06:03:15.385Z - success: cocos-services loaded
+2019-12-31T06:03:15.405Z - success: console loaded
+2019-12-31T06:03:15.415Z - success: fb-instant-games loaded
+2019-12-31T06:03:15.419Z - success: game-window loaded
+2019-12-31T06:03:15.419Z - success: google-instant-games loaded
+2019-12-31T06:03:15.423Z - success: hierarchy loaded
+2019-12-31T06:03:15.430Z - success: inspector loaded
+2019-12-31T06:03:15.432Z - success: keystore loaded
+2019-12-31T06:03:15.436Z - success: node-library loaded
+2019-12-31T06:03:15.437Z - success: open-recent-items loaded
+2019-12-31T06:03:15.438Z - success: package-asset loaded
+2019-12-31T06:03:15.439Z - success: preferences loaded
+2019-12-31T06:03:15.441Z - success: project-exporter loaded
+2019-12-31T06:03:15.443Z - success: project-importer loaded
+2019-12-31T06:03:15.446Z - success: project-settings loaded
+2019-12-31T06:03:15.449Z - success: scene loaded
+2019-12-31T06:03:15.450Z - success: simulator-debugger loaded
+2019-12-31T06:03:15.451Z - success: sprite-editor loaded
+2019-12-31T06:03:15.454Z - success: store loaded
+2019-12-31T06:03:15.465Z - success: timeline loaded
+2019-12-31T06:03:15.469Z - success: wechatgame-opendata loaded
+2019-12-31T06:03:15.479Z - success: wechatgame loaded
+2019-12-31T06:03:15.483Z - success: xiaomi-runtime loaded
+2019-12-31T06:03:21.081Z - normal: Loading packages
+2019-12-31T06:03:21.087Z - normal: Watching packages
+2019-12-31T06:03:21.413Z - normal: Run Application
+2019-12-31T06:03:21.460Z - info: Cocos Services load base data!
+2019-12-31T08:49:51.804Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 | 
+  399 |     //用户的微信账户信息
+> 400 |     userName = '',//用户昵称
+      |              ^
+  401 |     userGender = '',//用户性别
+  402 |     //全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:51:08.310Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (399:13)
+  397 | var globalData = {
+  398 |     //用户的微信账户信息
+> 399 |     userName = '',//用户昵称
+      |              ^
+  400 |     userGender = '',//用户性别
+  401 |     //全局属性数据
+  402 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:51:54.462Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 |     
+  399 |     //用户的微信账户信息
+> 400 |     userName = '',//用户昵称
+      |              ^
+  401 |     userGender = '',//用户性别
+  402 |     //全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:53:23.797Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 | 
+  399 |     // 用户的微信账户信息
+> 400 |     userName = '', // 用户昵称
+      |              ^
+  401 |     userGender = '', // 用户性别
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:56:23.014Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 | 
+  399 |     // 用户的微信账户信息
+> 400 |     userName = '', // 用户昵称
+      |              ^
+  401 |     userGender = '', // 用户性别
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:56:48.358Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 | 
+  399 |     // 用户的微信账户信息
+> 400 |     userName = '', 
+      |              ^
+  401 |     userGender = '', // 用户性别
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:57:01.119Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (401:15)
+  399 |     // 用户的微信账户信息
+  400 |     // userName = '', // 用户昵称
+> 401 |     userGender = '', // 用户性别
+      |                ^
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+  404 |     userID = '', // 用户ID，游戏中的唯一标识
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:57:22.185Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
+  398 | 
+  399 |     // 用户的微信账户信息
+> 400 |     userName = null, // 用户昵称
+      |              ^
+  401 |     userGender = '', // 用户性别
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2019-12-31T08:58:06.056Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:12)
+  398 | 
+  399 |     // 用户的微信账户信息
+> 400 |     userName='', // 用户昵称
+      |             ^
+  401 |     userGender = '', // 用户性别
+  402 |     // 全局属性数据
+  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
+    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
+    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
+    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
+    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
+    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
+    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
+    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
+    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
+    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
+    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
+2020-01-02T02:38:38.605Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
 Node path: "Canvas/personalInfo"
 Asset url: "db://assets/personalInfo/personalInfo.fire"
 Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
 Class ID: "5b733dN9epOQp2S5mmJ2CP6"
 
-2019-12-27T06:43:06.250Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
+2020-01-02T02:53:58.356Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/prompt/itemPic"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
+
+2020-01-02T02:53:58.356Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/cart/cartBlock/item"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
+
+2020-01-02T03:01:17.004Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
 Node path: "Canvas/personalInfo"
 Asset url: "db://assets/personalInfo/personalInfo.fire"
 Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
 Class ID: "5b733dN9epOQp2S5mmJ2CP6"
 
-2019-12-27T06:50:46.632Z - warn: Script attached to "personalInfo" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
+2020-01-02T03:15:12.530Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/prompt/itemPic"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
 
-2019-12-27T07:35:48.257Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
+2020-01-02T03:15:12.530Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/cart/cartBlock/item"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
+
+2020-01-02T03:22:51.539Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/prompt/itemPic"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
+
+2020-01-02T03:22:51.539Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
+Node path: "Canvas/cart/cartBlock/item"
+Asset url: "db://assets/shop/shop.fire"
+Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
+
+2020-01-02T03:25:04.504Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
+Node path: "shopItem/priceBlock/priceIcon"
+Asset url: "db://assets/resources/prefab/shopItem.prefab"
+Missing uuid: "6c216a61-e040-4832-8f12-cd630a2dc28e"
+
+2020-01-02T03:25:04.530Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
+Node path: "shopItem/priceBlock/priceIcon"
+Asset url: "db://assets/resources/prefab/shopItem.prefab"
+Missing uuid: "6c216a61-e040-4832-8f12-cd630a2dc28e"
+
+2020-01-02T06:27:38.378Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
+Node path: "shopItem/pictureBlock/block/itemPic"
+Asset url: "db://assets/resources/prefab/shopItem.prefab"
+Missing uuid: "5cd71789-2f6b-446d-b675-1b72984e9943"
+
+2020-01-02T06:27:38.897Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
+Node path: "shopItem/pictureBlock/block/itemPic"
+Asset url: "db://assets/resources/prefab/shopItem.prefab"
+Missing uuid: "5cd71789-2f6b-446d-b675-1b72984e9943"
+
+2020-01-02T06:27:41.990Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2020-01-02T06:27:45.951Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
+2020-01-02T06:52:02.342Z - info: 只有预制节点 "item1" 及其子节点会被保存。
+2020-01-02T06:52:03.952Z - info: 只有预制节点 "item1" 及其子节点会被保存。
+2020-01-02T07:17:09.858Z - info: 只有预制节点 "item1" 及其子节点会被保存。
+2020-01-02T07:19:57.636Z - info: 只有预制节点 "item1" 及其子节点会被保存。
+2020-01-02T07:19:59.298Z - info: 只有预制节点 "item1" 及其子节点会被保存。
+2020-01-03T01:21:40.279Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
+Node path: "Canvas/Main Camera/house"
 
