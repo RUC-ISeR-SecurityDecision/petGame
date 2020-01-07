@@ -1,300 +1,341 @@
-2019-12-31T06:03:11.339Z - normal: Load ~/.CocosCreator/settings.json
-2019-12-31T06:03:11.402Z - normal: Initializing Asset Database
-2019-12-31T06:03:11.408Z - normal: checking language setting...
-2019-12-31T06:03:11.408Z - normal: Language: zh
-2019-12-31T06:03:12.382Z - success: preview server running at http://localhost:7456
-2019-12-31T06:03:12.386Z - success: protocol editor-framework registered
-2019-12-31T06:03:12.386Z - success: protocol app registered
-2019-12-31T06:03:12.386Z - success: protocol theme registered
-2019-12-31T06:03:12.386Z - success: protocol packages registered
-2019-12-31T06:03:12.386Z - success: protocol uuid registerred
-2019-12-31T06:03:12.386Z - success: protocol db registerred
-2019-12-31T06:03:12.387Z - success: protocol thumbnail registerred
-2019-12-31T06:03:12.387Z - success: protocol unpack registerred
-2019-12-31T06:03:12.387Z - success: protocol disable-commonjs registerred
-2019-12-31T06:03:12.912Z - normal: connected!
-2019-12-31T06:03:12.914Z - normal: Check project F:\petGame
-2019-12-31T06:03:12.918Z - normal: Initializing project F:\petGame
-2019-12-31T06:03:13.274Z - normal: Initializing Cocos2d
-2019-12-31T06:03:14.119Z - normal: Initializing engine extends
-2019-12-31T06:03:14.276Z - success: adapters loaded
-2019-12-31T06:03:14.284Z - success: asset-db-debugger loaded
-2019-12-31T06:03:14.456Z - success: fb-audience-network loaded
-2019-12-31T06:03:14.502Z - success: fb-live-stream loaded
-2019-12-31T06:03:14.504Z - success: google-play-instant loaded
-2019-12-31T06:03:14.520Z - success: huawei-runtime loaded
-2019-12-31T06:03:14.868Z - success: cpk-publish loaded
-2019-12-31T06:03:14.869Z - success: jsb-adapter loaded
-2019-12-31T06:03:14.873Z - success: oppo-runtime loaded
-2019-12-31T06:03:14.904Z - success: package-manager loaded
-2019-12-31T06:03:14.941Z - success: runtime-dev-tools loaded
-2019-12-31T06:03:14.955Z - success: sdkbox loaded
-2019-12-31T06:03:14.963Z - success: ui-kit-preview-extra loaded
-2019-12-31T06:03:14.977Z - success: ui-kit-preview loaded
-2019-12-31T06:03:14.998Z - success: vivo-runtime loaded
-2019-12-31T06:03:15.000Z - success: alipay-minigame loaded
-2019-12-31T06:03:15.042Z - success: assets loaded
-2019-12-31T06:03:15.045Z - success: baidugame-opendata loaded
-2019-12-31T06:03:15.047Z - success: baidugame loaded
-2019-12-31T06:03:15.070Z - success: builder loaded
-2019-12-31T06:03:15.385Z - success: cocos-services loaded
-2019-12-31T06:03:15.405Z - success: console loaded
-2019-12-31T06:03:15.415Z - success: fb-instant-games loaded
-2019-12-31T06:03:15.419Z - success: game-window loaded
-2019-12-31T06:03:15.419Z - success: google-instant-games loaded
-2019-12-31T06:03:15.423Z - success: hierarchy loaded
-2019-12-31T06:03:15.430Z - success: inspector loaded
-2019-12-31T06:03:15.432Z - success: keystore loaded
-2019-12-31T06:03:15.436Z - success: node-library loaded
-2019-12-31T06:03:15.437Z - success: open-recent-items loaded
-2019-12-31T06:03:15.438Z - success: package-asset loaded
-2019-12-31T06:03:15.439Z - success: preferences loaded
-2019-12-31T06:03:15.441Z - success: project-exporter loaded
-2019-12-31T06:03:15.443Z - success: project-importer loaded
-2019-12-31T06:03:15.446Z - success: project-settings loaded
-2019-12-31T06:03:15.449Z - success: scene loaded
-2019-12-31T06:03:15.450Z - success: simulator-debugger loaded
-2019-12-31T06:03:15.451Z - success: sprite-editor loaded
-2019-12-31T06:03:15.454Z - success: store loaded
-2019-12-31T06:03:15.465Z - success: timeline loaded
-2019-12-31T06:03:15.469Z - success: wechatgame-opendata loaded
-2019-12-31T06:03:15.479Z - success: wechatgame loaded
-2019-12-31T06:03:15.483Z - success: xiaomi-runtime loaded
-2019-12-31T06:03:21.081Z - normal: Loading packages
-2019-12-31T06:03:21.087Z - normal: Watching packages
-2019-12-31T06:03:21.413Z - normal: Run Application
-2019-12-31T06:03:21.460Z - info: Cocos Services load base data!
-2019-12-31T08:49:51.804Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 | 
-  399 |     //用户的微信账户信息
-> 400 |     userName = '',//用户昵称
-      |              ^
-  401 |     userGender = '',//用户性别
-  402 |     //全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:51:08.310Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (399:13)
-  397 | var globalData = {
-  398 |     //用户的微信账户信息
-> 399 |     userName = '',//用户昵称
-      |              ^
-  400 |     userGender = '',//用户性别
-  401 |     //全局属性数据
-  402 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:51:54.462Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 |     
-  399 |     //用户的微信账户信息
-> 400 |     userName = '',//用户昵称
-      |              ^
-  401 |     userGender = '',//用户性别
-  402 |     //全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/',//服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:53:23.797Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 | 
-  399 |     // 用户的微信账户信息
-> 400 |     userName = '', // 用户昵称
-      |              ^
-  401 |     userGender = '', // 用户性别
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:56:23.014Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 | 
-  399 |     // 用户的微信账户信息
-> 400 |     userName = '', // 用户昵称
-      |              ^
-  401 |     userGender = '', // 用户性别
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:56:48.358Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 | 
-  399 |     // 用户的微信账户信息
-> 400 |     userName = '', 
-      |              ^
-  401 |     userGender = '', // 用户性别
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:57:01.119Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (401:15)
-  399 |     // 用户的微信账户信息
-  400 |     // userName = '', // 用户昵称
-> 401 |     userGender = '', // 用户性别
-      |                ^
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-  404 |     userID = '', // 用户ID，游戏中的唯一标识
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:57:22.185Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:13)
-  398 | 
-  399 |     // 用户的微信账户信息
-> 400 |     userName = null, // 用户昵称
-      |              ^
-  401 |     userGender = '', // 用户性别
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2019-12-31T08:58:06.056Z - failed: [db-task][sync-changes] Failed to import asset F:\petGame\assets\Global\globalData.js, message: Compile error: SyntaxError: F:/petGame/assets/Global/globalData.js: Unexpected token (400:12)
-  398 | 
-  399 |     // 用户的微信账户信息
-> 400 |     userName='', // 用户昵称
-      |             ^
-  401 |     userGender = '', // 用户性别
-  402 |     // 全局属性数据
-  403 |     serverAddr = 'https://www.llquruc.top/petGame/', // 服务器地址
-    at Parser.pp$5.raise (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4454:13)
-    at Parser.pp.unexpected (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:3370:10)
-    at Parser.pp$1.parseVar (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2340:24)
-    at Parser.pp$1.parseVarStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2169:8)
-    at Parser.pp$1.parseStatement (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1861:19)
-    at Parser.pp$1.parseBlockBody (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2268:21)
-    at Parser.pp$1.parseTopLevel (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1778:8)
-    at Parser.parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1673:17)
-    at parse (D:\software\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:7305:37)
-2020-01-02T02:38:38.605Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
-
-2020-01-02T02:53:58.356Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/prompt/itemPic"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
-
-2020-01-02T02:53:58.356Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/cart/cartBlock/item"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
-
-2020-01-02T03:01:17.004Z - warn: Script attached to "personalInfo" in scene "personalInfo.fire" is missing or invalid. Detailed information:
-Node path: "Canvas/personalInfo"
-Asset url: "db://assets/personalInfo/personalInfo.fire"
-Script UUID: "5b73374d-f5ea-4e42-9d92-e66989d823fa"
-Class ID: "5b733dN9epOQp2S5mmJ2CP6"
-
-2020-01-02T03:15:12.530Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/prompt/itemPic"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
-
-2020-01-02T03:15:12.530Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/cart/cartBlock/item"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
-
-2020-01-02T03:22:51.539Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/prompt/itemPic"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "b0077289-347f-4bfa-b92e-d4af57573566"
-
-2020-01-02T03:22:51.539Z - warn: The Asset used by component "cc.Sprite" in scene "shop.fire" is missing. Detailed information:
-Node path: "Canvas/cart/cartBlock/item"
-Asset url: "db://assets/shop/shop.fire"
-Missing uuid: "21c72855-8b5a-481a-965d-8a2bab626e87"
-
-2020-01-02T03:25:04.504Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
-Node path: "shopItem/priceBlock/priceIcon"
-Asset url: "db://assets/resources/prefab/shopItem.prefab"
-Missing uuid: "6c216a61-e040-4832-8f12-cd630a2dc28e"
-
-2020-01-02T03:25:04.530Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
-Node path: "shopItem/priceBlock/priceIcon"
-Asset url: "db://assets/resources/prefab/shopItem.prefab"
-Missing uuid: "6c216a61-e040-4832-8f12-cd630a2dc28e"
-
-2020-01-02T06:27:38.378Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
-Node path: "shopItem/pictureBlock/block/itemPic"
-Asset url: "db://assets/resources/prefab/shopItem.prefab"
-Missing uuid: "5cd71789-2f6b-446d-b675-1b72984e9943"
-
-2020-01-02T06:27:38.897Z - warn: The Asset used by component "cc.Sprite" in prefab "shopItem.prefab" is missing. Detailed information:
-Node path: "shopItem/pictureBlock/block/itemPic"
-Asset url: "db://assets/resources/prefab/shopItem.prefab"
-Missing uuid: "5cd71789-2f6b-446d-b675-1b72984e9943"
-
-2020-01-02T06:27:41.990Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
-2020-01-02T06:27:45.951Z - info: 只有预制节点 "shopItem" 及其子节点会被保存。
-2020-01-02T06:52:02.342Z - info: 只有预制节点 "item1" 及其子节点会被保存。
-2020-01-02T06:52:03.952Z - info: 只有预制节点 "item1" 及其子节点会被保存。
-2020-01-02T07:17:09.858Z - info: 只有预制节点 "item1" 及其子节点会被保存。
-2020-01-02T07:19:57.636Z - info: 只有预制节点 "item1" 及其子节点会被保存。
-2020-01-02T07:19:59.298Z - info: 只有预制节点 "item1" 及其子节点会被保存。
-2020-01-03T01:21:40.279Z - warn: The Scrollbar referenced by component "cc.ScrollView" is invalid. Detailed information:
-Node path: "Canvas/Main Camera/house"
-
+2020-01-07T02:57:28.494Z - normal: Load ~/.CocosCreator/settings.json
+2020-01-07T02:57:28.545Z - normal: Initializing Asset Database
+2020-01-07T02:57:28.553Z - normal: checking language setting...
+2020-01-07T02:57:28.553Z - normal: Language: zh
+2020-01-07T02:57:28.888Z - success: preview server running at http://localhost:7456
+2020-01-07T02:57:28.892Z - success: protocol editor-framework registered
+2020-01-07T02:57:28.892Z - success: protocol app registered
+2020-01-07T02:57:28.892Z - success: protocol theme registered
+2020-01-07T02:57:28.892Z - success: protocol packages registered
+2020-01-07T02:57:28.892Z - success: protocol uuid registerred
+2020-01-07T02:57:28.892Z - success: protocol db registerred
+2020-01-07T02:57:28.893Z - success: protocol thumbnail registerred
+2020-01-07T02:57:28.893Z - success: protocol unpack registerred
+2020-01-07T02:57:28.893Z - success: protocol disable-commonjs registerred
+2020-01-07T02:57:28.990Z - normal: connected!
+2020-01-07T02:57:28.991Z - normal: Check project D:\cocos_project\petGame20200105
+2020-01-07T02:57:28.992Z - normal: Initializing project D:\cocos_project\petGame20200105
+2020-01-07T02:57:29.215Z - normal: Initializing Cocos2d
+2020-01-07T02:57:29.549Z - normal: Initializing engine extends
+2020-01-07T02:57:29.579Z - success: adapters loaded
+2020-01-07T02:57:29.584Z - success: asset-db-debugger loaded
+2020-01-07T02:57:29.641Z - success: fb-audience-network loaded
+2020-01-07T02:57:29.661Z - success: fb-live-stream loaded
+2020-01-07T02:57:29.664Z - success: google-play-instant loaded
+2020-01-07T02:57:29.669Z - success: huawei-runtime loaded
+2020-01-07T02:57:29.781Z - success: cpk-publish loaded
+2020-01-07T02:57:29.782Z - success: jsb-adapter loaded
+2020-01-07T02:57:29.786Z - success: oppo-runtime loaded
+2020-01-07T02:57:29.791Z - success: package-manager loaded
+2020-01-07T02:57:29.793Z - success: runtime-dev-tools loaded
+2020-01-07T02:57:29.798Z - success: sdkbox loaded
+2020-01-07T02:57:29.801Z - success: ui-kit-preview-extra loaded
+2020-01-07T02:57:29.805Z - success: ui-kit-preview loaded
+2020-01-07T02:57:29.811Z - success: vivo-runtime loaded
+2020-01-07T02:57:29.815Z - success: alipay-minigame loaded
+2020-01-07T02:57:29.850Z - success: assets loaded
+2020-01-07T02:57:29.853Z - success: baidugame-opendata loaded
+2020-01-07T02:57:29.856Z - success: baidugame loaded
+2020-01-07T02:57:29.860Z - success: builder loaded
+2020-01-07T02:57:29.983Z - success: cocos-services loaded
+2020-01-07T02:57:29.990Z - success: console loaded
+2020-01-07T02:57:30.004Z - success: fb-instant-games loaded
+2020-01-07T02:57:30.007Z - success: game-window loaded
+2020-01-07T02:57:30.009Z - success: google-instant-games loaded
+2020-01-07T02:57:30.013Z - success: hierarchy loaded
+2020-01-07T02:57:30.015Z - success: inspector loaded
+2020-01-07T02:57:30.016Z - success: keystore loaded
+2020-01-07T02:57:30.019Z - success: node-library loaded
+2020-01-07T02:57:30.020Z - success: open-recent-items loaded
+2020-01-07T02:57:30.023Z - success: package-asset loaded
+2020-01-07T02:57:30.024Z - success: preferences loaded
+2020-01-07T02:57:30.026Z - success: project-exporter loaded
+2020-01-07T02:57:30.028Z - success: project-importer loaded
+2020-01-07T02:57:30.030Z - success: project-settings loaded
+2020-01-07T02:57:30.034Z - success: scene loaded
+2020-01-07T02:57:30.034Z - success: simulator-debugger loaded
+2020-01-07T02:57:30.035Z - success: sprite-editor loaded
+2020-01-07T02:57:30.038Z - success: store loaded
+2020-01-07T02:57:30.041Z - success: timeline loaded
+2020-01-07T02:57:30.047Z - success: wechatgame-opendata loaded
+2020-01-07T02:57:30.051Z - success: wechatgame loaded
+2020-01-07T02:57:30.054Z - success: xiaomi-runtime loaded
+2020-01-07T02:57:32.870Z - normal: Loading packages
+2020-01-07T02:57:32.875Z - normal: Watching packages
+2020-01-07T02:57:33.636Z - info: Cocos Services load base data!
+2020-01-07T02:57:35.352Z - normal: Run Application
+2020-01-07T02:57:39.457Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.457Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
+2020-01-07T02:57:39.460Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.461Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
+2020-01-07T02:57:39.464Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.464Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    sleepSound: cc.Texture2D,
+    // or:
+    sleepSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    sleepSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.464Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    hiSound: cc.Texture2D,
+    // or:
+    hiSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    hiSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.464Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
+2020-01-07T02:57:39.464Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
+2020-01-07T02:57:39.464Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
+2020-01-07T02:57:39.466Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.466Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
+2020-01-07T02:57:39.470Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.471Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
+2020-01-07T02:57:39.472Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T02:57:39.472Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.006Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.006Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.010Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.010Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.014Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.014Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    sleepSound: cc.Texture2D,
+    // or:
+    sleepSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    sleepSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.014Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    hiSound: cc.Texture2D,
+    // or:
+    hiSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    hiSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.014Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.015Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
+2020-01-07T03:01:26.015Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
+2020-01-07T03:01:26.016Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.017Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.023Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.023Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
+2020-01-07T03:01:26.024Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
+the use of declaring a property in CCClass as a URL has been deprecated.
+For example, if property is Texture2D, the previous definition is:
+    btnSound: cc.Texture2D,
+    // or:
+    btnSound: {
+      url: cc.Texture2D,
+      default: ""
+    },
+Now it should be changed to:
+    btnSound: {
+      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
+      default: null,      // object's default value is null
+    },
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2020-01-07T03:01:26.025Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
+2020-01-07T03:02:44.288Z - warn: [db-task][sync-changes] Backup unused meta file: db://assets/resources/page_adopt.meta
+2020-01-07T03:06:15.511Z - warn: [db-task][sync-changes] Backup unused meta file: db://assets/resources/shopPic/cate2/backup.meta
+2020-01-07T03:06:16.761Z - error: TypeError: Cannot read property 'parent' of null
+    at Object.exports.remove (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor\builtin\assets\panel\utils\cache.js:1:2062)
+    at Object.exports.remove (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor\builtin\assets\panel\utils\operation.js:1:2741)
+    at eval (eval at s (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\utils\resource-mgr.js:1:933), <anonymous>:1:4308)
+    at Array.forEach (<anonymous>)
+    at HTMLElement.asset-db:assets-deleted (eval at s (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\utils\resource-mgr.js:1:933), <anonymous>:1:4294)
+    at EventEmitter.<anonymous> (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\panel\frame.js:1:3124)
+    at EventEmitter.emit (events.js:199:15)
+2020-01-07T03:22:32.775Z - warn: [db-task][sync-changes] Backup unused meta file: db://assets/resources/shopPic/cate10/backup.meta
+2020-01-07T03:22:34.844Z - error: TypeError: Cannot read property 'parent' of null
+    at Object.exports.remove (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor\builtin\assets\panel\utils\cache.js:1:2062)
+    at Object.exports.remove (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor\builtin\assets\panel\utils\operation.js:1:2741)
+    at eval (eval at s (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\utils\resource-mgr.js:1:933), <anonymous>:1:4308)
+    at Array.forEach (<anonymous>)
+    at HTMLElement.asset-db:assets-deleted (eval at s (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\utils\resource-mgr.js:1:933), <anonymous>:1:4294)
+    at EventEmitter.<anonymous> (D:\Program Files (x86)\CocosCreator\resources\app.asar\editor-framework\lib\renderer\ui\panel\frame.js:1:3124)
+    at EventEmitter.emit (events.js:199:15)

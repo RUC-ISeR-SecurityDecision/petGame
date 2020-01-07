@@ -21,6 +21,20 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        //音效
+        btnSound: {//按键音
+            default: null,
+            url: cc.AudioClip
+        },
+        sleepSound: {//睡觉的声音
+            default: null,
+            url: cc.AudioClip
+        },
+        hiSound: {//打招呼的声音
+            default: null,
+            url: cc.AudioClip
+        },
+
         theme: {
             get() {
                 return this._theme;
@@ -176,6 +190,27 @@ cc.Class({
     onLoad() {
         // console.log(GlobalData);
         this.init();
+        //播放打招呼的声音
+        switch(GlobalData.species)
+        {
+            case 1:
+                this.hiSound=cc.url.raw('resources/sound/hi/cat.mp3');
+                break;
+            case 2:
+                this.hiSound=cc.url.raw('resources/sound/hi/dog.mp3');
+                break;
+            case 3:
+                this.hiSound=cc.url.raw('resources/sound/hi/owl.mp3');
+                break;
+            case 4:
+                this.hiSound=cc.url.raw('resources/sound/hi/penguin.mp3');
+                break;
+            default:
+                console.log("Wrong species number")
+        }
+        var soundVolume = 0.8;
+        var hiSoundID = cc.audioEngine.play(this.hiSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         // this.drawClock();
     },
 
@@ -217,6 +252,11 @@ cc.Class({
     },
     // 关闭背包,根据isBagShow的值自己调用，不要单独调用
     closeBag: function () {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("close bag");
         this.bagContent.node.destroyAllChildren();
         let hide = cc.moveTo(0.2, cc.v2(0, 600));
@@ -429,7 +469,7 @@ cc.Class({
     },
 
     //生成登录奖励
-    genLoginReward: function () {
+    genLoginReward: function () {//  changed by qll on 20191226
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -442,10 +482,10 @@ cc.Class({
         let instance = this;
         // 调用自定义网路接口获取登录奖励
         let data = {
-            userID: GlobalData.userID,
-            genTime: timeStr,
-            rewardCategoryID: 1,
-            rewardLevel: 1,
+            "userID": GlobalData.userID,
+            "genTime": timeStr,
+            "rewardCategoryID": 1,
+            "rewardLevel": 1,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -460,7 +500,7 @@ cc.Class({
     },
 
     //生成连续登录奖励
-    genContLoginReward: function () {
+    genContLoginReward: function () {//  changed by qll on 20191226
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -473,10 +513,10 @@ cc.Class({
         let instance = this;
         // 调用自定义网路接口获取连续登录奖励
         let data = {
-            userID: GlobalData.userID,
-            genTime: timeStr,
-            rewardCategoryID: 2,
-            rewardLevel: GlobalData.contLoginDays,
+            "userID": GlobalData.userID,
+            "genTime": timeStr,
+            "rewardCategoryID": 2,
+            "rewardLevel": GlobalData.contLoginDays,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res == -1) {
@@ -577,7 +617,7 @@ cc.Class({
         this._isFunctionShow = true;
         this.loadBag();
         this.theme = GlobalData.bgPicNum;
-        // this.queryAttribute();
+        this.queryAttribute();
     },
 
     exit: function () {  //退出该页面时调用此函数
@@ -585,6 +625,11 @@ cc.Class({
     },
 
     onPlusBtnClicked: function () {
+        //播放按键音效
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         // 动作期间禁用功能按钮
         this.functionBtn.interactable = false;
         this.showFunction();
@@ -686,12 +731,10 @@ cc.Class({
         let serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
         // 调用自定义网路接口进行查询
         let data = {
-            "userID": GlobalData.userID
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.coin = res.coin;//金币值
                 GlobalData.title = res.title;//主人称呼
@@ -699,9 +742,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/queryPetAttribute.php";
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.lastLoginTime = res.lastLoginTime;//上一次登录时间
                 GlobalData.contLoginDays = res.contLoginDays; //连续登录天数
@@ -734,9 +775,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/querySetting.php";
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.flagBgMusic = res.flagBgMusic;//标志位_是否开启背景音乐
                 GlobalData.bgMusicVolume = res.bgMusicVolume;//背景音乐音量
@@ -749,24 +788,9 @@ cc.Class({
                 GlobalData.flagVibration = res.flagVibration;//标志位_是否开启震动
             }
         });
-        serverAddr = GlobalData.serverAddr + "php/queryBag.php";
-        HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
-                console.log(res);
-                GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
-                GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
-                GlobalData.bag.categoryIDArrayStr = res.categoryIDArray;//物品类别ID数组
-                GlobalData.bag.categoryNameArrayStr = res.categoryNameArray;//物品类别名称数组
-                GlobalData.bag.numberArrayStr = res.numberArray;//物品数量数组
-            }
-        });
         serverAddr = GlobalData.serverAddr + "php/queryDecBag.php";
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
@@ -775,6 +799,7 @@ cc.Class({
                 GlobalData.bag.flagEnableArrayStr = res.flagEnableArray;//物品是否启用的标志位数组
             }
         });
+        
     },
 
     //点击获取奖励
@@ -831,70 +856,32 @@ cc.Class({
     },
 
 
-    //点击获取奖励
-    //参数说明：1：登录奖励；2：连续登录奖励；3：升级奖励；4：随机奖励
-    onClickGetReward: function (rewardCategoryID) {
-        let date = new Date();
-        let year = date.getFullYear(); //获取当前年份   
-        let month = date.getMonth() + 1; //获取当前月份   
-        let dat = date.getDate(); //获取当前日    
-        let hour = date.getHours(); //获取小时   
-        let minute = date.getMinutes(); //获取分钟   
-        let second = date.getSeconds(); //获取秒   
-        let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-        let serverAddr = GlobalData.serverAddr + "php/getReward.php";
-        let details = 'Category:' + rewardCategoryID.toString();
-        let rewardCoin = 0;
-        let rewardGrowth = 0;
-        let rewardItemID = 0;
-        let rewardItemCateID = 0;
-        if (rewardCategoryID == 1) {  //登录奖励
-            rewardCoin = GlobalData.loginRewardCoin;
-            rewardGrowth = GlobalData.loginRewardGrowth;
-        }
-        else if (rewardCategoryID == 2) {  //连续登录奖励
-            rewardCoin = GlobalData.contLoginRewardCoin;
-            rewardGrowth = GlobalData.contLoginRewardGrowth;
-        }
-        else if (rewardCategoryID == 3) {  //升级奖励
-            rewardCoin = GlobalData.upgradeRewardCoin;
-            rewardItemID = GlobalData.upgradeRewardItemID;
-            rewardItemCateID = GlobalData.upgradeRewardItemCateID;
-        }
-        else {  //随机奖励
-            rewardItemID = GlobalData.randomRewardItemID;
-            rewardItemCateID = GlobalData.randomRewardItemCateID;
-        }
-        // 调用自定义网路接口领取奖励
-        let data = {
-            userID: GlobalData.userID,
-            getTime: timeStr,
-            rewardCoin: rewardCoin,
-            rewardGrowth: rewardGrowth,
-            rewardItemID: rewardItemID,
-            rewardItemCateID: rewardItemCateID,
-            details: details,
-        };
-        HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
-                console.log(res);
-            }
-        });
-    },
-
     onClickEatBtn: function () {  //点击吃饭按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击吃饭");
         this.isBagShow = 1;
     },
 
     onClickShowerBtn: function () {  //点击洗澡按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击洗澡");
         this.isBagShow = 2;
     },
 
     onClickDrinkBtn: function () {  //点击喝水按钮 //  changed by qll on 20191226
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击喝水");
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -924,12 +911,22 @@ cc.Class({
 
 
     onClickPlayBtn: function () {  //点击玩耍按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击玩耍");
         this._isPlaySettingShow = true;  //显示玩耍子类别按钮
     },
 
     //  changed by qll on 20191226
     onClickSubPlayBtn: function (playID) {  //点击玩耍子类别按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -965,12 +962,22 @@ cc.Class({
         //picAddr表示提供的图片
     },
 
-    onClickCloseBagBtn: function () {  //点击主界面上的打工按钮
+    onClickCloseBagBtn: function () {  //点击主界面上的关闭背包按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("关闭背包");
         this.isBagShow = 0;
     },
 
     onClickWorkBtn: function () {  //点击主界面上的打工按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击打工");
         if (GlobalData.energy >= 50 && GlobalData.mood >= 30) {
             this._isWorkSettingShow = true;  //显示打工设置框
@@ -982,17 +989,32 @@ cc.Class({
     },
 
     onClickWorkTypeBtn: function (workTypeID) {  //点击工种设置按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('设置工种为：', workTypeID);
         this.workTypeID = workTypeID;
     },
 
     onClickWorkTimeBtn: function (workTimeID) {  //点击工时设置按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('设置工时为：', workTimeID);
         this.workTimeID = workTimeID;
     },
 
     //  changed by qll on 20191226
     onClickConfirmWork: function () {//完成所有设置后，点击“去打工”
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("确认打工");
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -1026,6 +1048,11 @@ cc.Class({
 
 
     onClickTripBtn: function () {  //点击主界面上的旅游按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击旅游");
         if (GlobalData.energy >= 50) {
             this._isTripSettingShow = true;  //显示旅游设置框
@@ -1037,17 +1064,32 @@ cc.Class({
     },
 
     onClickTripLocBtn: function (tripLocID) {  //点击旅游地点设置按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('设置旅游地点为：', tripLocID);
         this.tripLocID = tripLocID;
     },
 
     onClickTripTimeBtn: function (tripTimeID) {  //点击旅游时间设置按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('设置旅游时间为：', tripTimeID);
         this.tripTimeID = tripTimeID;
     },
 
     //  changed by qll on 20191226
     onClickConfirmTrip: function () {//完成所有设置后，点击“去旅游”
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -1081,6 +1123,11 @@ cc.Class({
 
     //  changed by wang-c on 20200103
     onClickSleepBtn: function () {  //点击主界面上的睡觉按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("点击睡觉");
         this._isSleepSettingShow = true;  //显示睡觉设置框
         this.sleepCounter = this.sleepTotalTime;
@@ -1103,18 +1150,32 @@ cc.Class({
             this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / 30 * Math.PI, false);
             this.stroke();
         }
+         //播放睡觉的声音
+         this.sleepSound=cc.url.raw('resources/sound/sleep/6.mp3');
+         var soundVolume = 0.5;
+         var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, soundVolume);
+         //var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, GlobalData.soundVolume);
         // 计时函数，每一秒执行一次
-        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
+        this.clockCanvas.schedule(this.clockCanvas.callback, 1);  
+        //cc.audioEngine.stop(sleepSoundID);     
     },
 
 
     onClickSleepTimeBtn: function (sleepTimeID) {  //点击睡觉时间设置按钮
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         console.log('设置睡觉时间为：', sleepTimeID);
         this.sleepTimeID = sleepTimeID;
     },
 
     //  changed by qll on 20191226
     onClickConfirmSleep: function () {//完成所有设置后，点击“去睡觉”
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -1145,21 +1206,37 @@ cc.Class({
     },
 
     onClickHomeBtn: function () {  //跳转到小屋界面
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
         cc.director.loadScene('house');
     },
 
     onClickSettingBtn: function () {  //跳转到设置界面
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
         cc.director.loadScene('setting');
     },
 
     onClickShopBtn: function () {  //跳转到商店界面  P.S.这个按钮应该在两个地方都有出现：主界面and背包框
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
         cc.director.loadScene('shop');
     },
 
     onClickUserInfoBtn: function () {  //跳转到个人信息界面
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
         cc.director.loadScene('personalInfo');
     },

@@ -21,6 +21,11 @@ cc.Class({
         species: null,
         gender: null,
         color: null,
+
+        //added by qll in 20200105
+        //宠物操作按钮启用标志位
+        flagPetOperBtnEnable: true,
+
         // 宠物饥饿值
         hunger: {
             type: cc.Integer,
@@ -166,6 +171,11 @@ cc.Class({
             default: 0,
             type: cc.Integer
         },
+        // 宠物成长值上限  ----added by qll in 20191226
+        growthCeling: {
+            default: 0,
+            type: cc.Integer
+        },
         // 宠物成长等级
         growthLevel: {
             default: 0,
@@ -206,8 +216,10 @@ cc.Class({
             set: function set(value) {
                 this._flagSleep = value;
                 if (value) {
-                    this.flagWork == false;
-                    this.flagTrip == false;
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                }
+                if (!value) {
+                    this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
             }
         },
@@ -228,8 +240,10 @@ cc.Class({
             set: function set(value) {
                 this._flagWork = value;
                 if (value) {
-                    this.flagSleep == false;
-                    this.flagTrip == false;
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                }
+                if (!value) {
+                    this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
             }
         },
@@ -250,8 +264,10 @@ cc.Class({
             set: function set(value) {
                 this._flagTrip = value;
                 if (value) {
-                    this.flagWork == false;
-                    this.flagSleep == false;
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                }
+                if (!value) {
+                    this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
             }
         },
@@ -336,7 +352,7 @@ cc.Class({
                 self.image.spriteFrame = sp;
             }
         });
-        // this.updateID = setInterval(this.queryPetStatus, interval);
+        this.updateID = setInterval(this.queryPetStatus, interval, this);
     },
 
     /**
@@ -364,7 +380,7 @@ cc.Class({
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
                 console.log("eat food: " + foodID);
-                self.queryPetStatus();
+                self.queryPetStatus(self);
             }
         });
     },
@@ -394,7 +410,7 @@ cc.Class({
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
                 console.log("take a shower with bathToolID:" + bathToolID);
-                self.queryPetStatus();
+                self.queryPetStatus(self);
             }
         });
     },
@@ -435,11 +451,10 @@ cc.Class({
     start: function start() {},
 
 
-    queryPetStatus: function queryPetStatus() {
+    queryPetStatus: function queryPetStatus(self) {
         var data = {
             "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
         };
-        var self = this;
         var serverAddr = 'https://www.llquruc.top/petGame/php/queryPetAttribute.php';
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {

@@ -15,6 +15,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        //音效
+        btnSound: {//按键音
+            default: null,
+            url: cc.AudioClip
+        },
         loadingBar: cc.Graphics,
         startBtn: cc.Button
     },
@@ -74,6 +79,11 @@ cc.Class({
     },
 
     onStartBtnClicked: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('turn to adopt page');
         cc.director.loadScene("portrayPage");
     },

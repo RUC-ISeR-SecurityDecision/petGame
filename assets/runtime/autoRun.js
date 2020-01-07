@@ -29,15 +29,13 @@ cc.Class({
         var rewardLevel = newGrowthLevel;
         // 调用自定义网路接口生成升级奖励
         var data = {
-            userID: GlobalData.userID,
-            genTime: timeStr,
-            rewardCategoryID: 3,
-            rewardLevel: rewardLevel,
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
+            "genTime": timeStr,
+            "rewardCategoryID": 3,
+            "rewardLevel": rewardLevel,
         };
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.upgradeRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.upgradeRewardItemID = res.rewardItemID;//奖励物品编号
@@ -52,12 +50,10 @@ cc.Class({
         var serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
         // 调用自定义网路接口进行查询
         var data = {
-            userID: GlobalData.userID
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
         };
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.coin = res.coin;//金币值
                 GlobalData.title = res.title;//主人称呼
@@ -65,9 +61,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/queryPetAttribute.php";
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.lastLoginTime = res.lastLoginTime;//上一次登录时间
                 GlobalData.contLoginDays = res.contLoginDays; //连续登录天数
@@ -100,9 +94,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/querySetting.php";
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.flagBgMusic = res.flagBgMusic;//标志位_是否开启背景音乐
                 GlobalData.bgMusicVolume = res.bgMusicVolume;//背景音乐音量
@@ -117,9 +109,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/queryBag.php";
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
@@ -130,9 +120,7 @@ cc.Class({
         });
         serverAddr = GlobalData.serverAddr + "php/queryDecBag.php";
         HttpHelper.httpPost(serverAddr, data, function(res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.bag.itemIDArrayStr = res.itemIDArray;//物品ID数组
                 GlobalData.bag.itemNameArrayStr = res.itemNameArray;//物品名称数组（英文）
@@ -160,15 +148,13 @@ cc.Class({
             var rewardLevel = Math.ceil(Math.random() * 20);
             // 调用自定义网路接口生成随机奖励
             var data = {
-                userID: GlobalData.userID,
-                genTime: timeStr,
-                rewardCategoryID: 4,
-                rewardLevel: rewardLevel,
+                "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
+                "genTime": timeStr,
+                "rewardCategoryID": 4,
+                "rewardLevel": rewardLevel,
             };
             HttpHelper.httpPost(serverAddr, data, function(res) {
-                if (res == -1) {
-                    console.log("访问失败");
-                } else {
+                if (res != -1) {
                     console.log(res);
                     GlobalData.randomRewardItemID = res.rewardItemID;//奖励物品编号
                     GlobalData.randomRewardItemCateID = res.rewardItemCateID;//奖励物品类别编号

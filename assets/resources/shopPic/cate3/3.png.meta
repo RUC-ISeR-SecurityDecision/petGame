@@ -11,14 +11,14 @@
   "subMetas": {
     "3": {
       "ver": "1.0.4",
-      "uuid": "7b76bd91-f97c-4962-9b6c-b0e530ea1a93",
+      "uuid": "cf865d02-e1a7-4f93-92c1-5974c69a0a0a",
       "rawTextureUuid": "36eecedd-3646-48e2-b291-6343fad1a096",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
-      "offsetX": 23,
+      "offsetX": 21,
       "offsetY": -8.5,
-      "trimX": 100,
+      "trimX": 98,
       "trimY": 458,
       "width": 1846,
       "height": 1101,

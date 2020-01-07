@@ -14,6 +14,12 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        //音效
+        btnSound: {//按键音
+            default: null,
+            url: cc.AudioClip
+        },
+
         speciesBtn: cc.Button, // 切换至物种选择页面
         skinBtn: cc.Button, // 切换至毛色选择页面
         genderBtn: cc.Button, // 切换至性别选择页面
@@ -40,6 +46,11 @@ cc.Class({
 
     // 监听button点击事件
     onSpeciesBtnClicked: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('change to species view');
         this.portray.setCurrentPageIndex(0);
         this.portray.scrollToPage(0);
@@ -47,6 +58,11 @@ cc.Class({
     },
 
     onGenderBtnClicked: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('change to gender view');
         this.portray.setCurrentPageIndex(1);
         this.portray.scrollToPage(1);
@@ -54,6 +70,11 @@ cc.Class({
     },
 
     onSkinBtnClicked: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('change to skin view');
         this.portray.setCurrentPageIndex(2);
         this.portray.scrollToPage(2);
@@ -61,6 +82,11 @@ cc.Class({
     },
 
     onNameBtnClicked: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('change to name view');
         this.showNamePage();
     },
@@ -258,6 +284,11 @@ cc.Class({
     },
     // 监听性别选择页面的复选框事件
     onGenderToggleEvent: function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         let toggleArry = this.genderPage.getComponentsInChildren(cc.Toggle);
         for (let i = 0; i < toggleArry.length; i++) {
             const element = toggleArry[i];
@@ -274,6 +305,11 @@ cc.Class({
     },
     // 监听毛色选择页面的复选框事件
     onSkinToggleEvent : function() {
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         let toggleArry = this.skinPage.getComponentsInChildren(cc.Toggle);
         for (let i = 0; i < toggleArry.length; i++) {
             const element = toggleArry[i];
@@ -303,16 +339,21 @@ cc.Class({
     },
 
     onCompleteClicked: function() {  //命名完成，提交结果，跳转到主界面
+        //播放按键音
+        this.btnSound=cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log('turn to main page');
         // 调用自定义网路接口
         var serverAddr = GlobalData.serverAddr + "php/adopt.php";
 		var data = {
-			userID: GlobalData.userID,
-            species: GlobalData.species,
-            gender: GlobalData.gender,
-            color: GlobalData.color,
-            userTitle: GlobalData.title,
-            petName: GlobalData.name,
+			"userID": GlobalData.userID,
+            "species": GlobalData.species,
+            "gender": GlobalData.gender,
+            "color": GlobalData.color,
+            "userTitle": GlobalData.title,
+            "petName": GlobalData.name,
 		};
 		/*HttpHelper.httpPost(serverAddr, data, function(data) {
 			if (data == -1) {

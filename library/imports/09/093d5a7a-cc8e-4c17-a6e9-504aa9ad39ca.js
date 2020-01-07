@@ -42,6 +42,11 @@ cc.Class({
 	extends: cc.Component,
 
 	properties: {
+		//音效
+		btnSound: { //按键音
+			default: null,
+			url: cc.AudioClip
+		},
 		commodityArray: [], // 全部商品对象数组
 		cart: [], // 购物车中商品对象数组
 		showedCommodityArray: [], // 框中展示出的商品对象数组
@@ -124,6 +129,11 @@ cc.Class({
 
 	//点击类别按钮的事件处理函数
 	onClickCategory: function onClickCategory(event) {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		this.subCategory.active = false;
 		console.log('category ' + event.target.name + ' was clicked!');
 		if (event.target.name == 'btn1') {
@@ -148,6 +158,11 @@ cc.Class({
 
 	//点击子类别按钮的事件处理函数
 	onClickSubCategory: function onClickSubCategory(event) {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		console.log('sub category ' + event.target.name + ' was clicked!');
 		if (event.target.name == 'btn1') {
 			this.modifyShopItemType(3);
@@ -175,6 +190,11 @@ cc.Class({
 
 	//点击确认按钮的事件处理函数
 	confirm: function confirm() {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		if (this.promptQuantity > 0) {
 			console.log("buy " + this.commodityArray[this.selectedCommodityIndex].name + ' ' + this.promptQuantity);
 			// 选中商品的加入购物车
@@ -222,6 +242,11 @@ cc.Class({
 
 	//点击关闭商店按钮的事件处理函数，返回主界面
 	exit: function exit() {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		//退出清空
 		this.cart = [];
 		this.showedCommodityArra = [];
@@ -232,6 +257,11 @@ cc.Class({
 
 	//点击小屋按钮的事件处理函数，去到小屋
 	goHome: function goHome() {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		//退出清空
 		this.cart = [];
 		this.showedCommodityArra = [];
@@ -294,6 +324,11 @@ cc.Class({
      * 提示框减少按钮被点击
      */
 	onPromptDecreaseBtnClicked: function onPromptDecreaseBtnClicked() {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		this.promptQuantity -= 1;
 		this.promptTotalPrice = 0;
 		if (this.selectedCategory == 1 || this.selectedCategory == 2) {
@@ -309,6 +344,11 @@ cc.Class({
      * 提示框增加按钮被点击
      */
 	onPromptIncreaseBtnClicked: function onPromptIncreaseBtnClicked() {
+		//播放按键音
+		this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+		var soundVolume = 0.5;
+		var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+		//var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
 		this.promptQuantity += 1;
 		this.promptTotalPrice = 0;
 		if (this.selectedCategory == 1 || this.selectedCategory == 2) {
