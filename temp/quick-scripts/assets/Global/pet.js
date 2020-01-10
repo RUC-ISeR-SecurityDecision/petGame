@@ -214,13 +214,15 @@ cc.Class({
                 return this._flagSleep;
             },
             set: function set(value) {
-                this._flagSleep = value;
-                if (value) {
-                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                if (value > 1 || value < 0) {
+                    value = 0;
                 }
-                if (!value) {
+                if (value == 1) {
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                } else if (value == 0) {
                     this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
+                this._flagSleep = value;
             }
         },
         //睡觉剩余时长
@@ -238,13 +240,15 @@ cc.Class({
                 return this._flagWork;
             },
             set: function set(value) {
-                this._flagWork = value;
-                if (value) {
-                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                if (value > 1 || value < 0) {
+                    value = 0;
                 }
-                if (!value) {
+                if (value == 1) {
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                } else if (value == 0) {
                     this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
+                this._flagWork = value;
             }
         },
         //打工剩余时长
@@ -262,13 +266,15 @@ cc.Class({
                 return this._flagTrip;
             },
             set: function set(value) {
-                this._flagTrip = value;
-                if (value) {
-                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                if (value > 1 || value < 0) {
+                    value = 0;
                 }
-                if (!value) {
+                if (value == 1) {
+                    this.flagPetOperBtnEnable = false; //禁用所有宠物操作按钮
+                } else if (value == 0) {
                     this.flagPetOperBtnEnable = true; //启用所有宠物操作按钮
                 }
+                this._flagTrip = value;
             }
         },
         //旅游剩余时长
@@ -293,11 +299,11 @@ cc.Class({
         var serverAddr = 'https://www.llquruc.top/petGame/php/queryPetAttribute.php';
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
-                console.log(res);
+                // console.log(res);
                 self.species = parseInt(res.species);
                 self.gender = parseInt(res.gender);
                 self.color = parseInt(res.color);
-                console.log(self.species);
+                // console.log(self.species);
                 self.hungerCeiling = parseInt(res.hungerCeiling); // 宠物饥饿值上限
                 self.cleanessCeiling = parseInt(res.cleanessCeiling); // 宠物清洁值上限
                 self.thirstCeiling = parseInt(res.thirstCeiling); // 宠物口渴值上限
@@ -321,6 +327,7 @@ cc.Class({
                 self.flagTrip = res.flagTrip; // 标志位-是否正在旅游
                 self.tripRemainTime = res.tripRemainTime; // 旅游剩余时长
                 self.init();
+                console.log(self.flagSleep, self.flagTrip, self.flagWork);
             }
         });
     },
@@ -415,25 +422,43 @@ cc.Class({
         });
     },
 
-    /**
-     * 宠物睡觉操作
-     * @param { Number } time
-     */
-    sleep: function sleep(time) {},
+    //  宠物睡觉操作
+    goSleep: function goSleep() {
+        if (this.flagPetOperBtnEnable == true) {
+            this.flagSleep = 1;
+        } else {
+            console.log("宠物正忙");
+        }
+    },
+    // 宠物睡觉结束
+    sleepEnd: function sleepEnd() {
+        this.flagSleep = 0;
+    },
 
-    /**
-     * 宠物工作操作
-     * @param { Number } time 工作时长
-     * @param { Number } type 工种
-     */
-    work: function work(time, type) {},
-
-    /**
-     * 宠物工作操作
-     * @param { Number } time 旅游时长
-     * @param { Number } place 地点
-     */
-    travel: function travel(time, place) {},
+    // 宠物工作操作
+    goWork: function goWork() {
+        if (this.flagPetOperBtnEnable == true) {
+            this.flagWork = 1;
+        } else {
+            console.log("宠物正忙");
+        }
+    },
+    // 宠物工作结束
+    workEnd: function workEnd() {
+        this.flagWork = 0;
+    },
+    /// 宠物工作操作
+    goTrip: function goTrip() {
+        if (this.flagPetOperBtnEnable == true) {
+            this.flagTrip = 1;
+        } else {
+            console.log("宠物正忙");
+        }
+    },
+    // 宠物工作结束
+    tripEnd: function tripEnd() {
+        this.flagTrip = 0;
+    },
 
     // 宠物动作
     walk: function walk() {},

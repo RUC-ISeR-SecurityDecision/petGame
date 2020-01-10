@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "touring1",
+    "texture": "f1c9fd60-2416-4d3e-b305-34e35db5e7d8",
+    "atlas": "",
+    "rect": [
+      88,
+      118,
+      1326,
+      1327
+    ],
+    "offset": [
+      -19.5,
+      -11
+    ],
+    "originalSize": [
+      1541,
+      1541
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

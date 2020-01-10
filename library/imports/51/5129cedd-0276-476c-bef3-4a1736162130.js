@@ -22,11 +22,14 @@ cc.Class({
         dropBtn: cc.Button,
 
         dropMenu: cc.Node,
-        listTemp: cc.Node
+        listTemp: cc.Node,
+        selectIndex: 0
     },
 
     init: function init(data) {
         var _this = this;
+
+        this.captainLabel.string = data[0];
 
         var _loop = function _loop(i) {
             var element = data[i];
@@ -35,6 +38,7 @@ cc.Class({
             newListNode.getChildByName('itemLabel').getComponent(cc.Label).string = element;
             newListNode.on(cc.Node.EventType.TOUCH_START, function () {
                 self.captainLabel.string = element;
+                self.selectIndex = i;
                 self.dropMenu.active = false;
             }, self);
             self.listTemp.parent.addChild(newListNode);
@@ -47,6 +51,10 @@ cc.Class({
     },
 
     onDropBtnClick: function onDropBtnClick() {
+        //播放按键音
+        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         self.dropMenu.active = true;
     },
     // LIFE-CYCLE CALLBACKS:
@@ -57,7 +65,6 @@ cc.Class({
         self.dropBtn.node.on(cc.Node.EventType.TOUCH_START, function () {
             self.dropMenu.active = !self.dropMenu.active;
         }, self);
-        self.init([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     },
     start: function start() {}
 }

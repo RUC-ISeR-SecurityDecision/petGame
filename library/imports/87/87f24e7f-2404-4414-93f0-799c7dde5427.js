@@ -46,8 +46,6 @@ cc.Class({
                 return this._theme;
             },
             set: function set(value) {
-                var _this = this;
-
                 if (value < 0) {
                     value = 0;
                 }
@@ -56,11 +54,12 @@ cc.Class({
                 }
                 if (value != this._theme) {
                     var resPath = "bgPic/" + (value + 1);
+                    var self = this;
                     cc.loader.loadRes(resPath, cc.SpriteFrame, function (err, sp) {
                         if (err) {
                             console.log('failed to load sprite ' + resPath);
                         } else {
-                            _this.background.spriteFrame = sp;
+                            self.background.spriteFrame = sp;
                         }
                     });
                     var color = new cc.Color();
@@ -117,8 +116,8 @@ cc.Class({
         statusLayout: cc.Node,
         profile: cc.Sprite,
         shop: cc.Sprite,
-        tripBtn: cc.Sprite,
-        workBtn: cc.Sprite,
+        tripBtn: cc.Button,
+        workBtn: cc.Button,
         homeBtn: cc.Sprite,
         sleepBtn: cc.Button,
         settingBtn: cc.Sprite,
@@ -129,6 +128,7 @@ cc.Class({
         bagItemArray: [],
 
         pet: cc.Node, // 宠物
+        petCtrl: cc.Component, // 通过petCtrl关联pet.js
 
         //以下为页面中需要展示的值
         coin: cc.Label, // 金币值
@@ -171,9 +171,46 @@ cc.Class({
                 }
             }
         }, // 标志位_是否展示背包,根据值判断打开哪个背包
-        _isSleepSettingShow: false, //标志位_是否展示睡觉设置框
-        _isWorkSettingShow: false, //标志位_是否展示工作设置框
-        _isTripSettingShow: false, //标志位_是否展示旅游设置框
+
+        sleepPrompt: cc.Node, // 睡觉设置提示框
+        isSleepSettingShow: {
+            get: function get() {
+                return this._isSleepSettingShow;
+            },
+            set: function set(value) {
+                if (value != true && value != false) {
+                    value = false;
+                }
+                this.sleepPrompt.active = value;
+                this._isSleepSettingShow = value;
+            }
+        }, //标志位_是否展示睡觉设置框
+        workPrompt: cc.Node, // 工作设置提示框
+        isWorkSettingShow: {
+            get: function get() {
+                return this._isWorkSettingShow;
+            },
+            set: function set(value) {
+                if (value != true && value != false) {
+                    value = false;
+                }
+                this.workPrompt.active = value;
+                this._isWorkSettingShow = value;
+            }
+        }, //标志位_是否展示工作设置框
+        tripPrompt: cc.Node, // 旅游设置提示框
+        isTripSettingShow: {
+            get: function get() {
+                return this._isTripSettingShow;
+            },
+            set: function set(value) {
+                if (value != true && value != false) {
+                    value = false;
+                }
+                this.tripPrompt.active = value;
+                this._isTripSettingShow = value;
+            }
+        }, //标志位_是否展示旅游设置框
         _isPlaySettingShow: false, //标志位_是否展示玩耍子操作框
         _isClockShow: false, //标志位_是否显示倒计时（用于睡觉、打工和旅游）
 
@@ -182,14 +219,15 @@ cc.Class({
         _isRandomRewardShow: false, //标志位_是否显示随机奖励
         _isUpgradeRewardShow: false, //标志位_是否显示升级奖励
 
-        timeIndex: [0, 30, 40, 50, 60], //不同的时间ID对应的具体秒数（适用于旅游、打工和睡觉操作）P.S. ID0是无效的
+        timeIndex: [], //不同的时间ID对应的具体秒数（适用于旅游、打工和睡觉操作）P.S. ID0是无效的
+        placeIndex: [],
+        workTypeIndex: [],
 
         workTypeID: 0, //工种设置
         workTimeID: 0, //工时设置
 
         tripLocID: 0, //旅游地点设置
         tripTimeID: 0, //旅游时长设置
-
         sleepTimeID: 0, //睡觉时间设置
 
         updateID: 0, //用于退出该页面时清除interval
@@ -197,7 +235,11 @@ cc.Class({
 
         // clock
         clockCanvas: cc.Graphics,
-        sleepTimeLabel: cc.Label
+        sleepTimeLabel: cc.Label,
+
+        // question prompt
+        questionPrompt: cc.Node
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -278,7 +320,7 @@ cc.Class({
      * 打开背包,根据isBagShow的值自己调用，不要单独调用，逻辑查看isBagShow的注释
      */
     openBag: function openBag() {
-        var _this2 = this;
+        var _this = this;
 
         var self = this;
         console.log("open bag");
@@ -287,7 +329,7 @@ cc.Class({
             var element = self.bagItemArray[i];
             console.log("-----------debug log----------");
             console.log("now load bag item: " + (i + 1));
-            if (element.categoryID == _this2.isBagShow) {
+            if (element.categoryID == _this.isBagShow) {
                 console.log("item: " + i + ' will be loaded.');
                 var picName = 'shopPic/cate' + element.categoryID + '/' + element.id;
                 cc.loader.loadRes(picName, cc.SpriteFrame, function (err, sp) {
@@ -399,16 +441,17 @@ cc.Class({
         pos = self.bag.parent.convertToNodeSpaceAR(pos);
         var useRect = new cc.Rect(selectNode.x, selectNode.y, selectNode.width, selectNode.height);
         console.log("touch end");
-        if (petRect.intersects(useRect)) {
-            // 判断两个矩形框是否重叠
+        if (petRect.intersects(useRect) && self.petCtrl.flagPetOperBtnEnable == true) {
+            // 判断两个矩形框是否重叠 并且 宠物处于可操作状态
             // 矩形重叠说明进行喂食等操作
             // console.log(self.testNode.parent.parent.getChildByName('pet'));
             if (self.bagItemArray[self.selectBagItemIndex].categoryID == 1) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').eat(self.bagItemArray[self.selectBagItemIndex].id);
+                // selectNode.parent.parent.getChildByName('pet').getComponent('pet').eat(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.eat(self.bagItemArray[self.selectBagItemIndex].id);
             } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 2) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').shower(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.shower(self.bagItemArray[self.selectBagItemIndex].id);
             } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 10) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').play(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.play(self.bagItemArray[self.selectBagItemIndex].id);
             }
             selectNode.setPosition(copyNode.position);
             copyNode.destroy();
@@ -453,16 +496,16 @@ cc.Class({
         pos = self.bag.parent.convertToNodeSpaceAR(pos);
         var useRect = new cc.Rect(selectNode.x, selectNode.y, selectNode.width, selectNode.height);
         console.log("touch end");
-        if (petRect.intersects(useRect)) {
+        if (petRect.intersects(useRect) && self.petCtrl.flagPetOperBtnEnable == true) {
             // 判断两个矩形框是否重叠
             // 矩形重叠说明进行喂食等操作
             // console.log(self.testNode.parent.parent.getChildByName('pet'));
             if (self.bagItemArray[self.selectBagItemIndex].categoryID == 1) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').eat(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.eat(self.bagItemArray[self.selectBagItemIndex].id);
             } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 2) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').shower(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.shower(self.bagItemArray[self.selectBagItemIndex].id);
             } else if (self.bagItemArray[self.selectBagItemIndex].categoryID == 10) {
-                selectNode.parent.parent.getChildByName('pet').getComponent('pet').play(self.bagItemArray[self.selectBagItemIndex].id);
+                self.petCtrl.play(self.bagItemArray[self.selectBagItemIndex].id);
             }
             selectNode.setPosition(copyNode.position);
             copyNode.destroy();
@@ -640,9 +683,14 @@ cc.Class({
         // let interval = 1000;  //1秒
         // this.updateID = setInterval(this.autoUpdate, interval);
         this._isFunctionShow = true;
+        this.timeIndex = [0, 30, 40, 50, 60];
+        this.placeIndex = ["安徽", "澳门", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "海南", "河北", "河南", "黑龙江", "湖北", "湖南", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "台湾", "天津", "西藏", "香港", "新疆", "云南", "浙江"];
+        this.workTypeIndex = ["种花", "野外勘探", "画漫画", "当导游", "发广告", "算账"];
         this.loadBag();
         this.theme = GlobalData.bgPicNum;
         this.queryAttribute();
+        this.petCtrl = this.node.parent.getChildByName('pet').getComponent('pet');
+        console.log(this.petCtrl);
     },
 
     exit: function exit() {
@@ -984,11 +1032,18 @@ cc.Class({
         });
     },
 
-    startCountDown: function startCountDown(operationName, time, question, answer, picAddr) {//该函数待实现
+    startCountDown: function startCountDown(operationName, id) {
+        //该函数待实现
         //参数的意义：operationName表示到底是为了什么操作而进行倒计时（work或trip或sleep）
         //time表示时间
         //question和answer分别表示结束后问答环节的问题和答案
         //picAddr表示提供的图片
+        if (operationName == 'trip') {
+            this.questionPrompt.getComponent('questionPrompt').init(0, 1);
+        } else if (operationName == 'work') {
+            this.questionPrompt.getComponent('questionPrompt').init(1, 1);
+        }
+        this.questionPrompt.active = true;
     },
 
     onClickCloseBagBtn: function onClickCloseBagBtn() {
@@ -1002,81 +1057,9 @@ cc.Class({
         this.isBagShow = 0;
     },
 
-    onClickWorkBtn: function onClickWorkBtn() {
-        //点击主界面上的打工按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log("点击打工");
-        if (GlobalData.energy >= 50 && GlobalData.mood >= 30) {
-            this._isWorkSettingShow = true; //显示打工设置框
-        } else {
-            var promptStr = '宠物能量值不低于50且心情值不低于30才可以去打工哟~~';
-            alert(promptStr);
-        }
-    },
-
-    onClickWorkTypeBtn: function onClickWorkTypeBtn(workTypeID) {
-        //点击工种设置按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log('设置工种为：', workTypeID);
-        this.workTypeID = workTypeID;
-    },
-
-    onClickWorkTimeBtn: function onClickWorkTimeBtn(workTimeID) {
-        //点击工时设置按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log('设置工时为：', workTimeID);
-        this.workTimeID = workTimeID;
-    },
-
-    //  changed by qll on 20191226
-    onClickConfirmWork: function onClickConfirmWork() {
-        //完成所有设置后，点击“去打工”
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log("确认打工");
-        var date = new Date();
-        var year = date.getFullYear(); //获取当前年份   
-        var month = date.getMonth() + 1; //获取当前月份   
-        var dat = date.getDate(); //获取当前日    
-        var hour = date.getHours(); //获取小时   
-        var minute = date.getMinutes(); //获取分钟   
-        var second = date.getSeconds(); //获取秒   
-        var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-        var serverAddr = GlobalData.serverAddr + "php/work.php";
-        var details = '';
-        var instance = this;
-        // 调用自定义网路接口
-        var data = {
-            "userID": GlobalData.userID,
-            "operationTime": timeStr,
-            "workTimeID": instance.workTimeID,
-            "workTypeID": instance.workTypeID,
-            "details": details
-        };
-        HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
-                console.log(res);
-                //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
-                instance.startCountDown('work', instance.timeIndex[instance.workTimeID], res.question, res.answer, res.picAddr);
-            }
-        });
+    onClickTripCloseBtn: function onClickTripCloseBtn() {
+        // 音效尚未添加 -- need audio
+        this.isTripSettingShow = false;
     },
 
     onClickTripBtn: function onClickTripBtn() {
@@ -1086,35 +1069,23 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log("点击旅游");
-        if (GlobalData.energy >= 50) {
-            this._isTripSettingShow = true; //显示旅游设置框
+        if (this.petCtrl.flagPetOperBtnEnable == true) {
+            if (GlobalData.energy >= 0 && GlobalData.mood >= 0) {
+                console.log("打开旅游提示框");
+                this.isTripSettingShow = true; //显示旅游设置框
+                // 初始化提示框下拉框的值
+                var dropdownData = ['30s', '40s', '50s', '60s']; // 四个值，不能与timeIndex数组对应
+                this.tripPrompt.getChildByName('timeDropDownBox').getComponent('dropdown').init(dropdownData); // 时间下拉框
+                dropdownData = this.placeIndex;
+                this.tripPrompt.getChildByName('placeDropDownBox').getComponent('dropdown').init(dropdownData); // 地点下拉框
+            } else {
+                var promptStr = '宠物能量值不低于50且心情值不低于30才可以去旅游哟~~';
+                // 失败提示，待写
+            }
         } else {
-            var promptStr = '宠物能量值不低于50才可以去旅游哟~~';
-            alert(promptStr);
+            var _promptStr = '您的宠物现在正忙哟~~';
+            // 失败提示，待写
         }
-    },
-
-    onClickTripLocBtn: function onClickTripLocBtn(tripLocID) {
-        //点击旅游地点设置按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log('设置旅游地点为：', tripLocID);
-        this.tripLocID = tripLocID;
-    },
-
-    onClickTripTimeBtn: function onClickTripTimeBtn(tripTimeID) {
-        //点击旅游时间设置按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log('设置旅游时间为：', tripTimeID);
-        this.tripTimeID = tripTimeID;
     },
 
     //  changed by qll on 20191226
@@ -1125,6 +1096,36 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
+
+        // 游戏里需要完成的操作
+        this.tripPrompt.active = false; // 关闭提示框
+        this.pet.active = false; // 隐藏宠物
+        this.petCtrl.goTrip();
+        this.tripTimeID = this.tripPrompt.getChildByName('timeDropDownBox').getComponent('dropdown').selectIndex + 1; // 加1是为了与timeIndex对应起来
+        this.tripTypeID = this.tripPrompt.getChildByName('placeDropDownBox').getComponent('dropdown').selectIndex + 1;
+        this.clockCanvas.counter = parseInt(this.timeIndex[this.tripTimeID]); // 旅游计数器
+        var self = this;
+        // 计数函数
+        this.clockCanvas.callback = function () {
+            this.counter--;
+            if (this.counter < 1) {
+                this.unschedule(this.callback);
+                this.node.parent.active = false;
+                self.pet.active = true;
+                self.startCountDown('trip', self.tripTypeID);
+                self.petCtrl.tripEnd(); //  宠物状态开锁
+            }
+            this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
+            // this.circle(0, 0, 75);
+            // this.fill();
+            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.tripTimeID] * Math.PI, false);
+            this.stroke();
+        };
+        // 计时函数，每一秒执行一次
+        this.clockCanvas.node.parent.active = true; //打开工作倒计时
+        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
+
+        // http post
         var date = new Date();
         var year = date.getFullYear(); //获取当前年份   
         var month = date.getMonth() + 1; //获取当前月份   
@@ -1141,7 +1142,7 @@ cc.Class({
             "userID": GlobalData.userID,
             "operationTime": timeStr,
             "tripTimeID": instance.tripTimeID,
-            "tripLocID": instance.tripLocID,
+            "tripTypeID": instance.tripTypeID,
             "details": details
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
@@ -1155,6 +1156,108 @@ cc.Class({
         });
     },
 
+    onClickWorkCloseBtn: function onClickWorkCloseBtn() {
+        // 音效尚未添加 -- need audio
+        this.isWorkSettingShow = false;
+    },
+
+    onClickWorkBtn: function onClickWorkBtn() {
+        //点击主界面上的工作按钮
+        //播放按键音
+        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
+        console.log(this.petCtrl.flagPetOperBtnEnable);
+        if (this.petCtrl.flagPetOperBtnEnable == true) {
+            if (GlobalData.energy >= 0) {
+                console.log("打开工作提示框");
+                this.isWorkSettingShow = true; //显示工作设置框
+                // 初始化提示框下拉框的值
+                var dropdownData = ['30s', '40s', '50s', '60s']; // 四个值，不能与timeIndex数组对应
+                this.workPrompt.getChildByName('timeDropDownBox').getComponent('dropdown').init(dropdownData); // 时间下拉框
+                dropdownData = this.workTypeIndex;
+                this.workPrompt.getChildByName('typeDropDownBox').getComponent('dropdown').init(dropdownData); // 时间下拉框
+            } else {
+                var promptStr = '宠物能量值不低于50才可以去工作哟~~';
+                // 失败提示框！未设置
+            }
+        } else {
+            var _promptStr2 = '您的宠物正忙';
+            // 失败提示框！未设置
+        }
+    },
+
+    //  changed by qll on 20191226
+    onClickConfirmWork: function onClickConfirmWork() {
+        //完成所有设置后，点击“去工作”
+        //播放按键音
+        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
+        var soundVolume = 0.5;
+        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+        // 游戏里需要完成的操作
+        this.workPrompt.active = false; // 关闭提示框
+        this.pet.active = false; // 隐藏宠物
+        this.petCtrl.goWork(); //  宠物状态上锁
+        this.workTimeID = this.workPrompt.getChildByName('timeDropDownBox').getComponent('dropdown').selectIndex + 1; // 加1是为了与timeIndex对应起来
+        this.workTypeID = this.workPrompt.getChildByName('typeDropDownBox').getComponent('dropdown').selectIndex + 1;
+        this.clockCanvas.counter = parseInt(this.timeIndex[this.workTimeID]); // 工作计数器
+        var self = this;
+        // 计数函数
+        this.clockCanvas.callback = function () {
+            this.counter--;
+            if (this.counter < 1) {
+                this.unschedule(this.callback);
+                this.node.parent.active = false;
+                self.pet.active = true;
+                self.startCountDown('work', self.workTypeID);
+                self.petCtrl.workEnd(); // 宠物状态开锁
+            }
+            this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
+            this.circle(0, 0, 75);
+            this.fill();
+            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.workTimeID] * Math.PI, false);
+            this.stroke();
+        };
+        // 计时函数，每一秒执行一次
+        this.clockCanvas.node.parent.active = true; //打开工作倒计时
+        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
+
+        // http post
+        var date = new Date();
+        var year = date.getFullYear(); //获取当前年份   
+        var month = date.getMonth() + 1; //获取当前月份   
+        var dat = date.getDate(); //获取当前日    
+        var hour = date.getHours(); //获取小时   
+        var minute = date.getMinutes(); //获取分钟   
+        var second = date.getSeconds(); //获取秒   
+        var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+        var serverAddr = GlobalData.serverAddr + "php/work.php";
+        var details = '';
+        var instance = this;
+        // 调用自定义网路接口
+        var data = {
+            "userID": GlobalData.userID,
+            "operationTime": timeStr,
+            "workTimeID": instance.workTimeID,
+            "workLocID": instance.workLocID,
+            "details": details
+        };
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res == -1) {
+                console.log("访问失败");
+            } else {
+                console.log(res);
+                //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
+                instance.startCountDown('work', instance.timeIndex[instance.workTimeID], res.question, res.answer, res.picAddr);
+            }
+        });
+    },
+
+    onClickSleepCloseBtn: function onClickSleepCloseBtn() {
+        // 音效尚未添加 -- need audio
+        this.isSleepSettingShow = false;
+    },
     //  changed by wang-c on 20200103
     onClickSleepBtn: function onClickSleepBtn() {
         //点击主界面上的睡觉按钮
@@ -1163,46 +1266,17 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        console.log("点击睡觉");
-        this._isSleepSettingShow = true; //显示睡觉设置框
-        this.sleepCounter = this.sleepTotalTime;
-        this.clockCanvas.node.parent.active = true;
-        this.pet.active = false;
-        this.clockCanvas.counter = 30; // 睡觉计数器
-        this.sleepBtn.interactable = false; // ps：更好的办法是修改睡觉的flag，通过修改flag把该禁用的按钮全部禁用
-        var self = this;
-        this.clockCanvas.callback = function () {
-            this.counter--;
-            if (this.counter < 1) {
-                this.unschedule(this.callback);
-                this.node.parent.active = false;
-                self.pet.active = true;
-                self.sleepBtn.interactable = true;
-            }
-            this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
-            this.circle(0, 0, 75);
-            this.fill();
-            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / 30 * Math.PI, false);
-            this.stroke();
-        };
-        //播放睡觉的声音
-        this.sleepSound = cc.url.raw('resources/sound/sleep/6.mp3');
-        var soundVolume = 0.5;
-        var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, soundVolume);
-        //var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, GlobalData.soundVolume);
-        // 计时函数，每一秒执行一次
-        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
-        //cc.audioEngine.stop(sleepSoundID);     
-    },
-
-    onClickSleepTimeBtn: function onClickSleepTimeBtn(sleepTimeID) {
-        //点击睡觉时间设置按钮
-        //播放按键音
-        this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
-        var soundVolume = 0.5;
-        var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
-        console.log('设置睡觉时间为：', sleepTimeID);
-        this.sleepTimeID = sleepTimeID;
+        console.log(this.petCtrl.flagPetOperBtnEnable);
+        if (this.petCtrl.flagPetOperBtnEnable == true) {
+            console.log("打开睡觉提示框");
+            this.isSleepSettingShow = true; //显示睡觉设置框
+            // 初始化提示框下拉框的值
+            var dropdownData = ['30s', '40s', '50s', '60s']; // 四个值，不能与timeIndex数组对应
+            this.sleepPrompt.getChildByName('dropDownBox').getComponent('dropdown').init(dropdownData);
+        } else {
+            var promptStr = "您的宠物正忙哟~~~";
+            // 失败提示框，待写
+        }
     },
 
     //  changed by qll on 20191226
@@ -1212,6 +1286,40 @@ cc.Class({
         this.btnSound = cc.url.raw('resources/sound/button/1.mp3');
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
+
+        // 游戏里需要完成的操作
+        this.sleepPrompt.active = false; // 关闭提示框
+        this.pet.active = false; // 隐藏宠物
+        this.petCtrl.goSleep(); // 宠物状态上锁
+        this.sleepTimeID = this.sleepPrompt.getChildByName('dropDownBox').getComponent('dropdown').selectIndex + 1; // 加1是为了与timeIndex对应起来
+        this.clockCanvas.counter = parseInt(this.timeIndex[this.sleepTimeID]); // 睡觉计数器
+        var self = this;
+        // 计数函数
+        this.clockCanvas.callback = function () {
+            this.counter--;
+            if (this.counter < 1) {
+                this.unschedule(this.callback);
+                this.node.parent.active = false;
+                self.pet.active = true;
+                cc.audioEngine.stop(sleepSoundID);
+                self.petCtrl.sleepEnd(); // 宠物状态开锁
+            }
+            this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
+            this.circle(0, 0, 75);
+            this.fill();
+            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.sleepTimeID] * Math.PI, false);
+            this.stroke();
+        };
+        //播放睡觉的声音
+        this.sleepSound = cc.url.raw('resources/sound/sleep/6.mp3');
+        var soundVolume = 0.5;
+        var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, soundVolume);
+        //var sleepSoundID = cc.audioEngine.play(this.sleepSound, false, GlobalData.soundVolume);
+        // 计时函数，每一秒执行一次
+        this.clockCanvas.node.parent.active = true; //打开睡觉倒计时
+        this.clockCanvas.schedule(this.clockCanvas.callback, 1);
+
+        // http post
         var date = new Date();
         var year = date.getFullYear(); //获取当前年份   
         var month = date.getMonth() + 1; //获取当前月份   
@@ -1221,11 +1329,11 @@ cc.Class({
         var second = date.getSeconds(); //获取秒   
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/sleep.php";
-        var details = '';
+        var details = "";
         var instance = this;
         // 调用自定义网路接口
         var data = {
-            "userID": GlobalData.userID,
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
             "operationTime": timeStr,
             "sleepTimeID": instance.sleepTimeID,
             "details": details

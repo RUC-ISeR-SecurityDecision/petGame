@@ -29,14 +29,16 @@ cc.Class({
                 if (value == false) {
                     //Disable bg music
                     var offEnd = cc.callFunc(function () {
+                        // let onBtnOffAction = cc.moveTo(0.1, -48, 0);
+                        // onNode.runAction(onBtnOffAction);
                         onNode.active = false;
                     }, self, null);
                     offNode.active = true;
                     onNode.zIndex = 0;
                     offNode.zIndex = 1;
-                    var onBtnOffAction = cc.moveTo(0.3, -48, 0);
+
                     var offBtnOffAction = cc.sequence(cc.moveTo(0.3, -3, 0), offEnd);
-                    onNode.runAction(onBtnOffAction);
+
                     offNode.runAction(offBtnOffAction);
                     console.log("Disable bg music");
                     var date = new Date();
@@ -75,6 +77,8 @@ cc.Class({
                     offNode.runAction(offBtnOnAction);
                     onNode.runAction(onBtnOnAction);
                     console.log("Enable bg music");
+                }
+                if (value != this._isMusicOn && this._isMusicOn == false) {
                     self.openBgMusicSetting(); //open bgMusic Setting
                 }
                 this._isMusicOn = value;
@@ -174,6 +178,8 @@ cc.Class({
                     offNode.runAction(offBtnOnAction);
                     onNode.runAction(onBtnOnAction);
                     console.log("Enable sound");
+                }
+                if (value != this._isSoundOn && this._isSoundOn == false) {
                     self.openSoundSetting(); //open Sound Setting
                 }
                 this._isSoundOn = value;
@@ -353,8 +359,6 @@ cc.Class({
         this.isVibrationOn = GlobalData.flagVibration == 0 ? false : true;
         this.isNoticeOn = GlobalData.flagNotice == 0 ? false : true;
         this.flagBgMusic = GlobalData.flagBgMusic; //标志位_是否开启背景音乐
-        console.log("Hi");
-        console.log(this.flagBgMusic);
         this.bgMusicVolume = GlobalData.bgMusicVolume; //背景音乐音量
         this.bgMusicNum = GlobalData.bgMusicNum; //背景音乐曲目编号
         this.bgPicNum = GlobalData.bgPicNum; //背景图片编号

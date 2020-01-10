@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "showering1",
+    "texture": "69d6c34b-c3eb-405e-82ea-26d225e03396",
+    "atlas": "",
+    "rect": [
+      125,
+      114,
+      1326,
+      1327
+    ],
+    "offset": [
+      13.5,
+      -3
+    ],
+    "originalSize": [
+      1549,
+      1549
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
