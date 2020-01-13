@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cupHalf",
+    "texture": "f7a20967-3801-48e0-9a2d-219d20d13901",
+    "atlas": "",
+    "rect": [
+      500,
+      585,
+      990,
+      1152
+    ],
+    "offset": [
+      -5,
+      -161
+    ],
+    "originalSize": [
+      2000,
+      2000
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

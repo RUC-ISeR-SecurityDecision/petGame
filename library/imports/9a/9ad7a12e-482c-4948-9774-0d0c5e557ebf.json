@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "albumBtn2",
+    "texture": "d7ed9ed1-3b51-4c32-93d9-2a39f0f43cf6",
+    "atlas": "",
+    "rect": [
+      150,
+      82,
+      1084,
+      1219
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      1384,
+      1384
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

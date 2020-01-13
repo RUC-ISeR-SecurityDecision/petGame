@@ -364,9 +364,7 @@ cc.Class({
             "petName": GlobalData.name
         };
         /*HttpHelper.httpPost(serverAddr, data, function(data) {
-        	if (data == -1) {
-        		console.log("访问失败");
-        	} else {
+        	if (data != -1) { //---
         		console.log('领养成功');
         	}
               });
@@ -375,9 +373,7 @@ cc.Class({
         	userID: GlobalData.userID,
         };
               HttpHelper.httpPost(serverAddr, data, function(data) {
-        	if (data == -1) {
-        		console.log("访问失败");
-        	} else {
+        	if (data != -1) {  //---
         		console.log('后台自动更新进程开始运行');
         	}
               });*/

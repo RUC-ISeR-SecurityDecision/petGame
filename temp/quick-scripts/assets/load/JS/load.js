@@ -51,9 +51,8 @@ cc.Class({
             flagLocation: flagLocation
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            //---
+            if (res != -1) {
                 console.log(res);
                 GlobalData.userID = res.userID;
                 GlobalData.flagNewUser = Number(res.flagNewUser);
