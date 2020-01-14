@@ -8,6 +8,7 @@ var frog = {
     bodyWidth: 45,
     bodyHeight: 33,
     eyeRadius: 15,
+    closeEyeRadius: 8,
     innerEyeRadius: 12,
     pupilRadius: 8,
     eyePosX: 20,
@@ -15,8 +16,8 @@ var frog = {
     mouthPosX: 0,
     mouthPosY: 15,
     mouthLength: 12, // 按钮打开时候的嘴长度
+    mouthHeight: 12,
     mouthCloseRadius: 12, // 按钮关闭时候的嘴半径
-    status: 1,
     bodyColor: '#A3D768',
     eyeColor: '#ffffff',
     innerEyeColor: '#3F6A34',
@@ -29,7 +30,39 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        ctx: cc.Graphics
+        ctx: cc.Graphics,
+        updateTime: 800,
+        status: {
+            get: function get() {
+                return this._status;
+            },
+            set: function set(value) {
+                if (this._status == 2 && value == 1) {
+                    this._status = 1;
+                    console.log(this.ctx.node.getComponent(cc.Button));
+                    this.ctx.node.getComponent(cc.Button).interactable = true;
+                } else if (this._status == 3 && value == 0) {
+                    this._status = 0;
+                    this.ctx.node.getComponent(cc.Button).interactable = true;
+                } else if (this._status == 1 && value == 0) {
+                    this._status = 3;
+                    this.ctx.node.getComponent(cc.Button).interactable = false;
+                } else if (this._status == 0 && value == 1) {
+                    this._status = 2;
+                    this.ctx.node.getComponent(cc.Button).interactable = false;
+                } else {
+                    // 初始赋值
+                    this._status = value;
+                    if (value == 0) {
+                        frog.innerEyeRadius = 12;
+                        frog.pupilRadius = 8;
+                    } else if (value == 1) {
+                        frog.innerEyeRadius = 6;
+                        frog.pupilRadius = 4;
+                    }
+                }
+            }
+        }
     },
 
     drawFrogBack: function drawFrogBack() {
@@ -67,21 +100,21 @@ cc.Class({
     drawFrogCloseEye: function drawFrogCloseEye() {
         this.ctx.strokeColor = new cc.Color().fromHEX(frog.innerEyeColor);
         this.ctx.lineWidth = 3;
-        this.ctx.moveTo(frog.eyePosX - frog.pupilRadius, frog.eyePosY);
-        this.ctx.quadraticCurveTo(frog.eyePosX, frog.eyePosY - frog.pupilRadius, frog.eyePosX + frog.pupilRadius, frog.eyePosY);
+        this.ctx.moveTo(frog.eyePosX - frog.closeEyeRadius, frog.eyePosY);
+        this.ctx.quadraticCurveTo(frog.eyePosX, frog.eyePosY - frog.closeEyeRadius, frog.eyePosX + frog.closeEyeRadius, frog.eyePosY);
         this.ctx.stroke();
 
-        this.ctx.moveTo(-frog.eyePosX - frog.pupilRadius, frog.eyePosY);
-        this.ctx.quadraticCurveTo(-frog.eyePosX, frog.eyePosY - frog.pupilRadius, -frog.eyePosX + frog.pupilRadius, frog.eyePosY);
+        this.ctx.moveTo(-frog.eyePosX - frog.closeEyeRadius, frog.eyePosY);
+        this.ctx.quadraticCurveTo(-frog.eyePosX, frog.eyePosY - frog.closeEyeRadius, -frog.eyePosX + frog.closeEyeRadius, frog.eyePosY);
         this.ctx.stroke();
     },
 
     drawFrogOpenMouth: function drawFrogOpenMouth() {
         this.ctx.fillColor = new cc.Color().fromHEX(frog.mouthColor);
-        this.ctx.moveTo(0 - frog.innerEyeRadius, frog.mouthPosY);
-        this.ctx.lineTo(0 - frog.innerEyeRadius, frog.mouthPosY - frog.mouthLength);
-        this.ctx.quadraticCurveTo(0, frog.mouthPosY - frog.mouthLength - 10, frog.innerEyeRadius, frog.mouthPosY - frog.mouthLength);
-        this.ctx.lineTo(frog.innerEyeRadius, frog.mouthPosY);
+        this.ctx.moveTo(0 - frog.mouthHeight, frog.mouthPosY);
+        this.ctx.lineTo(0 - frog.mouthHeight, frog.mouthPosY - frog.mouthLength);
+        this.ctx.quadraticCurveTo(0, frog.mouthPosY - frog.mouthLength - 10, frog.mouthHeight, frog.mouthPosY - frog.mouthLength);
+        this.ctx.lineTo(frog.mouthHeight, frog.mouthPosY);
         this.ctx.close();
         this.ctx.fill();
     },
@@ -98,9 +131,10 @@ cc.Class({
         var pos3 = cc.v2(5, 0);
 
         self.drawFrogBack();
-        if (frog.status == 0) {
+        if (self.status == 0) {
             var flag = parseInt(Math.random() * 3);
             if (flag == 0) {
+                // button is open
                 self.drawFrogOpenEye(pos1.x, pos1.y);
             } else if (flag == 1) {
                 self.drawFrogOpenEye(pos2.x, pos2.y);
@@ -108,21 +142,43 @@ cc.Class({
                 self.drawFrogOpenEye(pos3.x, pos3.y);
             }
             self.drawFrogOpenMouth();
-        } else {
+        } else if (self.status == 1) {
+            // button is close
             self.drawFrogCloseEye();
+            frog.mouthCloseRadius--;
             if (frog.mouthCloseRadius < 8) {
-                frog.mouthCloseRadius++;
-            } else if (frog.mouthCloseRadius >= 12) {
-                frog.mouthCloseRadius--;
+                frog.mouthCloseRadius = 12;
             }
             self.drawFrogCloseMouth();
+        } else if (self.status == 2) {
+            // button turn off
+            self.drawFrogOpenEye(5, 0);
+            self.drawFrogOpenMouth();
+            frog.innerEyeRadius -= 3;
+            frog.pupilRadius -= 2;
+            if (frog.pupilRadius <= 4 || frog.innerEyeRadius <= 6) {
+                frog.innerEyeRadius = 6;
+                frog.pupilRadius = 4;
+                self.status = 1;
+            }
+        } else if (self.status == 3) {
+            // button turn on
+            frog.innerEyeRadius += 3;
+            frog.pupilRadius += 2;
+            self.drawFrogOpenEye(5, 0);
+            self.drawFrogCloseMouth();
+            if (frog.pupilRadius >= 8 || frog.innerEyeRadius >= 12) {
+                frog.innerEyeRadius = 12;
+                frog.pupilRadius = 8;
+                self.status = 0;
+            }
         }
     },
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function onLoad() {
         var self = this;
-        this.updateID = setInterval(self.drawFrog, 400, self);
+        this.updateID = setInterval(self.drawFrog, self.updateTime, self);
     },
     start: function start() {}
 }

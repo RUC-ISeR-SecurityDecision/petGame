@@ -1,9 +1,3 @@
-"use strict";
-cc._RF.push(module, 'f39f6MHJA5Bzbc+ji9NwT5J', 'questionPrompt');
-// main/js/questionPrompt.js
-
-"use strict";
-
 // Learn cc.Class:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
 //  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/class.html
@@ -19,17 +13,15 @@ cc.Class({
 
     properties: {
         type: {
-            get: function get() {
+            get() {
                 return this._type;
             },
-            set: function set(value) {
-                if (value == 0) {
-                    // 旅游
+            set(value) {
+                if (value == 0) { // 旅游
                     this.title.string = "您的宠物旅游回来啦，还带回来了...";
                     this.picPath = "tripPic/";
                     this.QAPath = "tripQA/";
-                } else if (value == 1) {
-                    // 打工
+                } else if (value == 1) { // 打工
                     this.title.string = "您的宠物打工回来啦，还带回来了...";
                     this.picPath = "workPic/";
                     this.QAPath = "workQA/";
@@ -53,21 +45,22 @@ cc.Class({
         wrongPrompt: cc.Node,
         correctPrompt: cc.Node,
 
+
         //added by qll on 20200114
-        QAindex: null,
-        QAquestion: null,
-        QAanswer: null,
-        work_indexArray: null,
-        work_questionArray: null,
-        work_answerArray: null,
-        trip_indexArray: null,
-        trip_questionArray: null,
-        trip_answerArray: null
+        QAindex : null,
+        QAquestion : null,
+        QAanswer : null,
+        work_indexArray : null,
+        work_questionArray : null,
+        work_answerArray : null,
+        trip_indexArray : null,
+        trip_questionArray : null,
+        trip_answerArray : null,
     },
 
     // LIFE-CYCLE CALLBACKS:
     //added by qll on 20200114
-    getQAArray: function getQAArray() {
+    getQAArray: function () {
         var work_indexArrayString = '3/3.txt - 4/5.txt - 1/1.txt - 3/5.txt - 2/2.txt - 4/2.txt - 3/4.txt - 1/3.txt - 1/2.txt - 5/5.txt - 2/5.txt - 1/4.txt - 2/1.txt - 5/2.txt - 4/4.txt - 2/3.txt - 2/4.txt - 1/5.txt - 5/3.txt - 3/2.txt - 4/3.txt - 5/1.txt - 3/1.txt - 5/4.txt - 4/1.txt';
         var work_questionArrayString = '请问下列选项中哪一个是漫画《百变小樱》中人物小樱不喜欢的科目？ - 请问莫斯科的气候特点是什么？ - 请问我国的国花是？ - 请问漫画《秦时明月》的时代背景是我国哪个朝代？ - 请问我国地形主要分为几个阶梯？ - 请问以下哪座建筑不属于巴黎？ - 请问漫画《美少女战士》中的主角叫什么？ - 请问经常被女孩子们用来染指甲的是下面哪一种花？ - 请问映山红指的是下面哪种花？ - 请问以下哪位不是微软的创始人？ - 请问2008年北京奥运会会徽徽宝“中国印”所用材料为以下哪种玉？ - 请问“岁寒三友”不包含下列哪一种植物？ - 请问神秘的罗布泊位于我国哪个地区？ - 请问蛋糕店好利来的创始人是？ - 请问以下哪个不是纽约市的别称？ - 请问野生保护动物藏羚羊主要分布于我国哪个区域？ - 请问以下哪个城市位于我国华北平原？ - 请问享有“月下美人”美誉的是下列哪一种花？ - 请问雅诗兰黛的这一品牌名称来源于？ - 请问下列选项中哪一个不是日本的漫画？ - 请问伦敦位于英国的哪个区域？ - 请问“蝌蝌啃蜡”指的是下列哪种饮料？ - 请问下列哪位不是漫画《海贼王》中的人物？ - 请问格力电器的董事长叫什么？ - 请问东京将于2020年举办第几届夏季奥运会？';
         var work_answerArrayString = '算术+音乐+体育 - 温带大陆性气候+温带海洋性气候+温带季风性气候 - 牡丹+月季+玫瑰 - 秦朝+汉朝+奏朝 - 三个+四个+五个 - 大本钟+埃菲尔铁塔+巴黎圣母院 - 月野兔+小小兔+火野丽 - 凤仙花+玫瑰花+水仙花 - 杜鹃+梅花+荷包牡丹 - 史蒂夫·鲍尔默+比尔·盖茨+保罗·艾伦 - 和田玉+蓝田玉+独山玉 - 菊花+竹子+梅花 - 新疆+西藏+青海 - 罗红+罗紫+罗兰 - 雾都+不夜城+哥谭市 - 青藏高原+大兴安岭+华北平原 - 天津+西安+苏州 - 昙花+百合+鸢尾 - 创始人的姓名+创始人的家乡+创始人爱人的姓名 - 秦时明月+海贼王+火影忍者 - 英格兰+苏格兰+威尔士 - 可口可乐+百事可乐+白花蛇草水 - 小樱+路飞+乔巴 - 董明珠+董金珠+董银珠 - 第34届+第33届+第35届';
@@ -82,109 +75,110 @@ cc.Class({
         this.trip_answerArray = trip_answerArrayString.split(" - ");
     },
 
-    //added by qll on 20200114
-    getQAIndex: function getQAIndex(type, QAPath) {
-        if (type == 0) //旅游
-            {
-                var len = this.trip_indexArray.length;
-                for (var i = 0; i < len; i++) {
-                    if (this.trip_indexArray[i] == QAPath) {
-                        return i;
-                    }
+//added by qll on 20200114
+    getQAIndex: function (type, QAPath) {
+        if(type == 0)//旅游
+        {
+            var len = this.trip_indexArray.length
+            for(let i=0;i<len;i++){
+                if(this.trip_indexArray[i]==QAPath)
+                {
+                    return i;
                 }
             }
-        if (type == 1) //打工
-            {
-                var len = this.work_indexArray.length;
-                for (var _i = 0; _i < len; _i++) {
-                    if (this.work_indexArray[_i] == QAPath) {
-                        return _i;
-                    }
+        
+        }
+        if(type == 1)//打工
+        {
+            var len = this.work_indexArray.length
+            for(let i=0;i<len;i++){
+                if(this.work_indexArray[i]==QAPath)
+                {
+                    return i;
                 }
             }
+        
+        }
     },
 
-    onLoad: function onLoad() {
-        this.getQAArray(); //added by qll on 20200114
+    onLoad() {
+        this.getQAArray();//added by qll on 20200114
         this.confirmBtn.node.on('click', this.onClickConfirmBtn, this);
         this.wrongPrompt.getChildByName('closeButton').on('click', this.onClickCloseBtn, this.wrongPrompt);
         this.correctPrompt.getChildByName('closeButton').on('click', this.onClickCloseBtn, this.correctPrompt);
     },
-
     /**
      * 答题提示框初始化
      * @param {integer} type 0,1 分别代表旅游或者工作
      * @param {integer} id 代表旅游地点或者工作种类
      */
-    init: function init(type, id, QANum, picNum) {
-        this.getQAArray(); //added by qll on 20200114
+    init: function (type, id, QANum, picNum) {
+        this.getQAArray();//added by qll on 20200114
         this.type = type;
-        if (type == 0) //旅游
-            {
-                this.picPath += id + '/' + picNum;
-                this.QAPath = id + '/' + picNum + '/' + QANum + '.txt';
-                console.log(this.QAPath);
-                console.log(this.picPath);
-            }
-        if (type == 1) //打工
-            {
-                this.picPath += id + '/' + picNum;
-                this.QAPath = id + '/' + QANum + '.txt';
-                console.log(this.QAPath);
-                console.log(this.picPath);
-            }
-        this.QAIndex = this.getQAIndex(type, this.QAPath);
-        if (type == 0) //旅游
-            {
-                this.QAquestion = this.trip_questionArray[this.QAIndex];
-                this.QAanswer = this.trip_answerArray[this.QAIndex].split('+');
-            }
-        if (type == 1) //打工
-            {
-                this.QAquestion = this.work_questionArray[this.QAIndex];
-                this.QAanswer = this.work_answerArray[this.QAIndex].split('+');
-            }
+        if(type==0)//旅游
+        {
+            this.picPath += id + '/' + picNum;
+            this.QAPath = id + '/' + picNum + '/' + QANum + '.txt';
+            console.log( this.QAPath);
+            console.log( this.picPath);
+        }
+        if(type==1)//打工
+        {
+            this.picPath += id + '/' + picNum;
+            this.QAPath = id + '/' + QANum + '.txt';
+            console.log( this.QAPath);
+            console.log( this.picPath);
+        }
+        this.QAIndex = this.getQAIndex(type,this.QAPath);
+        if(type==0)//旅游
+        {
+            this.QAquestion = this.trip_questionArray[this.QAIndex];
+            this.QAanswer = this.trip_answerArray[this.QAIndex].split('+');    
+        }
+        if(type==1)//打工
+        {
+            this.QAquestion = this.work_questionArray[this.QAIndex];
+            this.QAanswer = this.work_answerArray[this.QAIndex].split('+');
+        }
         this.question.string = this.QAquestion;
         this.choice1.string = this.QAanswer[0];
         this.choice2.string = this.QAanswer[1];
         this.choice3.string = this.QAanswer[2];
 
-        var self = this;
-        cc.loader.loadRes(self.picPath, cc.SpriteFrame, function (err, sp) {
+        let self = this;
+        cc.loader.loadRes(self.picPath, cc.SpriteFrame, (err, sp) => {
             if (err) {
                 console.log("failed to load picture");
             }
             self.picture.spriteFrame = sp;
-        });
+        }); 
     },
 
-    onClickConfirmBtn: function onClickConfirmBtn() {
-        var choiceArray = this.choiceContainer.getComponentsInChildren(cc.Toggle);
-        for (var i = 0; i < choiceArray.length; i++) {
-            var element = choiceArray[i];
+    onClickConfirmBtn: function () {
+        let choiceArray = this.choiceContainer.getComponentsInChildren(cc.Toggle);
+        for (let i = 0; i < choiceArray.length; i++) {
+            const element = choiceArray[i];
             if (element.isChecked) {
-                if (i == 0) {
-                    // 判断是否是正确答案，答案选项尚未随机
+                if (i == 0) { // 判断是否是正确答案，答案选项尚未随机
                     this.title.node.parent.active = false; // 关闭提示框
                     this.correctPrompt.active = true;
                 } else {
                     this.title.node.parent.active = false; // 关闭提示框
                     this.wrongPrompt.active = true;
-                    var correctAnswer = this.choice1.string;
+                    let correctAnswer = this.choice1.string;
                     this.wrongPrompt.getChildByName('promptText').getComponent(cc.Label).string += correctAnswer;
                 }
             }
         }
     },
 
-    onClickCloseBtn: function onClickCloseBtn() {
+    onClickCloseBtn: function () {
         this.active = false;
     },
 
-    start: function start() {}
-}
+    start() {
 
-// update (dt) {},
-);
+    },
 
-cc._RF.pop();
+    // update (dt) {},
+});

@@ -103,8 +103,7 @@
         "timeline",
         "game-window"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "sprite-editor": {

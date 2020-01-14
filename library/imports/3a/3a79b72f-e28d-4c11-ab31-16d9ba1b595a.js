@@ -15,8 +15,7 @@ cc.Class({
             url: cc.AudioClip
         },
 
-        musicOnButton: cc.Button,
-        musicOffButton: cc.Button,
+        musicFrogBtn: cc.Node,
         // 背景音乐标志位
         isMusicOn: {
             get: function get() {
@@ -24,22 +23,9 @@ cc.Class({
             },
             set: function set(value) {
                 var self = this;
-                var onNode = this.musicOnButton.node;
-                var offNode = this.musicOffButton.node;
                 if (value == false) {
                     //Disable bg music
-                    var offEnd = cc.callFunc(function () {
-                        // let onBtnOffAction = cc.moveTo(0.1, -48, 0);
-                        // onNode.runAction(onBtnOffAction);
-                        onNode.active = false;
-                    }, self, null);
-                    offNode.active = true;
-                    onNode.zIndex = 0;
-                    offNode.zIndex = 1;
-
-                    var offBtnOffAction = cc.sequence(cc.moveTo(0.3, -3, 0), offEnd);
-
-                    offNode.runAction(offBtnOffAction);
+                    this.musicFrogBtn.getComponent('frogBtn').status = 1;
                     console.log("Disable bg music");
                     var date = new Date();
                     var year = date.getFullYear(); //获取当前年份   
@@ -65,17 +51,8 @@ cc.Class({
                         }
                     });
                 } else {
-                    //Enable bg music
-                    var onEnd = cc.callFunc(function () {
-                        offNode.active = false;
-                    }, self, null);
-                    onNode.active = true;
-                    onNode.zIndex = 1;
-                    offNode.zIndex = 0;
-                    var offBtnOnAction = cc.moveTo(0.3, 48, 0);
-                    var onBtnOnAction = cc.sequence(cc.moveTo(0.3, 3, 0), onEnd);
-                    offNode.runAction(offBtnOnAction);
-                    onNode.runAction(onBtnOnAction);
+                    // Enable bg music
+                    this.musicFrogBtn.getComponent('frogBtn').status = 0;
                     console.log("Enable bg music");
                 }
                 if (value != this._isMusicOn && this._isMusicOn == false) {
@@ -121,8 +98,7 @@ cc.Class({
                 GlobalData.bgMusicVolume = value; //同时更新全局变量
             }
         },
-        soundOnButton: cc.Button,
-        soundOffButton: cc.Button,
+        soundFrogBtn: cc.Node,
         // 音效标志位
         isSoundOn: {
             get: function get() {
@@ -130,19 +106,8 @@ cc.Class({
             },
             set: function set(value) {
                 var self = this;
-                var onNode = this.soundOnButton.node;
-                var offNode = this.soundOffButton.node;
                 if (value == false) {
-                    var offEnd = cc.callFunc(function () {
-                        onNode.active = false;
-                    }, self, null);
-                    offNode.active = true;
-                    onNode.zIndex = 0;
-                    offNode.zIndex = 1;
-                    var onBtnOffAction = cc.moveTo(0.3, -48, 0);
-                    var offBtnOffAction = cc.sequence(cc.moveTo(0.3, -3, 0), offEnd);
-                    onNode.runAction(onBtnOffAction);
-                    offNode.runAction(offBtnOffAction);
+                    this.soundFrogBtn.getComponent('frogBtn').status = 1;
                     console.log("Disable sound");
                     var flagValue = self._isSoundOn == false ? 0 : 1;
                     var date = new Date();
@@ -167,16 +132,7 @@ cc.Class({
                         }
                     });
                 } else {
-                    var onEnd = cc.callFunc(function () {
-                        offNode.active = false;
-                    }, self, null);
-                    onNode.active = true;
-                    onNode.zIndex = 1;
-                    offNode.zIndex = 0;
-                    var offBtnOnAction = cc.moveTo(0.3, 48, 0);
-                    var onBtnOnAction = cc.sequence(cc.moveTo(0.3, 3, 0), onEnd);
-                    offNode.runAction(offBtnOnAction);
-                    onNode.runAction(onBtnOnAction);
+                    this.soundFrogBtn.getComponent('frogBtn').status = 0;
                     console.log("Enable sound");
                 }
                 if (value != this._isSoundOn && this._isSoundOn == false) {
@@ -205,8 +161,7 @@ cc.Class({
                 GlobalData.soundVolume = value; //同时更新全局变量
             }
         },
-        vibrationOnButton: cc.Button,
-        vibrationOffButton: cc.Button,
+        vibrationFrogBtn: cc.Node,
         //震动标志位
         isVibrationOn: {
             get: function get() {
@@ -214,60 +169,39 @@ cc.Class({
             },
             set: function set(value) {
                 var self = this;
-                var onNode = this.vibrationOnButton.node;
-                var offNode = this.vibrationOffButton.node;
                 if (value == false) {
-                    var offEnd = cc.callFunc(function () {
-                        onNode.active = false;
-                    }, self, null);
-                    offNode.active = true;
-                    onNode.zIndex = 0;
-                    offNode.zIndex = 1;
-                    var onBtnOffAction = cc.moveTo(0.3, -48, 0);
-                    var offBtnOffAction = cc.sequence(cc.moveTo(0.3, -3, 0), offEnd);
-                    onNode.runAction(onBtnOffAction);
-                    offNode.runAction(offBtnOffAction);
+                    this.vibrationFrogBtn.getComponent('frogBtn').status = 1;
+                    var date = new Date();
+                    var year = date.getFullYear(); //获取当前年份   
+                    var month = date.getMonth() + 1; //获取当前月份   
+                    var dat = date.getDate(); //获取当前日    
+                    var hour = date.getHours(); //获取小时   
+                    var minute = date.getMinutes(); //获取分钟   
+                    var second = date.getSeconds(); //获取秒   
+                    var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
+                    var flagValue = self._isVibrationOn == false ? 0 : 1;
+                    //向服务器传数据
+                    var data = {
+                        "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
+                        "operationTime": timeStr,
+                        "flagName": "flagVibration",
+                        "flagValue": flagValue,
+                        "details": ""
+                    };
+                    var serverAddr = 'https://www.llquruc.top/petGame/php/setting.php';
+                    HttpHelper.httpPost(serverAddr, data, function (res) {
+                        if (res != -1) {
+                            console.log("Set vibration successfully");
+                        }
+                    });
                 } else {
-                    var onEnd = cc.callFunc(function () {
-                        offNode.active = false;
-                    }, self, null);
-                    onNode.active = true;
-                    onNode.zIndex = 1;
-                    offNode.zIndex = 0;
-                    var offBtnOnAction = cc.moveTo(0.3, 48, 0);
-                    var onBtnOnAction = cc.sequence(cc.moveTo(0.3, 3, 0), onEnd);
-                    offNode.runAction(offBtnOnAction);
-                    onNode.runAction(onBtnOnAction);
+                    this.vibrationFrogBtn.getComponent('frogBtn').status = 0;
                 }
                 this._isVibrationOn = value;
                 GlobalData.flagVibration = this._isVibrationOn == false ? 0 : 1;
-                var date = new Date();
-                var year = date.getFullYear(); //获取当前年份   
-                var month = date.getMonth() + 1; //获取当前月份   
-                var dat = date.getDate(); //获取当前日    
-                var hour = date.getHours(); //获取小时   
-                var minute = date.getMinutes(); //获取分钟   
-                var second = date.getSeconds(); //获取秒   
-                var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-                var flagValue = self._isVibrationOn == false ? 0 : 1;
-                //向服务器传数据
-                var data = {
-                    "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
-                    "operationTime": timeStr,
-                    "flagName": "flagVibration",
-                    "flagValue": flagValue,
-                    "details": ""
-                };
-                var serverAddr = 'https://www.llquruc.top/petGame/php/setting.php';
-                HttpHelper.httpPost(serverAddr, data, function (res) {
-                    if (res != -1) {
-                        console.log("Set vibration successfully");
-                    }
-                });
             }
         },
-        noticeOnButton: cc.Button,
-        noticeOffButton: cc.Button,
+        noticeFrogBtn: cc.Node,
         //通知标志位
         isNoticeOn: {
             get: function get() {
@@ -275,30 +209,10 @@ cc.Class({
             },
             set: function set(value) {
                 var self = this;
-                var onNode = this.noticeOnButton.node;
-                var offNode = this.noticeOffButton.node;
                 if (value == false) {
-                    var offEnd = cc.callFunc(function () {
-                        onNode.active = false;
-                    }, self, null);
-                    offNode.active = true;
-                    onNode.zIndex = 0;
-                    offNode.zIndex = 1;
-                    var onBtnOffAction = cc.moveTo(0.3, -48, 0);
-                    var offBtnOffAction = cc.sequence(cc.moveTo(0.3, -3, 0), offEnd);
-                    onNode.runAction(onBtnOffAction);
-                    offNode.runAction(offBtnOffAction);
+                    this.noticeFrogBtn.getComponent('frogBtn').status = 1;
                 } else {
-                    var onEnd = cc.callFunc(function () {
-                        offNode.active = false;
-                    }, self, null);
-                    onNode.active = true;
-                    onNode.zIndex = 1;
-                    offNode.zIndex = 0;
-                    var offBtnOnAction = cc.moveTo(0.3, 48, 0);
-                    var onBtnOnAction = cc.sequence(cc.moveTo(0.3, 3, 0), onEnd);
-                    offNode.runAction(offBtnOnAction);
-                    onNode.runAction(onBtnOnAction);
+                    this.noticeFrogBtn.getComponent('frogBtn').status = 0;
                 }
                 this._isNoticeOn = value;
                 GlobalData.flagNotice = this._isNoticeOn == false ? 0 : 1;

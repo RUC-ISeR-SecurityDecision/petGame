@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'f39f6MHJA5Bzbc+ji9NwT5J', 'questionPrompt');
-// main/js/questionPrompt.js
+cc._RF.push(module, '902fanufHNJFqbXcu0NW6fy', 'questionPrompt');
+// resources/questionPrompt.js
 
 "use strict";
 

@@ -470,7 +470,7 @@
     "relativePath": "bag\\bag.fire"
   },
   "ec3d5574-fa84-42b4-8a40-0c713f7d41e3": {
-    "asset": 1578964816615,
+    "asset": 1578967594114,
     "meta": 1575355152000,
     "relativePath": "Global"
   },
@@ -545,7 +545,7 @@
     "relativePath": "main"
   },
   "44502c3a-dd4c-4a94-80b9-3bdad758c8c7": {
-    "asset": 1578964816616,
+    "asset": 1578993586877,
     "meta": 1575355152000,
     "relativePath": "main\\js"
   },
@@ -558,16 +558,6 @@
     "asset": 1576051412000,
     "meta": 1578965272462,
     "relativePath": "load\\loadPage.fire"
-  },
-  "87f24e7f-2404-4414-93f0-799c7dde5427": {
-    "asset": 1578964816616,
-    "meta": 1578965272479,
-    "relativePath": "main\\js\\main.js"
-  },
-  "f39f6307-240e-41cd-b73e-8e2f4dc13e49": {
-    "asset": 1578637540893,
-    "meta": 1578965272487,
-    "relativePath": "main\\js\\questionPrompt.js"
   },
   "16726349-0723-426f-80e0-ce738136dd90": {
     "asset": 1578383607242,
@@ -6789,191 +6779,6 @@
     "meta": 1578965282269,
     "relativePath": "resources\\tripQA\\9\\2\\4.txt"
   },
-  "763e1083-26ad-4607-9860-9f64a169cd65": {
-    "asset": 1578383608150,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\1"
-  },
-  "73475fef-fec1-430a-b574-88f0c276655f": {
-    "asset": 1576817472000,
-    "meta": 1578965282287,
-    "relativePath": "resources\\workPic\\1\\1.png"
-  },
-  "3a5edfbb-f4ba-4fc5-8762-ef6cbcb9da84": {
-    "asset": 1576817472000,
-    "meta": 1578965282288,
-    "relativePath": "resources\\workPic\\1\\2.png"
-  },
-  "8a3a7e8d-ed02-4057-9410-f0c835893560": {
-    "asset": 1576817472000,
-    "meta": 1578965282306,
-    "relativePath": "resources\\workPic\\1\\4.png"
-  },
-  "4895cedb-6b3c-420d-92b8-3d180ad30e37": {
-    "asset": 1576817472000,
-    "meta": 1578965282307,
-    "relativePath": "resources\\workPic\\1\\3.png"
-  },
-  "3a431b58-b2db-4423-ab84-6a73fd4a7da3": {
-    "asset": 1576817472000,
-    "meta": 1578965282328,
-    "relativePath": "resources\\workPic\\1\\5.png"
-  },
-  "bc781b41-e71a-4b9e-98c4-1974b1c40285": {
-    "asset": 1576817472000,
-    "meta": 1578965282374,
-    "relativePath": "resources\\workPic\\1\\7.png"
-  },
-  "5c858c8c-e248-4467-97ab-03a0eb5230f9": {
-    "asset": 1578383608154,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\2"
-  },
-  "4ec51439-272f-4d20-9eed-a0699491fde5": {
-    "asset": 1576817472000,
-    "meta": 1578965282398,
-    "relativePath": "resources\\workPic\\2\\1.png"
-  },
-  "1ef260d5-4dd9-4718-a873-862388b2b9e8": {
-    "asset": 1576817472000,
-    "meta": 1578965282413,
-    "relativePath": "resources\\workPic\\2\\2.png"
-  },
-  "fb97b6ea-28d0-4905-ad2c-47dc68851705": {
-    "asset": 1576817472000,
-    "meta": 1578965282489,
-    "relativePath": "resources\\workPic\\2\\3.png"
-  },
-  "98d08e72-ce6c-400c-9858-24a5c162e298": {
-    "asset": 1576817472000,
-    "meta": 1578965282958,
-    "relativePath": "resources\\workPic\\2\\4.png"
-  },
-  "06fd2eac-ae50-4deb-973f-47bc19c8d3c0": {
-    "asset": 1576817472000,
-    "meta": 1578965283009,
-    "relativePath": "resources\\workPic\\2\\5.png"
-  },
-  "a68420f8-49e0-4d11-8f44-762a8f591e94": {
-    "asset": 1578383608158,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\3"
-  },
-  "a2a659cc-6790-4b9d-ae09-b84e6913799e": {
-    "asset": 1576817472000,
-    "meta": 1578965283118,
-    "relativePath": "resources\\workPic\\3\\1.png"
-  },
-  "9b39b4f3-db15-45ef-96cd-3a04eef5f3db": {
-    "asset": 1576817472000,
-    "meta": 1578965283130,
-    "relativePath": "resources\\workPic\\3\\2.png"
-  },
-  "a1901008-2be6-4d66-b009-45889133bc8b": {
-    "asset": 1576817472000,
-    "meta": 1578965283148,
-    "relativePath": "resources\\workPic\\3\\3.png"
-  },
-  "5cf64c13-b234-4610-b280-e57b418cccc1": {
-    "asset": 1576817472000,
-    "meta": 1578965283165,
-    "relativePath": "resources\\workPic\\3\\4.png"
-  },
-  "451230d4-860f-45f2-9c0d-fab98b76b33a": {
-    "asset": 1576817472000,
-    "meta": 1578965283190,
-    "relativePath": "resources\\workPic\\3\\5.png"
-  },
-  "d541219b-3aa7-4424-9eca-b00494d29dbf": {
-    "asset": 1578383608164,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\4"
-  },
-  "61434688-a107-452a-81a9-0830a2f38354": {
-    "asset": 1576817472000,
-    "meta": 1578965283209,
-    "relativePath": "resources\\workPic\\1\\6.png"
-  },
-  "e14ddfa7-6001-4f88-a298-6a5a766cdbf8": {
-    "asset": 1576817472000,
-    "meta": 1578965283226,
-    "relativePath": "resources\\workPic\\4\\2.png"
-  },
-  "c020b795-e0e8-4ad8-906a-1d85e9eb72c6": {
-    "asset": 1576817472000,
-    "meta": 1578965283227,
-    "relativePath": "resources\\workPic\\4\\1.png"
-  },
-  "cb470595-e944-45de-aae5-b4654640eb83": {
-    "asset": 1576817472000,
-    "meta": 1578965283267,
-    "relativePath": "resources\\workPic\\4\\4.png"
-  },
-  "2e26bb34-399a-453f-9468-e4f58a367ebc": {
-    "asset": 1576817472000,
-    "meta": 1578965283268,
-    "relativePath": "resources\\workPic\\4\\3.png"
-  },
-  "f8e7de1a-1f7e-41bd-9ab3-ce38b7bb66da": {
-    "asset": 1578383608168,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\5"
-  },
-  "f1bc2ab7-7397-4363-b10a-99f788689179": {
-    "asset": 1576817472000,
-    "meta": 1578965283331,
-    "relativePath": "resources\\workPic\\5\\1.png"
-  },
-  "b2e6621c-dc79-4d3c-9e02-2c847a8501bb": {
-    "asset": 1576817472000,
-    "meta": 1578965283338,
-    "relativePath": "resources\\workPic\\4\\5.png"
-  },
-  "3c457f0d-3363-4f96-9f2e-99b7b05b40c2": {
-    "asset": 1576817472000,
-    "meta": 1578965283352,
-    "relativePath": "resources\\workPic\\5\\2.png"
-  },
-  "9d09cc2c-3798-4de7-9bb7-acce41650d62": {
-    "asset": 1576817472000,
-    "meta": 1578965283363,
-    "relativePath": "resources\\workPic\\5\\3.png"
-  },
-  "44b0685f-64f5-4525-be39-093663c2e703": {
-    "asset": 1576817472000,
-    "meta": 1578965283377,
-    "relativePath": "resources\\workPic\\5\\4.png"
-  },
-  "c0697b4e-5263-4ddc-a818-c6c026c5c108": {
-    "asset": 1578383608172,
-    "meta": 1576817472000,
-    "relativePath": "resources\\workPic\\6"
-  },
-  "8328b748-9787-4f36-8f2b-35a9040f6145": {
-    "asset": 1576817472000,
-    "meta": 1578965283381,
-    "relativePath": "resources\\workPic\\5\\5.png"
-  },
-  "4bde511d-0d84-4918-9866-a084b407fef4": {
-    "asset": 1576817472000,
-    "meta": 1578965283407,
-    "relativePath": "resources\\workPic\\6\\2.png"
-  },
-  "3947b0a1-c271-4d9b-bd04-e47f143c8e96": {
-    "asset": 1576817472000,
-    "meta": 1578965283418,
-    "relativePath": "resources\\workPic\\6\\1.png"
-  },
-  "1b1070f5-7c92-40d9-bec6-76c851d4c33c": {
-    "asset": 1576817472000,
-    "meta": 1578965283442,
-    "relativePath": "resources\\workPic\\6\\3.png"
-  },
-  "833bb0eb-848a-4ffc-8e7c-1cd2460df72d": {
-    "asset": 1576817472000,
-    "meta": 1578965283444,
-    "relativePath": "resources\\workPic\\6\\4.png"
-  },
   "2f5ea33e-72cf-4695-8639-e252ce25ae19": {
     "asset": 1578625702805,
     "meta": 1576817474000,
@@ -7139,11 +6944,6 @@
     "meta": 1578965283476,
     "relativePath": "resources\\workQA\\3\\5.json"
   },
-  "1e41d2ef-6b87-40ae-bd34-8349b337f899": {
-    "asset": 1576817474000,
-    "meta": 1578965283477,
-    "relativePath": "resources\\workPic\\6\\5.png"
-  },
   "930f1f91-08dd-4460-bda9-692ee0dbbe93": {
     "asset": 1578625702800,
     "meta": 1578625702795,
@@ -7294,11 +7094,6 @@
     "meta": 1578965283640,
     "relativePath": "setting\\js\\dropdown.js"
   },
-  "3a79b72f-e28d-4c11-ab31-16d9ba1b595a": {
-    "asset": 1578964809065,
-    "meta": 1578965283641,
-    "relativePath": "setting\\js\\setting.js"
-  },
   "dd2727e1-fb72-462f-b6dc-c3519814c883": {
     "asset": 1578383608198,
     "meta": 1575355152000,
@@ -7320,8 +7115,8 @@
     "relativePath": "shop\\js\\shopItem.js"
   },
   "e5d63e40-cf73-4af4-be38-8a2f26021b65": {
-    "asset": 1578990688010,
-    "meta": 1578990688023,
+    "asset": 1579001013710,
+    "meta": 1579001013725,
     "relativePath": "setting\\setting.fire"
   },
   "01dd0098-b0f1-4689-92b2-915a0a202dfd": {
@@ -7330,8 +7125,58 @@
     "relativePath": "shop\\shop.fire"
   },
   "1c0213b4-7ed0-495c-af58-d2a98b5cf86c": {
-    "asset": 1578992576615,
-    "meta": 1578992577772,
+    "asset": 1578999992929,
+    "meta": 1578999994131,
     "relativePath": "Global\\frogBtn.js"
+  },
+  "3a79b72f-e28d-4c11-ab31-16d9ba1b595a": {
+    "asset": 1579000483662,
+    "meta": 1579000485094,
+    "relativePath": "setting\\js\\setting.js"
+  },
+  "763e1083-26ad-4607-9860-9f64a169cd65": {
+    "asset": 1579000948964,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\1"
+  },
+  "f39f6307-240e-41cd-b73e-8e2f4dc13e49": {
+    "asset": 1578999664000,
+    "meta": 1579000990513,
+    "relativePath": "main\\js\\questionPrompt.js"
+  },
+  "5c858c8c-e248-4467-97ab-03a0eb5230f9": {
+    "asset": 1579000949105,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\2"
+  },
+  "a68420f8-49e0-4d11-8f44-762a8f591e94": {
+    "asset": 1579000949201,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\3"
+  },
+  "d541219b-3aa7-4424-9eca-b00494d29dbf": {
+    "asset": 1579000949566,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\4"
+  },
+  "f8e7de1a-1f7e-41bd-9ab3-ce38b7bb66da": {
+    "asset": 1579000949632,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\5"
+  },
+  "c0697b4e-5263-4ddc-a818-c6c026c5c108": {
+    "asset": 1579000949704,
+    "meta": 1578999272000,
+    "relativePath": "resources\\workPic\\6"
+  },
+  "902fa9ee-7c73-4916-a6d7-72ed0d5ba7f2": {
+    "asset": 1578999664000,
+    "meta": 1579000990979,
+    "relativePath": "resources\\questionPrompt.js"
+  },
+  "87f24e7f-2404-4414-93f0-799c7dde5427": {
+    "asset": 1579001465453,
+    "meta": 1579001466868,
+    "relativePath": "main\\js\\main.js"
   }
 }

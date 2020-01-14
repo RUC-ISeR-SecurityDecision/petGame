@@ -267,7 +267,7 @@ cc.Class({
         var soundVolume = 0.8;
         var hiSoundID = cc.audioEngine.play(this.hiSound, false, soundVolume);
         //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        // this.drawClock();
+        this.drawClock();
     },
 
     start() {
@@ -1135,8 +1135,6 @@ cc.Class({
             }
         });
         
-
-        
         // 计数函数
         this.clockCanvas.callback = function () {
             this.counter--;
@@ -1148,8 +1146,8 @@ cc.Class({
                 self.petCtrl.tripEnd() //  宠物状态开锁
             }
             this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
-            // this.circle(0, 0, 75);
-            // this.fill();
+            this.circle(0, 0, 75);
+            this.fill();
             this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.tripTimeID] * Math.PI, false);
             this.stroke();
         }
@@ -1157,7 +1155,6 @@ cc.Class({
         this.clockCanvas.node.parent.active = true; //打开工作倒计时
         this.clockCanvas.schedule(this.clockCanvas.callback, 1);
 
-        
     },
 
     onClickWorkCloseBtn: function () {
