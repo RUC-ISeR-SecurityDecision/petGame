@@ -59,7 +59,7 @@
             ],
             "height": 923,
             "type": "panel",
-            "width": 654
+            "width": 983
           },
           {
             "children": [
@@ -71,7 +71,7 @@
                 ],
                 "height": 556,
                 "type": "panel",
-                "width": 833
+                "width": 504
               },
               {
                 "active": 0,
@@ -82,12 +82,12 @@
                 ],
                 "height": 364,
                 "type": "panel",
-                "width": 833
+                "width": 504
               }
             ],
             "height": 923,
             "type": "dock-v",
-            "width": 833
+            "width": 504
           }
         ],
         "type": "dock-h"
@@ -103,7 +103,8 @@
         "timeline",
         "game-window"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "sprite-editor": {
