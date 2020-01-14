@@ -327,7 +327,7 @@ cc.Class({
     },
 
     init: function () {
-        let interval = 6000;  //6秒
+        let interval = 1000;  //1秒---changed by qll on 20200113
         let petImagePath = this.gender == 0 ? "pet/male_" : "pet/female_";
         let self = this;
         console.log(self.species);

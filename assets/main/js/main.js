@@ -532,9 +532,7 @@ cc.Class({
             "rewardLevel": 1,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.loginRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.loginRewardGrowth = res.rewardGrowth;//奖励成长值
@@ -563,9 +561,7 @@ cc.Class({
             "rewardLevel": GlobalData.contLoginDays,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 GlobalData.contLoginRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.contLoginRewardGrowth = res.rewardGrowth;//奖励成长值
@@ -605,10 +601,8 @@ cc.Class({
         //             "flagLocation": flagLocation,
         //         };
         //         HttpHelper.httpPost(serverAddr, data, function(res) {
-        // 	        if (res == -1) {
-        // 		        console.log("访问失败");
-        // 	        } else {
-        // 		        console.log(res);
+        // 	        if (res != -1) {
+        // 		           console.log(res);
         //                 GlobalData.userID = res.userID;
         //                 GlobalData.flagNewUser = Number(res.flagNewUser);
         //                 GlobalData.contLoginDays = Number(res.contLoginDays);
@@ -904,9 +898,7 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
             }
         });
@@ -957,9 +949,7 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 //无需更新属性值，后台会自动更新
             }
@@ -1002,9 +992,7 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 //无需更新属性值，后台会自动更新
             }
@@ -1012,11 +1000,8 @@ cc.Class({
     },
 
 
-    startCountDown: function(operationName, id) {  //该函数待实现
+    startCountDown: function(operationName, id) {  
         //参数的意义：operationName表示到底是为了什么操作而进行倒计时（work或trip或sleep）
-        //time表示时间
-        //question和answer分别表示结束后问答环节的问题和答案
-        //picAddr表示提供的图片
         if (operationName == 'trip') {
             this.questionPrompt.getComponent('questionPrompt').init(0, 1);
         } else if (operationName == 'work') {
@@ -1123,11 +1108,15 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
+                let moodChangedValue = res.moodChangedValue;
+                let energyChangedValue = res.energyChangedValue;
+                let coinChangedValue = res.coinChangedValue;
+                let growthChangedValue = res.growthChangedValue;
+                let QANum = res.QANum;  //题目文件编号
+                let picNum = res.picNum;  //旅游照片编号 
                 instance.startCountDown('trip', instance.timeIndex[instance.tripTimeID], res.question, res.answer, res.picAddr);
             }
         });
@@ -1219,12 +1208,20 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
-                instance.startCountDown('work', instance.timeIndex[instance.workTimeID], res.question, res.answer, res.picAddr);
+                let hungerChangedValue = res.hungerChangedValue;
+                let cleanessChangedValue = res.cleanessChangedValue;
+                let thirstChangedValue = res.thirstChangedValue;
+                let moodChangedValue = res.moodChangedValue;
+                let energyChangedValue = res.energyChangedValue;
+                let coinChangedValue = res.coinChangedValue;
+                let growthChangedValue = res.growthChangedValue;
+                let flagCAPTCHA = res.flagCAPTCHA; //是否出现验证码题目
+                let QANum = res.QANum;  //题目文件编号
+                let picNum = res.picNum;  //打工照片编号              
+                instance.startCountDown('work', instance.timeIndex[instance.workTimeID]);
             }
         });
     },
@@ -1313,12 +1310,12 @@ cc.Class({
             "details": details,
         };
         HttpHelper.httpPost(serverAddr, data, function (res) {
-            if (res == -1) {
-                console.log("访问失败");
-            } else {
+            if (res != -1) {
                 console.log(res);
                 //无需更新属性值，后台会自动更新，但可以根据这些属性值对用户做出提示
-                instance.startCountDown('sleep', instance.timeIndex[instance.sleepTimeID], null, null, null);
+                let energyChangedValue = res.energyChangedValue;
+                let growthChangedValue = res.growthChangedValue;
+                instance.startCountDown('sleep', instance.timeIndex[instance.sleepTimeID]);
             }
         });
     },

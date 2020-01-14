@@ -469,9 +469,7 @@ cc.Class({
 			"userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
 		};
 		HttpHelper.httpPost(url, data, function (data) {
-			if (data == -1) {
-				console.log("访问失败");
-			} else {
+			if (data != -1) {
 				self.initShop(data);
 				self.loadShopItem();
 			}
