@@ -1,21 +1,21 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "2--cover",
-    "texture": "09b401b9-1292-4881-b846-36237dad9a80",
+    "name": "furnitureuse_bg",
+    "texture": "bddc9935-7ac4-4011-a1a8-91a096a0a5ab",
     "atlas": "",
     "rect": [
-      0,
-      494,
-      1555,
-      306
+      38,
+      289,
+      401,
+      208
     ],
     "offset": [
-      0,
-      -247
+      -1.5,
+      7
     ],
     "originalSize": [
-      1555,
+      480,
       800
     ],
     "capInsets": [

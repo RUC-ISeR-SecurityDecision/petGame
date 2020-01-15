@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "furniturechoose_bg",
+    "texture": "3f39c800-af73-45ed-bc3f-c404b3d8c577",
+    "atlas": "",
+    "rect": [
+      12,
+      36,
+      454,
+      560
+    ],
+    "offset": [
+      -1,
+      1
+    ],
+    "originalSize": [
+      480,
+      634
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -266,8 +266,8 @@ cc.Class({
         }
         var soundVolume = 0.8;
         var hiSoundID = cc.audioEngine.play(this.hiSound, false, soundVolume);
-        //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
-        this.drawClock();
+        // var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
+        // this.drawClock();
     },
 
     start() {

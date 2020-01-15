@@ -514,11 +514,6 @@
     "meta": 1577957174000,
     "relativePath": "house\\js"
   },
-  "4fcf85af-f1c3-4747-9d8b-cdb5b050dce0": {
-    "asset": 1577957178000,
-    "meta": 1578965272221,
-    "relativePath": "house\\js\\house.js"
-  },
   "1a4f7c96-0e52-43f0-8606-78a5c7dde458": {
     "asset": 1578383607236,
     "meta": 1575355152000,
@@ -535,8 +530,8 @@
     "relativePath": "load\\JS\\load.js"
   },
   "7e0db090-f820-4e62-8ab1-72662f99c5d6": {
-    "asset": 1579050325957,
-    "meta": 1579050325968,
+    "asset": 1579100873833,
+    "meta": 1579100873843,
     "relativePath": "house\\house.fire"
   },
   "b1461062-749e-4ea0-bc95-3097edc09870": {
@@ -580,7 +575,7 @@
     "relativePath": "personalInfo\\personalInfo.fire"
   },
   "bb01b381-ca01-4b2b-b108-8a5656fe65a4": {
-    "asset": 1579000990415,
+    "asset": 1579052344854,
     "meta": 1575355152000,
     "relativePath": "resources"
   },
@@ -1055,7 +1050,7 @@
     "relativePath": "resources\\page_adopt\\species.png"
   },
   "cd23192d-2f91-4d54-9e42-ab754f24c9b5": {
-    "asset": 1578964816625,
+    "asset": 1579056243599,
     "meta": 1578020532000,
     "relativePath": "resources\\page_house"
   },
@@ -2190,7 +2185,7 @@
     "relativePath": "resources\\shopPic\\cate2\\4.png"
   },
   "5c785c5c-0a12-4f6b-ba22-aef0996c484a": {
-    "asset": 1578383607729,
+    "asset": 1579092814675,
     "meta": 1576817466000,
     "relativePath": "resources\\shopPic\\cate3"
   },
@@ -2223,11 +2218,6 @@
     "asset": 1578365048000,
     "meta": 1578965278888,
     "relativePath": "resources\\shopPic\\cate3\\2.png"
-  },
-  "4fb7fecc-3e01-4947-b5f0-408ed876f426": {
-    "asset": 1578365046000,
-    "meta": 1578965278969,
-    "relativePath": "resources\\shopPic\\cate3\\4--shadow.png"
   },
   "36eecedd-3646-48e2-b291-6343fad1a096": {
     "asset": 1578365046000,
@@ -2320,7 +2310,7 @@
     "relativePath": "resources\\shopPic\\cate4\\6-shadow.png"
   },
   "d96a6e43-db4d-4647-8834-20440ffe6d29": {
-    "asset": 1578964816680,
+    "asset": 1579078339916,
     "meta": 1576817466000,
     "relativePath": "resources\\shopPic\\cate5"
   },
@@ -2385,7 +2375,7 @@
     "relativePath": "resources\\shopPic\\cate5\\5.png"
   },
   "7e73f67e-98f7-4bfa-8bdd-e0d00715f9e4": {
-    "asset": 1578964816694,
+    "asset": 1579078339918,
     "meta": 1576817466000,
     "relativePath": "resources\\shopPic\\cate6"
   },
@@ -2408,11 +2398,6 @@
     "asset": 1576817470000,
     "meta": 1578965279644,
     "relativePath": "resources\\shopPic\\cate6\\2.jpg"
-  },
-  "09b401b9-1292-4881-b846-36237dad9a80": {
-    "asset": 1578964816684,
-    "meta": 1578965279659,
-    "relativePath": "resources\\shopPic\\cate6\\2--cover.png"
   },
   "4ed24d45-6617-4248-9444-e0264f7d9504": {
     "asset": 1578964816686,
@@ -7159,11 +7144,6 @@
     "meta": 1578999272000,
     "relativePath": "resources\\workPic\\6"
   },
-  "87f24e7f-2404-4414-93f0-799c7dde5427": {
-    "asset": 1579001465453,
-    "meta": 1579001466868,
-    "relativePath": "main\\js\\main.js"
-  },
   "1c0213b4-7ed0-495c-af58-d2a98b5cf86c": {
     "asset": 1579003076589,
     "meta": 1579003081184,
@@ -7333,5 +7313,80 @@
     "asset": 1579052382876,
     "meta": 1579052389155,
     "relativePath": "main\\js\\questionPrompt.js"
+  },
+  "3bf96841-3b60-4859-ba8c-20188c56dafa": {
+    "asset": 1579055968000,
+    "meta": 1579056243622,
+    "relativePath": "resources\\page_house\\backArrow.png"
+  },
+  "3b79d491-ec46-4f9b-a4b8-ceaa45ee741f": {
+    "asset": 1579055968000,
+    "meta": 1579056243625,
+    "relativePath": "resources\\page_house\\box3_bg.png"
+  },
+  "4f306c89-6eb0-44c2-a60d-e6352e4b52c9": {
+    "asset": 1579055968000,
+    "meta": 1579056243638,
+    "relativePath": "resources\\page_house\\cancelButton.png"
+  },
+  "17a8c9e2-f855-41e1-b36a-a483407b104a": {
+    "asset": 1579055968000,
+    "meta": 1579056243639,
+    "relativePath": "resources\\page_house\\buyButton.png"
+  },
+  "461e6667-42b7-432a-a52d-0a7b87184c40": {
+    "asset": 1579055968000,
+    "meta": 1579056243657,
+    "relativePath": "resources\\page_house\\furniturebuy_bg.png"
+  },
+  "cf34505a-defa-4daf-824c-7a466c08c15e": {
+    "asset": 1579055968000,
+    "meta": 1579056243672,
+    "relativePath": "resources\\page_house\\closeButton.png"
+  },
+  "3f39c800-af73-45ed-bc3f-c404b3d8c577": {
+    "asset": 1579055968000,
+    "meta": 1579056243673,
+    "relativePath": "resources\\page_house\\furniturechoose_bg.png"
+  },
+  "bddc9935-7ac4-4011-a1a8-91a096a0a5ab": {
+    "asset": 1579055968000,
+    "meta": 1579056243692,
+    "relativePath": "resources\\page_house\\furnitureuse_bg.png"
+  },
+  "584a1412-0e7f-4b60-963b-4c8b8f889c78": {
+    "asset": 1579055968000,
+    "meta": 1579056244300,
+    "relativePath": "resources\\page_house\\goldIcon.png"
+  },
+  "a2ec527d-14d1-4de8-ae2b-832081643708": {
+    "asset": 1579078194892,
+    "meta": 1579078340067,
+    "relativePath": "resources\\shopPic\\cate6\\shadow.png"
+  },
+  "05b6da79-aa0d-45ac-ab01-24ae244fe753": {
+    "asset": 1579078195763,
+    "meta": 1579078340084,
+    "relativePath": "resources\\shopPic\\cate5\\shadow.png"
+  },
+  "87f24e7f-2404-4414-93f0-799c7dde5427": {
+    "asset": 1579083416667,
+    "meta": 1579083420036,
+    "relativePath": "main\\js\\main.js"
+  },
+  "575b7a95-ada3-4873-99e5-cace407bdfdd": {
+    "asset": 1578365046000,
+    "meta": 1579092814789,
+    "relativePath": "resources\\shopPic\\cate3\\4-shadow.png"
+  },
+  "d8d736ba-1ddb-40e8-9610-45a0ebb53d1d": {
+    "asset": 1578964816684,
+    "meta": 1579094010582,
+    "relativePath": "resources\\shopPic\\cate6\\2-cover.png"
+  },
+  "4fcf85af-f1c3-4747-9d8b-cdb5b050dce0": {
+    "asset": 1579100845216,
+    "meta": 1579100850716,
+    "relativePath": "house\\js\\house.js"
   }
 }

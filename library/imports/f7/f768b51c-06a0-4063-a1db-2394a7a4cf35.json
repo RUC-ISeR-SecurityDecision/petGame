@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "furniturebuy_bg",
+    "texture": "461e6667-42b7-432a-a52d-0a7b87184c40",
+    "atlas": "",
+    "rect": [
+      46,
+      212,
+      391,
+      401
+    ],
+    "offset": [
+      1.5,
+      -12.5
+    ],
+    "originalSize": [
+      480,
+      800
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

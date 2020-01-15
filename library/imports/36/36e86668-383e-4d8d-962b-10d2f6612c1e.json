@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "4--shadow",
-    "texture": "4fb7fecc-3e01-4947-b5f0-408ed876f426",
+    "name": "box3_bg",
+    "texture": "3b79d491-ec46-4f9b-a4b8-ceaa45ee741f",
     "atlas": "",
     "rect": [
-      188,
-      607,
-      1641,
-      1011
+      40,
+      7,
+      349,
+      162
     ],
     "offset": [
-      8.5,
-      -112.5
+      -6.5,
+      0.5
     ],
     "originalSize": [
-      2000,
-      2000
+      442,
+      177
     ],
     "capInsets": [
       0,

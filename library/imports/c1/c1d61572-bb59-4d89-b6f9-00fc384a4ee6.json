@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "backArrow",
+    "texture": "3bf96841-3b60-4859-ba8c-20188c56dafa",
+    "atlas": "",
+    "rect": [
+      12,
+      36,
+      208,
+      154
+    ],
+    "offset": [
+      3,
+      0
+    ],
+    "originalSize": [
+      226,
+      226
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
