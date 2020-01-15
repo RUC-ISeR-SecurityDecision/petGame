@@ -79,7 +79,7 @@ cc.Class({
     getQAIndex: function (type, QAPath) {
         if(type == 0)//旅游
         {
-            var len = this.trip_indexArray.length
+            var len = this.trip_indexArray.length;
             for(let i=0;i<len;i++){
                 if(this.trip_indexArray[i]==QAPath)
                 {
@@ -90,7 +90,7 @@ cc.Class({
         }
         if(type == 1)//打工
         {
-            var len = this.work_indexArray.length
+            var len = this.work_indexArray.length;
             for(let i=0;i<len;i++){
                 if(this.work_indexArray[i]==QAPath)
                 {

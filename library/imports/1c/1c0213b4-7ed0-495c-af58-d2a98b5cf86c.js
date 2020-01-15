@@ -32,6 +32,8 @@ cc.Class({
     properties: {
         ctx: cc.Graphics,
         updateTime: 800,
+        innerEyeRadius: 0,
+        pupilRadius: 0,
         status: {
             get: function get() {
                 return this._status;
@@ -54,11 +56,11 @@ cc.Class({
                     // 初始赋值
                     this._status = value;
                     if (value == 0) {
-                        frog.innerEyeRadius = 12;
-                        frog.pupilRadius = 8;
+                        this.innerEyeRadius = frog.innerEyeRadius;
+                        this.pupilRadius = frog.pupilRadius;
                     } else if (value == 1) {
-                        frog.innerEyeRadius = 6;
-                        frog.pupilRadius = 4;
+                        this.innerEyeRadius = frog.innerEyeRadius / 2;
+                        this.pupilRadius = frog.pupilRadius / 2;
                     }
                 }
             }
@@ -77,15 +79,15 @@ cc.Class({
 
     drawFrogOpenEye: function drawFrogOpenEye(offsetX, offsetY) {
         this.ctx.fillColor = new cc.Color().fromHEX(frog.eyeColor);
-        this.ctx.circle(frog.eyePosX, frog.eyePosY, frog.innerEyeRadius);
+        this.ctx.circle(frog.eyePosX, frog.eyePosY, this.innerEyeRadius);
         this.ctx.fill();
-        this.ctx.circle(-frog.eyePosX, frog.eyePosY, frog.innerEyeRadius);
+        this.ctx.circle(-frog.eyePosX, frog.eyePosY, this.innerEyeRadius);
         this.ctx.fill();
 
         this.ctx.fillColor = new cc.Color().fromHEX(frog.innerEyeColor);
-        this.ctx.circle(frog.eyePosX, frog.eyePosY, frog.pupilRadius);
+        this.ctx.circle(frog.eyePosX, frog.eyePosY, this.pupilRadius);
         this.ctx.fill();
-        this.ctx.circle(-frog.eyePosX, frog.eyePosY, frog.pupilRadius);
+        this.ctx.circle(-frog.eyePosX, frog.eyePosY, this.pupilRadius);
         this.ctx.fill();
 
         this.ctx.fillColor = new cc.Color().fromHEX(frog.eyeColor);
@@ -154,22 +156,22 @@ cc.Class({
             // button turn off
             self.drawFrogOpenEye(5, 0);
             self.drawFrogOpenMouth();
-            frog.innerEyeRadius -= 3;
-            frog.pupilRadius -= 2;
-            if (frog.pupilRadius <= 4 || frog.innerEyeRadius <= 6) {
-                frog.innerEyeRadius = 6;
-                frog.pupilRadius = 4;
+            self.innerEyeRadius -= 3;
+            self.pupilRadius -= 2;
+            if (self.pupilRadius <= frog.pupilRadius / 2 || self.innerEyeRadius <= frog.innerEyeRadius / 2) {
+                self.innerEyeRadius = 6;
+                self.pupilRadius = 4;
                 self.status = 1;
             }
         } else if (self.status == 3) {
             // button turn on
-            frog.innerEyeRadius += 3;
-            frog.pupilRadius += 2;
+            self.innerEyeRadius += 3;
+            self.pupilRadius += 2;
             self.drawFrogOpenEye(5, 0);
             self.drawFrogCloseMouth();
-            if (frog.pupilRadius >= 8 || frog.innerEyeRadius >= 12) {
-                frog.innerEyeRadius = 12;
-                frog.pupilRadius = 8;
+            if (self.pupilRadius >= frog.pupilRadius || self.innerEyeRadius >= frog.innerEyeRadius) {
+                self.innerEyeRadius = frog.innerEyeRadius;
+                self.pupilRadius = frog.pupilRadius;
                 self.status = 0;
             }
         }

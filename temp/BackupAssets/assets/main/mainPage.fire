@@ -12279,7 +12279,7 @@
       "ctor": "Float32Array",
       "array": [
         0,
-        -3,
+        -14,
         0,
         0,
         0,
@@ -12347,8 +12347,8 @@
       "__type__": "TypedArray",
       "ctor": "Float32Array",
       "array": [
-        10,
-        69,
+        0,
+        71,
         0,
         0,
         0,
@@ -12410,7 +12410,7 @@
       "ctor": "Float32Array",
       "array": [
         0,
-        4.715000152587891,
+        -9,
         0,
         0,
         0,
@@ -12482,7 +12482,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "fbba2e31-42e0-44f1-b1fa-524409a69350"
+      "__uuid__": "93b19a0f-2b33-4f71-a408-509c2b23d171"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -14737,6 +14737,15 @@
     "correctPrompt": {
       "__id__": 313
     },
+    "QAindex": null,
+    "QAquestion": null,
+    "QAanswer": null,
+    "work_indexArray": null,
+    "work_questionArray": null,
+    "work_answerArray": null,
+    "trip_indexArray": null,
+    "trip_questionArray": null,
+    "trip_answerArray": null,
     "_id": "57sW0Uq3ZP+75wrIpXpgLQ"
   },
   {
