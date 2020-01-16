@@ -580,7 +580,7 @@ cc.Class({
     },
 
     //生成登录奖励
-    genLoginReward: function () {//  changed by qll on 20191226
+    genLoginReward: function () {//  changed by qll on 20200116
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
         let month = date.getMonth() + 1; //获取当前月份   
@@ -603,7 +603,6 @@ cc.Class({
                 console.log(res);
                 GlobalData.loginRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.loginRewardGrowth = res.rewardGrowth;//奖励成长值
-                instance._isLoginRewardShow = true;
             }
         });
     },
@@ -632,71 +631,11 @@ cc.Class({
                 console.log(res);
                 GlobalData.contLoginRewardCoin = res.rewardCoin;//奖励金币数
                 GlobalData.contLoginRewardGrowth = res.rewardGrowth;//奖励成长值
-                instance._isContLoginRewardShow = true;
             }
         });
     },
 
-    /**
-     *  登录函数
-     *  需要微信接口，测试时可以先注释掉
-     *  author: qll
-     *  time: 2019/12/2
-     */
-    login: function () {//  changed by qll on 20191226
-        let flagContLoginReward = 0;
-        let flagLoginReward = 0;
-        // wx.login({
-        //     success: res => {
-        //         // 发送 res.code 到后台并收取生成的userID，
-        //         let js_code = res.code;
-        //         console.log(js_code);
-        //         let date = new Date();
-        //         let year = date.getFullYear(); //获取当前年份   
-        //         let month = date.getMonth() + 1; //获取当前月份   
-        //         let dat = date.getDate(); //获取当前日    
-        //         let hour = date.getHours(); //获取小时   
-        //         let minute = date.getMinutes(); //获取分钟   
-        //         let second = date.getSeconds(); //获取秒   
-        //         let timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
-        //         let flagLocation = GlobalData.flagLocation;
-        //         let serverAddr = GlobalData.serverAddr + "php/login.php";
-        //         // 调用自定义网路接口进行登录操作
-        //         let data = {
-        //             "js_code": js_code,
-        //             "loginTime": timeStr,
-        //             "flagLocation": flagLocation,
-        //         };
-        //         HttpHelper.httpPost(serverAddr, data, function(res) {
-        // 	        if (res != -1) {
-        // 		           console.log(res);
-        //                 GlobalData.userID = res.userID;
-        //                 GlobalData.flagNewUser = Number(res.flagNewUser);
-        //                 GlobalData.contLoginDays = Number(res.contLoginDays);
-        //                 flagContLoginReward = Number(res.flagContLoginReward);
-        //                 flagLoginReward = Number(res.flagLoginReward);
-        // 	        }
-        //         });
-        //     }
-        // })
-
-        console.log('登录完成');
-
-        if (GlobalData.flagNewUser == 1)//新用户，跳到领养界面
-        {
-            cc.director.loadScene("adopt");
-        }
-        else   //老用户，查询属性信息，恢复场景，生成奖励
-        {
-            this.queryAttribute();
-            if (flagLoginReward == 1) {
-                this.genLoginReward();
-            }
-            if (flagContLoginReward == 1) {
-                this.genContLoginReward();
-            }
-        }
-    },
+   
 
     autoUpdate: function () {
         this.hunger.string = GlobalData.hunger;  // 饥饿值
@@ -781,68 +720,7 @@ cc.Class({
         this.functionBtn.node.runAction(actionPlusBtn);
     },
 
-    /**
-     * 进入游戏”按键所对应的事件处理函数，在用户的授权下获得并更新一些用户信息
-     * 需要微信接口，测试时可以先注释掉
-     * author: qll
-     * time: 2019/12/4
-     */
-    bindEnter: function (e) {
-        let instance = this;
-        if (e.detail.userInfo) {   //获得用户的微信账户信息
-            console.log(e.detail.userInfo);
-            GlobalData.userGender = e.detail.userInfo.gender;
-            GlobalData.userName = e.detail.userInfo.nickName;
-        }
-        else {
-            wx.showModal({
-                title: '用户未授权',
-                content: '拒绝授权将不能体验小游戏完整功能，点击确定开启授权',
-                success: (res) => {
-                    console.log(res);
-                    if (res.confirm) {
-                        wx.openSetting({});
-                    }
-                }
-            });
-        }
-        //询问用户是否授权位置信息（一个实际上不必要的授权，用来测试用户的安全意识）
-        wx.getSetting({
-            success(res) {
-                if (res.authSetting['scope.userLocation'] != true) {
-                    wx.showModal({
-                        title: '定位授权',
-                        content: '萌宠物语请求获得您的位置信息，请确认授权',
-                        success: (res) => {
-                            console.log(res);
-                            if (res.confirm) {
-                                wx.openSetting({
-                                    success(settingdata) {
-                                        console.log(settingdata);
-                                        if (settingdata.authSetting['scope.userLocation']) {
-                                            GlobalData.flagLocation = 1;
-                                            console.log("位置授权成功");
-                                            instance.login();
-                                        }
-                                        else {
-                                            GlobalData.flagLocation = 0;
-                                            console.log("取消位置授权");
-                                            instance.login();
-                                        }
-                                    }
-                                })
-                            }
-                            if (res.cancel) {
-                                GlobalData.flagLocation = 0;
-                                console.log("位置授权失败");
-                                instance.login();
-                            }
-                        }
-                    });
-                }
-            }
-        });
-    },
+    
 
     queryAttribute: function () {//  changed by qll on 20191226
         let serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
