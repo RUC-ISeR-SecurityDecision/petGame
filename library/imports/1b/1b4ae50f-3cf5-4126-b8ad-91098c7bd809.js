@@ -17,6 +17,8 @@ cc.Class({
         thirstLabel: cc.Node,
         moodLabel: cc.Node,
         energyLabel: cc.Node,
+        growthLabel: cc.Label,
+        coinLabel: cc.Label,
 
         species: null,
         gender: null,
@@ -168,18 +170,52 @@ cc.Class({
         },
         // 宠物成长值
         growth: {
-            default: 0,
-            type: cc.Integer
+            type: cc.Integer,
+            get: function get() {
+                return this._energy;
+            },
+            set: function set(value) {
+                if (value < 0) {
+                    value = 0;
+                    console.log("pet's energy is too low");
+                } else if (value > this.growthCeiling) {
+                    value = this.growthCeiling;
+                    console.log("pet's energy is full");
+                }
+                this._growth = value;
+            }
         },
         // 宠物成长值上限  ----added by qll in 20191226
         growthCeling: {
-            default: 0,
-            type: cc.Integer
+            type: cc.Integer,
+            get: function get() {
+                return this._growthCeling;
+            },
+            set: function set(value) {
+                this._growthCeling = value;
+            }
+        },
+        // 金币
+        coin: {
+            type: cc.Integer,
+            get: function get() {
+                return this._coin;
+            },
+            set: function set(value) {
+                this._coin = value;
+                this.coinLabel.string = this._coin;
+            }
         },
         // 宠物成长等级
         growthLevel: {
-            default: 0,
-            type: cc.Integer
+            type: cc.Integer,
+            get: function get() {
+                return this._growthLevel;
+            },
+            set: function set(value) {
+                this._growthLevel = value;
+                this.growthLabel.string = "LV." + this._growthLevel;
+            }
         },
         // 标志位：幼年or成年
         flagAgeGroup: {
@@ -299,7 +335,7 @@ cc.Class({
         var serverAddr = 'https://www.llquruc.top/petGame/php/queryPetAttribute.php';
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
-                // console.log(res);
+                console.log(res);
                 self.species = parseInt(res.species);
                 self.gender = parseInt(res.gender);
                 self.color = parseInt(res.color);
@@ -309,7 +345,6 @@ cc.Class({
                 self.thirstCeiling = parseInt(res.thirstCeiling); // 宠物口渴值上限
                 self.moodCeiling = parseInt(res.moodCeiling); // 宠物心情值上限
                 self.energyCeiling = parseInt(res.energyCeiling); // 宠物能量值上限
-
                 self.hunger = parseInt(res.hunger); // 宠物饥饿值
                 self.cleaness = parseInt(res.cleaness); // 宠物清洁值
                 self.thirst = parseInt(res.thirst); // 宠物口渴值
@@ -328,6 +363,15 @@ cc.Class({
                 self.tripRemainTime = res.tripRemainTime; // 旅游剩余时长
                 self.init();
                 console.log(self.flagSleep, self.flagTrip, self.flagWork);
+            }
+        });
+
+        serverAddr = "https://www.llquruc.top/petGame/php/queryUserAttribute.php";
+        // 调用自定义网路接口进行查询
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res != -1) {
+                console.log(res);
+                self.coin = res.coin; //金币值
             }
         });
     },
@@ -501,6 +545,15 @@ cc.Class({
                 self.workRemainTime = res.workRemainTime; // 打工剩余时长
                 self.flagTrip = res.flagTrip; // 标志位-是否正在旅游
                 self.tripRemainTime = res.tripRemainTime; // 旅游剩余时长
+            }
+        });
+
+        serverAddr = "https://www.llquruc.top/petGame/php/queryUserAttribute.php";
+        // 调用自定义网路接口进行查询
+        HttpHelper.httpPost(serverAddr, data, function (res) {
+            if (res != -1) {
+                console.log(res);
+                self.coin = res.coin; //金币值
             }
         });
     },

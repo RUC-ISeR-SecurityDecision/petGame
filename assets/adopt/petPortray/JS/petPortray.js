@@ -348,18 +348,19 @@ cc.Class({
         // 调用自定义网路接口
         var serverAddr = GlobalData.serverAddr + "php/adopt.php";
 		var data = {
-			"userID": GlobalData.userID,
+            "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1",
             "species": GlobalData.species,
             "gender": GlobalData.gender,
             "color": GlobalData.color,
             "userTitle": GlobalData.title,
             "petName": GlobalData.name,
 		};
-		/*HttpHelper.httpPost(serverAddr, data, function(data) {
+		HttpHelper.httpPost(serverAddr, data, function(data) {
 			if (data != -1) { //---
 				console.log('领养成功');
 			}
         });
+        /*
         serverAddr = GlobalData.serverAddr + "php/autoUpdate.php";
         data = {
 			userID: GlobalData.userID,

@@ -124,9 +124,6 @@ cc.Class({
         pet: cc.Node, // 宠物
         petCtrl: cc.Component, // 通过petCtrl关联pet.js
 
-        //以下为页面中需要展示的值
-        coin: cc.Label, // 金币值
-
         _isFunctionShow: true,
         //author:qll
         //time:2019.12.4
@@ -168,7 +165,26 @@ cc.Class({
                 if (value != true && value != false) {
                     value = false;
                 }
-                this.sleepPrompt.active = value;
+                if (value == false) {
+                    var fout = cc.fadeOut(0.3);
+                    this.sleepPrompt.runAction(fout);
+                    var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+                    var end_func = cc.callFunc(function () {
+                        this.sleepPrompt.active = false;
+                    }.bind(this));
+                    var seq = cc.sequence([s, end_func]);
+                    this.sleepPrompt.runAction(seq);
+                } else {
+                    // 提示框打开动作部分：
+                    // mask 渐变出来;
+                    this.sleepPrompt.active = true;
+                    var fin = cc.fadeTo(0.3, 255);
+                    this.sleepPrompt.runAction(fin);
+                    // dlg由小到大
+                    this.sleepPrompt.scale = 0;
+                    var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+                    this.sleepPrompt.runAction(s);
+                }
                 this._isSleepSettingShow = value;
             }
         }, //标志位_是否展示睡觉设置框
@@ -181,7 +197,26 @@ cc.Class({
                 if (value != true && value != false) {
                     value = false;
                 }
-                this.workPrompt.active = value;
+                if (value == false) {
+                    var fout = cc.fadeOut(0.3);
+                    this.workPrompt.runAction(fout);
+                    var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+                    var end_func = cc.callFunc(function () {
+                        this.workPrompt.active = false;
+                    }.bind(this));
+                    var seq = cc.sequence([s, end_func]);
+                    this.workPrompt.runAction(seq);
+                } else {
+                    // 提示框打开动作部分：
+                    // mask 渐变出来;
+                    this.workPrompt.active = true;
+                    var fin = cc.fadeTo(0.3, 255);
+                    this.workPrompt.runAction(fin);
+                    // dlg由小到大
+                    this.workPrompt.scale = 0;
+                    var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+                    this.workPrompt.runAction(s);
+                }
                 this._isWorkSettingShow = value;
             }
         },  //标志位_是否展示工作设置框
@@ -194,7 +229,26 @@ cc.Class({
                 if (value != true && value != false) {
                     value = false;
                 }
-                this.tripPrompt.active = value;
+                if (value == false) {
+                    var fout = cc.fadeOut(0.3);
+                    this.tripPrompt.runAction(fout);
+                    var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+                    var end_func = cc.callFunc(function () {
+                        this.tripPrompt.active = false;
+                    }.bind(this));
+                    var seq = cc.sequence([s, end_func]);
+                    this.tripPrompt.runAction(seq);
+                } else {
+                    // 提示框打开动作部分：
+                    // mask 渐变出来;
+                    this.tripPrompt.active = true;
+                    var fin = cc.fadeTo(0.3, 255);
+                    this.tripPrompt.runAction(fin);
+                    // dlg由小到大
+                    this.tripPrompt.scale = 0;
+                    var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+                    this.tripPrompt.runAction(s);
+                }
                 this._isTripSettingShow = value;
             }
         },  //标志位_是否展示旅游设置框
@@ -229,21 +283,21 @@ cc.Class({
 
     },
 
-//added by qll on 20200104
+    //added by qll on 20200104
     loadSound: function () {
-        var self=this;
+        var self = this;
         cc.loader.loadRes('sound/button/1.mp3', cc.AudioClip, (err, btnSound) => {
             if (err) {
                 console.log("failed to load sound");
             }
-            self.btnSound=btnSound;
+            self.btnSound = btnSound;
         });
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        GlobalData.userID="nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1";
+        GlobalData.userID = "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1";
         this.loadSound();
         // console.log(GlobalData);
         this.init();
@@ -652,7 +706,6 @@ cc.Class({
         this.energy.string = GlobalData.energy; // 能量值
         this.growth.string = GlobalData.growth; // 成长值
         this.growthLevel.string = GlobalData.growthLevel; // 成长值等级
-        this.coin.string = GlobalData.coin; // 金币值
         //检查是否有奖励生成（仅限随机和升级）
         if (GlobalData.flagRandomReward == true) {
             this._isRandomRewardShow = true;  //在主界面某处出现随机奖励
@@ -678,8 +731,8 @@ cc.Class({
             "种花", "野外勘探", "画漫画", "当导游", "发广告", "算账"
         ];
         this.loadBag();
-        this.theme = GlobalData.bgPicNum;
         this.queryAttribute();
+        this.theme = GlobalData.bgPicNum;
         this.petCtrl = this.node.parent.getChildByName('pet').getComponent('pet');
         console.log(this.petCtrl);
     },
@@ -797,6 +850,7 @@ cc.Class({
         let data = {
             "userID": "nqEsLYOCtdRUkx4Ovn8bhDUmnBHB3DdEncp0z7ApU1"
         };
+        let self = this;
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
                 console.log(res);
@@ -845,6 +899,7 @@ cc.Class({
                 GlobalData.bgMusicVolume = res.bgMusicVolume;//背景音乐音量
                 GlobalData.bgMusicNum = res.bgMusicNum;//背景音乐曲目编号
                 GlobalData.bgPicNum = res.bgPicNum;//背景图片编号
+                self.theme = GlobalData.bgPicNum;
                 GlobalData.flagSound = res.flagSound;//标志位_是否开启音效
                 GlobalData.soundVolume = res.soundVolume;//音效音量
                 GlobalData.flagNotice = res.flagNotice;//标志位_是否开启推送通知
@@ -863,7 +918,7 @@ cc.Class({
                 GlobalData.bag.flagEnableArrayStr = res.flagEnableArray;//物品是否启用的标志位数组
             }
         });
-
+        
     },
 
     //点击获取奖励
@@ -1013,11 +1068,11 @@ cc.Class({
     },
 
 
-    startCountDown: function(operationName, id, QANum, picNum) {  
+    startCountDown: function (operationName, id, QANum, picNum) {
         //参数的意义：operationName表示到底是为了什么操作而进行倒计时（work或trip或sleep）id 代表旅游地点或者工作种类
         //trip:0 work:1
         if (operationName == 'trip') {
-            this.questionPrompt.getComponent('questionPrompt').init(0, this.tripLocID, QANum, picNum );
+            this.questionPrompt.getComponent('questionPrompt').init(0, this.tripLocID, QANum, picNum);
         } else if (operationName == 'work') {
             this.questionPrompt.getComponent('questionPrompt').init(1, this.workTypeID, QANum, picNum);
         }
@@ -1091,7 +1146,7 @@ cc.Class({
         let second = date.getSeconds(); //获取秒   
         var timeStr = year + '-' + month + '-' + dat + ' ' + hour + ':' + minute + ':' + second;
         var serverAddr = GlobalData.serverAddr + "php/trip_select.php";
-        
+
         // 调用自定义网路接口
         var data = {
             "userID": GlobalData.userID,
@@ -1103,7 +1158,7 @@ cc.Class({
         var picNum = 0;  //旅游照片编号 
         var moodChangedValue = 0;
         var energyChangedValue = 0;
-        var coinChangedValue =0;
+        var coinChangedValue = 0;
         var growthChangedValue = 0;
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
@@ -1134,7 +1189,7 @@ cc.Class({
                 });
             }
         });
-        
+
         // 计数函数
         this.clockCanvas.callback = function () {
             this.counter--;
@@ -1146,9 +1201,9 @@ cc.Class({
                 self.petCtrl.tripEnd() //  宠物状态开锁
             }
             this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
-            this.circle(0, 0, 75);
+            this.circle(0, 0, 20);
             this.fill();
-            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.tripTimeID] * Math.PI, false);
+            this.arc(0, 0, 10, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.tripTimeID] * Math.PI, false);
             this.stroke();
         }
         // 计时函数，每一秒执行一次
@@ -1222,12 +1277,12 @@ cc.Class({
         var picNum = 0;  //旅游照片编号
         var hungerChangedValue = 0;
         var cleanessChangedValue = 0;
-        var thirstChangedValue = 0; 
+        var thirstChangedValue = 0;
         var moodChangedValue = 0;
         var energyChangedValue = 0;
-        var coinChangedValue =0;
+        var coinChangedValue = 0;
         var growthChangedValue = 0;
-        var flagCAPTCHA=0;
+        var flagCAPTCHA = 0;
         var details = '';
         HttpHelper.httpPost(serverAddr, data, function (res) {
             if (res != -1) {
@@ -1277,16 +1332,16 @@ cc.Class({
                 self.petCtrl.workEnd(); // 宠物状态开锁
             }
             this.node.parent.getChildByName('time').getComponent(cc.Label).string = this.counter;
-            this.circle(0, 0, 75);
+            this.circle(0, 0, 20);
             this.fill();
-            this.arc(0, 0, 60, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.workTimeID] * Math.PI, false);
+            this.arc(0, 0, 10, Math.PI / 2, Math.PI / 2 - 2 * this.counter / self.timeIndex[self.workTimeID] * Math.PI, false);
             this.stroke();
         }
         // 计时函数，每一秒执行一次
         this.clockCanvas.node.parent.active = true; //打开工作倒计时
         this.clockCanvas.schedule(this.clockCanvas.callback, 1);
 
-        
+
     },
 
     onClickSleepCloseBtn: function () {
@@ -1392,7 +1447,7 @@ cc.Class({
         this.clockCanvas.node.parent.active = true; //打开睡觉倒计时
         this.clockCanvas.schedule(this.clockCanvas.callback, 1);
 
-        
+
     },
 
     onClickHomeBtn: function () {  //跳转到小屋界面
@@ -1401,6 +1456,7 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
+        this.petCtrl.exit();
         cc.director.loadScene('house');
     },
 
@@ -1410,6 +1466,7 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
+        this.petCtrl.exit();
         cc.director.loadScene('setting');
     },
 
@@ -1419,6 +1476,7 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
+        this.petCtrl.exit();
         cc.director.loadScene('shop');
     },
 
@@ -1428,6 +1486,7 @@ cc.Class({
         var soundVolume = 0.5;
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         this.exit();
+        this.petCtrl.exit();
         cc.director.loadScene('personalInfo');
     },
 

@@ -326,8 +326,8 @@ cc.Class({
 
                 var _loop2 = function _loop2(_i) {
                     var element = picAddrArray[_i];
-                    picAddrArray[_i] = element.replace(/.png/, '');
-                    picAddrArray[_i] = picAddrArray[_i].replace(/resources\//, '');
+                    // picAddrArray[i] = element.replace(/.png/, '');
+                    // picAddrArray[i] = picAddrArray[i].replace(/resources\//, '')
                     console.log(picAddrArray[_i]);
 
                     self.listContainer.destroyAllChildren();
@@ -386,8 +386,8 @@ cc.Class({
 
                 var _loop3 = function _loop3(_i2) {
                     var element = picAddrArray[_i2];
-                    picAddrArray[_i2] = element.replace(/.png/, '');
-                    picAddrArray[_i2] = picAddrArray[_i2].replace(/resources\//, '');
+                    // picAddrArray[i] = element.replace(/.png/, '');
+                    // picAddrArray[i] = picAddrArray[i].replace(/resources\//, '')
                     console.log(picAddrArray[_i2]);
 
                     self.listContainer.destroyAllChildren();

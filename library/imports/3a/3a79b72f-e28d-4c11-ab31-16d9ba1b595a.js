@@ -250,6 +250,7 @@ cc.Class({
 
         promptBlock3: cc.Node, // 背景图片框节点
         bgToggleContainer: cc.ToggleContainer,
+        bgPicText: cc.Label,
         //背景图片编号
         bgPicNum: {
             get: function get() {
@@ -258,6 +259,15 @@ cc.Class({
             set: function set(value) {
                 if (value > 3 || value < 0) {
                     value = 0;
+                }
+                if (value == 0) {
+                    this.bgPicText.string = "春意盎然";
+                } else if (value == 1) {
+                    this.bgPicText.string = "夏日炎炎";
+                } else if (value == 2) {
+                    this.bgPicText.string = "秋色宜人";
+                } else if (value == 3) {
+                    this.bgPicText.string = "冬日野趣";
                 }
                 this._bgPicNum = value;
             }
@@ -339,6 +349,10 @@ cc.Class({
         var btnSoundID = cc.audioEngine.play(this.btnSound, false, soundVolume);
         //var btnSoundID = cc.audioEngine.play(this.btnSound, false, GlobalData.soundVolume);
         console.log("close setting");
+        this.musicFrogBtn.getComponent('frogBtn').exit();
+        this.soundFrogBtn.getComponent('frogBtn').exit();
+        this.noticeFrogBtn.getComponent('frogBtn').exit();
+        this.vibrationFrogBtn.getComponent('frogBtn').exit();
         cc.director.loadScene('mainPage');
     },
 

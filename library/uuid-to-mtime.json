@@ -454,11 +454,6 @@
     "meta": 1575355152000,
     "relativePath": "adopt\\petPortray\\JS"
   },
-  "27dca957-a67c-49eb-a753-d6753f03019d": {
-    "asset": 1578964816615,
-    "meta": 1578965272033,
-    "relativePath": "adopt\\petPortray\\JS\\petPortray.js"
-  },
   "59a00165-9cb9-4a84-99bc-818638622803": {
     "asset": 1578383607228,
     "meta": 1576138246000,
@@ -479,20 +474,10 @@
     "meta": 1578965272059,
     "relativePath": "Global\\game.js"
   },
-  "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
-    "asset": 1577782822000,
-    "meta": 1578965272084,
-    "relativePath": "Global\\globalData.js"
-  },
   "b928e20b-8666-4ee3-be7e-31d478039112": {
     "asset": 1576804764000,
     "meta": 1578965272116,
     "relativePath": "Global\\net.js"
-  },
-  "1b4ae50f-3cf5-4126-b8ad-91098c7bd809": {
-    "asset": 1578964816615,
-    "meta": 1578965272208,
-    "relativePath": "Global\\pet.js"
   },
   "4badcbb7-c8c6-4c78-b8d2-f099364fbf60": {
     "asset": 1578483122407,
@@ -524,14 +509,9 @@
     "meta": 1575355152000,
     "relativePath": "load\\JS"
   },
-  "ad10578c-dff4-4bf7-9641-6fa7c44efcb0": {
-    "asset": 1578964816616,
-    "meta": 1578965272243,
-    "relativePath": "load\\JS\\load.js"
-  },
   "7e0db090-f820-4e62-8ab1-72662f99c5d6": {
-    "asset": 1579100873833,
-    "meta": 1579100873843,
+    "asset": 1579159386848,
+    "meta": 1579159386858,
     "relativePath": "house\\house.fire"
   },
   "b1461062-749e-4ea0-bc95-3097edc09870": {
@@ -585,8 +565,8 @@
     "relativePath": "resources\\华康少女文字.ttf"
   },
   "8cc7625f-c16e-400f-95d7-f603e1b5b9ab": {
-    "asset": 1579003129560,
-    "meta": 1579003129578,
+    "asset": 1579163183655,
+    "meta": 1579163183677,
     "relativePath": "main\\mainPage.fire"
   },
   "975ff2cd-f50e-4d86-86de-f8625ed7c418": {
@@ -715,7 +695,7 @@
     "relativePath": "resources\\bgPic\\2.png"
   },
   "118bc3b7-b3ee-4e9a-aad1-8d2d9ef734fb": {
-    "asset": 1578383607320,
+    "asset": 1579141341267,
     "meta": 1576817464000,
     "relativePath": "resources\\button"
   },
@@ -748,11 +728,6 @@
     "asset": 1576817464000,
     "meta": 1578965273785,
     "relativePath": "resources\\button\\color.png"
-  },
-  "a775f780-abe4-43f3-843a-cece7173d714": {
-    "asset": 1576817464000,
-    "meta": 1578965273811,
-    "relativePath": "resources\\button\\confirm.png"
   },
   "9134804c-43e7-4e1c-a952-e8fdaa4bc51f": {
     "asset": 1576817464000,
@@ -1135,7 +1110,7 @@
     "relativePath": "resources\\page_main\\bg.png"
   },
   "61e1d744-b579-4ccb-bfa7-349d54b9b805": {
-    "asset": 1578964816985,
+    "asset": 1579141341267,
     "meta": 1578020532000,
     "relativePath": "resources\\page_main\\countdown"
   },
@@ -2375,7 +2350,7 @@
     "relativePath": "resources\\shopPic\\cate5\\5.png"
   },
   "7e73f67e-98f7-4bfa-8bdd-e0d00715f9e4": {
-    "asset": 1579078339918,
+    "asset": 1579094010531,
     "meta": 1576817466000,
     "relativePath": "resources\\shopPic\\cate6"
   },
@@ -7100,19 +7075,14 @@
     "relativePath": "shop\\js\\shopItem.js"
   },
   "e5d63e40-cf73-4af4-be38-8a2f26021b65": {
-    "asset": 1579001013710,
-    "meta": 1579001013725,
+    "asset": 1579145740269,
+    "meta": 1579145740279,
     "relativePath": "setting\\setting.fire"
   },
   "01dd0098-b0f1-4689-92b2-915a0a202dfd": {
     "asset": 1578197930000,
     "meta": 1578965283705,
     "relativePath": "shop\\shop.fire"
-  },
-  "3a79b72f-e28d-4c11-ab31-16d9ba1b595a": {
-    "asset": 1579000483662,
-    "meta": 1579000485094,
-    "relativePath": "setting\\js\\setting.js"
   },
   "763e1083-26ad-4607-9860-9f64a169cd65": {
     "asset": 1579000948964,
@@ -7143,11 +7113,6 @@
     "asset": 1579000949704,
     "meta": 1578999272000,
     "relativePath": "resources\\workPic\\6"
-  },
-  "1c0213b4-7ed0-495c-af58-d2a98b5cf86c": {
-    "asset": 1579003076589,
-    "meta": 1579003081184,
-    "relativePath": "Global\\frogBtn.js"
   },
   "e88bc832-5329-42b4-8683-cf78a1ba0f00": {
     "asset": 1576817472000,
@@ -7369,11 +7334,6 @@
     "meta": 1579078340084,
     "relativePath": "resources\\shopPic\\cate5\\shadow.png"
   },
-  "87f24e7f-2404-4414-93f0-799c7dde5427": {
-    "asset": 1579083416667,
-    "meta": 1579083420036,
-    "relativePath": "main\\js\\main.js"
-  },
   "575b7a95-ada3-4873-99e5-cace407bdfdd": {
     "asset": 1578365046000,
     "meta": 1579092814789,
@@ -7384,9 +7344,54 @@
     "meta": 1579094010582,
     "relativePath": "resources\\shopPic\\cate6\\2-cover.png"
   },
+  "a775f780-abe4-43f3-843a-cece7173d714": {
+    "asset": 1579141182581,
+    "meta": 1579141341306,
+    "relativePath": "resources\\button\\confirm.png"
+  },
+  "99f94bff-19e4-457c-934c-acba7d1e2f7f": {
+    "asset": 1579141180200,
+    "meta": 1579141341314,
+    "relativePath": "resources\\page_main\\countdown\\clock.png"
+  },
+  "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
+    "asset": 1579159809369,
+    "meta": 1579160641852,
+    "relativePath": "Global\\globalData.js"
+  },
+  "ad10578c-dff4-4bf7-9641-6fa7c44efcb0": {
+    "asset": 1579161127624,
+    "meta": 1579161128944,
+    "relativePath": "load\\JS\\load.js"
+  },
+  "27dca957-a67c-49eb-a753-d6753f03019d": {
+    "asset": 1579161948560,
+    "meta": 1579161950874,
+    "relativePath": "adopt\\petPortray\\JS\\petPortray.js"
+  },
+  "1c0213b4-7ed0-495c-af58-d2a98b5cf86c": {
+    "asset": 1579163758248,
+    "meta": 1579164967128,
+    "relativePath": "Global\\frogBtn.js"
+  },
+  "1b4ae50f-3cf5-4126-b8ad-91098c7bd809": {
+    "asset": 1579163929071,
+    "meta": 1579164967300,
+    "relativePath": "Global\\pet.js"
+  },
   "4fcf85af-f1c3-4747-9d8b-cdb5b050dce0": {
-    "asset": 1579100845216,
-    "meta": 1579100850716,
+    "asset": 1579164027346,
+    "meta": 1579164967545,
     "relativePath": "house\\js\\house.js"
+  },
+  "3a79b72f-e28d-4c11-ab31-16d9ba1b595a": {
+    "asset": 1579163880722,
+    "meta": 1579164967639,
+    "relativePath": "setting\\js\\setting.js"
+  },
+  "87f24e7f-2404-4414-93f0-799c7dde5427": {
+    "asset": 1579165025206,
+    "meta": 1579165029059,
+    "relativePath": "main\\js\\main.js"
   }
 }

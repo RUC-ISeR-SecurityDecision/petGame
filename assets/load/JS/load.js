@@ -26,7 +26,6 @@ cc.Class({
 
     init: function(){
         console.log("init", GlobalData);
-        GlobalData.init();
 
         // test for login: wangc
         let date = new Date();

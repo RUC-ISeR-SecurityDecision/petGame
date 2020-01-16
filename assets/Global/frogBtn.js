@@ -58,6 +58,7 @@ cc.Class({
                 }
              }
         }, 
+        updateID: null,
     },
 
     drawFrogBack: function () {
@@ -171,6 +172,10 @@ cc.Class({
     onLoad() {
         let self = this;
         this.updateID = setInterval(self.drawFrog, self.updateTime, self);
+    },
+
+    exit: function () {  //退出该页面时调用此函数
+        clearInterval(this.updateID);
     },
 
     start() {
