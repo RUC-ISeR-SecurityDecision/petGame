@@ -1,70 +1,70 @@
-2020-01-16T08:22:49.933Z - normal: Load ~/.CocosCreator/settings.json
-2020-01-16T08:22:49.971Z - normal: Initializing Asset Database
-2020-01-16T08:22:49.977Z - normal: checking language setting...
-2020-01-16T08:22:49.977Z - normal: Language: zh
-2020-01-16T08:22:50.267Z - success: preview server running at http://localhost:7456
-2020-01-16T08:22:50.271Z - success: protocol editor-framework registered
-2020-01-16T08:22:50.271Z - success: protocol app registered
-2020-01-16T08:22:50.271Z - success: protocol theme registered
-2020-01-16T08:22:50.272Z - success: protocol packages registered
-2020-01-16T08:22:50.272Z - success: protocol uuid registerred
-2020-01-16T08:22:50.272Z - success: protocol db registerred
-2020-01-16T08:22:50.272Z - success: protocol thumbnail registerred
-2020-01-16T08:22:50.272Z - success: protocol unpack registerred
-2020-01-16T08:22:50.272Z - success: protocol disable-commonjs registerred
-2020-01-16T08:22:50.379Z - normal: connected!
-2020-01-16T08:22:50.381Z - normal: Check project F:\petGame
-2020-01-16T08:22:50.385Z - normal: Initializing project F:\petGame
-2020-01-16T08:22:50.605Z - normal: Initializing Cocos2d
-2020-01-16T08:22:51.562Z - normal: Initializing engine extends
-2020-01-16T08:22:51.588Z - success: adapters loaded
-2020-01-16T08:22:51.594Z - success: asset-db-debugger loaded
-2020-01-16T08:22:51.657Z - success: fb-audience-network loaded
-2020-01-16T08:22:51.677Z - success: fb-live-stream loaded
-2020-01-16T08:22:51.679Z - success: google-play-instant loaded
-2020-01-16T08:22:51.692Z - success: huawei-runtime loaded
-2020-01-16T08:22:51.867Z - success: cpk-publish loaded
-2020-01-16T08:22:51.868Z - success: jsb-adapter loaded
-2020-01-16T08:22:51.873Z - success: oppo-runtime loaded
-2020-01-16T08:22:51.879Z - success: package-manager loaded
-2020-01-16T08:22:51.886Z - success: runtime-dev-tools loaded
-2020-01-16T08:22:51.895Z - success: sdkbox loaded
-2020-01-16T08:22:51.899Z - success: ui-kit-preview-extra loaded
-2020-01-16T08:22:51.901Z - success: ui-kit-preview loaded
-2020-01-16T08:22:51.910Z - success: vivo-runtime loaded
-2020-01-16T08:22:51.913Z - success: alipay-minigame loaded
-2020-01-16T08:22:51.949Z - success: assets loaded
-2020-01-16T08:22:51.952Z - success: baidugame-opendata loaded
-2020-01-16T08:22:51.954Z - success: baidugame loaded
-2020-01-16T08:22:51.980Z - success: builder loaded
-2020-01-16T08:22:52.132Z - success: cocos-services loaded
-2020-01-16T08:22:52.141Z - success: console loaded
-2020-01-16T08:22:52.153Z - success: fb-instant-games loaded
-2020-01-16T08:22:52.157Z - success: game-window loaded
-2020-01-16T08:22:52.159Z - success: google-instant-games loaded
-2020-01-16T08:22:52.163Z - success: hierarchy loaded
-2020-01-16T08:22:52.166Z - success: inspector loaded
-2020-01-16T08:22:52.166Z - success: keystore loaded
-2020-01-16T08:22:52.171Z - success: node-library loaded
-2020-01-16T08:22:52.173Z - success: open-recent-items loaded
-2020-01-16T08:22:52.174Z - success: package-asset loaded
-2020-01-16T08:22:52.175Z - success: preferences loaded
-2020-01-16T08:22:52.177Z - success: project-exporter loaded
-2020-01-16T08:22:52.179Z - success: project-importer loaded
-2020-01-16T08:22:52.181Z - success: project-settings loaded
-2020-01-16T08:22:52.184Z - success: scene loaded
-2020-01-16T08:22:52.185Z - success: simulator-debugger loaded
-2020-01-16T08:22:52.186Z - success: sprite-editor loaded
-2020-01-16T08:22:52.188Z - success: store loaded
-2020-01-16T08:22:52.192Z - success: timeline loaded
-2020-01-16T08:22:52.194Z - success: wechatgame-opendata loaded
-2020-01-16T08:22:52.198Z - success: wechatgame loaded
-2020-01-16T08:22:52.202Z - success: xiaomi-runtime loaded
-2020-01-16T08:22:55.866Z - normal: Loading packages
-2020-01-16T08:22:55.873Z - normal: Watching packages
-2020-01-16T08:22:56.112Z - normal: Run Application
-2020-01-16T08:22:56.323Z - info: Cocos Services load base data!
-2020-01-16T08:23:00.453Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
+2020-01-17T01:46:40.490Z - normal: Load ~/.CocosCreator/settings.json
+2020-01-17T01:46:40.527Z - normal: Initializing Asset Database
+2020-01-17T01:46:40.539Z - normal: checking language setting...
+2020-01-17T01:46:40.539Z - normal: Language: zh
+2020-01-17T01:46:40.819Z - success: preview server running at http://localhost:7456
+2020-01-17T01:46:40.824Z - success: protocol editor-framework registered
+2020-01-17T01:46:40.824Z - success: protocol app registered
+2020-01-17T01:46:40.824Z - success: protocol theme registered
+2020-01-17T01:46:40.824Z - success: protocol packages registered
+2020-01-17T01:46:40.824Z - success: protocol uuid registerred
+2020-01-17T01:46:40.825Z - success: protocol db registerred
+2020-01-17T01:46:40.825Z - success: protocol thumbnail registerred
+2020-01-17T01:46:40.825Z - success: protocol unpack registerred
+2020-01-17T01:46:40.825Z - success: protocol disable-commonjs registerred
+2020-01-17T01:46:40.900Z - normal: connected!
+2020-01-17T01:46:40.903Z - normal: Check project F:\petGame
+2020-01-17T01:46:40.906Z - normal: Initializing project F:\petGame
+2020-01-17T01:46:41.112Z - normal: Initializing Cocos2d
+2020-01-17T01:46:41.358Z - normal: Initializing engine extends
+2020-01-17T01:46:41.417Z - success: adapters loaded
+2020-01-17T01:46:41.422Z - success: asset-db-debugger loaded
+2020-01-17T01:46:41.471Z - success: fb-audience-network loaded
+2020-01-17T01:46:41.490Z - success: fb-live-stream loaded
+2020-01-17T01:46:41.492Z - success: google-play-instant loaded
+2020-01-17T01:46:41.496Z - success: huawei-runtime loaded
+2020-01-17T01:46:41.586Z - success: cpk-publish loaded
+2020-01-17T01:46:41.587Z - success: jsb-adapter loaded
+2020-01-17T01:46:41.590Z - success: oppo-runtime loaded
+2020-01-17T01:46:41.594Z - success: package-manager loaded
+2020-01-17T01:46:41.596Z - success: runtime-dev-tools loaded
+2020-01-17T01:46:41.600Z - success: sdkbox loaded
+2020-01-17T01:46:41.603Z - success: ui-kit-preview-extra loaded
+2020-01-17T01:46:41.605Z - success: ui-kit-preview loaded
+2020-01-17T01:46:41.610Z - success: vivo-runtime loaded
+2020-01-17T01:46:41.612Z - success: alipay-minigame loaded
+2020-01-17T01:46:41.646Z - success: assets loaded
+2020-01-17T01:46:41.649Z - success: baidugame-opendata loaded
+2020-01-17T01:46:41.651Z - success: baidugame loaded
+2020-01-17T01:46:41.654Z - success: builder loaded
+2020-01-17T01:46:41.757Z - success: cocos-services loaded
+2020-01-17T01:46:41.761Z - success: console loaded
+2020-01-17T01:46:41.769Z - success: fb-instant-games loaded
+2020-01-17T01:46:41.772Z - success: game-window loaded
+2020-01-17T01:46:41.773Z - success: google-instant-games loaded
+2020-01-17T01:46:41.776Z - success: hierarchy loaded
+2020-01-17T01:46:41.778Z - success: inspector loaded
+2020-01-17T01:46:41.779Z - success: keystore loaded
+2020-01-17T01:46:41.782Z - success: node-library loaded
+2020-01-17T01:46:41.783Z - success: open-recent-items loaded
+2020-01-17T01:46:41.784Z - success: package-asset loaded
+2020-01-17T01:46:41.785Z - success: preferences loaded
+2020-01-17T01:46:41.787Z - success: project-exporter loaded
+2020-01-17T01:46:41.790Z - success: project-importer loaded
+2020-01-17T01:46:41.793Z - success: project-settings loaded
+2020-01-17T01:46:41.797Z - success: scene loaded
+2020-01-17T01:46:41.798Z - success: simulator-debugger loaded
+2020-01-17T01:46:41.799Z - success: sprite-editor loaded
+2020-01-17T01:46:41.801Z - success: store loaded
+2020-01-17T01:46:41.805Z - success: timeline loaded
+2020-01-17T01:46:41.808Z - success: wechatgame-opendata loaded
+2020-01-17T01:46:41.814Z - success: wechatgame loaded
+2020-01-17T01:46:41.819Z - success: xiaomi-runtime loaded
+2020-01-17T01:46:43.571Z - normal: Loading packages
+2020-01-17T01:46:43.577Z - normal: Watching packages
+2020-01-17T01:46:43.804Z - normal: Run Application
+2020-01-17T01:46:44.147Z - info: Cocos Services load base data!
+2020-01-17T01:46:47.653Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -79,8 +79,8 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.454Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
-2020-01-16T08:23:00.457Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
+2020-01-17T01:46:47.653Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.657Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -95,8 +95,8 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.457Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
-2020-01-16T08:23:00.462Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
+2020-01-17T01:46:47.657Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.662Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -111,7 +111,7 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.462Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
+2020-01-17T01:46:47.662Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     sleepSound: cc.Texture2D,
@@ -126,7 +126,7 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.462Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
+2020-01-17T01:46:47.662Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     hiSound: cc.Texture2D,
@@ -141,10 +141,10 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.462Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
-2020-01-16T08:23:00.462Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
-2020-01-16T08:23:00.462Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
-2020-01-16T08:23:00.465Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
+2020-01-17T01:46:47.662Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.662Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
+2020-01-17T01:46:47.662Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
+2020-01-17T01:46:47.665Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -159,8 +159,8 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.465Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
-2020-01-16T08:23:00.469Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
+2020-01-17T01:46:47.665Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.669Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -175,8 +175,8 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.469Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
-2020-01-16T08:23:00.471Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
+2020-01-17T01:46:47.669Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.671Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
 the use of declaring a property in CCClass as a URL has been deprecated.
 For example, if property is Texture2D, the previous definition is:
     btnSound: cc.Texture2D,
@@ -191,388 +191,4 @@ Now it should be changed to:
       default: null,      // object's default value is null
     },
 (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:23:00.471Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.532Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.532Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.537Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.538Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.542Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.543Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    sleepSound: cc.Texture2D,
-    // or:
-    sleepSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    sleepSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.543Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    hiSound: cc.Texture2D,
-    // or:
-    hiSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    hiSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.543Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.544Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
-2020-01-16T08:31:14.544Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
-2020-01-16T08:31:14.545Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.545Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.549Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.549Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
-2020-01-16T08:31:14.550Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:31:14.551Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.307Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.308Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.311Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.311Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.315Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.315Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    sleepSound: cc.Texture2D,
-    // or:
-    sleepSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    sleepSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.315Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    hiSound: cc.Texture2D,
-    // or:
-    hiSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    hiSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.315Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.315Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
-2020-01-16T08:32:56.315Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
-2020-01-16T08:32:56.317Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.317Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.319Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.319Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
-2020-01-16T08:32:56.320Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:32:56.320Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.642Z - warn: Please change the definition of property 'btnSound' in class 'load'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.643Z - warn: Can not indicate the 'cc.String' attribute for "load.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.646Z - warn: Please change the definition of property 'btnSound' in class 'petPortray'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.646Z - warn: Can not indicate the 'cc.String' attribute for "petPortray.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.653Z - warn: Please change the definition of property 'btnSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.654Z - warn: Please change the definition of property 'sleepSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    sleepSound: cc.Texture2D,
-    // or:
-    sleepSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    sleepSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.654Z - warn: Please change the definition of property 'hiSound' in class 'main'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    hiSound: cc.Texture2D,
-    // or:
-    hiSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    hiSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.654Z - warn: Can not indicate the 'cc.String' attribute for "main.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.654Z - warn: Can not indicate the 'cc.String' attribute for "main.sleepSound", which its default value is type of object.
-2020-01-16T08:56:08.654Z - warn: Can not indicate the 'cc.String' attribute for "main.hiSound", which its default value is type of object.
-2020-01-16T08:56:08.657Z - warn: Please change the definition of property 'btnSound' in class 'personalInfo'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.657Z - warn: Can not indicate the 'cc.String' attribute for "personalInfo.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.669Z - warn: Please change the definition of property 'btnSound' in class 'setting'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.669Z - warn: Can not indicate the 'cc.String' attribute for "setting.btnSound", which its default value is type of object.
-2020-01-16T08:56:08.672Z - warn: Please change the definition of property 'btnSound' in class 'shopCopy'. Starting from v1.10,
-the use of declaring a property in CCClass as a URL has been deprecated.
-For example, if property is Texture2D, the previous definition is:
-    btnSound: cc.Texture2D,
-    // or:
-    btnSound: {
-      url: cc.Texture2D,
-      default: ""
-    },
-Now it should be changed to:
-    btnSound: {
-      type: cc.Texture2D, // use 'type:' to define Texture2D object directly
-      default: null,      // object's default value is null
-    },
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2020-01-16T08:56:08.672Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.
+2020-01-17T01:46:47.671Z - warn: Can not indicate the 'cc.String' attribute for "shopCopy.btnSound", which its default value is type of object.

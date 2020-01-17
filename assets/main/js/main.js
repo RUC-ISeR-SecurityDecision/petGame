@@ -635,7 +635,7 @@ cc.Class({
         });
     },
 
-   
+
 
     autoUpdate: function () {
         this.hunger.string = GlobalData.hunger;  // 饥饿值
@@ -720,7 +720,7 @@ cc.Class({
         this.functionBtn.node.runAction(actionPlusBtn);
     },
 
-    
+
 
     queryAttribute: function () {//  changed by qll on 20191226
         let serverAddr = GlobalData.serverAddr + "php/queryUserAttribute.php";
@@ -796,7 +796,7 @@ cc.Class({
                 GlobalData.bag.flagEnableArrayStr = res.flagEnableArray;//物品是否启用的标志位数组
             }
         });
-        
+
     },
 
     //点击获取奖励
@@ -954,7 +954,16 @@ cc.Class({
         } else if (operationName == 'work') {
             this.questionPrompt.getComponent('questionPrompt').init(1, this.workTypeID, QANum, picNum);
         }
+
+        // 提示框打开动作部分：
+        // mask 渐变出来;
         this.questionPrompt.active = true;
+        var fin = cc.fadeTo(0.3, 255);
+        this.questionPrompt.runAction(fin);
+        // dlg由小到大
+        this.questionPrompt.scale = 0;
+        var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+        this.questionPrompt.runAction(s);
     },
 
     onClickCloseBagBtn: function () {  //点击主界面上的关闭背包按钮

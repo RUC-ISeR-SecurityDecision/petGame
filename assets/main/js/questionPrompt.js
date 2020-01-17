@@ -47,15 +47,15 @@ cc.Class({
 
 
         //added by qll on 20200114
-        QAindex : null,
-        QAquestion : null,
-        QAanswer : null,
-        work_indexArray : null,
-        work_questionArray : null,
-        work_answerArray : null,
-        trip_indexArray : null,
-        trip_questionArray : null,
-        trip_answerArray : null,
+        QAindex: null,
+        QAquestion: null,
+        QAanswer: null,
+        work_indexArray: null,
+        work_questionArray: null,
+        work_answerArray: null,
+        trip_indexArray: null,
+        trip_questionArray: null,
+        trip_answerArray: null,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -75,29 +75,27 @@ cc.Class({
         this.trip_answerArray = trip_answerArrayString.split(" - ");
     },
 
-//added by qll on 20200114
+    //added by qll on 20200114
     getQAIndex: function (type, QAPath) {
-        if(type == 0)//旅游
+        if (type == 0)//旅游
         {
             var len = this.trip_indexArray.length;
-            for(let i=0;i<len;i++){
-                if(this.trip_indexArray[i]==QAPath)
-                {
+            for (let i = 0; i < len; i++) {
+                if (this.trip_indexArray[i] == QAPath) {
                     return i;
                 }
             }
-        
+
         }
-        if(type == 1)//打工
+        if (type == 1)//打工
         {
             var len = this.work_indexArray.length;
-            for(let i=0;i<len;i++){
-                if(this.work_indexArray[i]==QAPath)
-                {
+            for (let i = 0; i < len; i++) {
+                if (this.work_indexArray[i] == QAPath) {
                     return i;
                 }
             }
-        
+
         }
     },
 
@@ -115,27 +113,27 @@ cc.Class({
     init: function (type, id, QANum, picNum) {
         this.getQAArray();//added by qll on 20200114
         this.type = type;
-        if(type==0)//旅游
+        if (type == 0)//旅游
         {
             this.picPath += id + '/' + picNum;
             this.QAPath = id + '/' + picNum + '/' + QANum + '.txt';
-            console.log( this.QAPath);
-            console.log( this.picPath);
+            console.log(this.QAPath);
+            console.log(this.picPath);
         }
-        if(type==1)//打工
+        if (type == 1)//打工
         {
             this.picPath += id + '/' + picNum;
             this.QAPath = id + '/' + QANum + '.txt';
-            console.log( this.QAPath);
-            console.log( this.picPath);
+            console.log(this.QAPath);
+            console.log(this.picPath);
         }
-        this.QAIndex = this.getQAIndex(type,this.QAPath);
-        if(type==0)//旅游
+        this.QAIndex = this.getQAIndex(type, this.QAPath);
+        if (type == 0)//旅游
         {
             this.QAquestion = this.trip_questionArray[this.QAIndex];
-            this.QAanswer = this.trip_answerArray[this.QAIndex].split('+');    
+            this.QAanswer = this.trip_answerArray[this.QAIndex].split('+');
         }
-        if(type==1)//打工
+        if (type == 1)//打工
         {
             this.QAquestion = this.work_questionArray[this.QAIndex];
             this.QAanswer = this.work_answerArray[this.QAIndex].split('+');
@@ -151,7 +149,7 @@ cc.Class({
                 console.log("failed to load picture");
             }
             self.picture.spriteFrame = sp;
-        }); 
+        });
     },
 
     onClickConfirmBtn: function () {
@@ -173,7 +171,14 @@ cc.Class({
     },
 
     onClickCloseBtn: function () {
-        this.active = false;
+        var fout = cc.fadeOut(0.3);
+        this.node.runAction(fout);
+        var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+        var end_func = cc.callFunc(function () {
+            this.node.active = false;
+        }.bind(this));
+        var seq = cc.sequence([s, end_func]);
+        this.node.runAction(seq);
     },
 
     start() {

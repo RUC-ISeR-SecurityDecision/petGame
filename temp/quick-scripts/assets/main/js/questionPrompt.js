@@ -178,7 +178,14 @@ cc.Class({
     },
 
     onClickCloseBtn: function onClickCloseBtn() {
-        this.active = false;
+        var fout = cc.fadeOut(0.3);
+        this.node.runAction(fout);
+        var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+        var end_func = cc.callFunc(function () {
+            this.node.active = false;
+        }.bind(this));
+        var seq = cc.sequence([s, end_func]);
+        this.node.runAction(seq);
     },
 
     start: function start() {}

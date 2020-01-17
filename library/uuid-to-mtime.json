@@ -465,7 +465,7 @@
     "relativePath": "bag\\bag.fire"
   },
   "ec3d5574-fa84-42b4-8a40-0c713f7d41e3": {
-    "asset": 1578967594114,
+    "asset": 1579223053177,
     "meta": 1575355152000,
     "relativePath": "Global"
   },
@@ -505,7 +505,7 @@
     "relativePath": "load"
   },
   "bd8e4191-a3d2-4b9d-b348-c92ef31c5601": {
-    "asset": 1578964816615,
+    "asset": 1579223053177,
     "meta": 1575355152000,
     "relativePath": "load\\JS"
   },
@@ -520,7 +520,7 @@
     "relativePath": "main"
   },
   "44502c3a-dd4c-4a94-80b9-3bdad758c8c7": {
-    "asset": 1579000990363,
+    "asset": 1579223053177,
     "meta": 1575355152000,
     "relativePath": "main\\js"
   },
@@ -7015,7 +7015,7 @@
     "relativePath": "resources\\workQA\\6\\5.json"
   },
   "c03fb8e5-8b84-49ba-b8a2-68902011f747": {
-    "asset": 1578383608193,
+    "asset": 1579223053177,
     "meta": 1575795758000,
     "relativePath": "runtime"
   },
@@ -7025,8 +7025,8 @@
     "relativePath": "resources\\workQA\\6\\5.txt"
   },
   "c8a3f33c-c315-44ff-a505-d691541e8076": {
-    "asset": 1578278976000,
-    "meta": 1578965283533,
+    "asset": 1579223053177,
+    "meta": 1579223826489,
     "relativePath": "runtime\\autoRun.js"
   },
   "e2d70ee3-8200-4c81-a577-4668f1a4d1b9": {
@@ -7274,11 +7274,6 @@
     "meta": 1579052330278,
     "relativePath": "resources\\workPic\\4\\6.png"
   },
-  "f39f6307-240e-41cd-b73e-8e2f4dc13e49": {
-    "asset": 1579052382876,
-    "meta": 1579052389155,
-    "relativePath": "main\\js\\questionPrompt.js"
-  },
   "3bf96841-3b60-4859-ba8c-20188c56dafa": {
     "asset": 1579055968000,
     "meta": 1579056243622,
@@ -7355,13 +7350,13 @@
     "relativePath": "resources\\page_main\\countdown\\clock.png"
   },
   "d5ba6e3e-d16d-4f3c-9de8-f4937f57c31f": {
-    "asset": 1579159809369,
-    "meta": 1579160641852,
+    "asset": 1579223053177,
+    "meta": 1579223826130,
     "relativePath": "Global\\globalData.js"
   },
   "ad10578c-dff4-4bf7-9641-6fa7c44efcb0": {
-    "asset": 1579161127624,
-    "meta": 1579161128944,
+    "asset": 1579223053177,
+    "meta": 1579223826442,
     "relativePath": "load\\JS\\load.js"
   },
   "27dca957-a67c-49eb-a753-d6753f03019d": {
@@ -7379,19 +7374,24 @@
     "meta": 1579164967300,
     "relativePath": "Global\\pet.js"
   },
-  "4fcf85af-f1c3-4747-9d8b-cdb5b050dce0": {
-    "asset": 1579164027346,
-    "meta": 1579164967545,
-    "relativePath": "house\\js\\house.js"
-  },
   "3a79b72f-e28d-4c11-ab31-16d9ba1b595a": {
     "asset": 1579163880722,
     "meta": 1579164967639,
     "relativePath": "setting\\js\\setting.js"
   },
   "87f24e7f-2404-4414-93f0-799c7dde5427": {
-    "asset": 1579165025206,
-    "meta": 1579165029059,
+    "asset": 1579225495485,
+    "meta": 1579225591202,
     "relativePath": "main\\js\\main.js"
+  },
+  "f39f6307-240e-41cd-b73e-8e2f4dc13e49": {
+    "asset": 1579225497095,
+    "meta": 1579225591202,
+    "relativePath": "main\\js\\questionPrompt.js"
+  },
+  "4fcf85af-f1c3-4747-9d8b-cdb5b050dce0": {
+    "asset": 1579230654639,
+    "meta": 1579230657387,
+    "relativePath": "house\\js\\house.js"
   }
 }

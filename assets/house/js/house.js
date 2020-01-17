@@ -234,10 +234,24 @@ cc.Class({
             set(value) {
                 let choiceNodeArray = this.choosePrompt.getChildByName('Layout').children;
                 if (value == 0) {
-                    this.choosePrompt.active = false;
+                    var fout = cc.fadeOut(0.3);
+                    this.choosePrompt.runAction(fout);
+                    var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+                    var end_func = cc.callFunc(function () {
+                        this.choosePrompt.active = false;
+                    }.bind(this));
+                    var seq = cc.sequence([s, end_func]);
+                    this.choosePrompt.runAction(seq);
                 } else if (value == 10) { // tool
                 } else {
                     this.choosePrompt.active = true;
+                    var fin = cc.fadeTo(0.3, 255);
+                    this.choosePrompt.runAction(fin);
+                    // dlg由小到大
+                    this.choosePrompt.scale = 0;
+                    var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+                    this.choosePrompt.runAction(s);
+
                     for (let i = 0; i < choiceNodeArray.length; i++) {
                         const element = choiceNodeArray[i].getComponent(cc.Sprite);
                         let picPath = "shopPic/cate" + value + "/";
@@ -288,7 +302,7 @@ cc.Class({
         // 首先清除缓存图片
         for (let i = 0; i < this.picAddrArray.length; i++) {
             const element = this.picAddrArray[i];
-            cc.loader.releaseRes(element, cc.SpriteFrame);             
+            cc.loader.releaseRes(element, cc.SpriteFrame);
         }
         let date = new Date();
         let year = date.getFullYear(); //获取当前年份   
@@ -329,7 +343,7 @@ cc.Class({
                         newListNode.height = 140;
                         self.listContainer.addChild(newListNode);
                     })
-                    
+
                     newListNode.on(cc.Node.EventType.TOUCH_START, function () {
 
                     }, self);
@@ -344,7 +358,7 @@ cc.Class({
         // 首先清除缓存图片
         for (let i = 0; i < this.picAddrArray.length; i++) {
             const element = this.picAddrArray[i];
-            cc.loader.releaseRes(element, cc.SpriteFrame);             
+            cc.loader.releaseRes(element, cc.SpriteFrame);
         }
 
         let date = new Date();
@@ -388,11 +402,11 @@ cc.Class({
                         newListNode.width = 175;
                         newListNode.height = 140;
                         self.listContainer.addChild(newListNode);
-                    })                    
+                    })
                 }
                 self.picAddrArray = picAddrArray;
                 self.album.active = true;
-            }            
+            }
         });
     },
 
@@ -403,7 +417,7 @@ cc.Class({
         // 首先清除缓存图片
         for (let i = 0; i < this.picAddrArray.length; i++) {
             const element = this.picAddrArray[i];
-            cc.loader.releaseRes(element, cc.SpriteFrame);             
+            cc.loader.releaseRes(element, cc.SpriteFrame);
         }
         this.picAddrArray = [];
         this.listContainer.destroyAllChildren();

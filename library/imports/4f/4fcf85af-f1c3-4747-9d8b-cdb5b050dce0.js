@@ -242,10 +242,23 @@ cc.Class({
 
                 var choiceNodeArray = this.choosePrompt.getChildByName('Layout').children;
                 if (value == 0) {
-                    this.choosePrompt.active = false;
+                    var fout = cc.fadeOut(0.3);
+                    this.choosePrompt.runAction(fout);
+                    var s = cc.scaleTo(0.3, 0).easing(cc.easeBackIn());
+                    var end_func = cc.callFunc(function () {
+                        this.choosePrompt.active = false;
+                    }.bind(this));
+                    var seq = cc.sequence([s, end_func]);
+                    this.choosePrompt.runAction(seq);
                 } else if (value == 10) {// tool
                 } else {
                     this.choosePrompt.active = true;
+                    var fin = cc.fadeTo(0.3, 255);
+                    this.choosePrompt.runAction(fin);
+                    // dlg由小到大
+                    this.choosePrompt.scale = 0;
+                    var s = cc.scaleTo(0.4, 1).easing(cc.easeBackOut());
+                    this.choosePrompt.runAction(s);
 
                     var _loop = function _loop(i) {
                         var element = choiceNodeArray[i].getComponent(cc.Sprite);
